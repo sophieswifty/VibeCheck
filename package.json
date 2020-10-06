@@ -1,7 +1,7 @@
 {
   "name": "a02",
   "version": "1.0.0",
-  "description": "",
+  "description": "Buzzfeed quiz (format) which creates a personalized Spotfiy playlist!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +11,13 @@
   "dependencies": {
     "browser-sync": "^2.26.12",
     "bulma": "^0.9.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sophieswifty/VibeCheck.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sophieswifty/VibeCheck/issues"
+  },
+  "homepage": "https://github.com/sophieswifty/VibeCheck#readme"
 }
