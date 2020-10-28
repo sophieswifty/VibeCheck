@@ -1,23 +1,24 @@
 {
-  "name": "VibeCheck",
+  "name": "photo-website",
   "version": "1.0.0",
-  "description": "Pass the vibe check with a custom playlist of your dreams created by a quiz to gauge your vibes!",
+  "description": "sample photo website",
   "main": "index.js",
   "scripts": {
+    "type": "module",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "browser-sync": "^2.26.12",
-    "bulma": "^0.9.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sophieswifty/VibeCheck.git"
+    "url": "git+https://github.com/dschimtz/photo-website.git"
   },
+  "author": "Dennis Schimtzek",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sophieswifty/VibeCheck/issues"
+    "url": "https://github.com/dschimtz/photo-website/issues"
   },
-  "homepage": "https://github.com/sophieswifty/VibeCheck#readme"
+  "homepage": "https://github.com/dschimtz/photo-website#readme",
+  "dependencies": {
+    "bulma": "^0.9.1",
+    "bulma-carousel": "^4.0.4"
+  }
 }
