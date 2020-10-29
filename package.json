@@ -1,7 +1,7 @@
 {
-  "name": "a02",
+  "name": "VibeCheck",
   "version": "1.0.0",
-  "description": "Buzzfeed quiz (format) which creates a personalized Spotfiy playlist!",
+  "description": "Pass the vibe check with a custom playlist of your dreams created by a quiz to gauge your vibes!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
