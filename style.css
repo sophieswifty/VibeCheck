@@ -1,1 +1,41 @@
 html, body {margin: 0; height: 100%; overflow: hidden}
+
+#question-carousel-parent{
+    /* The image used */
+    /* background-image: url("./img/dancing.jpg"); */
+    background-color: #1DB954;
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.question-box {
+    background-color:rgba(0, 0, 0, 0.4);
+    margin: auto;
+    margin-top: 70px;
+    /* text-align: center; */
+    /* width: 60%; */
+    height: 70%;
+    left: 50%;
+    right: 50%;
+  }
+  
+.answerimage {
+  border-radius: 10px;
+}
+
+.answer-tile {
+  text-align: center;
+  background-color:rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 80%;
+}
+
+.answer-tile:hover {
+  background-color:rgba(0, 0, 0, 0.4);
+}
