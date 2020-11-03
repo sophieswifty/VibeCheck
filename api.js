@@ -1,4 +1,6 @@
 import axios from "axios";
+//API's and functions for WEATHER, TIME/DATE, ECONOMY
+
 // Weather
 //Function to find weather, must give zipcode as input
 async function getWeather(zipcode) {
@@ -27,7 +29,7 @@ async function getWeather(zipcode) {
   } else {
     console.log("BAD WEATHER - HEAVY RAIN, STORMS, BLIZZARDS");
   }
-} 
+}
 //Time
 //Function to find time and if holoiday season
 function getTime() {
