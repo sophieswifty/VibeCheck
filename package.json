@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/dschimtz/photo-website#readme",
   "dependencies": {
+    "axios": "^0.21.0",
     "bulma": "^0.9.1",
-    "bulma-carousel": "^4.0.4"
+    "bulma-carousel": "^4.0.4",
+    "esm": "^3.2.25",
+    "navigator": "^1.0.1",
+    "node-fetch": "^2.6.1"
   }
 }
