@@ -16,6 +16,7 @@ async function getWeather(zipcode) {
   } catch (error) {
     console.log('error');
   }
+  
   if (weather == 1000 || weather == 1003) {
     console.log("GREAT WEATHER, EITHER SUNNY IF DAY or CLEAR IF NIGHT");
   } else if (weather == 1150 || weather == 1153 || weather == 1180 || weather == 1183) {
