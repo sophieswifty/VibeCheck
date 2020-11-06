@@ -1,5 +1,6 @@
 //import 'react-bulma-components/dist/react-bulma-components.min.css';
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Profile } from './pages/Profile';

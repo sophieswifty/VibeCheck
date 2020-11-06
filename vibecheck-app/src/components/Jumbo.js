@@ -3,11 +3,13 @@ import { Jumbotron, Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import paintGif from '../assets/greenpaint.gif';
 import paintPng from '../assets/greenpaint.PNG';
+import ReactDOM from 'react-dom';
 
+const e = React.createElement;
 
 const Styles = styled.div`
     .jumbo {
-        background: url(${paintGif}) no-repeat fixed bottom;
+        background: url(${paintPng}) no-repeat fixed bottom;
         background-size: cover;
         color: #efefef;
         height: 200px;
@@ -46,3 +48,7 @@ export const Jumbo = () => {
 }
 
 export default Jumbo
+
+const domContainer = document.querySelector('#jumbo');
+ReactDOM.render(e(Jumbo), domContainer);
+
