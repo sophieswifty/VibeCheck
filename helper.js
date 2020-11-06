@@ -1,5 +1,5 @@
 const id = "c712506f4ad74dcc9dbf58efc645a833";
-// const token = "BQDQzvWWwUJSrq1EfaE8XPmF7r3aYM8oe1fgPuX2T8l3s6fOzhCOps81rHH2D25PisN4g3CmXmGUWIRizHYk1Rjdbxq1iYLshPfoU29EcMnFsWICD6Lz4PppHzO_8nsNXR31EZVrjd3jXYmGdfB_D_wFoR8iurVK";
+const token = "BQDvatkphjyqa2CYaXFe1d5gl-L5-m0pZ2NeICXBxjPldRGUYDec1fvCnH65TH0fKuaZ7HiQks3EbUr_usL8wXeY8YOW-yw-Xj8PCLf_Og19zOxZOCG0eazBuS6prCM-oFF5q5GZHqwvGaG4Q4YnGuYhsC_OBkLR2JdKobuEd3r3yBk0xLQuJlD1fuD6qExitkA";
 const sample_song = "11dFghVXANMlKmJXsNCbNl";
 const sample_song_b = "5lRzWDEe7UuedU2QPsFg0K";
 const sample_artist = "0OdUWJ0sBjDrqHygGUXeCF";
@@ -23,13 +23,13 @@ function generateRandomString(length) {
 
 const auth = async () => {
     var client_id = id; // Your client id
-    var redirect_uri = "https://dennis.d3ejum8sktgg3x.amplifyapp.com/"; // Your redirect uri
+    var redirect_uri = "https://main.d3ejum8sktgg3x.amplifyapp.com/"; // Your redirect uri
 
     var state = generateRandomString(16);
     var stateKey = "spotify_auth_state";
 
     localStorage.setItem(stateKey, state);
-    var scope = 'user-read-private user-read-email';
+    var scope = 'user-read-private user-read-email playlist-modify-public user-top-read';
 
     var url = 'https://accounts.spotify.com/authorize';
     url += '?response_type=token';
@@ -43,7 +43,7 @@ const auth = async () => {
 }
 
 const authorize = async () => {
-    const return_uri = "https://dennis.d3ejum8sktgg3x.amplifyapp.com/"
+    const return_uri = "https://main.d3ejum8sktgg3x.amplifyapp.com/"
     const res = await axios({
         method: 'get',
         url: 'https://accounts.spotify.com/authorize?' + 'client_id=' + id + 
@@ -132,6 +132,100 @@ const getUserData = async () => {
     }
 }
 
+const getUserTopTracks = async (limit, offset) => {
+    try {
+        const res = await axios({
+            method: 'get',
+            url: "https://api.spotify.com/v1/me/top/tracks" +
+            "?limit=" + limit + "&offset=" + offset,
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+        return res.data;
+    } catch (e) {
+        return e;
+    }
+}
+
+const getUserTopArtists = async (limit, offset) => {
+    try {
+        const res = await axios({
+            method: 'get',
+            url: "https://api.spotify.com/v1/me/top/artists" +
+            "?limit=" + limit + "&offset=" + offset,
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+        return res.data;
+    } catch (e) {
+        return e;
+    }
+}
+
+const getUserAllTopArtists = async () => {
+    return await getUserTopArtists(50,0);
+}
+
+const getRelatedArtists = async (artist_id) => {
+    try {
+        const res = await axios({
+            method: 'get',
+            url: "https://api.spotify.com/v1/artists/" + artist_id + "/related-artists/",
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+        return res.data;
+    } catch (e) {
+        return e;
+    }
+}
+
+//returns all top artists and their related artists with no repeats
+const getAllUserArtists = async () => {
+    var artists = {};
+    const topArtistsResult = await getUserAllTopArtists();
+    Array.prototype.forEach.call(topArtistsResult.items, elt => {
+        artists[elt.id] = elt.name;
+    });
+    for (var key in artists) {
+        if (artists[key]) {
+            const relatedArtistsResult = await getRelatedArtists(key);
+            Array.prototype.forEach.call(relatedArtistsResult.artists, artist => {
+            if (!artists[artist.id]) {
+                artists[artist.id] = artist.name;
+            }
+        });
+        }
+    }
+    // Array.prototype.forEach.call(topArtistsResult.items, async (elt) => {
+    //     const relatedArtistsResult = await getRelatedArtists(elt.id);
+    //     Array.prototype.forEach.call(relatedArtistsResult.artists, artist => {
+    //         if (!artists[artist.id]) {
+    //             artists[artist.id] = artist.name;
+    //         }
+    //     });
+    // })
+    return artists;
+}
+
+// artists is an object with id: name pairs
+const getTopSongsByArtists = async (artists) => {
+    let topSongs = [];
+    for (var key in artists) {
+        if (artists[key]) {
+            const topTracks = await getArtistTopTracks(key);
+            topTracks.tracks.forEach((track) => {
+                topSongs.push(track.id);
+            });
+        }
+    }
+    console.log(topSongs.length);
+    return topSongs;
+}
+
 const runTests = () => {
     getUserData().then((data) => {
         console.log(data.id);
@@ -152,12 +246,35 @@ const runTests = () => {
 
 document.querySelector("button.is-link").addEventListener("click", function(event) {
     event.preventDefault();
-    auth().then(() => {
-        console.log("HERE");
-    });
+    auth();
 });
 
-var access_token = getAccessToken();
-if (access_token != null) {
-    runTests();
-}
+// getUserTopArtists(50,0).then((data) => {
+//     const simpleData = data.items.map(elt => elt.name);
+//     console.log(simpleData);
+//     getRelatedArtists(data.items[0].id).then((rel) => {
+//         const simpleRel = rel.artists.map(elt => elt.name);
+//         console.log(simpleRel);
+//     });
+// });
+
+// getUserTopTracks(50,0).then((data) => {
+//     console.log(data);
+//     getTrackData(data.items[0].id).then((metrics) => {
+//         console.log(metrics);
+//     })
+// })
+
+getAllUserArtists().then((data) => {
+    console.log(Object.keys(data).length + " artists");
+    getTopSongsByArtists(data).then((tracks) => {
+        console.log(tracks);
+    })
+});
+
+// // var access_token = getAccessToken();
+// var access_token = "BQBaD0ITp2A7xN148yYRBGPCaG2t5_gqWapi0BtVXI7ajLGH_8AJH9nKZfThPMvmkzmYZsnJcNYzGCCwJmRe3OFkNmnqg5CkLJAV4BFtoQtBWRFJfLydKthhaHdkuJTjmwMPZxGdZHmc-0TmgDRw1zwfnMrZMTUW";
+// if (access_token != null) {
+//     token = access_token;
+//     runTests();
+// }
