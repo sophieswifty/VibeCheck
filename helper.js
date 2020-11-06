@@ -150,7 +150,7 @@ const runTests = () => {
     });
 }
 
-document.querySelector("button.is-link").addEventListener("click", function(event) {
+document.querySelector("#sign-in").addEventListener("click", function(event) {
     event.preventDefault();
     auth().then(() => {
         console.log("HERE");
