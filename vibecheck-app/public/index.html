@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>VibeCheck</title>
+</head>
+
+<body>
+
+  <body>
+
+    <section class="hero is-large">
+      <div class="hero-head">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <img src="./temp_vc.png" width="190">
+            </a>
+
+            <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+
+          <div id="navbarMenuHeroB" class="navbar-menu">
+            <div class="navbar-start">
+              <a class="navbar-item">
+                Quiz
+              </a>
+
+              <a class="navbar-item">
+                Custom Playlist
+              </a>
+
+              <a class="navbar-item">
+                Statistics
+              </a>
+            </div>
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">
+                    Profile
+                  </a>
+
+                  <div class="navbar-dropdown">
+                    <a class="navbar-item">
+                      Playlists
+                    </a>
+                    <a class="navbar-item">
+                      Friends
+                    </a>
+                    <hr class="navbar-divider">
+                    <a class="navbar-item">
+                      Log out
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="buttons" id="sign-in">
+                <a class="button is-success">
+                  <strong>Sign in</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+      </div>
+      </nav>
+
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <p class="title">
+            Welcome to VibeCheck
+          </p>
+          <p class="subtitle">
+            Sign in to Spotify to create an account.
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-foot">
+        <nav class="tabs is-boxed is-fullwidth">
+          <div class="container">
+            <ul>
+              <li class="is-active">
+                <a>Home</a>
+              </li>
+              <li>
+                <a>Quiz</a>
+              </li>
+              <li>
+                <a>Customize</a>
+              </li>
+              <li>
+                <a href="/statistics">Statistics</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>VibeCheck</strong> by Dennis, Mahler, Sofia, Sophie, Ujesh.
+        </p>
+      </div>
+    </footer>
+
+    <div id='root'></div>
+
+    <div id="jumbo"></div>
+
+    <!-- Load our React component. -->
+    <script src="Jumbo.js"></script>
+    <script src="./node_modules/axios/dist/axios.js"></script>
+    <script src="helper.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  </body>
+
+</html>
