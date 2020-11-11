@@ -11,6 +11,7 @@ import { ErrorPage } from './pages/ErrorPage';
 import { Layout } from './components/Layout';
 import { NavigationBar } from './components/NavigationBar';
 import { Jumbo } from './components/Jumbo';
+import { axios } from 'axios';
 
 class App extends Component {
   render() {

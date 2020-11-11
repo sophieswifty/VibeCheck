@@ -1,5 +1,7 @@
+const axios = require('axios').default;
+
 const id = "c712506f4ad74dcc9dbf58efc645a833";
-const token = "BQBffd4z8l4pGeAcGAiGuJeQK7jlTCmi0SNIMVowDAPDhDIt6qPdyMMKYVLa3lN3B1_6PGZtUqL8Zy-Hnn4PLpED3RqH5Q0_Mlc3ncUy0Zc-ZZyD800c1-DWbwh4EK977zpGzV9GDN0ZTCiwnhcA_AcmWaWEsHPLFPag25-n0t6fduJBMdLZLH-cyuabLbhE8xw";
+const token = "BQAjhaaVpxQ0LUHIKR8vbsS7p23_6D1DAWkkH3ngz7wkepezBUO0LGNh308jnnjf9aH85qzJPa1SYx1OWsNKAFw4XaAbCmAbxQG38R03vhwrfkJ21RoO7iWWG1CtfH0WLjVZnr8SrPhlZbyLttUApT7bXoXDOY9Vl01JEZayrvyOmC6RH31rH1Rh8IaiVFBKhrw";
 const sample_song = "11dFghVXANMlKmJXsNCbNl";
 const sample_song_b = "5lRzWDEe7UuedU2QPsFg0K";
 const sample_artist = "0OdUWJ0sBjDrqHygGUXeCF";
@@ -21,7 +23,8 @@ function generateRandomString(length) {
     return text;
 };
 
-const auth = async () => {
+export const authorize = async () => {
+    const id = "c712506f4ad74dcc9dbf58efc645a833";
     var client_id = id; // Your client id
     var redirect_uri = "https://main.d3ejum8sktgg3x.amplifyapp.com/"; // Your redirect uri
 
@@ -40,15 +43,6 @@ const auth = async () => {
 
     window.location.replace(url);
     return false;
-}
-
-const authorize = async () => {
-    const return_uri = "https://main.d3ejum8sktgg3x.amplifyapp.com/"
-    const res = await axios({
-        method: 'get',
-        url: 'https://accounts.spotify.com/authorize?' + 'client_id=' + id + 
-        '&response_type=token&redirect_uri=' + return_uri
-    });
 }
 
 const getArtist = async (artist_id) => {
@@ -497,6 +491,24 @@ const addTracksToPlaylist = async (playlist_id, track_uris) => {
     }
 }
 
+export const doItAll = async (filter) => {
+    getAllUserArtists().then((data) => {
+        console.log(data);
+        getTopSongsByArtists(data).then((tracks) => {
+            getDataFromTracks(tracks).then((audio_features) => {
+                const passedTracks = audio_features.filter((elt) => passesFilter(elt,filter));
+                const passedIDs = passedTracks.map(elt => elt.id);
+                getTracks(passedIDs).then((songs) => console.log(songs.tracks.map(e => getFullSongName(e))));
+                const passedURIs = passedTracks.map(elt => elt.uri);
+                createPlaylist("VibeCheck2").then((playlist) => {
+                    console.log(playlist);
+                    addTracksToPlaylist(playlist.id, passedURIs);
+                })
+            });
+        });
+    });
+}
+
 // const audio_feats = [];
 // getAllUserArtists().then(data => {
 //     const artistIDList = Object.keys(data);
@@ -594,18 +606,18 @@ const filter = {
     valence_high: 0.75
 };
 
-getAllUserArtists().then((data) => {
-    getTopSongsByArtists(data).then((tracks) => {
-        getDataFromTracks(tracks).then((audio_features) => {
-            const passedTracks = audio_features.filter((elt) => passesFilter(elt,filter));
-            console.log(passedTracks);
-            const passedIDs = passedTracks.map(elt => elt.id);
-            getTracks(passedIDs).then((songs) => console.log(songs.tracks.map(e => getFullSongName(e))));
-            const passedURIs = passedTracks.map(elt => elt.uri);
-            addTracksToPlaylist("VibeCheck", passedURIs);
-        });
-    });
-});
+// getAllUserArtists().then((data) => {
+//     getTopSongsByArtists(data).then((tracks) => {
+//         getDataFromTracks(tracks).then((audio_features) => {
+//             const passedTracks = audio_features.filter((elt) => passesFilter(elt,filter));
+//             console.log(passedTracks);
+//             const passedIDs = passedTracks.map(elt => elt.id);
+//             getTracks(passedIDs).then((songs) => console.log(songs.tracks.map(e => getFullSongName(e))));
+//             const passedURIs = passedTracks.map(elt => elt.uri);
+//             addTracksToPlaylist("VibeCheck", passedURIs);
+//         });
+//     });
+// });
 
 // createPlaylist("VibeCheck").then(data => console.log(data));
 
@@ -642,7 +654,8 @@ getAllUserArtists().then((data) => {
 //     runTests();
 // }
 
-document.querySelector("button.is-link").addEventListener("click", function(event) {
-    event.preventDefault();
-    auth();
-});
+// document.querySelector("#sign-in").addEventListener("click", function(event) {
+//     alert("Signing in");
+//     event.preventDefault();
+//     authorize();
+// });
