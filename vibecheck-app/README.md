@@ -8,6 +8,7 @@
     * react-router,
     * react-bulma-components,
     * axios
+    * font-awesome (use: `npm install --save @fortawesome/fontawesome-free`)
 
 * To run in browser: `npm start` (browser-sync no longer needed)
 
