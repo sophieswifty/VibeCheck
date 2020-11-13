@@ -6,8 +6,7 @@
     * bulma,
     * react,
     * react-router,
-    * react-bootstrap,
-    * styled-components,
+    * *react-bulma-components,
     * axios
 
 * To run in browser: `npm start` (browser-sync no longer needed)
@@ -21,5 +20,7 @@
         * `API/` for api functions
         * `assets/` for pictures, media, misc.
         * `components/` for UI components of the site
-        * `pages/` houses each page of the site
+        * `pages/` houses each page of the site as a React component
         * `util/` any helper (utility) functions, classes, enums, etc.
+        * `index.js` renders the React components in the html using the querySelector
+        * `App.js` creates the entire app with React components
