@@ -1,5 +1,5 @@
 import React from 'react';
-import {Heading, Form, Button, Container, Hero} from 'react-bulma-components';
+import {Heading, Form, Button, Hero} from 'react-bulma-components';
 
 export default class VibecheckSong extends React.Component {
     constructor(props) {

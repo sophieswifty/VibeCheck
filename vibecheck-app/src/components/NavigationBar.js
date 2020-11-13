@@ -1,18 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../node_modules/react-bulma-components/lib/components/navbar/navbar';
-import Button from '../../node_modules/react-bulma-components/lib/components/button/button';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 
 export default class NavigationBar extends React.Component {
   render() {
     return (
     <Navbar color="primary">
         <Navbar.Brand transparent>
-          <Navbar.Item renderAs="a" href="/">
-            <img src="./temp_vc.png" width="190" />
+          <Navbar.Item>
+            <Link renderAs="a" to="/">
+              <img src="./temp_vc.png" width="190" />
+            </Link>
           </Navbar.Item>
           <Navbar.Burger />
         </Navbar.Brand>
@@ -35,7 +33,9 @@ export default class NavigationBar extends React.Component {
             </Navbar.Item>
             <Navbar.Item dropdown hoverable>
               <Navbar.Link>
+                <Link>
                 Tools
+                </Link>
               </Navbar.Link>
               <Navbar.Dropdown>
                 <Navbar.Item>
@@ -51,12 +51,12 @@ export default class NavigationBar extends React.Component {
               </Navbar.Dropdown>
             </Navbar.Item>
           </Navbar.Container>
-          <Navbar.Container position="end">
+          {/* <Navbar.Container position="end">
             <Navbar.Item>
               <Link to="./quiz">
               </Link>
             </Navbar.Item>
-          </Navbar.Container>
+          </Navbar.Container> */}
         </Navbar.Menu>
       </Navbar>
     )
