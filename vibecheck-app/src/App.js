@@ -9,17 +9,16 @@ import { Statistics } from './pages/Statistics';
 import { Custom } from './pages/Custom';
 import { ErrorPage } from './pages/ErrorPage';
 import { Layout } from './components/Layout';
-import { NavigationBar } from './components/NavigationBar';
+import NavigationBar from './components/NavigationBar';
 import { Jumbo } from './components/Jumbo';
 import { axios } from 'axios';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <React.Fragment>
         <Router>
           <NavigationBar />
-          <Jumbo />
           <Layout>
             <Switch>
               <Route exact path="/" component={Home} />
@@ -36,4 +35,3 @@ class App extends Component {
   }
 }
 
-export default App;

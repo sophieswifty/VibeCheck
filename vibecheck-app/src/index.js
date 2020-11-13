@@ -2,18 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-
+import Button from "../node_modules/react-bulma-components/lib/components/button/button";
 import {authorize, doItAll} from './API/spotifyAPI';
+import { Link } from 'react-router-dom';
+import NavigationBar from './components/NavigationBar';
 
-ReactDOM.render(
-  <React.StrictMode>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// Render react components using querySelectors below.
+let e = React.createElement;
 
-document.getElementById('sign-in').addEventListener("click", () => {
-  authorize();
-});
+const domContainer = document.querySelector('#root');
+ReactDOM.render(e(App), domContainer);
 
 const filter = {
   acousticness_low: 0,
@@ -42,6 +40,3 @@ const filter = {
 };
 
 doItAll(filter);
-
-
-

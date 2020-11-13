@@ -47,8 +47,3 @@ export const Jumbo = () => {
     )
 }
 
-export default Jumbo
-
-const domContainer = document.querySelector('#jumbo');
-ReactDOM.render(e(Jumbo), domContainer);
-

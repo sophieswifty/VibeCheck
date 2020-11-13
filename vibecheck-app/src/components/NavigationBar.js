@@ -1,61 +1,85 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
 import styled from 'styled-components';
 import { Button } from './Button';
+import Navbar from '../../node_modules/react-bulma-components/lib/components/navbar/navbar';
 
 
-const Styles = styled.div`
-  .navbar {
-    background-color: #222;
+export default class NavigationBar extends React.Component {
+  render() {
+    return (
+      <div>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <NavbarItem linkTo="/">
+              <img src="./temp_vc.png" width="190" />
+            </NavbarItem>
+
+            <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+
+          <div id="navbarMenuHeroB" class="navbar-menu">
+            <div class="navbar-start">
+              <NavbarItem linkTo="/quiz">
+                Quiz
+              </NavbarItem>
+
+              <NavbarItem linkTo="/custom">
+                Custom playlist
+              </NavbarItem>
+
+              <NavbarItem linkTo="/statistics">
+                Quiz
+              </NavbarItem>
+            </div>
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <NavbarItem linkTo="/profile">
+                    Profile
+                  </NavbarItem>
+
+                  <div class="navbar-dropdown">
+                    <NavbarItem linkTo="/playlists">
+                      playlists
+                    </NavbarItem>
+                    <NavbarItem linkTo="/friends">
+                      friends
+                    </NavbarItem>
+                    <hr class="navbar-divider" />
+                    <NavbarItem linkTo="/">
+                      Log out
+                    </NavbarItem>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div >
+    )
   }
-  a, .navbar-brand, .navbar-nav .nav-link {
-    color: #bbb;
-    &:hover {
-      color: white;
-    }
+}
+
+class NavbarItem extends React.Component {
+
+  render() {
+    return (
+      <div class="navbar-item">
+      <Nav.Item>
+        <Nav.Link>
+          <Link to={this.props.linkTo} style={{ textDecoration: 'none' }}>{this.props.children}</Link>
+        </Nav.Link>
+      </Nav.Item>
+      </div>
+    )
   }
-`;
-
-export const NavigationBar = () => (
-  <Styles>
-    <Navbar expand="lg">
-      <Navbar.Brand href="/">Code Life</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
-          <Nav.Item>
-            <Nav.Link>
-              <Link to="/">Home</Link>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link>
-              <Link to="/profile">Profile</Link>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link>
-              <Link to="/quiz">Quiz</Link>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link>
-              <Link to="/statistics">Statistics</Link>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link>
-              <Link to="/custom">Custom</Link>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Button buttonStyle='btn--outline'>SIGNUP</Button>
-          </Nav.Item>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-  </Styles >
-)
-
-export default NavigationBar
+}
