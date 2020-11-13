@@ -6,7 +6,7 @@
     * bulma,
     * react,
     * react-router,
-    * *react-bulma-components,
+    * react-bulma-components,
     * axios
 
 * To run in browser: `npm start` (browser-sync no longer needed)
