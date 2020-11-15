@@ -25,3 +25,25 @@
         * `util/` any helper (utility) functions, classes, enums, etc.
         * `index.js` renders the React components in the html using the querySelector
         * `App.js` creates the entire app with React components
+
+* Page organization:
+   * New user:
+      * Home page:
+      - Log in button --> Spotify login
+      - Description
+      - Recently generated playlists from users
+      * Tools
+      - Vibecheck a song
+      - Vibecheck a playlist
+   * User logged in:
+      * Dashboard: 
+      - User's generated playlists. 
+      - Suggested vibe playlists.
+      - Friends? Friends' playlists?
+      * Quiz:
+      - Carousel of quiz questions
+      * Tools:
+      - Vibecheck a song
+      - Vibecheck a playlist
+         - Add to my playlists button?
+      * Log out
