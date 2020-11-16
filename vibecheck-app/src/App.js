@@ -8,6 +8,7 @@ import Statistics from './pages/Statistics';
 import ErrorPage from './pages/ErrorPage';
 import VibecheckSong from './pages/VibecheckSong';
 import VibecheckPlaylist from './pages/VibecheckPlaylist';
+import Redirect from './pages/Redirect';
 
 import Layout from './components/Layout';
 import NavigationBar from './components/NavigationBar';
@@ -31,6 +32,7 @@ export default class App extends Component {
               <Route path="/statistics" component={Statistics} />
               <Route path="/vibecheck-song" component={VibecheckSong} />
               <Route path="/vibecheck-playlist" component={VibecheckPlaylist} />
+              <Route path="/redirect" component={Redirect} />
               <Route component={ErrorPage} />
             </Switch>
           </Layout>

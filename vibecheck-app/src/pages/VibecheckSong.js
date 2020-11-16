@@ -15,6 +15,8 @@ export default class VibecheckSong extends React.Component {
     }
 
     handleSubmit(event) {
+        // Authenticate user
+        
         alert('The following song was submitted: ' + this.state.value);
         event.preventDefault();
       }
