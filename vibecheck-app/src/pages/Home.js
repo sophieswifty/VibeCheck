@@ -17,9 +17,7 @@ export class Home extends React.Component {
                             and which includes a quiz that generates a playlist for whatever vibe you want.
                             Connect to spotify to begin. Don't worry, this process is completely safe.
                         </p>
-                        <Link to="./quiz">
                     <ConnectSpotify></ConnectSpotify>
-                    </Link>
                     </Hero.Body>
                 </Hero>
                 <br/>

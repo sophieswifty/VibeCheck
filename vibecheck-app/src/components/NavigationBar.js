@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../../node_modules/react-bulma-components/lib/components/navbar/navbar';
+import { Navbar } from 'react-bulma-components';
 
 export default class NavigationBar extends React.Component {
   render() {
