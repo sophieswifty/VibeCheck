@@ -1,12 +1,11 @@
 import React from 'react'
 
-export const Custom = () => {
-    return (
-        <div>
-            <h1> CUSTOM PAGE </h1>
-        </div>
-    )
-    
+export default class Custom extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1> CUSTOM PAGE </h1>
+            </div>
+        );
+    }
 }
-
-export default Custom
