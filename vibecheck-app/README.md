@@ -6,7 +6,7 @@
     * bulma,
     * react,
     * react-router,
-    * react-bulma-components,
+    * [react-bulma-components](https://couds.github.io/react-bulma-components/?path=/story/box--default),
     * axios
     * font-awesome (use: `npm install --save @fortawesome/fontawesome-free`)
 
