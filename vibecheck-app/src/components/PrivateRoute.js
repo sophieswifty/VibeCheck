@@ -1,14 +1,15 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import { useAuth } from "./context/auth";
+import { useAuth } from "../context/auth";
 
 function PrivateRoute({ component: Component, ...rest }) {
     const { authTokens } = useAuth();
 
-//  Example of what authTokens looks like after it's set: {
+//  Example of what authTokens looks like after it's set (look at devtools if you want to see it irl): 
+//    {
 //     authTokens: 'some token string',
 //     setAuthTokens: func
-// }
+// ```}
 
  return (
     <Route

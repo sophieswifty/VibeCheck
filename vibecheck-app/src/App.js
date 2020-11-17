@@ -1,4 +1,6 @@
 import React, { Component, useState } from 'react';
+
+// Router
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
@@ -13,18 +15,16 @@ import Redirect from './pages/Redirect';
 import Layout from './components/Layout';
 import NavigationBar from './components/NavigationBar';
 
+// Context 
 import { AuthContext } from './context/auth';
-import PrivateRoute from './PrivateRoute';
+import PrivateRoute from './components/PrivateRoute';
 
-import { Hero, Heading } from 'react-bulma-components';
-import { Link } from 'react-router-dom';
-import ConnectSpotify from './components/ConnectSpotify'
-import PlaylistCarousel from './components/PlaylistCarousel';
-
-// Add any icons you want to use right here
+// Icons
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons'; // import brand icons (needed for spotify logo)
 library.add(fab)
+
+
 
 function App(props) {
   const existingTokens = JSON.parse(localStorage.getItem("spotify_auth_state"));
