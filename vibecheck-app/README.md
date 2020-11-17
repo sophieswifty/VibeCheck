@@ -56,3 +56,4 @@
   ### Design Patterns:
   * `useEffect()` and `useState()` from React
   * React Context (see: https://reactjs.org/docs/context.html and https://medium.com/better-programming/building-basic-react-authentication-e20a574d5e71)
+  * React Router
