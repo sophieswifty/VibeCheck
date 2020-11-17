@@ -1,5 +1,5 @@
-# Welcome to the VibeCheck website!
-### Generate custom playlists to match your vibe, gain insights into your listening habits, and more!
+# Vibecheck
+#### Generate custom playlists to match your vibe, gain insights into your listening habits, and more!
 
 ## Developer Notes:
 * Npm install the following packages:
@@ -22,10 +22,10 @@
         * `assets/` for pictures, media, misc.
         * `components/` for UI components of the site
         * `pages/` houses each page of the site as a React component
-        * `util/` any helper (utility) functions, classes, enums, etc.
+        * `utils/` any helper (utility) functions, classes, enums, etc.
         * `index.js` renders the React components in the html using the querySelector
         * `App.js` creates the entire app with React components
-
+      
 ### Page organization
 * New user:
   * Home page:
@@ -52,3 +52,7 @@
       - Add to my playlists button?
       
    * Log out button
+   
+  ### Design Patterns:
+  * `useEffect()` and `useState()` from React
+  * React Context (see: https://reactjs.org/docs/context.html and https://medium.com/better-programming/building-basic-react-authentication-e20a574d5e71)
