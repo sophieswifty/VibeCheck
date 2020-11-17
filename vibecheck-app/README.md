@@ -12,7 +12,7 @@
 
 * To run in browser: `npm start` (browser-sync no longer needed)
 
-* Project organization:
+### Project organization:
     * `public/`
         * `index.html`
         * `style.css`
@@ -26,24 +26,29 @@
         * `index.js` renders the React components in the html using the querySelector
         * `App.js` creates the entire app with React components
 
-* Page organization:
-   * New user:
-      * Home page:
+### Page organization
+* New user:
+  * Home page:
       - Log in button --> Spotify login
       - Description
       - Recently generated playlists from users
-      * Tools
+  
+  * Tools (if we get to this)
       - Vibecheck a song
       - Vibecheck a playlist
-   * User logged in:
-      * Dashboard: 
+   
+* User logged in:
+  * Dashboard: 
       - User's generated playlists. 
       - Suggested vibe playlists.
       - Friends? Friends' playlists?
-      * Quiz:
+  
+  * Quiz:
       - Carousel of quiz questions
-      * Tools:
+  
+  * Tools:
       - Vibecheck a song
       - Vibecheck a playlist
-         - Add to my playlists button?
-      * Log out
+      - Add to my playlists button?
+      
+   * Log out button
