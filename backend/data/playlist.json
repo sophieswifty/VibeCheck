@@ -1,0 +1,20 @@
+{
+  "0": {
+    "id": 0,
+    "username": "ujeshregmi",
+    "playlist": [
+      1,
+      2,
+      3
+    ]
+  },
+  "1": {
+    "id": 1,
+    "username": "ujeshregmi",
+    "tracks": [
+      22,
+      34,
+      45
+    ]
+  }
+}
