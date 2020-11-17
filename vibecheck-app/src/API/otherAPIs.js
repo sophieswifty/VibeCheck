@@ -18,13 +18,13 @@ async function getWeather(zipcode) {
   } catch (error) {
     console.log('error');
   }
-  if (weather == 1000 || weather == 1003) {
+  if (weather === 1000 || weather === 1003) {
     console.log("GREAT WEATHER, EITHER SUNNY IF DAY or CLEAR IF NIGHT");
-  } else if (weather == 1150 || weather == 1153 || weather == 1180 || weather == 1183) {
+  } else if (weather === 1150 || weather === 1153 || weather === 1180 || weather === 1183) {
     console.log("NICE RAIN");
-  } else if ((weather >= 1210 && weather <= 1225) || (weather == 1255 || weather == 1258 )) {
+  } else if ((weather >= 1210 && weather <= 1225) || (weather === 1255 || weather === 1258 )) {
     console.log("NICE SNOW")
-  } else if (weather == 1135 || weather == 1030) {
+  } else if (weather === 1135 || weather === 1030) {
     console.log("FOG/MIST");
   } else {
     console.log("BAD WEATHER - HEAVY RAIN, STORMS, BLIZZARDS");

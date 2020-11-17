@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Profile from './pages/Profile';
+import Dashboard from './pages/Dashboard';
 import Quiz from './pages/Quiz';
 import Statistics from './pages/Statistics';
 import ErrorPage from './pages/ErrorPage';
@@ -13,32 +13,56 @@ import Redirect from './pages/Redirect';
 import Layout from './components/Layout';
 import NavigationBar from './components/NavigationBar';
 
+import { AuthContext } from './context/auth';
+import PrivateRoute from './PrivateRoute';
+
+import { Hero, Heading } from 'react-bulma-components';
+import { Link } from 'react-router-dom';
+import ConnectSpotify from './components/ConnectSpotify'
+import PlaylistCarousel from './components/PlaylistCarousel';
+
 // Add any icons you want to use right here
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons'; // import brand icons (needed for spotify logo)
 library.add(fab)
 
-export default class App extends Component {
-  render() {
-    return (
-      <React.Fragment>
+function App(props) {
+  const existingTokens = JSON.parse(localStorage.getItem("spotify_auth_state"));
+  const [authTokens, setAuthTokens] = useState(existingTokens);
+
+  const setTokens = (data) => {
+    localStorage.setItem("tokens", JSON.stringify(data));
+    setAuthTokens(data);
+  }
+  
+  // Context set up following this explanation: https://medium.com/better-programming/building-basic-react-authentication-e20a574d5e71
+  // any component using our AuthContext can now get tokens and set the tokens
+
+  return (
+    <React.Fragment>
+      <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
         <Router>
-        <NavigationBar />
+          { !authTokens && <Home /> }
+          { authTokens && <NavigationBar /> }
+          { authTokens && <Dashboard /> }
           <Layout>
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/profile" component={Profile} />
-              <Route path="/quiz" component={Quiz} />
-              <Route path="/statistics" component={Statistics} />
-              <Route path="/vibecheck-song" component={VibecheckSong} />
-              <Route path="/vibecheck-playlist" component={VibecheckPlaylist} />
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute path="/quiz" component={Quiz} />
+              <PrivateRoute path="/statistics" component={Statistics} />
+              <PrivateRoute path="/vibecheck-song" component={VibecheckSong} />
+              <PrivateRoute path="/vibecheck-playlist" component={VibecheckPlaylist} />
               <Route path="/redirect" component={Redirect} />
+              <Route exact path="/" />
+              <Route exact path="/error" component={Error} />
               <Route component={ErrorPage} />
             </Switch>
           </Layout>
         </Router>
-      </React.Fragment>
-    );
-  }
+      </AuthContext.Provider>
+    </React.Fragment>
+  );
+
 }
 
+export default App;

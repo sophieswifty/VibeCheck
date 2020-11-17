@@ -1,62 +1,54 @@
 import React from 'react';
+import './NavigationBar.css'
 import { Link } from 'react-router-dom';
 import { Navbar } from 'react-bulma-components';
+import Logout from './Logout';
 
 export default class NavigationBar extends React.Component {
   render() {
     return (
-    <Navbar color="primary">
+      <Navbar color="primary">
         <Navbar.Brand transparent>
-          <Navbar.Item>
-            <Link renderAs="a" to="/">
-              <img src="./temp_vc.png" width="190" />
-            </Link>
-          </Navbar.Item>
+          <Link renderAs="a" to="/">
+            <img src="./temp_vc.png" width="190" />
+          </Link>
           <Navbar.Burger />
         </Navbar.Brand>
         <Navbar.Menu >
           <Navbar.Container>
-            <Navbar.Item>
+            <Navbar.Item href="./quiz">
               <Link renderAs="a" to="./quiz">
-              Quiz
-              </Link>
-            </Navbar.Item>
-            <Navbar.Item renderAs="a">
-              <Link renderAs="a" to="./profile">
-              Profile
+                Quiz
               </Link>
             </Navbar.Item>
             <Navbar.Item href="./statistics">
               <Link renderAs="a" to="./statistics">
-              Statistics
+                Statistics
               </Link>
             </Navbar.Item>
             <Navbar.Item dropdown hoverable>
               <Navbar.Link>
                 <Link>
-                Tools
+                  Vibify...
                 </Link>
               </Navbar.Link>
               <Navbar.Dropdown>
                 <Navbar.Item>
                   <Link renderAs="a" to="./vibecheck-song">
-                  Vibecheck a song
+                    a Song
                   </Link>
                 </Navbar.Item>
                 <Navbar.Item>
-                <Link renderAs="a" to="./vibecheck-playlist">
-                  Vibecheck a playlist
+                  <Link renderAs="a" to="./vibecheck-playlist">
+                   a Playlist
                   </Link>
                 </Navbar.Item>
               </Navbar.Dropdown>
             </Navbar.Item>
           </Navbar.Container>
-          {/* <Navbar.Container position="end">
-            <Navbar.Item>
-              <Link to="./quiz">
-              </Link>
-            </Navbar.Item>
-          </Navbar.Container> */}
+          <Navbar.Container position="end">
+            <Logout />
+          </Navbar.Container>
         </Navbar.Menu>
       </Navbar>
     )
