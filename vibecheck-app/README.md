@@ -13,18 +13,18 @@
 * To run in browser: `npm start` (browser-sync no longer needed)
 
 ### Project organization:
-    * `public/`
-        * `index.html`
-        * `style.css`
+* `public/`
+   * `index.html`
+   * `style.css`
 
-    * `src/` for - you guessed it - source code
-        * `API/` for api functions
-        * `assets/` for pictures, media, misc.
-        * `components/` for UI components of the site
-        * `pages/` houses each page of the site as a React component
-        * `utils/` any helper (utility) functions, classes, enums, etc.
-        * `index.js` renders the React components in the html using the querySelector
-        * `App.js` creates the entire app with React components
+* `src/` for - you guessed it - source code
+   * `API/` for api functions
+   * `assets/` for pictures, media, misc.
+   * `components/` for UI components of the site
+   * `pages/` houses each page of the site as a React component
+   * `utils/` any helper (utility) functions, classes, enums, etc.
+   * `index.js` renders the React components in the html using the querySelector
+   * `App.js` creates the entire app with React components
       
 ### Page organization
 * New user:
