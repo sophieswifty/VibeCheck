@@ -12,7 +12,7 @@ export class Home extends React.Component {
             <div>
                 <Hero gradient size="large" className="home-hero">
                         <Hero.Body align="center">
-                            <div class="wrapper"><h1>Vibecheck</h1></div>
+                            <div class="wrapper"><h1>▼ibec❚❚eck</h1></div>
                             <p>
                             Vibe  <i>(Noun)</i> A distinctive emotional atmosphere; sensed intuitively. 
                             </p>
