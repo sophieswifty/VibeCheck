@@ -65,8 +65,22 @@ function Quiz() {
 
     
     return (
-            // 
-            <Question question={questions[currentQuestion]} />
+        <div className="quiz">
+        <div className='question-section'>
+                <div className='question-count'>
+                    <span>Question {currentQuestion + 1}</span>/{questions.length}
+                </div>
+                <div className='question-text'>{questions[currentQuestion].questionText}</div>
+            </div>
+            <div className='answer-section'>
+                {questions[currentQuestion].answerOptions.map((answerOption, index) => (
+                    
+                    <button onClick={() => handleAnswerOptionClick(answerOption)}>{answerOption.answerText}</button>
+                ))}
+            </div>
+
+    </div>
+
     );
 }
 
