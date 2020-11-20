@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Quiz.css';
 
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -72,13 +73,13 @@ function Quiz() {
                 </div>
                 <div className='question-text'>{questions[currentQuestion].questionText}</div>
             </div>
-            <div className='answer-section'>
+            <div className='answer-section grid-container'>
                 {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                    
+                    <div className='grid-box'>
                     <button onClick={() => handleAnswerOptionClick(answerOption)}>{answerOption.answerText}</button>
+                    </div>
                 ))}
             </div>
-
     </div>
 
     );
