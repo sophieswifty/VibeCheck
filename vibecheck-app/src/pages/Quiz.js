@@ -1,11 +1,10 @@
 import React from 'react'
+import Question from '../components/Question'
 
 export default class Quiz extends React.Component {
     render() {
         return (
-            <div>
-                <h1> QUIZ PAGE </h1>
-            </div>
+            <Question/>
         );
     }
 }
