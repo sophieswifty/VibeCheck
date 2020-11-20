@@ -13,6 +13,7 @@
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "bulma": "^0.9.1",
+    "bulma-carousel": "^4.0.4",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
@@ -20,7 +21,9 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
+    "recharts": "^1.8.5",
     "styled-components": "^5.2.1",
+    "throttle-debounce": "^3.0.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

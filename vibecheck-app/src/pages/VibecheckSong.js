@@ -1,57 +1,49 @@
 import React from 'react';
 import {Heading, Form, Button, Hero} from 'react-bulma-components';
+import Autocomplete from '../components/Autocomplete';
+import SongStatistics from '../components/SongStatistics';
 
 export default class VibecheckSong extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {
+            songMetrics: {
+                "search": '',
+                "key" : 5,
+                "mode" : 0,
+                "time_signature" : 4,
+                "acousticness" : 0.514,
+                "danceability" : 0.735,
+                "energy" : 0.578,
+                "instrumentalness" : 0.0902,
+                "liveness" : 0.159,
+                "loudness" : -11.840,
+                "speechiness" : 0.0461,
+                "valence" : 0.624,
+                "tempo" : 98.002,
+            }
+        }
     
-        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
 
-    handleSubmit(event) {
-        // Authenticate user
-        
-        alert('The following song was submitted: ' + this.state.value);
-        event.preventDefault();
-      }
+    handleSubmit(songName) {
+        // Use track id to get track data here
+        let nsongMetrics = {...this.state.songMetrics};
+        nsongMetrics.search = songName;
+        this.setState({songMetrics: nsongMetrics});
+    }
 
     render() {
         return (
-            <div>
-                <Hero color="primary">
-                    <Hero.Body>
-                        <Heading>
-                            Vibecheck a song
-                        </Heading>
-                        <Form.Field grouped>
-                            <Form.Control>
-                                <Form.Input  type="text" value={this.state.value} onChange={this.handleChange}></Form.Input>
-                            </Form.Control>
-                            <br/>
-                            <Form.Control>
-                                <Button rounded onClick={this.handleSubmit}>Submit</Button>
-                            </Form.Control>
-                        </Form.Field>
-                        <p>
-                            The user will be able to type in a song and when they hit enter below the form the cover art 
-                            cover of the song will be displayed, along with all metrics for the song. This will fulfill
-                            the auto-complete requirement of the assignment
-                        </p>
-                    </Hero.Body>
-                </Hero>
+            <React.Fragment>
                 <Heading>
-                    Song Stats and Song Cover
+                    Vibecheck a song {this.state.search}
                 </Heading>
-                <p>
-                    Here is where we will display the song cover and metrics.
-                    Maybe use fancy pie or bar charts?
-                </p>
-            </div>);
+                <Autocomplete onSubmit={this.handleSubmit}/> 
+                {this.state.songMetrics.search.length > 0 &&
+                    <SongStatistics songMetrics={this.state.songMetrics}/>
+                }
+            </React.Fragment>);
     }
 }

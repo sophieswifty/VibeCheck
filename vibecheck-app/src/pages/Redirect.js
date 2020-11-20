@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import _ from 'lodash';
 import { getParamValues } from '../utils/functions.js';
 import { useAuth } from "../context/auth";
@@ -9,7 +9,6 @@ function Redirect(props) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const { setAuthTokens } = useAuth();
-
 
   useEffect(() => {
     const history = props.history;

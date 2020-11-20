@@ -11,7 +11,6 @@ export class Home extends React.Component {
         return (
             <div>
                 <Hero gradient size="large" className="home-hero">
-                    <Container>
                         <Hero.Body align="center">
                             <div class="wrapper"><h1>Vibecheck</h1></div>
                             <p>
@@ -19,7 +18,6 @@ export class Home extends React.Component {
                             </p>
                             <ConnectSpotify></ConnectSpotify>
                         </Hero.Body>
-                    </Container>
                 </Hero>
                 <br />
                 <Container>
