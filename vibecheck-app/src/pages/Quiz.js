@@ -1,38 +1,11 @@
 import React, { useState } from 'react';
 import './Quiz.css';
+import questions from '../assets/questions';
 
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showResult, setShowResult] = useState(false);
-
-    let questions = [
-        {
-            nextIndex: 1,
-            questionText: "WHats ur Name",
-            answerOptions: [
-                { answerText: "SOFIA" },
-                { answerText: "DENNIS" },
-                { answerText: "RATS" },
-                { answerText: "TURLRE" },
-            ],
-        },
-
-        {
-            nextIndex: 2,
-            questionText: "second question",
-            answerOptions: [
-                {
-                    answerText: "q2a1"
-                },
-                {
-                    answerText: "q2a2"
-                }
-
-            ],
-        }
-
-    ];
-
+    
     let userAnswers = new Array();
     
     // Example answers array: [
@@ -76,7 +49,10 @@ function Quiz() {
             <div className='answer-section grid-container'>
                 {questions[currentQuestion].answerOptions.map((answerOption, index) => (
                     <div className='grid-box'>
-                    <button onClick={() => handleAnswerOptionClick(answerOption)}>{answerOption.answerText}</button>
+                    <button onClick={() => handleAnswerOptionClick(answerOption)}>
+                        <img src={'../assets/' + answerOption.answerImage}/>
+                        {answerOption.answerText}
+                        </button>
                     </div>
                 ))}
             </div>
