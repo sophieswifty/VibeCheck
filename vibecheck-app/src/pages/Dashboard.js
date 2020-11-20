@@ -3,20 +3,19 @@ import {Heading, Hero} from 'react-bulma-components';
 import { Link } from 'react-router-dom';
 import ConnectSpotify from '../components/ConnectSpotify'
 import PlaylistCarousel from '../components/PlaylistCarousel';
+import './Dashboard.css';
 
 export class Dashboard extends React.Component {
     render() {
         return (
             <div>
-                <Hero color="primary">
+                <Hero className="dash-hero">
                     <Hero.Body>
                         <Heading>
                             Dashboard: You're logged in!
                         </Heading>
                         <p>
-                            This is a website that lets you explore the "vibe" a song or playlist has,
-                            and which includes a quiz that generates a playlist for whatever vibe you want.
-                            Connect to spotify to begin. Don't worry, this process is completely safe.
+                            nice.
                         </p>
                    
                     </Hero.Body>

@@ -1,9 +1,15 @@
+import { q1_run
+            
+
+
+} from './q1_run.jpeg';
+
 let questions = [
     {
         nextIndex: 1,
         questionText: "What are you doing?",
         answerOptions: [
-            { answerText: "Getting turnt", answerImage: 'q1_party.jpeg'},
+            { answerText: "Getting turnt", answerImage: 'q1_party.jpeg' },
             { answerText: "Study mode", answerImage: 'q1_study.jpeg'},
             { answerText: "Healthicizing", answerImage: 'q1_run.jpeg' },
             { answerText: "Just vibing.", answerImage: 'q1_vibes.jpeg' },

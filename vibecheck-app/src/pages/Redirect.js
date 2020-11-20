@@ -6,8 +6,6 @@ import { useAuth } from "../context/auth";
 function Redirect(props) {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
   const { setAuthTokens } = useAuth();
 
   useEffect(() => {
@@ -20,7 +18,7 @@ function Redirect(props) {
       const access_token = getParamValues(location.hash);
       setAuthTokens(access_token);
       setLoggedIn(true);
-      history.push('/');
+      history.push('/dashboard');
     } catch (error) {
       history.push('/');
       setIsError(true);

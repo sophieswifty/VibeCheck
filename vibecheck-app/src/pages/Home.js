@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ConnectSpotify from '../components/ConnectSpotify'
 import PlaylistCarousel from '../components/PlaylistCarousel';
 import PlaylistReel from '../components/PlaylistReel';
+import './Home.css';
 
 
 export class Home extends React.Component {
@@ -29,7 +30,6 @@ export class Home extends React.Component {
                         Take the quiz to gauge your vibe and let our algorithm produce the perfect playlist to match using you and your friends' music taste. 
                         Sign in with your spotify to get started.
                     </Heading>
-                    {/* <PlaylistCarousel/> */}
                 </Container>
                 <br></br>
                 <Container>

@@ -1,0 +1,56 @@
+
+.hero {
+    background-color: rgb(185, 255, 209);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img {
+    transition: all .2s ease-in-out; 
+}
+   
+img:hover { 
+   transform: scale(1.05); 
+}
+
+/* Front page gimmick: https://codepen.io/sxrdev/pen/LXMwPb */
+
+  .wrapper {
+	text-align: center;
+  }
+  
+  .wrapper h1 {
+	color: #fff;
+	font-size: 500%;
+	font-family: "ubuntu";
+	text-transform: uppercase;
+	font-weight: 700;
+	font-family: "Josefin Sans", sans-serif;
+	background: linear-gradient(to right, #e72ade 10%, #fff 50%, #ff9812 60%);
+	background-size: auto auto;
+	background-clip: border-box;
+	background-size: 200% auto;
+	color: #fff;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: textclip 1.5s linear infinite;
+	display: inline-block;
+	transition: all .2s ease-in-out; 
+  }
+
+  .wrapper h1:hover { 
+	transform: scale(1.20); 
+ }
+  
+  @keyframes textclip {
+	to {
+	  background-position: 150% center;
+	}
+  }
+  
+
+  .spotify-icon {
+	  padding-right: 10px;
+  }

@@ -50,7 +50,7 @@ function Quiz() {
                 {questions[currentQuestion].answerOptions.map((answerOption, index) => (
                     <div className='grid-box'>
                     <button onClick={() => handleAnswerOptionClick(answerOption)}>
-                        <img src={'../assets/' + answerOption.answerImage}/>
+                        <img src={require(`../assets/${answerOption.answerImage}`)} alt="" /> 
                         {answerOption.answerText}
                         </button>
                     </div>
