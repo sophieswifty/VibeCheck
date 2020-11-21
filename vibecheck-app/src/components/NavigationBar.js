@@ -5,6 +5,7 @@ import { Navbar } from 'react-bulma-components';
 import Logout from './Logout';
 
 function NavigationBar(props) {
+  const [isActive, setisActive] = React.useState(false);
   return (
     <Navbar className="main-nav">
       <Navbar.Brand transparent>
@@ -14,9 +15,8 @@ function NavigationBar(props) {
             <div className="dash-logo"><h1>▼ibec❚❚eck</h1></div>
           </Link>
         </Navbar.Item>
-        <Navbar.Burger />
       </Navbar.Brand>
-      <Navbar.Menu >
+      <Navbar.Menu className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
         <Navbar.Container>
           <Navbar.Item href="./quiz" className="navbar-item-button">
             <Link className="nav-link" renderAs="a" to="./quiz">
@@ -58,6 +58,9 @@ function NavigationBar(props) {
       
         </Navbar.Container>
       </Navbar.Menu>
+      <Navbar.Burger className={`navbar-burger burger ${isActive ? 'is-active' : ''}`} onClick={() => {
+            setisActive(!isActive)
+          }}/>
     </Navbar>
   );
 }

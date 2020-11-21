@@ -16,10 +16,10 @@ let questions = [
         nextIndex: 1,
         questionText: "What are you doing?",
         answerOptions: [
-            { answerText: "Getting turnt", answerImage: 'q1_party.jpeg' },
-            { answerText: "Study mode", answerImage: 'q1_study.jpeg'},
-            { answerText: "Healthicizing", answerImage: 'q1_run.jpeg' },
-            { answerText: "Just vibing.", answerImage: 'q1_vibes.jpeg' },
+            { answerText: "Getting turnt", answerImage: 'q1_party.jpeg', metric: 'acousticness_low', value: 100 },
+            { answerText: "Study mode", answerImage: 'q1_study.jpeg', metric: 'acousticness_low', value: 200 },
+            { answerText: "Healthicizing", answerImage: 'q1_run.jpeg', metric: 'acousticness_low', value: 300  },
+            { answerText: "Just vibing.", answerImage: 'q1_vibes.jpeg', metric: 'acousticness_low', value: 400  },
         ],
 
     },

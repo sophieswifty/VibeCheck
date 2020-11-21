@@ -41,9 +41,11 @@ a:hover {
  .name-no-hover:hover {
   background-color: unset !important;
   color: unset !important;
-
-
 } 
+
+.navbar-burger.burger.is-active {
+  margin: 0px;
+}
 
 
 
