@@ -137,6 +137,114 @@ let questions = [
     {
         index: 11,
         nextIndex: 12,
+        questionText: "How are you studying?",
+        answerOptions: [
+            { answerText: "In a group", answerImage: 'q1_party.jpeg'},
+            { answerText: "By myself", answerImage: 'q1_study.jpeg'},
+        ],
+    },
+    {
+        index: 12,
+        nextIndex: 13,
+        questionText: "Pick a candy.",
+        answerOptions: [
+            { answerText: "Skittles", answerImage: 'q1_party.jpeg'},
+            { answerText: "Kit-Kat", answerImage: 'q1_study.jpeg'},
+            { answerText: "Snickers", answerImage: 'q1_study.jpeg'},
+            { answerText: "Nerds", answerImage: 'q1_study.jpeg'},
+        ],
+    },
+    {
+        index: 13,
+        nextIndex: 14,
+        questionText: "What subject are you studying?",
+        answerOptions: [
+            { answerText: "Humanities", answerImage: 'q1_party.jpeg'},
+            { answerText: "STEM", answerImage: 'q1_study.jpeg'},
+            { answerText: "Art", answerImage: 'q1_party.jpeg'},
+            { answerText: "Other", answerImage: 'q1_study.jpeg'},
+        ],
+    },
+    {
+        index: 14,
+        nextIndex: 15,
+        questionText: "What is your dream vacation spot?",
+        answerOptions: [
+            { answerText: "Tanning in the Bahamas", answerImage: 'q1_party.jpeg'},
+            { answerText: "Skiing in the Alps", answerImage: 'q1_study.jpeg'},
+            { answerText: "Sightseeing in Tokyo", answerImage: 'q1_study.jpeg'},
+            { answerText: "Road tripping across America", answerImage: 'q1_study.jpeg'},
+        ],
+    },
+    {
+        index: 15,
+        nextIndex: 16,
+        questionText: "Will you pass your next test?",
+        answerOptions: [
+            { answerText: "Of course", answerImage: 'q1_party.jpeg'},
+            { answerText: "Probably not", answerImage: 'q1_study.jpeg'},
+            { answerText: "I don't care", answerImage: 'q1_study.jpeg'},
+            { answerText: "Oh god I hope so", answerImage: 'q1_study.jpeg'},
+        ],
+    },
+    {
+        index: 16,
+        nextIndex: 17,
+        questionText: "Pick a game show",
+        answerOptions: [
+            { answerText: "Family Feud", answerImage: 'q1_party.jpeg'},
+            { answerText: "Wheel of Fortune", answerImage: 'q1_study.jpeg'},
+            { answerText: "The Price is Right", answerImage: 'q1_study.jpeg'},
+            { answerText: "Jeopardy", answerImage: 'q1_study.jpeg'},
+        ],
+    },
+    {
+        index: 17,
+        nextIndex: 18,
+        questionText: "Where do you study best?",
+        answerOptions: [
+            { answerText: "In my room", answerImage: 'q1_party.jpeg'},
+            { answerText: "At the library", answerImage: 'q1_study.jpeg'},
+            { answerText: "In front of the tv", answerImage: 'q1_study.jpeg'},
+            { answerText: "In a sunny park", answerImage: 'q1_study.jpeg'},
+        ],
+    },
+    {
+        index: 18,
+        nextIndex: 19,
+        questionText: "Choose a word",
+        answerOptions: [
+            { answerText: "Fortitude", answerImage: 'q1_party.jpeg'},
+            { answerText: "Smorgasbord", answerImage: 'q1_study.jpeg'},
+            { answerText: "Bump", answerImage: 'q1_study.jpeg'},
+            { answerText: "Fantasia", answerImage: 'q1_study.jpeg'},
+        ],
+    },
+    {
+        index: 19,
+        nextIndex: 20,
+        questionText: "Describe your grades.",
+        answerOptions: [
+            { answerText: "Straightest A's", answerImage: 'q1_party.jpeg'},
+            { answerText: "Could be worse", answerImage: 'q1_study.jpeg'},
+            { answerText: "Pass/failing the class", answerImage: 'q1_study.jpeg'},
+            { answerText: "Dropping out", answerImage: 'q1_study.jpeg'},
+        ],
+    },
+    {
+        index: 20,
+        nextIndex: null,
+        questionText: "Finally, pick a direction",
+        answerOptions: [
+            { answerText: "North", answerImage: 'q1_party.jpeg'},
+            { answerText: "East", answerImage: 'q1_study.jpeg'},
+            { answerText: "South", answerImage: 'q1_study.jpeg'},
+            { answerText: "West", answerImage: 'q1_study.jpeg'},
+        ],
+    },
+    {
+        index: 41,
+        nextIndex: 42,
         questionText: "Use your location?",
         answerOptions: [
             { answerText: "Yes", answerImage: 'q1_party.jpeg'},
@@ -144,8 +252,8 @@ let questions = [
         ],
     },
     {
-        index: 12,
-        nextIndex: 13,
+        index: 42,
+        nextIndex: 43,
         questionText: "Use the weather?",
         answerOptions: [
             { answerText: "Yes", answerImage: 'q1_party.jpeg'},
@@ -153,8 +261,8 @@ let questions = [
         ],
     },
     {
-        index: 13,
-        nextIndex: 14,
+        index: 43,
+        nextIndex: 44,
         questionText: "Use the time?",
         answerOptions: [
             { answerText: "Yes", answerImage: 'q1_party.jpeg'},
@@ -162,7 +270,7 @@ let questions = [
         ],
     },
     {
-        index: 14,
+        index: 44,
         nextIndex: null,
         questionText: "Use the time?",
         answerOptions: [
