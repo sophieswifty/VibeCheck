@@ -15,7 +15,7 @@ function PlaylistReel(props) {
                     <Box>
                         <Media>
                             <Media.Item renderAs="figure" position="center">
-                                <Image size={10} alt="30x30" src="http://bulma.io/images/placeholders/128x128.png" />
+                                <Image alt="30x30" src="http://bulma.io/images/placeholders/128x128.png" />
                                 <p className="heading">Playlist 1</p>
                                 <Heading renderAs="p">Tear Drop</Heading>
                             </Media.Item>
@@ -26,7 +26,7 @@ function PlaylistReel(props) {
                     <Box>
                         <Media>
                             <Media.Item renderAs="figure" position="center">
-                                <Image size={10} alt="30x30" src="http://bulma.io/images/placeholders/128x128.png" />
+                                <Image alt="30x30" src="http://bulma.io/images/placeholders/128x128.png" />
                                 <p className="heading">Playlist 1</p>
                                 <Heading renderAs="p">Serotonin</Heading>
                             </Media.Item>
@@ -37,7 +37,7 @@ function PlaylistReel(props) {
                     <Box>
                         <Media>
                             <Media.Item renderAs="figure" position="center">
-                                <Image size={10} alt="30x30" src="http://bulma.io/images/placeholders/128x128.png" />
+                                <Image alt="30x30" src="http://bulma.io/images/placeholders/128x128.png" />
                                 <p className="heading">Playlist 1</p>
                                 <Heading renderAs="p">Lofi Focus</Heading>
                             </Media.Item>
@@ -48,7 +48,7 @@ function PlaylistReel(props) {
                     <Box>
                         <Media>
                             <Media.Item renderAs="figure" position="center">
-                                <Image size={10} alt="30x30" src="http://bulma.io/images/placeholders/128x128.png" />
+                                <Image alt="30x30" src="http://bulma.io/images/placeholders/128x128.png" />
                                 <p className="heading">Playlist 1</p>
                                 <Heading renderAs="p">Golden Hr</Heading>
                             </Media.Item>

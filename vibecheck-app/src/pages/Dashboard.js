@@ -1,15 +1,15 @@
 import React from 'react'
-import { Heading, Hero, OpenModal, Modal, Section } from 'react-bulma-components';
-import { Link } from 'react-router-dom';
-import ConnectSpotify from '../components/ConnectSpotify'
-import PlaylistCarousel from '../components/PlaylistCarousel';
+import { Heading, Hero, Section } from 'react-bulma-components';
 import './Dashboard.css';
 import PlaylistReel from '../components/PlaylistReel';
 import { Container } from 'react-bulma-components';
 import { getUserData } from '../API/spotifyAPI';
 
 export class Dashboard extends React.Component {
-
+    constructor(props) {
+        super(props)
+    }
+    
     render() {
         return (
             <div>

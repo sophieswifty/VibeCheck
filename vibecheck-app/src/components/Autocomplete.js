@@ -3,6 +3,8 @@ import { debounce } from 'throttle-debounce';
 import { Form, Columns, Media, Box, Section, Container, Tile } from 'react-bulma-components'
 import './Autocomplete.css'
 
+// use songSearch() and findSongById(id) from API
+
 export default class Autocomplete extends React.Component {
   constructor(props) {
     super(props);

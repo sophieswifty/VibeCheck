@@ -17,7 +17,7 @@ function ConnectSpotify() {
 
     return (
         <Button size="large" onClick={handleConnect}>
-            <div class="spotify-icon">
+            <div className="spotify-icon">
                 <FontAwesomeIcon icon={["fab", "spotify"]} />
             </div>
                 Connect to Spotify

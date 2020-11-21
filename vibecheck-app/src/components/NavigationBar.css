@@ -38,6 +38,13 @@ a:hover {
     color: unset !important;
  }
 
+ .name-no-hover:hover {
+  background-color: unset !important;
+  color: unset !important;
+
+
+} 
+
 
 
 .main-nav {

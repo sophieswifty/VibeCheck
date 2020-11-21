@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 
 // Router
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -7,7 +7,6 @@ import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Quiz from './pages/Quiz';
 import Statistics from './pages/Statistics';
-import ErrorPage from './pages/ErrorPage';
 import VibecheckSong from './pages/VibecheckSong';
 import VibecheckPlaylist from './pages/VibecheckPlaylist';
 import Redirect from './pages/Redirect';
@@ -33,21 +32,26 @@ library.add(fab)
 function App(props) {
   const existingTokens = JSON.parse(localStorage.getItem("spotify_auth_state"));
   const [authTokens, setAuthTokens] = useState(existingTokens);
-  const [userData, setUserData] = useState("");
+  const [username, setUsername] = useState("");
+  const [userId, setUserId] = useState("");
 
   const setTokens = (data) => {
     localStorage.setItem("tokens", JSON.stringify(data));
     setAuthTokens(data);
   }
-
-  if (authTokens) {
-    setAccessToken(authTokens.access_token);
-    getUserData().then(data => {
-      setUserData(data);
-      console.log(data);
-    });
-  }
   
+  // useEffect is equivalent to ComponentDidMount() --> runs this only once at first render.
+  useEffect(() => {
+    if (authTokens) {
+      setAccessToken(authTokens.access_token);
+      getUserData().then(data => {
+        setUsername(data.display_name);
+        setUserId(data.id);
+        console.log(data);
+      });
+    }
+  }, [authTokens])
+
   // Context set up following this explanation: https://medium.com/better-programming/building-basic-react-authentication-e20a574d5e71
   // any component using our AuthContext can now get tokens and set the tokens
 
@@ -55,8 +59,7 @@ function App(props) {
     <React.Fragment>
       <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
         <Router>
-          {/* { !authTokens && <Home /> } */}
-          { authTokens && <LoggedIn userData={userData}/> }
+          {authTokens && <LoggedIn username={username} />}
           <Layout>
             <Switch>
               <PrivateRoute path="/dashboard" component={Dashboard} />
