@@ -2,7 +2,6 @@ import React from 'react'
 import { Heading, Hero, Container, Section } from 'react-bulma-components';
 import { Link } from 'react-router-dom';
 import ConnectSpotify from '../components/ConnectSpotify'
-import PlaylistCarousel from '../components/PlaylistCarousel';
 import PlaylistReel from '../components/PlaylistReel';
 import './Home.css';
 
@@ -34,7 +33,7 @@ export class Home extends React.Component {
                 <br></br>
                 <Container>
                     <div class="playlist-reel-home">
-                    <PlaylistReel />
+                    <PlaylistReel title="Recently vibified playlists"/>
                     </div>
                 </Container>
                 <br/>

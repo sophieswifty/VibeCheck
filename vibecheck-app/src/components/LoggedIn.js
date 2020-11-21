@@ -2,16 +2,13 @@ import React, { useState, useEffect, useLayoutEffect } from 'react';
 import NavigationBar from './NavigationBar';
 import { useAuth } from "../context/auth";
 
-function LoggedIn() {
+function LoggedIn(props) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const token = useAuth();
-
-  // retrieve user data
 
     return (
         <div>
-      <NavigationBar /> 
+      <NavigationBar userData={props.userData} /> 
         </div>
     )
 }

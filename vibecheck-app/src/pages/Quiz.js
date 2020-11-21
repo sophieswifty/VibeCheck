@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import './Quiz.css';
 import questions from '../assets/questions';
+import { Button } from 'react-bulma-components';
+
+let userAnswers = new Array();
 
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showResult, setShowResult] = useState(false);
-    
-    let userAnswers = new Array();
-    
+
     // Example answers array: [
     //     {
     //         index: 99,
@@ -15,11 +16,6 @@ function Quiz() {
     //     }
 
     // ]
-
-    if (showResult) {
-        alert("DONE WITH QUIZ");
-    }
-
     const handleAnswerOptionClick = (answerOption) => {
         const nextQuestion = currentQuestion + 1;
         
@@ -55,6 +51,11 @@ function Quiz() {
                         </button>
                     </div>
                 ))}
+
+                {showResult && <div>
+                    Generating playlist...
+                    <Button> Retake quiz </Button>
+                </div>}
             </div>
     </div>
 

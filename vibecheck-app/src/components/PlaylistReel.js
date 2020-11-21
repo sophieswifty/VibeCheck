@@ -3,12 +3,12 @@ import { Level, Heading, Box, Media, Image } from 'react-bulma-components';
 
 // Note: should probably break out media item pieces into its own component.
 
-function PlaylistReel() {
+function PlaylistReel(props) {
     return (
         <div>
             <Box>
             <Heading size={4}>
-                        <i>Recently vibified playlists:</i>
+                        <i>{props.title}</i>
                     </Heading>
             <Level mobile renderAs="nav">
                 <Level.Item textAlignment="centered">

@@ -23,17 +23,29 @@ import PrivateRoute from './components/PrivateRoute';
 // Icons
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons'; // import brand icons (needed for spotify logo)
+
+import { getUserData, setAccessToken } from './API/spotifyAPI';
 library.add(fab)
+
 
 
 
 function App(props) {
   const existingTokens = JSON.parse(localStorage.getItem("spotify_auth_state"));
   const [authTokens, setAuthTokens] = useState(existingTokens);
+  const [userData, setUserData] = useState("");
 
   const setTokens = (data) => {
     localStorage.setItem("tokens", JSON.stringify(data));
     setAuthTokens(data);
+  }
+
+  if (authTokens) {
+    setAccessToken(authTokens.access_token);
+    getUserData().then(data => {
+      setUserData(data);
+      console.log(data);
+    });
   }
   
   // Context set up following this explanation: https://medium.com/better-programming/building-basic-react-authentication-e20a574d5e71
@@ -44,7 +56,7 @@ function App(props) {
       <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
         <Router>
           {/* { !authTokens && <Home /> } */}
-          { authTokens && <LoggedIn /> }
+          { authTokens && <LoggedIn userData={userData}/> }
           <Layout>
             <Switch>
               <PrivateRoute path="/dashboard" component={Dashboard} />

@@ -8,13 +8,13 @@ const sample_artist = "0OdUWJ0sBjDrqHygGUXeCF";
 const country = "US";
 const authenticated = false;
 
+export function setAccessToken(userToken) {
+    token = userToken;
+}
+
 function getAccessToken() {
     var url = window.location;
     return new URLSearchParams(url.search).get("access_token");
-}
-
-export function setAccessToken(access_token) {
-    token = access_token;
 }
 
 function generateRandomString(length) {
@@ -167,7 +167,7 @@ const getTracksData = async (song_ids) => {
     }
 }
 
-const getUserData = async () => {
+export const getUserData = async () => {
     try {
         const res = await axios({
             method: 'get',
