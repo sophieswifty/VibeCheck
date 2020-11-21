@@ -1,5 +1,6 @@
 import React from 'react';
 import {Heading, Form, Button, Hero} from 'react-bulma-components';
+import PlaylistReel from '../components/PlaylistReel';
 
 export default class VibecheckPlaylist extends React.Component {
     constructor(props) {
@@ -19,6 +20,12 @@ export default class VibecheckPlaylist extends React.Component {
         event.preventDefault();
       }
 
+      /*
+      Dennis - I feel like for playlist, we should just display a playlist reel of the user's spotify playlists 
+      (that Ujesh is doing I think) and add click handlers for when the user clicks on the playlist, then
+      we display the stats for their specific playlist. Just bc searching for playlists sounds kinda finnicky.
+      */
+
     render() {
         return (
             <div>
@@ -27,6 +34,8 @@ export default class VibecheckPlaylist extends React.Component {
                         <Heading>
                             Vibecheck a playlist
                         </Heading>
+
+                        <PlaylistReel/> 
                         <Form.Field grouped>
                             <Form.Control>
                                 <Form.Input  type="text" value={this.state.value} onChange={this.handleChange}></Form.Input>

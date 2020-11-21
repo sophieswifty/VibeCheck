@@ -43,16 +43,22 @@ a:hover {
   color: unset !important;
 } 
 
+navbar-item btn-no-hover.active {
+
+}
+
 .navbar-burger.burger.is-active {
   margin: 0px;
 }
 
 
 
-.main-nav {
+.navbar {
     background-color: rgb(185, 255, 209);
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: 0 0 10px  rgb(179, 223, 194);
+ 
 }
 
 img {
@@ -65,16 +71,18 @@ img:hover {
 
 /* Front page gimmick: https://codepen.io/sxrdev/pen/LXMwPb */
   .dash-logo {
-	text-align: center;
+  text-align: center;
+  
   }
   
   .dash-logo h1 {
+  margin-top: 10px;
 	color: #fff;
-	font-size: 150%;
+	font-size: 175%;
 	text-transform: uppercase;
 	font-weight: 700;
 	font-family: "Josefin Sans", sans-serif;
-	background: linear-gradient(to right, #e72ade 10%, #ffce8e 60%,  hsl(34, 100%, 78%) 20%, #e72ade);
+	background: linear-gradient(to right, #e72ade , #fdaf4a,  hsl(51, 98%, 63%), #e72ade);
 	background-size: auto auto;
 	background-clip: border-box;
 	background-size: 200% auto;
@@ -83,18 +91,22 @@ img:hover {
 	text-fill-color: transparent;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	animation: textclip 5s linear infinite;
+	animation: textclip 8s linear infinite;
 	display: inline-block;
-	transition: all .5s ease-in-out; 
+  transition: all .5s ease-in-out; 
+  text-shadow: 
+  2px 2.5px 1px hsl(240, 100%, 50%, .2); 
   }
 
   .dash-logo h1:hover { 
-	transform: scale(1.07); 
+  transform: scale(1.07); 
+  
  }
   
   @keyframes textclip {
 	to {
-	  background-position: 150% center;
+    background-position: 150% center;
+    
 	}
   }
   

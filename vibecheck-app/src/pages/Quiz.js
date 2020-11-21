@@ -112,8 +112,8 @@ function Quiz() {
     return (
         <div className="quiz">
             <div className='question-section'>
-                <Heading subtitle siez={4} className='question-count'>
-                    <span>Question {currentQuestion + 1}</span>/{questions.length}
+                <Heading subtitle size={4} className='question-count'>
+                    <span>Question {currentQuestion}</span>/{questions.length}
                 </Heading>
                 <Heading className='question-text'>{questions[currentQuestion].questionText}</Heading>
             </div>

@@ -9,12 +9,12 @@ function NavigationBar(props) {
   return (
     <Navbar className="main-nav">
       <Navbar.Brand transparent>
-        <Navbar.Item className='btn-no-hover'>
+        <div className="dash-logo">
           <Link renderAs="a" to="/dashboard">
             {/* <img src="./temp_vc.png" width="200" /> */}
             <div className="dash-logo"><h1>▼ibec❚❚eck</h1></div>
           </Link>
-        </Navbar.Item>
+          </div>
       </Navbar.Brand>
       <Navbar.Menu className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
         <Navbar.Container>
