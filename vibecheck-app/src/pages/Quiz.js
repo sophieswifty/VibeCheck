@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Quiz.css';
 import questions from '../assets/questions';
 import { Button, Box, Heading } from 'react-bulma-components';
+import { doItAll } from '../API/spotifyAPI';
 
 // let filter = {
 //     acousticness_low: 0,
@@ -90,7 +91,9 @@ function Quiz() {
 
     const handleAnswerOptionClick = (answerOption) => {
         if (answerOption.answerText === "1") {
-            // range 
+            doItAll(filter).then(data => {
+                console.log("adventurousness is low, here is data: " + data);
+            })
         }
 
         // Update filter by adding the value to the metric per question
