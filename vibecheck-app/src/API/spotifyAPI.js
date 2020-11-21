@@ -576,7 +576,12 @@ export const practiceWaiting = async () => {
 }
 
 export const foo = async () => {
-    songSearch("Love You").then(data => console.log(data));
+    let res;
+    fetchCandidateSongs((data) => {
+        res = data;
+        console.log(res);
+    });
+    // songSearch("Love You").then(data => console.log(data));
     // const results = [];
     // await getAllUserArtists().then(data => {
     //     Object.keys(data).forEach(async (artist_id) => {
@@ -587,11 +592,12 @@ export const foo = async () => {
     // }).then(console.log(results));
 }
 
-const fetchCandidateSongs = async () => {
+const fetchCandidateSongs = async (callback) => {
+    const audio_feats = [];
     getAllUserArtists().then((topArtists) => {
         getTopSongsByArtists(topArtists).then((tracks) => {
             getDataFromTracks(tracks).then((audio_features) => {
-                // do something with audio features
+                callback(audio_features);
             })
         })
     })
