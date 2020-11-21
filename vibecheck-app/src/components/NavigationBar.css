@@ -1,3 +1,97 @@
-.no-underline {
+.nav-link {
+ 
+        color: rgb(143, 143, 143);
+        text-decoration: none;
+ 
+}
+
+a {
+    
+        color: rgb(143, 143, 143);
+        text-decoration: none;
+    
+}
+
+a:hover {
+    color: rgb(143, 143, 143);
     text-decoration: none;
 }
+
+.navbar-item-button:hover {
+   background-color:rgb(204, 252, 220); 
+}
+
+.navbar-item-dropdown:hover {
+    background-color:rgb(204, 252, 220);
+ }
+
+ .navbar-item-dropdown {
+    background-color:rgb(185, 255, 209);
+ }
+
+ .logout-btn {
+     background-color: #ffce8e;
+ }
+
+ .btn-no-hover:hover {
+    background-color: unset !important;
+    color: unset !important;
+ }
+
+
+
+.main-nav {
+    background-color: rgb(185, 255, 209);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img {
+    transition: all .2s ease-in-out; 
+}
+   
+img:hover { 
+   transform: scale(1.05); 
+}
+
+/* Front page gimmick: https://codepen.io/sxrdev/pen/LXMwPb */
+  .dash-logo {
+	text-align: center;
+  }
+  
+  .dash-logo h1 {
+	color: #fff;
+	font-size: 150%;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-family: "Josefin Sans", sans-serif;
+	background: linear-gradient(to right, #e72ade 10%, #ffce8e 60%,  hsl(34, 100%, 78%) 20%, #e72ade);
+	background-size: auto auto;
+	background-clip: border-box;
+	background-size: 200% auto;
+	color: #fff;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: textclip 5s linear infinite;
+	display: inline-block;
+	transition: all .5s ease-in-out; 
+  }
+
+  .dash-logo h1:hover { 
+	transform: scale(1.07); 
+ }
+  
+  @keyframes textclip {
+	to {
+	  background-position: 150% center;
+	}
+  }
+  
+
+  .spotify-icon {
+	  padding-right: 10px;
+  }
+
+

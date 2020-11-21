@@ -11,6 +11,7 @@ import ErrorPage from './pages/ErrorPage';
 import VibecheckSong from './pages/VibecheckSong';
 import VibecheckPlaylist from './pages/VibecheckPlaylist';
 import Redirect from './pages/Redirect';
+import LoggedIn from './components/LoggedIn';
 
 import Layout from './components/Layout';
 import NavigationBar from './components/NavigationBar';
@@ -42,20 +43,17 @@ function App(props) {
     <React.Fragment>
       <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
         <Router>
-          { !authTokens && <Home /> }
-          { authTokens && <NavigationBar /> }
-          { authTokens && <Dashboard /> }
+          {/* { !authTokens && <Home /> } */}
+          { authTokens && <LoggedIn /> }
           <Layout>
             <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute path="/dashboard" component={Dashboard} />
               <PrivateRoute path="/quiz" component={Quiz} />
               <PrivateRoute path="/statistics" component={Statistics} />
               <PrivateRoute path="/vibecheck-song" component={VibecheckSong} />
               <PrivateRoute path="/vibecheck-playlist" component={VibecheckPlaylist} />
               <Route path="/redirect" component={Redirect} />
-              <Route exact path="/" />
-              <Route exact path="/error" component={Error} />
-              <Route component={ErrorPage} />
+              <Route exact path="/" component={Home} />
             </Switch>
           </Layout>
         </Router>

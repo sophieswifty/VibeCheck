@@ -12,7 +12,7 @@ function Logout() {
 
   return (
     <div>
-      <Button color="primary" onClick={logOut}>Log out</Button>
+      <Button className="logout-btn" onClick={logOut}>Log out</Button>
     </div>
   );
 }
