@@ -37,10 +37,10 @@ ReactDOM.render(
 //   valence_high: 0.75
 // };
 
-// const tokens = JSON.parse(window.localStorage.tokens);
-// console.log(tokens);
-// if (tokens != null && tokens != undefined) {
-//   setAccessToken(tokens.access_token);
-//   foo();
-//   // doItAll(filter);
-// }
+const tokens = JSON.parse(window.localStorage.tokens);
+console.log(tokens);
+if (tokens != null && tokens != undefined) {
+  setAccessToken(tokens.access_token);
+  foo();
+  // doItAll(filter);
+}

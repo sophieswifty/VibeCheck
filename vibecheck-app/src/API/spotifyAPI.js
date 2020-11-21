@@ -608,10 +608,12 @@ const filterCandidateSongs = (audio_features, filter) => {
     const passed_tracks = audio_features.filter((elt) => passesFilter(elt, filter));
 }
 
-const makePlaylist = async(tracks, playlistName) => {
+const makePlaylist = async(tracks, playlistName, callback) => {
     createPlaylist(playlistName).then((playlist) => {
         const URIs = tracks.map(elt => elt.uri);
-        addTracksToPlaylist(playlist.id, URIs);
+        addTracksToPlaylist(playlist.id, URIs).then(() => {
+            callback(playlist);
+        })
     })
 }
 
