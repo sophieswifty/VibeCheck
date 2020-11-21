@@ -1,25 +1,23 @@
 import { q1_run
 } from './q1_run.jpeg';
 /*
-0 - branch from here
-1-10 - turnt questions
-11-13 - shared questions abt api
-14-24 - study questions
-25-35 -exercise questions
-36-46 - vibing questions
 
+0 - branch from here
+1-10 - party
+11-20 - study
+21-30 - exercise
+31-40 -vibes
 */
 
 let questions = [
     {
         index: 0,
-        nextIndex: 1,
         questionText: "What are you doing?",
         answerOptions: [
-            { answerText: "Getting turnt", answerImage: 'q1_party.jpeg', metric: 'energy_high', value: 1 },
-            { answerText: "Study mode", answerImage: 'q1_study.jpeg', metric: 'energy_low', value: -0.5 },
-            { answerText: "Healthicizing", answerImage: 'q1_run.jpeg', metric: 'energy_high', value: 1.5  },
-            { answerText: "Just vibing.", answerImage: 'q1_vibes.jpeg', metric: 'energy_low', value: -1  },
+            { answerText: "Getting turnt", answerImage: 'q1_party.jpeg', nextIndex: 1, metric: 'energy_high', value: 1 },
+            { answerText: "Study mode", answerImage: 'q1_study.jpeg',  nextIndex: 11, metric: 'energy_low', value: -0.5 },
+            { answerText: "Healthicizing", answerImage: 'q1_run.jpeg',  nextIndex: 21, metric: 'energy_high', value: 1.5  },
+            { answerText: "Just vibing.", answerImage: 'q1_vibes.jpeg',  nextIndex: 31, metric: 'energy_low', value: -1  },
         ],
 
     },
@@ -27,12 +25,12 @@ let questions = [
     {
         index: 1,
         nextIndex: 2,
-        questionText: "How adventurous do you feel?",
+        questionText: "Are you feeling...",
         answerOptions: [
-            { answerText: "1", answerImage: 'q1_party.jpeg'},
-            { answerText: "2", answerImage: 'q1_study.jpeg'},
-            { answerText: "3", answerImage: 'q1_run.jpeg' },
-            { answerText: "4", answerImage: 'q1_vibes.jpeg' },
+            { answerText: "Smooth", answerImage: 'q1_party.jpeg'},
+            { answerText: "Glitter", answerImage: 'q1_study.jpeg'},
+            { answerText: "Wood", answerImage: 'q1_run.jpeg' },
+            { answerText: "Concrete", answerImage: 'q1_vibes.jpeg' },
         ],
     },
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Quiz.css';
 import questions from '../assets/questions';
 import { Button, Box, Heading } from 'react-bulma-components';
+import { doItAll } from '../API/spotifyAPI';
 
 // let filter = {
 //     acousticness_low: 0,
@@ -89,10 +90,6 @@ function Quiz() {
     // Using filter as a global var which means when the user goes 
 
     const handleAnswerOptionClick = (answerOption) => {
-        if (answerOption.answerText === "1") {
-            // range 
-        }
-
         // Update filter by adding the value to the metric per question
         let filter_copy = JSON.parse(JSON.stringify(filter));
         filter_copy[answerOption.metric] = filter[answerOption.metric] + answerOption.value;
@@ -117,6 +114,10 @@ function Quiz() {
         setShowQuiz(true);
 
     }
+
+    useEffect(() => {
+        
+    }, []);
 
 
     return (
