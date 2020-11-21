@@ -1,3 +1,5 @@
+import { create } from 'lodash';
+
 const axios = require('axios').default;
 
 const id = "c712506f4ad74dcc9dbf58efc645a833";
@@ -583,6 +585,28 @@ export const foo = async () => {
     //         results.push(res);
     //     })
     // }).then(console.log(results));
+}
+
+const fetchCandidateSongs = async () => {
+    getAllUserArtists().then((topArtists) => {
+        getTopSongsByArtists(topArtists).then((tracks) => {
+            getDataFromTracks(tracks).then((audio_features) => {
+                // do something with audio features
+            })
+        })
+    })
+}
+
+// audio_features is a list of all fetched candidate songs' audio features
+const filterCandidateSongs = (audio_features, filter) => {
+    const passed_tracks = audio_features.filter((elt) => passesFilter(elt, filter));
+}
+
+const makePlaylist = async(tracks, playlistName) => {
+    createPlaylist(playlistName).then((playlist) => {
+        const URIs = tracks.map(elt => elt.uri);
+        addTracksToPlaylist(playlist.id, URIs);
+    })
 }
 
 export const doItAll = async (filter) => {
