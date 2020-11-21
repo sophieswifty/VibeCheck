@@ -592,7 +592,7 @@ export const foo = async () => {
     // }).then(console.log(results));
 }
 
-const fetchCandidateSongs = async (callback) => {
+export const fetchCandidateSongs = async (callback) => {
     const audio_feats = [];
     getAllUserArtists().then((topArtists) => {
         getTopSongsByArtists(topArtists).then((tracks) => {

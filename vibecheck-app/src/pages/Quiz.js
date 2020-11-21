@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Quiz.css';
 import questions from '../assets/questions';
 import { Button, Box, Heading } from 'react-bulma-components';
-import { doItAll } from '../API/spotifyAPI';
+import { doItAll, fetchCandidateSongs } from '../API/spotifyAPI';
 
 // let filter = {
 //     acousticness_low: 0,
@@ -66,22 +66,17 @@ function Quiz() {
         danceability: 0,
         duration_ms: 0,
         energy: 0,
-        instrumentalness_low: 0,
-        instrumentalness_high: 0.25,
-        key: 0,
-        liveness_low: 0,
-        liveness_high: 0.25,
-        loudness_low: -8,
-        loudness_high: 0,
-        mode: 1,
-        speechiness_low: 0,
-        speechiness_high: 0.25,
-        tempo_low: 60,
-        tempo_high: 140,
-        time_signature: 4,
-        valence_low: 0.5,
-        valence_high: 0.75
+        instrumentalness: 0,
+        liveness: 0,
+        loudness: 0,
+        mode: 0,
+        speechiness: 0,
+        tempo: 0,
+        time_signature: 0,
+        valence_high: 0
     });
+
+    const [audioDetailList, setAudioDetailList] = useState({});
 
     // Using filter as a global var which means when the user goes 
 
@@ -108,11 +103,11 @@ function Quiz() {
 
     const generateQuiz = () => {
         setShowQuiz(true);
-
+        
     }
 
     useEffect(() => {
-        
+        fetchCandidateSongs(setAudioDetailList);
     }, []);
 
 
