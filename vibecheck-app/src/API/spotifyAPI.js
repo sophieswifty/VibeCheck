@@ -1,7 +1,7 @@
 const axios = require('axios').default;
 
 const id = "c712506f4ad74dcc9dbf58efc645a833";
-const token = "BQAjhaaVpxQ0LUHIKR8vbsS7p23_6D1DAWkkH3ngz7wkepezBUO0LGNh308jnnjf9aH85qzJPa1SYx1OWsNKAFw4XaAbCmAbxQG38R03vhwrfkJ21RoO7iWWG1CtfH0WLjVZnr8SrPhlZbyLttUApT7bXoXDOY9Vl01JEZayrvyOmC6RH31rH1Rh8IaiVFBKhrw";
+let token = "";
 const sample_song = "11dFghVXANMlKmJXsNCbNl";
 const sample_song_b = "5lRzWDEe7UuedU2QPsFg0K";
 const sample_artist = "0OdUWJ0sBjDrqHygGUXeCF";
@@ -11,6 +11,10 @@ const authenticated = false;
 function getAccessToken() {
     var url = window.location;
     return new URLSearchParams(url.search).get("access_token");
+}
+
+export function setAccessToken(access_token) {
+    token = access_token;
 }
 
 function generateRandomString(length) {
@@ -43,6 +47,38 @@ export const authorize = async () => {
 
     window.location.replace(url);
     return false;
+}
+
+const genericRequest = async (query_url) => {
+    try {
+        const res = await axios({
+            method: 'get',
+            url: query_url,
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+        return res.data;
+    } catch (e) {
+        return e;
+    }
+}
+
+const songSearch = async (searchTerm) => {
+    searchTerm = searchTerm.replace(" ","+");
+    const searchUrl = "https://api.spotify.com/v1/search?query=" + searchTerm + "&offset=0&limit=20&type=track";
+    try {
+        const res = await axios({
+            method: 'get',
+            url: searchUrl,
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+        return res.data;
+    } catch (e) {
+        return e;
+    }
 }
 
 const getArtist = async (artist_id) => {
@@ -179,6 +215,7 @@ const getUserTopArtists = async (limit, offset) => {
 }
 
 const getUserAllTopArtists = async () => {
+    console.log(token);
     return await getUserTopArtists(50,0);
 }
 
@@ -297,6 +334,29 @@ const getAllSongsByArtist = async (artist) => {
     })
     return tracks;
 }
+
+const getAllUserAlbums = async () => {
+    const album_list = [];
+    getAllUserArtists().then(data => {
+        Object.keys(data).forEach(artist_id => {
+            getArtistAlbums(artist_id).then(albums => {
+                albums.items.forEach(album => {
+                    if (album.album_type == "album") {
+                        album_list.append(album);
+                    }
+                })
+            })
+        })
+    })
+    return album_list;
+}
+
+// const getAllSongsByArtists = async (artists) => {
+//     let tracks = [];
+//     Object.keys(artists).forEach( async (artist_id) => {
+//         const albumData = await getArtistAlbums(artist);
+//     })
+// }
 
 const getCandidateSongIDs = async () => {
     const songs = [];
@@ -491,19 +551,57 @@ const addTracksToPlaylist = async (playlist_id, track_uris) => {
     }
 }
 
+export const practiceWaiting = async () => {
+    const songsToGet = ["11dFghVXANMlKmJXsNCbNl","11dFghVXANMlKmJXsNCbNl","11dFghVXANMlKmJXsNCbNl","11dFghVXANMlKmJXsNCbNl","11dFghVXANMlKmJXsNCbNl"];
+    for (let i = 0; i < songsToGet.length; i++) {
+        let success = false;
+        console.log("Making api call at i=" + i);
+        let res = await getTrackData(songsToGet[i]);
+        if (i != 3) {
+            success = true;
+        } else {
+            setTimeout(async () => {
+                res = await getTrackData(songsToGet[i]);
+                success = true;
+            },2000);
+        }
+        while (!success) {
+            //no-op
+        }
+        console.log("Printing at i=" + i);
+        console.log(res);
+    }
+}
+
+export const foo = async () => {
+    songSearch("Love You").then(data => console.log(data));
+    // const results = [];
+    // await getAllUserArtists().then(data => {
+    //     Object.keys(data).forEach(async (artist_id) => {
+    //         const starting_url = "https://api.spotify.com/v1/search?type=track&q=artist:" + data[artist_id];
+    //         const res = await genericRequest(starting_url);
+    //         results.push(res);
+    //     })
+    // }).then(console.log(results));
+}
+
 export const doItAll = async (filter) => {
     getAllUserArtists().then((data) => {
+        console.log("Found All Artists")
         console.log(data);
         getTopSongsByArtists(data).then((tracks) => {
+            console.log("Found artist top songs");
+            console.log(tracks);
             getDataFromTracks(tracks).then((audio_features) => {
+                console.log("Retrieved song feature data");
                 const passedTracks = audio_features.filter((elt) => passesFilter(elt,filter));
                 const passedIDs = passedTracks.map(elt => elt.id);
                 getTracks(passedIDs).then((songs) => console.log(songs.tracks.map(e => getFullSongName(e))));
                 const passedURIs = passedTracks.map(elt => elt.uri);
-                createPlaylist("VibeCheck2").then((playlist) => {
-                    console.log(playlist);
-                    addTracksToPlaylist(playlist.id, passedURIs);
-                })
+                // createPlaylist("VibeCheck2").then((playlist) => {
+                //     console.log(playlist);
+                //     addTracksToPlaylist(playlist.id, passedURIs);
+                // })
             });
         });
     });
