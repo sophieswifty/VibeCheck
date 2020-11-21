@@ -62,14 +62,10 @@ function Quiz() {
     const [showResult, setShowResult] = useState(false);
     const [showQuiz, setShowQuiz] = useState(false);
     const [filter, setFilter] = useState({
-        acousticness_low: 0,
-        acousticness_high: 0.25,
-        danceability_low: 0.4,
-        danceability_high: 0.65,
-        duration_ms_low: 0,
-        duration_ms_high: 600000,
-        energy_low: 0.5,
-        energy_high: 0.75,
+        acousticness: 0,
+        danceability: 0,
+        duration_ms: 0,
+        energy: 0,
         instrumentalness_low: 0,
         instrumentalness_high: 0.25,
         key: 0,

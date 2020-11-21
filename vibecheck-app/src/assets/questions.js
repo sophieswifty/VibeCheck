@@ -1,7 +1,6 @@
 import { q1_run
 } from './q1_run.jpeg';
 /*
-
 0 - branch from here
 1-10 - party
 11-20 - study
@@ -18,7 +17,7 @@ let questions = [
             { answerText: "Study mode", answerImage: 'q1_study.jpeg',  nextIndex: 11, metric: 'energy_low', value: -0.5 },
             { answerText: "Healthicizing", answerImage: 'q1_run.jpeg',  nextIndex: 21, metric: 'energy_high', value: 1.5  },
             { answerText: "Just vibing.", answerImage: 'q1_vibes.jpeg',  nextIndex: 31, metric: 'energy_low', value: -1  },
-        ],
+
 
     },
 
