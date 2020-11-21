@@ -32,14 +32,11 @@
     box-shadow:0 0 10px rgb(184, 184, 184);
   }
 
-  .question-section {
+  .quiz {
     width: 50%;
-    border-radius: 20px;
     margin: 0 auto;
-    padding-bottom: 10px;
-    margin-top:10px;
-    padding-top: 5px;
-    box-shadow:0 0 10px rgb(184, 184, 184);
+    padding: 10px;
+    margin-top: 20px;
   }
 
   .grid-container button {
@@ -47,5 +44,9 @@
     border: none;
     background: none;
     outline: none;
+  }
+
+  .button {
+    margin: 10px;
   }
   

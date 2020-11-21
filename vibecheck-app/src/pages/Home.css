@@ -5,6 +5,17 @@
     background-size: cover;
 }
 
+.desc {
+	padding-left: 10%;
+	padding-right: 10%;;
+}
+
+.hero.is-large .hero-body {
+	padding: 10%;
+	justify-content: center;
+}
+
+
 img {
     transition: all .2s ease-in-out; 
 }

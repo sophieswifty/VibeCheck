@@ -16,10 +16,10 @@ let questions = [
         nextIndex: 1,
         questionText: "What are you doing?",
         answerOptions: [
-            { answerText: "Getting turnt", answerImage: 'q1_party.jpeg', metric: 'acousticness_low', value: 100 },
-            { answerText: "Study mode", answerImage: 'q1_study.jpeg', metric: 'acousticness_low', value: 200 },
-            { answerText: "Healthicizing", answerImage: 'q1_run.jpeg', metric: 'acousticness_low', value: 300  },
-            { answerText: "Just vibing.", answerImage: 'q1_vibes.jpeg', metric: 'acousticness_low', value: 400  },
+            { answerText: "Getting turnt", answerImage: 'q1_party.jpeg', metric: 'energy_high', value: 1 },
+            { answerText: "Study mode", answerImage: 'q1_study.jpeg', metric: 'energy_low', value: -0.5 },
+            { answerText: "Healthicizing", answerImage: 'q1_run.jpeg', metric: 'energy_high', value: 1.5  },
+            { answerText: "Just vibing.", answerImage: 'q1_vibes.jpeg', metric: 'energy_low', value: -1  },
         ],
 
     },
@@ -27,12 +27,12 @@ let questions = [
     {
         index: 1,
         nextIndex: 2,
-        questionText: "Pick a material.",
+        questionText: "How adventurous do you feel?",
         answerOptions: [
-            { answerText: "Smooth", answerImage: 'q1_party.jpeg'},
-            { answerText: "Glittery", answerImage: 'q1_study.jpeg'},
-            { answerText: "Wood", answerImage: 'q1_run.jpeg' },
-            { answerText: "Concrete", answerImage: 'q1_vibes.jpeg' },
+            { answerText: "1", answerImage: 'q1_party.jpeg'},
+            { answerText: "2", answerImage: 'q1_study.jpeg'},
+            { answerText: "3", answerImage: 'q1_run.jpeg' },
+            { answerText: "4", answerImage: 'q1_vibes.jpeg' },
         ],
     },
 
@@ -165,8 +165,8 @@ let questions = [
         ],
     },
     {
-        index: 13,
-        nextIndex: 14,
+        index: 14,
+        nextIndex: null,
         questionText: "Use the time?",
         answerOptions: [
             { answerText: "Yes", answerImage: 'q1_party.jpeg'},

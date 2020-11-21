@@ -59,6 +59,7 @@ let resetFilter = {
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showResult, setShowResult] = useState(false);
+    const [showQuiz, setShowQuiz] = useState(false);
     const [filter, setFilter] = useState({
         acousticness_low: 0,
         acousticness_high: 0.25,
@@ -86,11 +87,14 @@ function Quiz() {
     });
 
     // Using filter as a global var which means when the user goes 
-    
+
     const handleAnswerOptionClick = (answerOption) => {
+        if (answerOption.answerText === "1") {
+            // range 
+        }
 
         // Update filter by adding the value to the metric per question
-        let filter_copy = filter;
+        let filter_copy = JSON.parse(JSON.stringify(filter));
         filter_copy[answerOption.metric] = filter[answerOption.metric] + answerOption.value;
         setFilter(filter_copy);
 
@@ -105,38 +109,53 @@ function Quiz() {
 
     const handleRestartClick = () => {
         setCurrentQuestion(0);
+        setShowResult(false);
         setFilter(resetFilter);
+    }
+
+    const generateQuiz = () => {
+        setShowQuiz(true);
+
     }
 
 
     return (
-        <div className="quiz">
-            <div className='question-section'>
-                <Heading subtitle size={4} className='question-count'>
-                    <span>Question {currentQuestion}</span>/{questions.length}
-                </Heading>
-                <Heading className='question-text'>{questions[currentQuestion].questionText}</Heading>
-            </div>
-            <div className='answer-section grid-container'>
-                {!showResult && questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                    <div className='grid-box' key={questions[currentQuestion].id}>
-                        <button onClick={() => handleAnswerOptionClick(answerOption)}>
-                            <img src={'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'} alt="" />
-                            {answerOption.answerText}
-                        </button>
+        <div>
+      {!showQuiz &&  <div className="quiz">
+            {!showResult && <div className="question-container">
+                <div className='question-section'>
+                    <Heading subtitle size={6} className='question-count'>
+                        <span>Question {currentQuestion}</span>/{questions.length}
+                    </Heading>
+                    <Heading className='question-text'>{questions[currentQuestion].questionText}</Heading>
+                </div>
+                <div className='answer-section grid-container'>
+                    {!showResult && questions[currentQuestion].answerOptions.map((answerOption, index) => (
+                        <div className='grid-box' key={questions[currentQuestion].id}>
+                            <button onClick={() => handleAnswerOptionClick(answerOption)}>
+                                <img src={'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'} alt="" />
+                                {answerOption.answerText}
+                            </button>
+                        </div>
+                    ))
+                    }
+                </div>
+                </div>
+            }
+
+            {showResult &&
+                    <div className="result-container">
+                        <Box className='result-section'>
+                            <Heading className='result-text'>You've got some good vibes...</Heading>
+                            <Button size="large" fullwidth onClick={generateQuiz}>Generate playlist!</Button>
+                        </Box>
                     </div>
-                ))
                 }
+                <Button onClick={handleRestartClick}>Restart</Button>
 
-                {!showResult && <Button onClick={handleRestartClick}>Restart</Button>}
-
-                {showResult && 
-                <div>
-                    <Button>Generate playlist!</Button>
-                    <Button> Retake quiz </Button>
-                </div>}
+            </div>}
+        {showQuiz && <NewPlaylist playlist={newPlaylist}/>}
             </div>
-        </div>
 
     );
 }
