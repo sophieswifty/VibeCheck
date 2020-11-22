@@ -139,8 +139,8 @@ let questions = [
         nextIndex: 12,
         questionText: "How are you studying?",
         answerOptions: [
-            { answerText: "In a group", answerImage: 'q1_party.jpeg'},
-            { answerText: "By myself", answerImage: 'q1_study.jpeg'},
+            { answerText: "In a group", answerImage: 'https://images.unsplash.com/photo-1460518451285-97b6aa326961?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80'},
+            { answerText: "By myself", answerImage: 'https://images.unsplash.com/photo-1593698054469-2bb6fdf4b512?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80'},
         ],
     },
     {

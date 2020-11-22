@@ -575,6 +575,23 @@ export const practiceWaiting = async () => {
     }
 }
 
+const getPlaylist = async (playlist_id) => {
+    const queryUrl = "https://api.spotify.com/v1/playlists/" + playlist_id;
+    try {
+        const res = await axios({
+            method: 'get',
+            url: queryUrl,
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': "application/json"
+            }
+        });
+        return res.data;
+    } catch (e) {
+        return e;
+    }
+}
+
 export const foo = async () => {
     let res;
     fetchCandidateSongs((data) => {
@@ -592,6 +609,10 @@ export const foo = async () => {
     // }).then(console.log(results));
 }
 
+export const getAverageTrackData = async (audio_features) => {
+
+}
+
 export const fetchCandidateSongs = async (callback) => {
     const audio_feats = [];
     getAllUserArtists().then((topArtists) => {
@@ -604,15 +625,17 @@ export const fetchCandidateSongs = async (callback) => {
 }
 
 // audio_features is a list of all fetched candidate songs' audio features
-const filterCandidateSongs = (audio_features, filter) => {
+export const filterCandidateSongs = (audio_features, filter) => {
     const passed_tracks = audio_features.filter((elt) => passesFilter(elt, filter));
 }
 
-const makePlaylist = async(tracks, playlistName, callback) => {
+export const makePlaylist = async(tracks, playlistName, callback) => {
     createPlaylist(playlistName).then((playlist) => {
         const URIs = tracks.map(elt => elt.uri);
         addTracksToPlaylist(playlist.id, URIs).then(() => {
-            callback(playlist);
+            getPlaylist(playlist.id).then((final_playlist) => {
+                callback(final_playlist);
+            })
         })
     })
 }
