@@ -4,11 +4,10 @@ import UserDataContext from '../context/userdata';
 import TopArtistList from '../components/TopArtistList'
 import { getUserTopTracks } from '../API/spotifyAPI'
 import './Statistics.css'
-import React from 'react'
 
 function Statistics() {
     const userData = useContext(UserDataContext);
-    
+
     return (
         <div>
          <StatisticsBox userData={userData}></StatisticsBox>
