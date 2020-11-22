@@ -34,15 +34,9 @@ export default class Autocomplete extends React.Component {
     const request = songSearch(q).then( (r) => {
       const results = [];
       r.tracks.items.forEach( (track) => {
-        console.log(track.artists[0].name);
-        let o = {
-          name: track.name,
-          artist: track.artists[0].name,
-          id: track.id,
-        }
 
-        results.push(o);
-        this.setState({results: results});
+        results.push(track);
+        this.setState({results: results.slice(0, 5)});
       });
     }).catch( (e) => {
       console.log(e);
@@ -77,10 +71,10 @@ export default class Autocomplete extends React.Component {
               this.state.results.map((s, i) => {
                 return (
                 <Columns.Column className="is-full" key={s + i}>
-                  <Box className="suggestion" onClick={(e) => this.handleSubmit(s.id)}>
+                  <Box className="suggestion" onClick={(e) => this.handleSubmit(s)}>
                     <Media>
                       <div>
-                        {`${s.artist} - ${s.name}`}
+                        {`${s.artists[0].name} - ${s.name}`}
                       </div>
                     </Media>
                   </Box>

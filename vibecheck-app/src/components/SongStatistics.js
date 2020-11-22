@@ -28,6 +28,9 @@ export default class SongStatistics extends React.Component {
                 }
             ]
         }
+
+        console.log(this.state.data);
+        console.log(this.props.albumCover)
     }
 
     render() {
@@ -36,13 +39,12 @@ export default class SongStatistics extends React.Component {
             <Container>
                 <Box>
                     <Heading>
-                        {this.props.songMetrics.search}
+                        {this.props.songName}
                     </Heading>
                     <div className="tile is-ancestor">
                         <div className="tile is-vertical is-5" id="album-image-tile">
                             <div className="tile is-6">
-                                <Image>
-                                    <img src="https://bulma.io/images/placeholders/128x128.png" id="album-img"/>
+                                <Image src={this.props.albumCover} id="album-img">
                                 </Image>
                             </div>
                         </div>
