@@ -11,12 +11,14 @@ import VibecheckSong from './pages/VibecheckSong';
 import VibecheckPlaylist from './pages/VibecheckPlaylist';
 import Redirect from './pages/Redirect';
 import LoggedIn from './components/LoggedIn';
+import Profile from './pages/Profile';
 
 import Layout from './components/Layout';
 import NavigationBar from './components/NavigationBar';
 
 // Context 
 import { AuthContext } from './context/auth';
+import { UserDataContext } from './context/userdata'
 import PrivateRoute from './components/PrivateRoute';
 
 // Icons
@@ -32,8 +34,7 @@ library.add(fab)
 function App(props) {
   const existingTokens = JSON.parse(localStorage.getItem("spotify_auth_state"));
   const [authTokens, setAuthTokens] = useState(existingTokens);
-  const [username, setUsername] = useState("");
-  const [userId, setUserId] = useState("");
+  const [userData, setUserData] = useState({});
 
   const setTokens = (data) => {
     localStorage.setItem("tokens", JSON.stringify(data));
@@ -45,8 +46,9 @@ function App(props) {
     if (authTokens) {
       setAccessToken(authTokens.access_token);
       getUserData().then(data => {
-        setUsername(data.display_name);
-        setUserId(data.id);
+        setUserData(data);
+        // setUsername(data.display_name);
+        // setUserId(data.id);
         console.log(data);
       });
     }
@@ -58,12 +60,14 @@ function App(props) {
   return (
     <React.Fragment>
       <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
+        <UserDataContext.Provider value={[userData, setUserData]}>
         <Router>
-          {authTokens && <LoggedIn username={username} />}
+          {authTokens && <LoggedIn username={userData.display_name} />}
           <Layout>
             <Switch>
               <PrivateRoute path="/dashboard" component={Dashboard} />
               <PrivateRoute path="/quiz" component={Quiz} />
+              <PrivateRoute path="/profile" component={Profile} />
               <PrivateRoute path="/statistics" component={Statistics} />
               <PrivateRoute path="/vibecheck-song" component={VibecheckSong} />
               <PrivateRoute path="/vibecheck-playlist" component={VibecheckPlaylist} />
@@ -72,6 +76,7 @@ function App(props) {
             </Switch>
           </Layout>
         </Router>
+        </UserDataContext.Provider>
       </AuthContext.Provider>
     </React.Fragment>
   );

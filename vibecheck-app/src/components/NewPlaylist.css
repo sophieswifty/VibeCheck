@@ -1,0 +1,104 @@
+.playlist-image {
+    width: 400px;
+  }
+  
+  .playlist-image img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  .media-content {
+    display: table-cell;
+    width: 350px;
+    height: 200px;
+    padding: 10px;
+    vertical-align: middle;
+  }
+
+ .playlist-info {
+   margin-left: 20px;
+   text-align: left;
+ }
+
+  .playlist_result_box {
+      padding: 20px;
+      margin: 10px;
+  }
+
+  .media-left {
+      margin: 0px;
+  }
+
+  /* Here's some environment setup,
+   scroll down for the interesting parts */
+
+.animated-box {
+    font-family: 'Lato';
+    color: #ffffff;
+    text-align: center;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
+    margin: 10px;
+  }
+
+.animated-box:hover {
+    transform: scale(1.05);
+}
+
+.animated-box img:hover {
+    transform: scale(1.00);
+}
+  
+  /* The animation starts here */
+  .animated-box {
+    position: relative;
+  }
+
+  .animated-box:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius:1px;
+    background: linear-gradient(120deg, rgb(78, 255, 149), rgb(255, 213, 73), rgb(62, 255, 207));
+    background-size: 300% 300%;
+    clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
+  }
+  
+  .animated-box.in:after {
+    animation: frame-enter 1s forwards ease-in-out reverse, gradient-animation 4s ease-in-out infinite;
+  }
+  
+  /* motion */
+  @keyframes gradient-animation {
+    0% {
+      background-position: 15% 0%;
+    }
+    50% {
+      background-position: 85% 100%;
+    }
+    100% {
+      background-position: 15% 0%;
+    }
+  }
+  
+  @keyframes frame-enter {
+    0% {
+      clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
+    }
+    25% {
+      clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 100%, 100% 100%, 100% 0%, 0% 0%);
+    }
+    50% {
+      clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, 100% 0%, 0% 0%);
+    }
+    75% {
+      -webkit-clip-path: polygon(0% 100%, 3px 100%, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 0%, 0% 0%);
+    }
+    100% {
+      -webkit-clip-path: polygon(0% 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 0% 100%);
+    }
+  }
+  

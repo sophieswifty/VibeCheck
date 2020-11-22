@@ -604,16 +604,25 @@ export const fetchCandidateSongs = async (callback) => {
 }
 
 // audio_features is a list of all fetched candidate songs' audio features
-const filterCandidateSongs = (audio_features, filter) => {
+export const filterCandidateSongs = (audio_features, filter) => {
     const passed_tracks = audio_features.filter((elt) => passesFilter(elt, filter));
+    return passed_tracks;
 }
 
+<<<<<<< HEAD
 const makePlaylist = async(tracks, playlistName, callback) => {
     createPlaylist(playlistName).then((playlist) => {
         const URIs = tracks.map(elt => elt.uri);
         addTracksToPlaylist(playlist.id, URIs).then(() => {
             callback(playlist);
         })
+=======
+export const makePlaylist = async(tracks, playlistName) => {
+    createPlaylist(playlistName).then((playlist) => {
+        const URIs = tracks.map(elt => elt.uri);
+        addTracksToPlaylist(playlist.id, URIs);
+        return playlist;
+>>>>>>> feat: UserDataContext added, quiz result page added, website-wide font set, Profile page set.
     })
 }
 

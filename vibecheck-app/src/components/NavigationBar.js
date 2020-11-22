@@ -50,7 +50,9 @@ function NavigationBar(props) {
         </Navbar.Container>
         <Navbar.Container position="end">
           <Navbar.Item className='name-no-hover'>
+          <Link renderAs="a" to="./profile">
             {props.username}
+            </Link>
           </Navbar.Item>
           <Navbar.Item className='btn-no-hover'>
             <Logout />

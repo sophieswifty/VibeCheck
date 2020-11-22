@@ -23,13 +23,12 @@ let questions = [
 
     {
         index: 1,
-        nextIndex: 2,
         questionText: "Are you feeling...",
         answerOptions: [
-            { answerText: "Smooth", answerImage: 'q1_party.jpeg'},
-            { answerText: "Glitter", answerImage: 'q1_study.jpeg'},
-            { answerText: "Wood", answerImage: 'q1_run.jpeg' },
-            { answerText: "Concrete", answerImage: 'q1_vibes.jpeg' },
+            { answerText: "Smooth", answerImage: 'q1_party.jpeg', nextIndex: 2, metric: 'energy_high', value: 1 },
+            { answerText: "Glitter", answerImage: 'q1_study.jpeg', nextIndex: 2, metric: 'energy_high', value: 1 },
+            { answerText: "Wood", answerImage: 'q1_run.jpeg', nextIndex: 2, metric: 'energy_high', value: 1 },
+            { answerText: "Concrete", answerImage: 'q1_vibes.jpeg', nextIndex: 2, metric: 'energy_high', value: 1 },
         ],
     },
 
@@ -38,7 +37,7 @@ let questions = [
         nextIndex: 3,
         questionText: "How many people are with you?",
         answerOptions: [
-            { answerText: "Just me.", answerImage: 'q1_party.jpeg'},
+            { answerText: "Just me.", answerImage: 'q1_party.jpeg', nextIndex: 3, metric: 'energy_high', value: 1 },
             { answerText: "1-3", answerImage: 'q1_study.jpeg'},
             { answerText: "4-9", answerImage: 'q1_run.jpeg' },
             { answerText: "Over 10", answerImage: 'q1_vibes.jpeg' },
