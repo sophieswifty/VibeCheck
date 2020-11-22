@@ -74,6 +74,10 @@ img:hover {
   text-align: center;
   
   }
+
+.loader.loading {
+    margin-left: 10px;
+  }
   
   .dash-logo h1 {
   margin-top: 10px;

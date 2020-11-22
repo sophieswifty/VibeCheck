@@ -58,7 +58,6 @@ export default class Autocomplete extends React.Component {
 
   render() {
     return (
-      <Section>
         <Container>
           <Columns gapless>
             <Columns.Column className="is-full">
@@ -98,7 +97,6 @@ export default class Autocomplete extends React.Component {
             }
           </Columns>
         </Container>
-      </Section>
     );
   }
 }

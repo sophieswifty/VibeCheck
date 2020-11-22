@@ -110,8 +110,9 @@ function Quiz() {
         setShowQuiz(true);
         // modify filter before sending
         let resultSongs = filterCandidateSongs(audioBatch, resetFilter);
-        const playlist = makePlaylist(resultSongs, playlistName, (playlist) => { console.log(playlist) }).then((data) => {
-            return data;
+        const playlist = makePlaylist(resultSongs, playlistName).then((data) => {
+            console.log("make playlist");
+            console.log(data);  // FINAL_PLAYLIST   should be returned
         });
     }
 

@@ -10,7 +10,6 @@ export default class SongStatistics extends React.Component {
         super(props);
       
         this.state = {
-            clicked: false,
             data: [
                 {
                     category: "Acousticness", score: this.props.songMetrics.acousticness
@@ -34,22 +33,14 @@ export default class SongStatistics extends React.Component {
         console.log(this.props.albumCover)
     }
 
-    // CLick on image, show stats. Trying to get this to wor but giving up it s 2am
-    handleImageClick() {
-        if (this.state.clicked) {
-            this.state.clicked = false;
-        } else {
-            this.state.clicked = true;
-        }
-    }
 
     render() {
         return (
         
             <Container>
                 <Box>
-                    <Heading>
-                        {this.props.songName}
+                    <Heading >
+                        <i className="song-title">{this.props.songName}</i>
                     </Heading>
                     <div className="tile is-ancestor">
                         <div className="tile is-vertical is-5 is-parent" id="album-image-tile">

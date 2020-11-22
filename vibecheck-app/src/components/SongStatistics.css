@@ -1,7 +1,7 @@
 .song-image {
     height: 400px;
     width: 400px;
-  }
+}
   
   .song-image img {
     max-height: 100%;
@@ -12,6 +12,7 @@
     max-height: 100%;
     max-width: 100%;
   }
+
   /* The animation starts here */
   .animated-box {
     position: relative;

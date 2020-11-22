@@ -683,16 +683,26 @@ export const filterCandidateSongs = (audio_features, filter) => {
     return passed_tracks;
 }
 
-export const makePlaylist = async(tracks, playlistName, callback) => {
+export const makePlaylist = async(tracks, playlistName) => {
     createPlaylist(playlistName).then((playlist) => {
         const URIs = tracks.map(elt => elt.uri);
         addTracksToPlaylist(playlist.id, URIs).then(() => {
             getPlaylist(playlist.id).then((final_playlist) => {
-                callback(final_playlist);
+                return final_playlist;
             })
         })
     });
 }
+// export const makePlaylist = async(tracks, playlistName, callback) => {
+//     createPlaylist(playlistName).then((playlist) => {
+//         const URIs = tracks.map(elt => elt.uri);
+//         addTracksToPlaylist(playlist.id, URIs).then(() => {
+//             getPlaylist(playlist.id).then((final_playlist) => {
+//                 callback(final_playlist);
+//             })
+//         })
+//     });
+// }
 
 export const doItAll = async (filter) => {
     getAllUserArtists().then((data) => {

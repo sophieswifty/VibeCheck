@@ -1,9 +1,13 @@
 import React from 'react';
-import {Heading, Form, Button, Hero} from 'react-bulma-components';
+import {Heading, Form, Button, Tile, Box, Hero} from 'react-bulma-components';
 import Autocomplete from '../components/Autocomplete';
 import SongStatistics from '../components/SongStatistics';
 import { getTrackData } from '../API/spotifyAPI';
+
 import PublicPlaylist from '../components/PublicPlaylists'
+
+import './VibecheckSong.css';
+
 
 export default class VibecheckSong extends React.Component {
     constructor(props) {
