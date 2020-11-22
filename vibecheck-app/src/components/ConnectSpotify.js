@@ -11,7 +11,7 @@ function ConnectSpotify() {
             REACT_APP_REDIRECT_URL
         } = process.env;
 
-        const scope = 'user-read-private user-read-email playlist-modify-public user-top-read';
+        const scope = 'user-read-private user-read-email playlist-modify-public user-top-read user-library-read';
         window.location = `${REACT_APP_AUTHORIZE_URL}?client_id=${REACT_APP_CLIENT_ID}&redirect_uri=${REACT_APP_REDIRECT_URL}&response_type=token&scope=${scope}&show_dialog=true`
     };
 

@@ -3,7 +3,6 @@ import {Heading, Form, Button, Hero} from 'react-bulma-components';
 import Autocomplete from '../components/Autocomplete';
 import PlaylistStatistics from '../components/PlaylistStatistics';
 import { getPlaylistItems, getTracksData } from '../API/spotifyAPI';
-import PublicPlaylist from '../components/PublicPlaylists';
 
 export default class VibecheckPlaylist extends React.Component {
     constructor(props) {

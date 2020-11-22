@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import './Quiz.css';
 import questions from '../assets/questions';
 import { Button, Box, Heading, Field, Label, Control, Input, Form } from 'react-bulma-components';
-import { fetchCandidateSongs, filterCandidateSongs, makePlaylist } from '../API/spotifyAPI';
+import { fetchCandidateSongs, filterCandidateSongs, makePlaylist, createPlaylist, getPlaylist, addTracksToPlaylist } from '../API/spotifyAPI';
 import NewPlaylist from '../components/NewPlaylist';
 import { AudioBatchContext } from '../context/audiobatch';
 
@@ -104,21 +104,24 @@ function Quiz() {
         setFilter(resetFilter);
     }
 
-    let resultPlaylist = {};
-
     const generatePlaylist = () => {
         setShowQuiz(true);
         // modify filter before sending
-        let resultSongs = filterCandidateSongs(audioBatch, resetFilter);
-        const playlist = makePlaylist(resultSongs, playlistName).then((data) => {
-            console.log("make playlist");
-            console.log(data);  // FINAL_PLAYLIST   should be returned
+        let resultPlaylist = filterCandidateSongs(audioBatch, resetFilter);
+
+        createPlaylist(playlistName).then((playlist) => {
+            const URIs = resultPlaylist.map(elt => elt.uri);
+            addTracksToPlaylist(playlist.id, URIs).then(() => {
+                getPlaylist(playlist.id).then((final_playlist) => {
+                    setPlaylistData(final_playlist);
+                })
+            })
+        }).catch((error) => {
+            console.log(error);
         });
     }
 
-    // const storePlaylist = (playlist) => {
-    //     setPlaylistData(playlist)
-    // }
+
 
     function handleChange(e) {
         setPlaylistName(e.target.value);
@@ -162,7 +165,7 @@ function Quiz() {
                 <Button onClick={handleRestartClick}>Restart</Button>
 
             </div>}
-            {showQuiz && <NewPlaylist restart={handleRestartClick} playlist={resultPlaylist}/>}
+            {showQuiz && <NewPlaylist restart={handleRestartClick} playlist={playlistData}/>}
         </div>
 
     );

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Box, Content, Media, Image, Heading, Button, Notification } from 'react-bulma-components';
-import UserDataContext from  '../context/userdata';
+import UserDataContext from '../context/userdata';
+import PlaylistStatistics from './PlaylistStatistics';
 import axios from 'axios';
 import './NewPlaylist.css';
 
@@ -10,7 +11,7 @@ function NewPlaylist(props) {
     const [userData, setUserData] = useContext(UserDataContext);
 
 
-    const handleSave = async() => {
+    const handleSave = async () => {
         setSaveNotification(true);
 
         try {
@@ -18,8 +19,8 @@ function NewPlaylist(props) {
                 method: 'POST',
                 url: 'http://localhost:3030/playlists',
                 body: {
-                   "username": userData.id,
-                   "tracks": [] // [array of track ids]
+                    "username": userData.id,
+                    "tracks": props.playlist
                 }
             });
         } catch (error) {
@@ -72,7 +73,7 @@ function NewPlaylist(props) {
                 <Media>
                     <Media.Item renderAs="figure" position="left">
                         <div className="playlist-image animated-box in">
-                            {/* <Image src={props.playlist} /> */}
+                            <Image src={props.playlist.images[0].url} />
                         </div>
                     </Media.Item>
                     <Media.Item>
@@ -81,12 +82,7 @@ function NewPlaylist(props) {
                                 {props.playlist.name}
                             </Heading>
                             <p>
-                                {/* DENNIS - ADD AVG METRICS PIC FOR PLAYLIST HERE: */}
-                                Average metrics:
-                                <li> Danceability: </li>
-                                <li> Acousticness: </li>
-                                <li> Tempo: </li>
-                                <li> Liveness: </li>
+                                A custom playlist for you!
                             </p>
                             <Button onClick={props.restart}>Restart</Button>
                             <Button color="primary" onClick={handleSave}>Save</Button>

@@ -50,7 +50,7 @@ function NavigationBar(props) {
         </Navbar.Container>
         <Navbar.Container position="end">
           {props.loadingData && <Navbar.Item className='name-no-hover'>
-           Syncing vibes with {props.username} 
+          Scanning for vibes from {props.username} 
             <Loader className="loading" />
           </Navbar.Item>}
           {!props.loadingData && <Navbar.Item className='name-no-hover'>

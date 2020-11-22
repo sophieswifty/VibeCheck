@@ -4,8 +4,6 @@ import Autocomplete from '../components/Autocomplete';
 import SongStatistics from '../components/SongStatistics';
 import { getTrackData } from '../API/spotifyAPI';
 
-import PublicPlaylist from '../components/PublicPlaylists'
-
 import './VibecheckSong.css';
 
 
@@ -36,6 +34,7 @@ export default class VibecheckSong extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <Box>
                 <Heading>
                     Vibecheck a song
                 </Heading>
@@ -48,6 +47,7 @@ export default class VibecheckSong extends React.Component {
                         songMetrics={this.state.songMetrics}
                     />
                 }
+                </Box>
             </React.Fragment>);
     }
 }

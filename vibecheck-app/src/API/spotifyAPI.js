@@ -237,7 +237,22 @@ export const getUserData = async () => {
     }
 }
 
-export const getUserTopTracks = async (limit, offset) => {
+export const getUserSavedTracks = async () => {
+    const savedSongs = [];
+    const res = await genericRequest("https://api.spotify.com/v1/me/tracks?offset=50&limit=50");
+    res.items.forEach((elt) => {
+        savedSongs.push(elt.track.id);
+    });
+    while (res.next) {
+        const newRes = await genericRequest(res.next);
+        newRes.items.forEach((elt) => {
+            savedSongs.push(elt.track.id);
+        })
+    }
+    return savedSongs;
+}
+
+const getUserTopTracks = async (limit, offset) => {
     try {
         const res = await axios({
             method: 'get',
@@ -251,6 +266,17 @@ export const getUserTopTracks = async (limit, offset) => {
     } catch (e) {
         return e;
     }
+}
+
+export const getUserTopTracksData = async () => {
+    const res = await getUserTopTracks(50,0);
+    const track_ids = res.items.map(elt => elt.id);
+    const fields = ["acousticness","danceability","duration_ms","energy","instrumentalness",
+        "key","liveness","loudness","mode","speechiness","tempo","valence"];
+    const track_data = await getTracksData(track_ids);
+    track_data.audio_features.forEach((elt) => {
+
+    });
 }
 
 const getUserTopArtists = async (limit, offset) => {
@@ -527,6 +553,20 @@ const passesFilter = (trackInfo, filter) => {
     trackInfo.valence <= filter.valence_high;
 }
 
+const passesFilterB = (track, filter) => {
+    const fields = ["acousticness","danceability","energy","instrumentalness","liveness","speechiness","valence"];
+    fields.forEach(field => {
+        const field_range = field + "_range";
+        if (track[field] < filter[field] - filter[field_range]) {
+            return false;
+        }
+        if (track[field] > filter[field] + filter[field_range]) {
+            return false;
+        }
+    });
+    return true;
+}
+
 const getFullSongName = (track) => {
     let str = track.name + " by " + track.artists[0].name;
     for (let i = 1; i < track.artists.length - 1; i++) {
@@ -662,8 +702,21 @@ export const foo = async () => {
     // }).then(console.log(results));
 }
 
-export const getAverageTrackData = async (audio_features) => {
-
+export const getAverageCandidateTrackData = async (audio_features) => {
+    const fields = ["acousticness","danceability","energy","instrumentalness","liveness","speechiness","valence"];
+    const avgData = {};
+    fields.forEach(field => {
+        avgData[field] = 0;
+    });
+    audio_features.forEach(elt => {
+        fields.forEach(field => {
+            avgData[field] += elt[field];
+        })
+    });
+    fields.forEach(field => {
+        avgData[field] /= audio_features.length;
+    });
+    return avgData;
 }
 
 export const fetchCandidateSongs = async (callback) => {
@@ -679,7 +732,37 @@ export const fetchCandidateSongs = async (callback) => {
 
 // audio_features is a list of all fetched candidate songs' audio features
 export const filterCandidateSongs = (audio_features, filter) => {
-    const passed_tracks = audio_features.filter((elt) => passesFilter(elt, filter));
+    const passed_tracks = audio_features.filter((elt) => passesFilterB(elt, filter));
+    const fields = ["acousticness","danceability","energy","instrumentalness","liveness","speechiness","valence"];
+    if (passed_tracks.length < 15) {
+        while (passed_tracks.length < 15) {
+            fields.forEach(field => {
+                const field_range = field + "_range";
+                filter[field_range] *= 1.1;
+            })
+            passed_tracks = audio_features.filter((elt) => passesFilterB(elt, filter));
+        }
+        if (passed_tracks.length > 35) {
+            passed_tracks = passed_tracks.slice(0,30);
+        }
+    } else if (passed_tracks.length > 35) {
+        while (passed_tracks.length > 35) {
+            fields.forEach(field => {
+                const field_range = field + "_range";
+                filter[field_range] /= 1.1;
+            })
+            passed_tracks = audio_features.filter((elt) => passesFilterB(elt, filter));
+        }
+        if (passed_tracks.length < 15) {
+            fields.forEach(field => {
+                const field_range = field + "_range";
+                filter[field_range] *= 1.1;
+            })
+            passed_tracks = audio_features.filter((elt) => passesFilterB(elt, filter));
+            const playlist_length = passed_tracks.length > 35 ? 30 : passed_tracks.length;
+            passed_tracks = passed_tracks.slice(0,playlist_length);
+        }
+    }
     return passed_tracks;
 }
 
