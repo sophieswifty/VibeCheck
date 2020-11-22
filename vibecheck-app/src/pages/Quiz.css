@@ -63,6 +63,16 @@
     margin: 20px;
   }
   
+  .cropped {
+    width: 150px; /* width of container */
+    height: 150px; /* height of container */
+    overflow: hidden;
+
+}
+
+.cropped img {
+    margin: 0px 0px 0px -180px;
+}
 
 
 

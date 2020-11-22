@@ -9,7 +9,7 @@
 let questions = [
     {
         index: 0,
-        questionText: "What are you doing?",
+        questionText: "What are you doing????",
         answerOptions: [
             // accousticness: 0.05
             // accousticness range: 0.05
@@ -23,7 +23,7 @@ let questions = [
             // speechiness range: 0.33
             // valence: 0.7
             // valence range: 0.3
-            { answerText: "Getting turnt", answerImage: 'q1_party.jpeg', nextIndex: 1, metric: 'energy_high', value: 1 },
+            { answerText: "Getting turnt", answerImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80', nextIndex: 1, metric: 'energy_high', value: 1 },
             // accousticness: 0.6
             // accousticness range: 0.4
             // danceability: 0.1
@@ -49,7 +49,7 @@ let questions = [
             // speechiness range: 0.33
             // valence: 0.8
             // valence range: 0.2
-            { answerText: "Healthicizing", answerImage: 'q1_run.jpeg',  nextIndex: 21, metric: 'energy_high', value: 1.5  },
+            { answerText: "Healthicizing", answerImage: 'https://images.unsplash.com/photo-1527933053326-89d1746b76b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',  nextIndex: 21, metric: 'energy_high', value: 1.5  },
             // accousticness: 0.25
             // accousticness range: 0.25
             // danceability: 0.2
@@ -62,7 +62,7 @@ let questions = [
             // speechiness range: 0.33
             // valence: 0.3
             // valence range: 0.3
-            { answerText: "Just vibing.", answerImage: 'q1_vibes.jpeg',  nextIndex: 31, metric: 'energy_low', value: -1  },
+            { answerText: "Just vibing.", answerImage: 'https://images.unsplash.com/photo-1498892156743-6d5da30bab8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80',  nextIndex: 31, metric: 'energy_low', value: -1  },
         ]
 
     },
