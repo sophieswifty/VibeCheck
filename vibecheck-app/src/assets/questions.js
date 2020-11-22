@@ -13,8 +13,8 @@ let questions = [
         index: 0,
         questionText: "What are you doing?",
         answerOptions: [
-            { answerText: "Getting turnt", answerImage: 'q1_party.jpeg', nextIndex: 1, metric: 'energy', value: 1 },
-            { answerText: "Study mode", answerImage: 'q1_study.jpeg',  nextIndex: 11, metric: 'energy', value: -0.5 },
+            { answerText: "Getting turnt", answerImage: 'q1_party.jpeg', nextIndex: 1, metric: 'energy_high', value: 1 },
+            { answerText: "Study mode", answerImage: 'q1_study.jpeg',  nextIndex: 11, metric: 'energy_low', value: -0.5 },
             { answerText: "Healthicizing", answerImage: 'q1_run.jpeg',  nextIndex: 21, metric: 'energy_high', value: 1.5  },
             { answerText: "Just vibing.", answerImage: 'q1_vibes.jpeg',  nextIndex: 31, metric: 'energy_low', value: -1  },
         ]
@@ -37,7 +37,7 @@ let questions = [
         nextIndex: 3,
         questionText: "How many people are with you?",
         answerOptions: [
-            { answerText: "Just me.", answerImage: 'q1_party.jpeg', nextIndex: 3, metric: 'energy_high', value: 1 },
+            { answerText: "Just me.", answerImage: 'q1_party.jpeg', nextIndex: 1, metric: 'energy_high', value: 1 },
             { answerText: "1-3", answerImage: 'q1_study.jpeg'},
             { answerText: "4-9", answerImage: 'q1_run.jpeg' },
             { answerText: "Over 10", answerImage: 'q1_vibes.jpeg' },
@@ -324,7 +324,6 @@ let questions = [
             { answerText: "Cheerios", answerImage: 'cheerios.jpg', metric: 'acousticness', value: .6 },
             { answerText: "Honey Bunches of Oats", answerImage: 'hboa.jpeg', metric: 'danceability', value: .5 },
             { answerText: "Cinnamon Toast Crunch", answerImage: 'ctc.jpg', metric: 'danceability', value: .8 },
-         
         ],
     },
     {
@@ -359,8 +358,8 @@ let questions = [
         ],
     },
     {
-        index: 42,
-        nextIndex: 43,
+        index: 12,
+        nextIndex: 13,
         questionText: "Use the weather?",
         answerOptions: [
             { answerText: "Yes", answerImage: 'q1_party.jpeg'},
@@ -368,8 +367,8 @@ let questions = [
         ],
     },
     {
-        index: 43,
-        nextIndex: 44,
+        index: 13,
+        nextIndex: 14,
         questionText: "Use the time?",
         answerOptions: [
             { answerText: "Yes", answerImage: 'q1_party.jpeg'},
@@ -377,7 +376,7 @@ let questions = [
         ],
     },
     {
-        index: 44,
+        index: 14,
         nextIndex: null,
         questionText: "Use the time?",
         answerOptions: [

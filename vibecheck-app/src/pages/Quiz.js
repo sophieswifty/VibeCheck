@@ -6,45 +6,19 @@ import { fetchCandidateSongs, filterCandidateSongs, makePlaylist} from '../API/s
 import NewPlaylist from '../components/NewPlaylist';
 import { AudioBatchContext } from '../context/audiobatch';
 
-// let filter = {
-//     acousticness_low: 0,
-//     acousticness_high: 0.25,
-//     danceability_low: 0.4,
-//     danceability_high: 0.65,
-//     duration_ms_low: 0,
-//     duration_ms_high: 600000,
-//     energy_low: 0.5,
-//     energy_high: 0.75,
-//     instrumentalness_low: 0,
-//     instrumentalness_high: 0.25,
-//     key: 0,
-//     liveness_low: 0,
-//     liveness_high: 0.25,
-//     loudness_low: -8,
-//     loudness_high: 0,
-//     mode: 1,
-//     speechiness_low: 0,
-//     speechiness_high: 0.25,
-//     tempo_low: 60,
-//     tempo_high: 140,
-//     time_signature: 4,
-//     valence_low: 0.5,
-//     valence_high: 0.75
-// };
-
-// NEW FILTER:
-// acousticness: 0,
-// danceability: 0,
-// duration_ms: 0,
-// energy: 0,
-// instrumentalness: 0,
-// liveness: 0,
-// loudness: 0,
-// mode: 0,
-// speechiness: 0,
-// tempo: 0,
-// time_signature: 0,
-// valence_high: 0
+    // NEW FILTER:
+    // acousticness: 0,
+    // danceability: 0,
+    // duration_ms: 0,
+    // energy: 0,
+    // instrumentalness: 0,
+    // liveness: 0,
+    // loudness: 0,
+    // mode: 0,
+    // speechiness: 0,
+    // tempo: 0,
+    // time_signature: 0,
+    // valence_high: 0
 
 let resetFilter = {
     acousticness_low: 0,
@@ -71,7 +45,6 @@ let resetFilter = {
     valence_low: 0.5,
     valence_high: 0.75
 };
-
 
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -102,6 +75,7 @@ function Quiz() {
         valence_low: 0.5,
         valence_high: 0.75
     });
+   
     const [audioBatch, setAudioBatch] = useContext(AudioBatchContext);
 
     // Using filter as a global var which means when the user goes 
@@ -130,8 +104,9 @@ function Quiz() {
 
     const generateQuiz = () => {
         setShowQuiz(true);
-        let resultSongs = filterCandidateSongs(audioBatch, filter);
-        makePlaylist(resultSongs, "vibecheck").then((data)=> {
+        // modify filter before sending
+        let resultSongs = filterCandidateSongs(audioBatch, resetFilter);
+        makePlaylist(resultSongs, "vibecheck", (playlist)=>{console.log(playlist)}).then((data)=> {
             console.log(data);
         });
     }
