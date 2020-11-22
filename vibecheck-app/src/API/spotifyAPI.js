@@ -627,6 +627,7 @@ export const fetchCandidateSongs = async (callback) => {
 // audio_features is a list of all fetched candidate songs' audio features
 export const filterCandidateSongs = (audio_features, filter) => {
     const passed_tracks = audio_features.filter((elt) => passesFilter(elt, filter));
+    return passed_tracks;
 }
 
 export const makePlaylist = async(tracks, playlistName, callback) => {
@@ -637,7 +638,7 @@ export const makePlaylist = async(tracks, playlistName, callback) => {
                 callback(final_playlist);
             })
         })
-    })
+    });
 }
 
 export const doItAll = async (filter) => {

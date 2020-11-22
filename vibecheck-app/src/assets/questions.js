@@ -13,8 +13,8 @@ let questions = [
         index: 0,
         questionText: "What are you doing?",
         answerOptions: [
-            { answerText: "Getting turnt", answerImage: 'q1_party.jpeg', nextIndex: 1, metric: 'energy_high', value: 1 },
-            { answerText: "Study mode", answerImage: 'q1_study.jpeg',  nextIndex: 11, metric: 'energy_low', value: -0.5 },
+            { answerText: "Getting turnt", answerImage: 'q1_party.jpeg', nextIndex: 1, metric: 'energy', value: 1 },
+            { answerText: "Study mode", answerImage: 'q1_study.jpeg',  nextIndex: 11, metric: 'energy', value: -0.5 },
             { answerText: "Healthicizing", answerImage: 'q1_run.jpeg',  nextIndex: 21, metric: 'energy_high', value: 1.5  },
             { answerText: "Just vibing.", answerImage: 'q1_vibes.jpeg',  nextIndex: 31, metric: 'energy_low', value: -1  },
         ]
@@ -23,13 +23,12 @@ let questions = [
 
     {
         index: 1,
-        nextIndex: 2,
         questionText: "Are you feeling...",
         answerOptions: [
-            { answerText: "Smooth", answerImage: 'q1_party.jpeg'},
-            { answerText: "Glitter", answerImage: 'q1_study.jpeg'},
-            { answerText: "Wood", answerImage: 'q1_run.jpeg' },
-            { answerText: "Concrete", answerImage: 'q1_vibes.jpeg' },
+            { answerText: "Smooth", answerImage: 'q1_party.jpeg', nextIndex: 2, metric: 'energy_high', value: 1 },
+            { answerText: "Glitter", answerImage: 'q1_study.jpeg', nextIndex: 2, metric: 'energy_high', value: 1 },
+            { answerText: "Wood", answerImage: 'q1_run.jpeg', nextIndex: 2, metric: 'energy_high', value: 1 },
+            { answerText: "Concrete", answerImage: 'q1_vibes.jpeg', nextIndex: 2, metric: 'energy_high', value: 1 },
         ],
     },
 
@@ -38,7 +37,7 @@ let questions = [
         nextIndex: 3,
         questionText: "How many people are with you?",
         answerOptions: [
-            { answerText: "Just me.", answerImage: 'q1_party.jpeg'},
+            { answerText: "Just me.", answerImage: 'q1_party.jpeg', nextIndex: 3, metric: 'energy_high', value: 1 },
             { answerText: "1-3", answerImage: 'q1_study.jpeg'},
             { answerText: "4-9", answerImage: 'q1_run.jpeg' },
             { answerText: "Over 10", answerImage: 'q1_vibes.jpeg' },
@@ -240,6 +239,114 @@ let questions = [
             { answerText: "East", answerImage: 'q1_study.jpeg'},
             { answerText: "South", answerImage: 'q1_study.jpeg'},
             { answerText: "West", answerImage: 'q1_study.jpeg'},
+        ],
+    },
+    {
+        index: 21,
+        nextIndex: 22,
+        questionText: "Is this a group or solo workout sesh?",
+        answerOptions: [
+            { answerText: "Solo", answerImage: 'solo+workout.jpg', metric: 'energy', value: .5},
+            { answerText: "Group", answerImage: 'groupWork.jpg', metric: 'danceability', value: .8},
+        ],
+    },
+    {
+        index: 22,
+        nextIndex: 23,
+        questionText: "What kind of exercise are you doing?",
+        answerOptions: [
+            { answerText: "Cardio", answerImage: 'cardio.jpg', metric: 'danceability', value: .9 },
+            { answerText: "Lifting weights", answerImage: 'groupWork.jpg', metric: 'energy', value: .6 },
+            { answerText: "Yoga", answerImage: 'yoga.jpg', metric: 'acousticness', value: .7 },
+            { answerText: "Just walking", answerImage: 'walking.jpg', metric: 'danceability', value: .5 },
+        ],
+    },
+    {
+        index: 23,
+        nextIndex: 24,
+        questionText: "Do you need motivation for the exercise?",
+        answerOptions: [
+            { answerText: "PLEASE", answerImage: 'yeah.jpg', metric: 'energy', value: .7 },
+            { answerText: "Nah, I love to exercise!", answerImage: 'nah.jpg', metric: 'danceability', value: .7 },
+            { answerText: "Maybe a little", answerImage: 'little.jpg', metric: 'danceability', value: .6 },
+        ],
+    },
+    {
+        index: 24,
+        nextIndex: 25,
+        questionText: "Pick your favorite post workout pick me up",
+        answerOptions: [
+            { answerText: "Gatorade", answerImage: 'gatorade.jpg', metric: 'danceability', value: .8 },
+            { answerText: "Water, water, water!", answerImage: 'water.jpg', metric: 'tempo', value: 99 },
+            { answerText: "Something Sweet", answerImage: 'sweet.jpg', metric: 'danceability', value: .8 },
+            { answerText: "SALT", answerImage: 'salt.jpg', metric: 'tempo', value: 97},
+        ],
+    },
+    {
+        index: 25,
+        nextIndex: 26,
+        questionText: "What color describes your mood right now?",
+        answerOptions: [
+            { answerText: "Red", answerImage: 'red.png', metric: 'danceability', value: .9},
+            { answerText: "Yellow", answerImage: 'yellow.png', metric: 'danceability', value: .8 },
+            { answerText: "Blue", answerImage: 'blue.png', metric: 'acousticness', value: .6 },
+            { answerText: "Green", answerImage: 'green.png', metric: 'energy', value: .5 },
+        ],
+    },
+    {
+        index: 26,
+        nextIndex: 27,
+        questionText: "How do you take your coffee?",
+        answerOptions: [
+            { answerText: "Black", answerImage: 'blackC.jpg', metric: 'danceability', value: .8 },
+            { answerText: "With a splash of cream", answerImage: 'cream.jpg', metric: 'danceability', value: .6 },
+            { answerText: "The more sugar, the better", answerImage: 'sweetC.jpg', metric: 'danceability', value: .8 },
+            { answerText: "Coffee? Where's the tea?", answerImage: 'tea.jpg', metric: 'danceability', value: .5 },
+        ],
+    },
+    {
+        index: 27,
+        nextIndex: 28,
+        questionText: "What's your go-to shoe when you're not exercising?",
+        answerOptions: [
+            { answerText: "Tennis shoes", answerImage: 'tennis.jpg', metric: 'energy', value: .7 },
+            { answerText: "Heels", answerImage: 'heels.jpg', metric: 'time_signature', value: 4 },
+            { answerText: "Flip Flops", answerImage: 'flipflop.jpeg', metric: 'acousticness', value: .5 },
+            { answerText: "Shoes? Barefoot for sure", answerImage: 'barefoor.jpg', metric: 'danceability', value: .8 },
+        ],
+    },
+    {
+        index: 28,
+        nextIndex: 29,
+        questionText: "Pick a cereal.",
+        answerOptions: [
+            { answerText: "Fruit loops", answerImage: 'fruitloops.jpg', metric: 'danceability', value: .8 },
+            { answerText: "Cheerios", answerImage: 'cheerios.jpg', metric: 'acousticness', value: .6 },
+            { answerText: "Honey Bunches of Oats", answerImage: 'hboa.jpeg', metric: 'danceability', value: .5 },
+            { answerText: "Cinnamon Toast Crunch", answerImage: 'ctc.jpg', metric: 'danceability', value: .8 },
+         
+        ],
+    },
+    {
+        index: 29,
+        nextIndex: 30,
+        questionText: "If you got to rename your WiFi, which one would you pick?",
+        answerOptions: [
+            { answerText: "MySpectrumWiFib7-5G", answerImage: 'wifi.jpg', metric: 'danceability', value: .8 },
+            { answerText: "Bill Wi, the Science Fi", answerImage: 'wifi.jpg', metric: 'energy', value: .6 },
+            { answerText: "Clever Wifi Name", answerImage: 'wifi.jpg', metric: 'danceability', value: .6 },
+            { answerText: "Drop It Like It's Hotspot", answerImage: 'wifi.jpg', metric: 'energy', value: .7 },
+         
+        ],
+    },
+    {
+        index: 30,
+        nextIndex: null,
+        questionText: "And finally, how do you feel about pineapple on pizza?",
+        answerOptions: [
+            { answerText: "Ew!", answerImage: 'noPonP.jpeg', metric: 'danceability', value: .6 },
+            { answerText: "Delicious!", answerImage: 'yesPonP.png', metric: 'danceability', value: .8 },
+            { answerText: "I'm the only person on the planet who doesn't have an opinion on this.", answerImage: 'dontcarePonP.png', metric: 'danceability', value: .6 },
         ],
     },
     {
