@@ -2,6 +2,7 @@ import React from 'react';
 import { debounce } from 'throttle-debounce';
 import { Form, Columns, Media, Box, Section, Container, Tile } from 'react-bulma-components'
 import './Autocomplete.css'
+import { songSearch } from '../API/spotifyAPI';
 
 // use songSearch() and findSongById(id) from API
 
@@ -25,10 +26,27 @@ export default class Autocomplete extends React.Component {
     this._fetch(q);
   };
 
+
   _fetch = q => {
     // Fetch results here
-    const results = ["Jingle Bells", "Christmas Tree", "on the first day of christams"];
-    this.setState({results: results});
+    // const results = ["Jingle Bells", "Christmas Tree", "on the first day of christams"];
+
+    const request = songSearch(q).then( (r) => {
+      const results = [];
+      r.tracks.items.forEach( (track) => {
+        console.log(track.artists[0].name);
+        let o = {
+          name: track.name,
+          artist: track.artists[0].name,
+          id: track.id,
+        }
+
+        results.push(o);
+        this.setState({results: results});
+      });
+    }).catch( (e) => {
+      console.log(e);
+    });
   };
 
   handleSubmit = (s) => {
@@ -59,10 +77,10 @@ export default class Autocomplete extends React.Component {
               this.state.results.map((s, i) => {
                 return (
                 <Columns.Column className="is-full" key={s + i}>
-                  <Box className="suggestion" onClick={(e) => this.handleSubmit(s)}>
+                  <Box className="suggestion" onClick={(e) => this.handleSubmit(s.id)}>
                     <Media>
                       <div>
-                        {s}
+                        {`${s.artist} - ${s.name}`}
                       </div>
                     </Media>
                   </Box>

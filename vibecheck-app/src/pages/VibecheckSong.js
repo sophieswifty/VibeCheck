@@ -2,13 +2,16 @@ import React from 'react';
 import {Heading, Form, Button, Hero} from 'react-bulma-components';
 import Autocomplete from '../components/Autocomplete';
 import SongStatistics from '../components/SongStatistics';
+import { getTracks } from '../API/spotifyAPI';
 
 export default class VibecheckSong extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            songID: '',
             songMetrics: {
                 "search": '',
+                "id": '',
                 "key" : 5,
                 "mode" : 0,
                 "time_signature" : 4,
@@ -27,11 +30,15 @@ export default class VibecheckSong extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(songName) {
+    handleSubmit(songID) {
         // Use track id to get track data here
-        let nsongMetrics = {...this.state.songMetrics};
-        nsongMetrics.search = songName;
-        this.setState({songMetrics: nsongMetrics});
+        const request = get(songID).then( (r) => {
+            console.log(r);
+        })
+
+        // this.setState({songID: songID});
+
+
     }
 
     render() {

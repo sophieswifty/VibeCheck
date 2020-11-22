@@ -73,7 +73,7 @@ const genericRequest = async (query_url) => {
     }
 }
 
-const songSearch = async (searchTerm) => {
+export const songSearch = async (searchTerm) => {
     searchTerm = searchTerm.replace(" ","+");
     const searchUrl = "https://api.spotify.com/v1/search?query=" + searchTerm + "&offset=0&limit=20&type=track";
     try {
