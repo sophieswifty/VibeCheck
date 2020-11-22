@@ -49,7 +49,7 @@ let resetFilter = {
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showResult, setShowResult] = useState(false);
-    const [showQuiz, setShowQuiz] = useState(false);
+    const [showPlaylist, setShowPlaylist] = useState(false);
     const [filter, setFilter] = useState({
         acousticness_low: 0,
         acousticness_high: 0.25,
@@ -100,12 +100,11 @@ function Quiz() {
     const handleRestartClick = () => {
         setCurrentQuestion(0);
         setShowResult(false);
-        setShowQuiz(false)
+        setShowPlaylist(false)
         setFilter(resetFilter);
     }
 
     const generatePlaylist = () => {
-        setShowQuiz(true);
         // modify filter before sending
         let resultPlaylist = filterCandidateSongs(audioBatch, resetFilter);
 
@@ -113,7 +112,9 @@ function Quiz() {
             const URIs = resultPlaylist.map(elt => elt.uri);
             addTracksToPlaylist(playlist.id, URIs).then(() => {
                 getPlaylist(playlist.id).then((final_playlist) => {
+                   
                     setPlaylistData(final_playlist);
+                    setShowPlaylist(true);
                 })
             })
         }).catch((error) => {
@@ -129,7 +130,7 @@ function Quiz() {
 
     return (
         <div>
-            {!showQuiz && <div className="quiz">
+            {!showPlaylist && <div className="quiz">
                 {!showResult && <div className="question-container">
                     <div className='question-section'>
                         <Heading subtitle size={6} className='question-count'>
@@ -156,16 +157,17 @@ function Quiz() {
                         <Box className='result-section'>
                             <Heading className='result-text'>You've got some good vibes...</Heading>
 
+                            <label>Enter a playlist title: </label>
                             <input placeholder="Vibecheck Playlist" type="text" value={playlistName} onChange={handleChange} />
 
                             <Button size="large" fullwidth onClick={generatePlaylist}>Generate playlist!</Button>
                         </Box>
                     </div>
                 }
-                <Button onClick={handleRestartClick}>Restart</Button>
+                <Button className="restart-btn" onClick={handleRestartClick}>Restart</Button>
 
             </div>}
-            {showQuiz && <NewPlaylist restart={handleRestartClick} playlist={playlistData}/>}
+            {showPlaylist && <NewPlaylist restart={handleRestartClick} playlist={playlistData}/>}
         </div>
 
     );

@@ -20,29 +20,29 @@ function NavigationBar(props) {
         <Navbar.Container>
           <Navbar.Item href="./quiz" className="navbar-item-button">
             <Link className="nav-link" renderAs="a" to="./quiz">
-              Quiz
+              QUIZ
               </Link>
           </Navbar.Item>
           <Navbar.Item href="./statistics" className="navbar-item-button">
             <Link className="nav-link" renderAs="a" to="./statistics">
-              Statistics
+              STATISTICS
               </Link>
           </Navbar.Item>
           <Navbar.Item dropdown hoverable className="navbar-item-button">
             <Navbar.Link className="navbar-item-button">
               <Link className="nav-link" to="./vibecheck-song">
-                Vibify...
+                VIBIFY...
                 </Link>
             </Navbar.Link>
             <Navbar.Dropdown className="navbar-item-dropdown">
               <Navbar.Item>
                 <Link renderAs="a" to="./vibecheck-song">
-                  a Song
+                  A SONG
                   </Link>
               </Navbar.Item>
               <Navbar.Item>
                 <Link renderAs="a" to="./vibecheck-playlist">
-                  a Playlist
+                  A PLAYLIST
                   </Link>
               </Navbar.Item>
             </Navbar.Dropdown>
