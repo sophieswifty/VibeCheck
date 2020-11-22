@@ -1,10 +1,5 @@
 import React from 'react'
-<<<<<<< HEAD
 import { Heading, Hero, Container, Section, Box } from 'react-bulma-components';
-=======
-import axios from 'axios'
-import {Heading, Hero} from 'react-bulma-components';
->>>>>>> backend
 import { Link } from 'react-router-dom';
 import ConnectSpotify from '../components/ConnectSpotify'
 import PlaylistReel from '../components/PlaylistReel';
@@ -45,14 +40,6 @@ export class Home extends React.Component {
                     </div>
                 </Container>
                 <br/>
-<<<<<<< HEAD
-=======
-                <Heading>
-                    User Generated Playlists
-                </Heading>
-                <container>
-                </container>
->>>>>>> backend
             </div>);
     }
 }
