@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Container, Heading, Tile, Section, Image, Box } from 'react-bulma-components';
+import UserDataContext from '../context/userdata';
 
 function Statistics(props) {
+    const [userData, setUserData] = useContext(UserDataContext);
 
     return (
         <div>
             <Section>
             <Heading subtitle>
-                    Listening statistics for props.username
+                    Listening statistics for {userData.display_name}
                 </Heading>
             <Box>
                 <Tile kind="ancestor">
