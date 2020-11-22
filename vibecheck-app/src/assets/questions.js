@@ -147,10 +147,10 @@ let questions = [
         nextIndex: 13,
         questionText: "Pick a candy.",
         answerOptions: [
-            { answerText: "Skittles", answerImage: 'q1_party.jpeg'},
-            { answerText: "Kit-Kat", answerImage: 'q1_study.jpeg'},
-            { answerText: "Snickers", answerImage: 'q1_study.jpeg'},
-            { answerText: "Nerds", answerImage: 'q1_study.jpeg'},
+            { answerText: "Skittles", answerImage: 'https://media2.s-nbcnews.com/j/newscms/2018_04/1313196/skittles_flavors_180125_tease_34a2498693efe14b41f71f464d96cc33.social_share_1200x630_center.jpg'},
+            { answerText: "Kit-Kat", answerImage: 'https://www.hersheys.com/content/dam/smartlabelproductsimage/kitkat/00034000002467-0010.png'},
+            { answerText: "Snickers", answerImage: 'https://images.heb.com/is/image/HEBGrocery/000121400'},
+            { answerText: "Nerds", answerImage: 'https://images-na.ssl-images-amazon.com/images/I/81b37Ux9IbL._SX466_.jpg'},
         ],
     },
     {

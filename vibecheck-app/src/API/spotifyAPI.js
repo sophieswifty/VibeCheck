@@ -98,6 +98,22 @@ const getArtist = async (artist_id) => {
     }
 }
 
+const getTrack = async (track_id) => {
+    const url = "https://api.spotify.com/v1/tracks/" + track_id;
+    try {
+        const res = await axios({
+            method: 'get',
+            url: url,
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+        return res.data;
+    } catch (e) {
+        return e;
+    }
+}
+
 const getTracks = async (track_ids) => {
     var url = "https://api.spotify.com/v1/tracks/?ids=" + track_ids[0];
     for (var i = 1; i < track_ids.length; i++) {
