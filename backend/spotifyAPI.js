@@ -1,7 +1,5 @@
-const axios = require('axios').default;
-
 const id = "c712506f4ad74dcc9dbf58efc645a833";
-const token = "BQDG40mhpyQG3sZ23phKHdE_O7IbCpK_ppKfgL-rX6iccT-o-ssFxcvrMps4jUS08uLMPqpKzbE59f_mZVunv7xfSlIGi5lewAobiDK8Ad2-QplRR3ca_vUSJgzDco_DbOxW89vbcRfRIEs";
+const token = "BQBK6wjpRT8lhbUgHQVaEsVNAl9nGVM_4FMw4Yl_VVbeOps-wTmxVwTu_RERV8OJrqJCHMQMlKCt3MpOhD8gNYlVhaH3ozoTXRtANFS9qY1TbdXCjK4f6mn_mZc03uW7Wtq6NMwY2m5KRbQ";
 const sample_song = "11dFghVXANMlKmJXsNCbNl";
 const sample_song_b = "5lRzWDEe7UuedU2QPsFg0K";
 const sample_artist = "0OdUWJ0sBjDrqHygGUXeCF";
@@ -11,9 +9,6 @@ const authenticated = false;
 function getAccessToken() {
     var url = window.location;
     return new URLSearchParams(url.search).get("access_token");
-}
-export const help = function() {
-    return 'hi';
 }
 
 function generateRandomString(length) {
@@ -62,6 +57,9 @@ const getArtist = async (artist_id) => {
         return e;
     }
 }
+export const help = async () => {
+    return 'hi';
+}
 
 export const getTracks = async (track_ids) => {
     var url = "https://api.spotify.com/v1/tracks/?ids=" + track_ids[0];
@@ -77,7 +75,6 @@ export const getTracks = async (track_ids) => {
                 'Authorization': 'Bearer ' + token
             }
         });
-        console.log(res.data.tracks[0].album.images);
         return res.data;
     } catch (e) {
         return e;

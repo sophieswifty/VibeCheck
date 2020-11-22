@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import {Heading, Hero} from 'react-bulma-components';
 import { Link } from 'react-router-dom';
 import ConnectSpotify from '../components/ConnectSpotify'
@@ -24,12 +25,8 @@ export class Home extends React.Component {
                 <Heading>
                     User Generated Playlists
                 </Heading>
-                <p>
-                    Here is where we show all the playlists other users have generated using our website. This will
-                    require using the backend. We will save any playlists we generate on the backend and then display them here. 
-                    Hopefully this will satisfie the requirement for using the backend. We could also include a like system
-                    where user can like playlists idk.
-                </p>
+                <container>
+                </container>
             </div>);
     }
 }

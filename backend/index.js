@@ -4,15 +4,24 @@ const Playlist = require('./Playlist.js');
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
+var cors = require('cors')
+
+app.use(cors())
+
 app.get('/playlists', (req, res) => {
     res.json(Playlist.getAllIDs());
+    return;
+});
+
+app.get('/playlists/all', (req, res) => {
+    res.json(Playlist.getAllPlaylists());
     return;
 });
 
 app.get('/playlists/:id', (req, res) => {
     let p = Playlist.findByID(req.params.id);
     if (p == null) {
-        req.status(404).send('Playlist not found');
+        res.status(404).send('Playlist not found');
         return
     }
     res.json(p);
@@ -29,7 +38,32 @@ app.post('/playlists', (req, res) => {
     return res.json(playlist);
 });
 
-const port = 3000;
+app.put('/playlists/:id', (req, res) => {
+    let p = Playlist.findByID(req.params.id);
+    if (p == null) {
+        res.status(404).send('Playlist not found');
+        return
+    }
+    let {username, tracks} = req.body;
+    p.username = username;
+    p.tracks = tracks;
+    p.update();
+
+    res.json(p);
+});
+
+
+app.delete('/playlists/:id', (req, res) => {
+    let p = Playlist.findByID(req.params.id);
+    if (p == null) {
+        res.status(404).send('Playlist not found');
+        return
+    }
+    p.delete();
+    res.json(true);
+});
+
+const port = 3030;
 app.listen(port, () => {
-    console.log('tutorial');
+    console.log(`Local Host ${port} is running`);
 })
