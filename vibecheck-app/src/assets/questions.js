@@ -11,9 +11,57 @@ let questions = [
         index: 0,
         questionText: "What are you doing?",
         answerOptions: [
+            // accousticness: 0.05
+            // accousticness range: 0.05
+            // danceability: 0.8
+            // danceability range: 0.2
+            // energy: 0.8
+            // energy range: 0.2
+            // instrumentalness: 0.2
+            // instrumentalness range: 0.2
+            // speechiness: 0.33
+            // speechiness range: 0.33
+            // valence: 0.7
+            // valence range: 0.3
             { answerText: "Getting turnt", answerImage: 'q1_party.jpeg', nextIndex: 1, metric: 'energy_high', value: 1 },
+            // accousticness: 0.6
+            // accousticness range: 0.4
+            // danceability: 0.1
+            // danceability range: 0.1
+            // energy: 0.25
+            // energy range: 0.25
+            // instrumentalness: 0.5
+            // instrumentalness range: 0.5
+            // speechiness: 0.2
+            // speechiness range: 0.2
+            // valence: 0.5
+            // valence range: 0.15
             { answerText: "Study mode", answerImage: 'q1_study.jpeg',  nextIndex: 11, metric: 'energy_low', value: -0.5 },
+            // accousticness: 0.05
+            // accousticness range: 0.05
+            // danceability: 0.8
+            // danceability range: 0.2
+            // energy: 0.8
+            // energy range: 0.2
+            // instrumentalness: 0.2
+            // instrumentalness range: 0.2
+            // speechiness: 0.33
+            // speechiness range: 0.33
+            // valence: 0.8
+            // valence range: 0.2
             { answerText: "Healthicizing", answerImage: 'q1_run.jpeg',  nextIndex: 21, metric: 'energy_high', value: 1.5  },
+            // accousticness: 0.25
+            // accousticness range: 0.25
+            // danceability: 0.2
+            // danceability range: 0.2
+            // energy: 0.2
+            // energy range: 0.2
+            // instrumentalness: 0.4
+            // instrumentalness range: 0.4
+            // speechiness: 0.33
+            // speechiness range: 0.33
+            // valence: 0.3
+            // valence range: 0.3
             { answerText: "Just vibing.", answerImage: 'q1_vibes.jpeg',  nextIndex: 31, metric: 'energy_low', value: -1  },
         ]
 
@@ -136,7 +184,7 @@ let questions = [
         nextIndex: 12,
         questionText: "How are you studying?",
         answerOptions: [
-            { answerText: "In a group", answerImage: 'https://images.unsplash.com/photo-1460518451285-97b6aa326961?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80'},
+            { answerText: "In a group", answerImage: 'https://images.unsplash.com/photo-1460518451285-97b6aa326961?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80'}, // up: energy, danceability, valence
             { answerText: "By myself", answerImage: 'https://images.unsplash.com/photo-1593698054469-2bb6fdf4b512?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80'},
         ],
     },
@@ -156,10 +204,10 @@ let questions = [
         nextIndex: 14,
         questionText: "What subject are you studying?",
         answerOptions: [
-            { answerText: "Humanities", answerImage: 'q1_party.jpeg'},
-            { answerText: "STEM", answerImage: 'q1_study.jpeg'},
-            { answerText: "Art", answerImage: 'q1_party.jpeg'},
-            { answerText: "Other", answerImage: 'q1_study.jpeg'},
+            { answerText: "Humanities", answerImage: 'https://s3.amazonaws.com/photos.bcheights.com/wp-content/uploads/2019/09/03123633/opinions-36.png'},
+            { answerText: "STEM", answerImage: 'https://www.iberdrola.com/wcorp/gc/prod/en_US/comunicacion/profesionales_stem_1_res/STEM_gris_746x419.jpg'},
+            { answerText: "Art", answerImage: 'https://stvp-static-prod.s3.amazonaws.com/uploads/sites/2/2016/08/eCorner_Arts_Tech5.jpg'},
+            { answerText: "Other", answerImage: 'https://cdn.shoplightspeed.com/shops/610593/files/2916194/mystery-box-mystery-box-7500.jpg'},
         ],
     },
     {
@@ -167,10 +215,10 @@ let questions = [
         nextIndex: 15,
         questionText: "What is your dream vacation spot?",
         answerOptions: [
-            { answerText: "Tanning in the Bahamas", answerImage: 'q1_party.jpeg'},
-            { answerText: "Skiing in the Alps", answerImage: 'q1_study.jpeg'},
-            { answerText: "Sightseeing in Tokyo", answerImage: 'q1_study.jpeg'},
-            { answerText: "Road tripping across America", answerImage: 'q1_study.jpeg'},
+            { answerText: "Tanning in the Bahamas", answerImage: 'https://www.travelweekly.com/uploadedImages/All_TW_Art/2020/0727/T0102BAHAMAS_JUNKAROO_HR.jpg?n=5999&width=1540&height=866&mode=crop&Anchor=MiddleCenter'},
+            { answerText: "Skiing in the Alps", answerImage: 'https://www.worldatlas.com/upload/2a/cc/96/alps-mountain-range-europe.jpg'},
+            { answerText: "Sightseeing in Tokyo", answerImage: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/4b/5d/10/caption.jpg?w=500&h=300&s=1&cx=1005&cy=690&chk=v1_2ed86f729380ea073850'},
+            { answerText: "Road tripping across America", answerImage: 'https://s3.amazonaws.com/fathom_media/photos/usa-cross-country-road-trip-route-6-main.jpg.1200x800_q85_crop.jpg'},
         ],
     },
     {
@@ -178,10 +226,10 @@ let questions = [
         nextIndex: 16,
         questionText: "Will you pass your next test?",
         answerOptions: [
-            { answerText: "Of course", answerImage: 'q1_party.jpeg'},
-            { answerText: "Probably not", answerImage: 'q1_study.jpeg'},
-            { answerText: "I don't care", answerImage: 'q1_study.jpeg'},
-            { answerText: "Oh god I hope so", answerImage: 'q1_study.jpeg'},
+            { answerText: "Of course", answerImage: 'https://img.jakpost.net/c/2017/11/30/2017_11_30_36667_1512028887._large.jpg'},
+            { answerText: "Probably not", answerImage: 'https://i.imgur.com/FXLThSZ.jpg'},
+            { answerText: "I don't care", answerImage: 'https://somersetsentinel.com/wp-content/uploads/2018/04/apathy-900x596.png'},
+            { answerText: "Oh god I hope so", answerImage: 'https://our.warwick.ac.uk/wp-content/uploads/2020/01/existential.jpeg'},
         ],
     },
     {
@@ -200,10 +248,10 @@ let questions = [
         nextIndex: 18,
         questionText: "Where do you study best?",
         answerOptions: [
-            { answerText: "In my room", answerImage: 'q1_party.jpeg'},
-            { answerText: "At the library", answerImage: 'q1_study.jpeg'},
-            { answerText: "In front of the tv", answerImage: 'q1_study.jpeg'},
-            { answerText: "In a sunny park", answerImage: 'q1_study.jpeg'},
+            { answerText: "In my room", answerImage: 'https://www.timeshighereducation.com/sites/default/files/styles/the_breaking_news_image_style/public/istock-1093929298.jpg?itok=-ASwUBzQ'},
+            { answerText: "At the library", answerImage: 'https://cdn7.dissolve.com/p/D1061_242_525/D1061_242_525_1200.jpg'},
+            { answerText: "In front of the tv", answerImage: 'https://theenrichery.com/wp-content/uploads/2018/01/Distractions.jpg'},
+            { answerText: "In a sunny park", answerImage: 'https://www.faulkner.edu/wp-content/uploads/studying-in-the-park.jpg'},
         ],
     },
     {

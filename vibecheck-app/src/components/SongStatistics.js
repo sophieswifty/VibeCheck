@@ -35,8 +35,6 @@ export default class SongStatistics extends React.Component {
     }
 
     // CLick on image, show stats. Trying to get this to wor but giving up it s 2am
-    
-
     render() {
         return (
         
