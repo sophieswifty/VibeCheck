@@ -283,7 +283,7 @@ const getUserTopTracksData = async () => {
     });
 }
 
-const getUserTopArtists = async (limit, offset) => {
+export const getUserTopArtists = async (limit, offset) => {
     try {
         const res = await axios({
             method: 'get',
