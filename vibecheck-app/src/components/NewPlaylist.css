@@ -29,6 +29,10 @@
       margin: 0px;
   }
 
+  .playlist-info button {
+    margin-right: 10px;
+  }
+
   /* Here's some environment setup,
    scroll down for the interesting parts */
 
