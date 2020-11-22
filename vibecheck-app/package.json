@@ -49,20 +49,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> commit
   },
   "devDependencies": {
     "file-loader": "^6.2.0",
     "url-loader": "^4.1.1"
-<<<<<<< HEAD
-=======
->>>>>>> diweudn
-=======
->>>>>>> 264e26ca7f52727d27dc9554d0da3210a8d4d83e
->>>>>>> commit
   }
 }
