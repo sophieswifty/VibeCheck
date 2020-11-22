@@ -101,7 +101,6 @@ const getArtist = async (artist_id) => {
     }
 }
 
-const getTrack = async (track_id) => {
 export const getTrack = async (track_id) => {
     const url = "https://api.spotify.com/v1/tracks/" + track_id;
     try {
@@ -118,7 +117,7 @@ export const getTrack = async (track_id) => {
     }
 }
 
-const getTracks = async (track_ids) => {
+export const getTracks = async (track_ids) => {
     var url = "https://api.spotify.com/v1/tracks/?ids=" + track_ids[0];
     for (var i = 1; i < track_ids.length; i++) {
         url += ",";
@@ -534,7 +533,7 @@ const testParallelism = async () => {
     console.log("Parallel took " + (t3-t2) + " milliseconds");
 }
 
-const createPlaylist = async (name) => {
+export const createPlaylist = async (name) => {
     const userData = await getUserData();
     try {
         const res = await axios({
@@ -554,7 +553,7 @@ const createPlaylist = async (name) => {
     }
 }
 
-const addTracksToPlaylist = async (playlist_id, track_uris) => {
+export const addTracksToPlaylist = async (playlist_id, track_uris) => {
     let url = "https://api.spotify.com/v1/playlists/" + playlist_id + "/tracks?uris=" + track_uris[0];
     for (let i = 1; i < track_uris.length; i++) {
         url += "," + track_uris[i];
@@ -596,7 +595,7 @@ export const practiceWaiting = async () => {
     }
 }
 
-const getPlaylist = async (playlist_id) => {
+export const getPlaylist = async (playlist_id) => {
     const queryUrl = "https://api.spotify.com/v1/playlists/" + playlist_id;
     try {
         const res = await axios({
@@ -780,8 +779,6 @@ const filter = {
     valence_low: 0.5,
     valence_high: 0.75
 };
-
-}
 
 
 // getAllUserArtists().then((data) => {

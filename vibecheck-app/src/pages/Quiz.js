@@ -1,24 +1,24 @@
 import React, { useState, useContext } from 'react';
 import './Quiz.css';
 import questions from '../assets/questions';
-import { Button, Box, Heading } from 'react-bulma-components';
-import { fetchCandidateSongs, filterCandidateSongs, makePlaylist} from '../API/spotifyAPI';
+import { Button, Box, Heading, Field, Label, Control, Input, Form } from 'react-bulma-components';
+import { fetchCandidateSongs, filterCandidateSongs, makePlaylist } from '../API/spotifyAPI';
 import NewPlaylist from '../components/NewPlaylist';
 import { AudioBatchContext } from '../context/audiobatch';
 
-    // NEW FILTER:
-    // acousticness: 0,
-    // danceability: 0,
-    // duration_ms: 0,
-    // energy: 0,
-    // instrumentalness: 0,
-    // liveness: 0,
-    // loudness: 0,
-    // mode: 0,
-    // speechiness: 0,
-    // tempo: 0,
-    // time_signature: 0,
-    // valence_high: 0
+// NEW FILTER:
+// acousticness: 0,
+// danceability: 0,
+// duration_ms: 0,
+// energy: 0,
+// instrumentalness: 0,
+// liveness: 0,
+// loudness: 0,
+// mode: 0,
+// speechiness: 0,
+// tempo: 0,
+// time_signature: 0,
+// valence_high: 0
 
 let resetFilter = {
     acousticness_low: 0,
@@ -75,8 +75,10 @@ function Quiz() {
         valence_low: 0.5,
         valence_high: 0.75
     });
-   
+
     const [audioBatch, setAudioBatch] = useContext(AudioBatchContext);
+    const [playlistName, setPlaylistName] = useState("Vibecheck Playlist");
+    const [playlistData, setPlaylistData] = useState({});
 
     // Using filter as a global var which means when the user goes 
 
@@ -102,52 +104,65 @@ function Quiz() {
         setFilter(resetFilter);
     }
 
-    const generateQuiz = () => {
+    let resultPlaylist = {};
+
+    const generatePlaylist = () => {
         setShowQuiz(true);
         // modify filter before sending
         let resultSongs = filterCandidateSongs(audioBatch, resetFilter);
-        makePlaylist(resultSongs, "vibecheck", (playlist)=>{console.log(playlist)}).then((data)=> {
-            console.log(data);
+        const playlist = makePlaylist(resultSongs, playlistName, (playlist) => { console.log(playlist) }).then((data) => {
+            return data;
         });
+    }
+
+    // const storePlaylist = (playlist) => {
+    //     setPlaylistData(playlist)
+    // }
+
+    function handleChange(e) {
+        setPlaylistName(e.target.value);
     }
 
     return (
         <div>
-      {!showQuiz &&  <div className="quiz">
-            {!showResult && <div className="question-container">
-                <div className='question-section'>
-                    <Heading subtitle size={6} className='question-count'>
-                        <span>Question {currentQuestion}</span>/{questions.length}
-                    </Heading>
-                    <Heading className='question-text'>{questions[currentQuestion].questionText}</Heading>
+            {!showQuiz && <div className="quiz">
+                {!showResult && <div className="question-container">
+                    <div className='question-section'>
+                        <Heading subtitle size={6} className='question-count'>
+                            <span>Question {currentQuestion}</span>/{questions.length}
+                        </Heading>
+                        <Heading className='question-text'>{questions[currentQuestion].questionText}</Heading>
+                    </div>
+                    <div className='answer-section grid-container'>
+                        {!showResult && questions[currentQuestion].answerOptions.map((answerOption, index) => (
+                            <div className='grid-box' key={questions[currentQuestion].id}>
+                                <button onClick={() => handleAnswerOptionClick(answerOption)}>
+                                    <img src={'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'} alt="" />
+                                    {answerOption.answerText}
+                                </button>
+                            </div>
+                        ))
+                        }
+                    </div>
                 </div>
-                <div className='answer-section grid-container'>
-                    {!showResult && questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                        <div className='grid-box' key={questions[currentQuestion].id}>
-                            <button onClick={() => handleAnswerOptionClick(answerOption)}>
-                                <img src={'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'} alt="" />
-                                {answerOption.answerText}
-                            </button>
-                        </div>
-                    ))
-                    }
-                </div>
-                </div>
-            }
+                }
 
-            {showResult &&
+                {showResult &&
                     <div className="result-container">
                         <Box className='result-section'>
                             <Heading className='result-text'>You've got some good vibes...</Heading>
-                            <Button size="large" fullwidth onClick={generateQuiz}>Generate playlist!</Button>
+
+                            <input placeholder="Vibecheck Playlist" type="text" value={playlistName} onChange={handleChange} />
+
+                            <Button size="large" fullwidth onClick={generatePlaylist}>Generate playlist!</Button>
                         </Box>
                     </div>
                 }
                 <Button onClick={handleRestartClick}>Restart</Button>
 
             </div>}
-        {showQuiz && <NewPlaylist restart={handleRestartClick}/>}
-            </div>
+            {showQuiz && <NewPlaylist restart={handleRestartClick} playlist={resultPlaylist}/>}
+        </div>
 
     );
 }

@@ -1,10 +1,75 @@
-#album-image-tile {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-}
+.song-image {
+    height: 400px;
+    width: 400px;
+  }
+  
+  .song-image img {
+    max-height: 100%;
+    max-width: 100%;
+  }
 
-#album-img {
-    margin-left: 100px;
-    /* margin-right: auto; */
-}
+  .song-image button {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  /* The animation starts here */
+  .animated-box {
+    position: relative;
+  }
+
+  .chart-container {
+   height: 100%;
+  }
+
+  .chart {
+    padding-bottom: 20px;
+  }
+
+  .animated-box:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius:1px;
+    background: linear-gradient(120deg, rgb(78, 255, 149), rgb(255, 213, 73), rgb(62, 255, 207));
+    background-size: 300% 300%;
+    clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
+  }
+  
+  .animated-box.in:after {
+    animation: frame-enter 1s forwards ease-in-out reverse, gradient-animation 4s ease-in-out infinite;
+  }
+  
+  /* motion */
+  @keyframes gradient-animation {
+    0% {
+      background-position: 15% 0%;
+    }
+    50% {
+      background-position: 85% 100%;
+    }
+    100% {
+      background-position: 15% 0%;
+    }
+  }
+  
+  @keyframes frame-enter {
+    0% {
+      clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
+    }
+    25% {
+      clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 100%, 100% 100%, 100% 0%, 0% 0%);
+    }
+    50% {
+      clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, 100% 0%, 0% 0%);
+    }
+    75% {
+      -webkit-clip-path: polygon(0% 100%, 3px 100%, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 0%, 0% 0%);
+    }
+    100% {
+      -webkit-clip-path: polygon(0% 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 0% 100%);
+    }
+  }
+  

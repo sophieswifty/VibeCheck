@@ -1,7 +1,7 @@
 import React from 'react';
 import './NavigationBar.css'
 import { Link } from 'react-router-dom';
-import { Navbar } from 'react-bulma-components';
+import { Navbar, Loader, Heading } from 'react-bulma-components';
 import Logout from './Logout';
 
 function NavigationBar(props) {
@@ -14,7 +14,7 @@ function NavigationBar(props) {
             {/* <img src="./temp_vc.png" width="200" /> */}
             <div className="dash-logo"><h1>▼ibec❚❚eck</h1></div>
           </Link>
-          </div>
+        </div>
       </Navbar.Brand>
       <Navbar.Menu className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
         <Navbar.Container>
@@ -49,20 +49,24 @@ function NavigationBar(props) {
           </Navbar.Item>
         </Navbar.Container>
         <Navbar.Container position="end">
-          <Navbar.Item className='name-no-hover'>
-          <Link renderAs="a" to="./profile">
-            {props.username}
+          {props.loadingData && <Navbar.Item className='name-no-hover'>
+            <p>Syncing vibes with {props.username}</p>
+            <Loader />
+          </Navbar.Item>}
+          {!props.loadingData && <Navbar.Item className='name-no-hover'>
+            <Link renderAs="a" to="./profile">
+              {props.username}
             </Link>
-          </Navbar.Item>
+          </Navbar.Item>}
           <Navbar.Item className='btn-no-hover'>
             <Logout />
           </Navbar.Item>
-      
+
         </Navbar.Container>
       </Navbar.Menu>
       <Navbar.Burger className={`navbar-burger burger ${isActive ? 'is-active' : ''}`} onClick={() => {
-            setisActive(!isActive)
-          }}/>
+        setisActive(!isActive)
+      }} />
     </Navbar>
   );
 }
