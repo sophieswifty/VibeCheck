@@ -69,7 +69,7 @@ const genericRequest = async (query_url) => {
     }
 }
 
-const songSearch = async (searchTerm) => {
+export const songSearch = async (searchTerm) => {
     searchTerm = searchTerm.replace(" ","+");
     const searchUrl = "https://api.spotify.com/v1/search?query=" + searchTerm + "&offset=0&limit=20&type=track";
     try {
@@ -102,6 +102,7 @@ const getArtist = async (artist_id) => {
 }
 
 const getTrack = async (track_id) => {
+export const getTrack = async (track_id) => {
     const url = "https://api.spotify.com/v1/tracks/" + track_id;
     try {
         const res = await axios({
@@ -779,6 +780,9 @@ const filter = {
     valence_low: 0.5,
     valence_high: 0.75
 };
+
+}
+
 
 // getAllUserArtists().then((data) => {
 //     getTopSongsByArtists(data).then((tracks) => {

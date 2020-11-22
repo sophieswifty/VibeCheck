@@ -1,5 +1,3 @@
-import { q1_run
-} from './q1_run.jpeg';
 /*
 0 - branch from here
 1-10 - party
@@ -243,65 +241,59 @@ let questions = [
     },
     {
         index: 21,
-        nextIndex: 22,
         questionText: "Is this a group or solo workout sesh?",
         answerOptions: [
-            { answerText: "Solo", answerImage: 'solo+workout.jpg', metric: 'energy', value: .5},
-            { answerText: "Group", answerImage: 'groupWork.jpg', metric: 'danceability', value: .8},
+            { answerText: "Solo", answerImage: 'solo+workout.jpg', nextIndex: 22, metric: 'energy', value: .5},
+            { answerText: "Group", answerImage: 'groupWork.jpg', nextIndex: 22, metric: 'danceability', value: .8},
         ],
     },
     {
         index: 22,
-        nextIndex: 23,
         questionText: "What kind of exercise are you doing?",
         answerOptions: [
-            { answerText: "Cardio", answerImage: 'cardio.jpg', metric: 'danceability', value: .9 },
-            { answerText: "Lifting weights", answerImage: 'groupWork.jpg', metric: 'energy', value: .6 },
-            { answerText: "Yoga", answerImage: 'yoga.jpg', metric: 'acousticness', value: .7 },
-            { answerText: "Just walking", answerImage: 'walking.jpg', metric: 'danceability', value: .5 },
+            { answerText: "Cardio", answerImage: 'cardio.jpg',   nextIndex: 23, metric: 'danceability', value: .9 },
+            { answerText: "Lifting weights", answerImage: 'groupWork.jpg',   nextIndex: 23, metric: 'energy', value: .6 },
+            { answerText: "Yoga", answerImage: 'yoga.jpg',   nextIndex: 23,metric: 'acousticness', value: .7 },
+            { answerText: "Just walking", answerImage: 'walking.jpg',   nextIndex: 23, metric: 'danceability', value: .5 },
         ],
     },
     {
         index: 23,
-        nextIndex: 24,
         questionText: "Do you need motivation for the exercise?",
         answerOptions: [
-            { answerText: "PLEASE", answerImage: 'yeah.jpg', metric: 'energy', value: .7 },
-            { answerText: "Nah, I love to exercise!", answerImage: 'nah.jpg', metric: 'danceability', value: .7 },
-            { answerText: "Maybe a little", answerImage: 'little.jpg', metric: 'danceability', value: .6 },
+            { answerText: "PLEASE", answerImage: 'yeah.jpg',  nextIndex: 24, metric: 'energy', value: .7 },
+            { answerText: "Nah, I love to exercise!", answerImage: 'nah.jpg',  nextIndex: 24, metric: 'danceability', value: .7 },
+            { answerText: "Maybe a little", answerImage: 'little.jpg',  nextIndex: 24, metric: 'danceability', value: .6 },
         ],
     },
     {
         index: 24,
-        nextIndex: 25,
         questionText: "Pick your favorite post workout pick me up",
         answerOptions: [
-            { answerText: "Gatorade", answerImage: 'gatorade.jpg', metric: 'danceability', value: .8 },
-            { answerText: "Water, water, water!", answerImage: 'water.jpg', metric: 'tempo', value: 99 },
-            { answerText: "Something Sweet", answerImage: 'sweet.jpg', metric: 'danceability', value: .8 },
-            { answerText: "SALT", answerImage: 'salt.jpg', metric: 'tempo', value: 97},
+            { answerText: "Gatorade", answerImage: 'gatorade.jpg', nextIndex: 25, metric: 'danceability', value: .8 },
+            { answerText: "Water, water, water!", answerImage: 'water.jpg', nextIndex: 25, metric: 'tempo', value: 99 },
+            { answerText: "Something Sweet", answerImage: 'sweet.jpg', nextIndex: 25, metric: 'danceability', value: .8 },
+            { answerText: "SALT", answerImage: 'salt.jpg', nextIndex: 25, metric: 'tempo', value: 97},
         ],
     },
     {
         index: 25,
-        nextIndex: 26,
         questionText: "What color describes your mood right now?",
         answerOptions: [
-            { answerText: "Red", answerImage: 'red.png', metric: 'danceability', value: .9},
-            { answerText: "Yellow", answerImage: 'yellow.png', metric: 'danceability', value: .8 },
-            { answerText: "Blue", answerImage: 'blue.png', metric: 'acousticness', value: .6 },
-            { answerText: "Green", answerImage: 'green.png', metric: 'energy', value: .5 },
+            { answerText: "Red", answerImage: 'red.png', nextIndex: 26, metric: 'danceability', value: .9},
+            { answerText: "Yellow", answerImage: 'yellow.png', nextIndex: 26, metric: 'danceability', value: .8 },
+            { answerText: "Blue", answerImage: 'blue.png', nextIndex: 26, metric: 'acousticness', value: .6 },
+            { answerText: "Green", answerImage: 'green.png', nextIndex: 26, metric: 'energy', value: .5 },
         ],
     },
     {
         index: 26,
-        nextIndex: 27,
         questionText: "How do you take your coffee?",
         answerOptions: [
-            { answerText: "Black", answerImage: 'blackC.jpg', metric: 'danceability', value: .8 },
-            { answerText: "With a splash of cream", answerImage: 'cream.jpg', metric: 'danceability', value: .6 },
-            { answerText: "The more sugar, the better", answerImage: 'sweetC.jpg', metric: 'danceability', value: .8 },
-            { answerText: "Coffee? Where's the tea?", answerImage: 'tea.jpg', metric: 'danceability', value: .5 },
+            { answerText: "Black", answerImage: 'blackC.jpg',  nextIndex: 27, metric: 'danceability', value: .8 },
+            { answerText: "With a splash of cream", answerImage: 'cream.jpg',  nextIndex: 27, metric: 'danceability', value: .6 },
+            { answerText: "The more sugar, the better", answerImage: 'sweetC.jpg',  nextIndex: 27, metric: 'danceability', value: .8 },
+            { answerText: "Coffee? Where's the tea?", answerImage: 'tea.jpg',  nextIndex: 27, metric: 'danceability', value: .5 },
         ],
     },
     {
@@ -309,79 +301,40 @@ let questions = [
         nextIndex: 28,
         questionText: "What's your go-to shoe when you're not exercising?",
         answerOptions: [
-            { answerText: "Tennis shoes", answerImage: 'tennis.jpg', metric: 'energy', value: .7 },
-            { answerText: "Heels", answerImage: 'heels.jpg', metric: 'time_signature', value: 4 },
-            { answerText: "Flip Flops", answerImage: 'flipflop.jpeg', metric: 'acousticness', value: .5 },
-            { answerText: "Shoes? Barefoot for sure", answerImage: 'barefoor.jpg', metric: 'danceability', value: .8 },
+            { answerText: "Tennis shoes", answerImage: 'tennis.jpg',  nextIndex: 28, metric: 'energy', value: .7 },
+            { answerText: "Heels", answerImage: 'heels.jpg',  nextIndex: 28, metric: 'time_signature', value: 4 },
+            { answerText: "Flip Flops", answerImage: 'flipflop.jpeg',  nextIndex: 28, metric: 'acousticness', value: .5 },
+            { answerText: "Shoes? Barefoot for sure", answerImage: 'barefoot.jpg',  nextIndex: 28, metric: 'danceability', value: .8 },
         ],
     },
     {
         index: 28,
-        nextIndex: 29,
         questionText: "Pick a cereal.",
         answerOptions: [
-            { answerText: "Fruit loops", answerImage: 'fruitloops.jpg', metric: 'danceability', value: .8 },
-            { answerText: "Cheerios", answerImage: 'cheerios.jpg', metric: 'acousticness', value: .6 },
-            { answerText: "Honey Bunches of Oats", answerImage: 'hboa.jpeg', metric: 'danceability', value: .5 },
-            { answerText: "Cinnamon Toast Crunch", answerImage: 'ctc.jpg', metric: 'danceability', value: .8 },
+            { answerText: "Fruit loops", answerImage: 'fruitloops.jpg', nextIndex: 29, metric: 'danceability', value: .8 },
+            { answerText: "Cheerios", answerImage: 'cheerios.jpg', nextIndex: 29, metric: 'acousticness', value: .6 },
+            { answerText: "Honey Bunches of Oats", answerImage: 'hboa.jpeg', nextIndex: 29, metric: 'danceability', value: .5 },
+            { answerText: "Cinnamon Toast Crunch", answerImage: 'ctc.jpg', nextIndex: 29, metric: 'danceability', value: .8 },
         ],
     },
     {
         index: 29,
-        nextIndex: 30,
         questionText: "If you got to rename your WiFi, which one would you pick?",
         answerOptions: [
-            { answerText: "MySpectrumWiFib7-5G", answerImage: 'wifi.jpg', metric: 'danceability', value: .8 },
-            { answerText: "Bill Wi, the Science Fi", answerImage: 'wifi.jpg', metric: 'energy', value: .6 },
-            { answerText: "Clever Wifi Name", answerImage: 'wifi.jpg', metric: 'danceability', value: .6 },
-            { answerText: "Drop It Like It's Hotspot", answerImage: 'wifi.jpg', metric: 'energy', value: .7 },
+            { answerText: "MySpectrumWiFib7-5G", answerImage: 'wifi.jpg', nextIndex: 30, metric: 'danceability', value: .8 },
+            { answerText: "Bill Wi, the Science Fi", answerImage: 'wifi.jpg', nextIndex: 30, metric: 'energy', value: .6 },
+            { answerText: "Clever Wifi Name", answerImage: 'wifi.jpg', nextIndex: 30, metric: 'danceability', value: .6 },
+            { answerText: "Drop It Like It's Hotspot", answerImage: 'wifi.jpg', nextIndex: 30, metric: 'energy', value: .7 },
          
         ],
     },
     {
         index: 30,
-        nextIndex: null,
         questionText: "And finally, how do you feel about pineapple on pizza?",
         answerOptions: [
-            { answerText: "Ew!", answerImage: 'noPonP.jpeg', metric: 'danceability', value: .6 },
-            { answerText: "Delicious!", answerImage: 'yesPonP.png', metric: 'danceability', value: .8 },
-            { answerText: "I'm the only person on the planet who doesn't have an opinion on this.", answerImage: 'dontcarePonP.png', metric: 'danceability', value: .6 },
-        ],
-    },
-    {
-        index: 41,
-        nextIndex: 42,
-        questionText: "Use your location?",
-        answerOptions: [
-            { answerText: "Yes", answerImage: 'q1_party.jpeg'},
-            { answerText: "No", answerImage: 'q1_study.jpeg'},
-        ],
-    },
-    {
-        index: 12,
-        nextIndex: 13,
-        questionText: "Use the weather?",
-        answerOptions: [
-            { answerText: "Yes", answerImage: 'q1_party.jpeg'},
-            { answerText: "No", answerImage: 'q1_study.jpeg'},
-        ],
-    },
-    {
-        index: 13,
-        nextIndex: 14,
-        questionText: "Use the time?",
-        answerOptions: [
-            { answerText: "Yes", answerImage: 'q1_party.jpeg'},
-            { answerText: "No", answerImage: 'q1_study.jpeg'},
-        ],
-    },
-    {
-        index: 14,
-        nextIndex: null,
-        questionText: "Use the time?",
-        answerOptions: [
-            { answerText: "Yes", answerImage: 'q1_party.jpeg'},
-            { answerText: "No", answerImage: 'q1_study.jpeg'},
+            { answerText: "Ew!", answerImage: 'noPonP.jpeg', nextIndex: null, metric: 'danceability', value: .6 },
+            { answerText: "Delicious!", answerImage: 'yesPonP.png', nextIndex: null, metric: 'danceability', value: .8 },
+            { answerText: "I'm the only person on the planet who doesn't have an opinion on this.", nextIndex: null, answerImage: 'dontcarePonP.png', metric: 'danceability', value: .6 },
         ],
     },
 
