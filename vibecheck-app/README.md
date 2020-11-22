@@ -9,7 +9,8 @@
     * [react-bulma-components](https://couds.github.io/react-bulma-components/?path=/story/box--default),
     * axios
     * font-awesome (use: `npm install --save @fortawesome/fontawesome-free`)
-    * `npm install --save-dev url-loader file-loader`
+    * `npm install recharts`
+    
 
 * To run in browser: `npm start` (browser-sync no longer needed)
 
