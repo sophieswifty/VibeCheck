@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import './Quiz.css';
 import questions from '../assets/questions';
 import { Button, Box, Heading } from 'react-bulma-components';
 import { fetchCandidateSongs, filterCandidateSongs, makePlaylist} from '../API/spotifyAPI';
 import NewPlaylist from '../components/NewPlaylist';
+import { AudioBatchContext } from '../context/audiobatch';
 
 // let filter = {
 //     acousticness_low: 0,
@@ -71,7 +72,6 @@ let resetFilter = {
     valence_high: 0.75
 };
 
-let audioDetailList = {};
 
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -102,6 +102,7 @@ function Quiz() {
         valence_low: 0.5,
         valence_high: 0.75
     });
+    const [audioBatch, setAudioBatch] = useContext(AudioBatchContext);
 
     // Using filter as a global var which means when the user goes 
 
@@ -129,20 +130,11 @@ function Quiz() {
 
     const generateQuiz = () => {
         setShowQuiz(true);
-        let resultSongs = filterCandidateSongs(audioDetailList, filter);
-        makePlaylist(resultSongs, "name").then((data)=> {
+        let resultSongs = filterCandidateSongs(audioBatch, filter);
+        makePlaylist(resultSongs, "vibecheck").then((data)=> {
             console.log(data);
         });
     }
-
-    // Should move this to App/Dashboard instead of Quiz if we have time.
-    useEffect(() => {
-        fetchCandidateSongs((data) => {
-            console.log(data);
-            audioDetailList = data;
-        });
-    }, []);
-
 
     return (
         <div>
