@@ -1,8 +1,9 @@
 import React, {useContext, useState} from 'react';
 import { Container, Heading, Tile, Section, Image, Box } from 'react-bulma-components';
 import UserDataContext from '../context/userdata';
-import TopArtistList from '../components/TopArtistList'
-import { getUserTopTracks } from '../API/spotifyAPI'
+import TopArtistList from '../components/TopArtistList';
+import StatisticsBox from '../components/StatisticsBox';
+import { getUserTopTracks } from '../API/spotifyAPI';
 import './Statistics.css'
 
 function Statistics() {
