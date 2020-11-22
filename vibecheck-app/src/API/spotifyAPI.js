@@ -171,7 +171,7 @@ export const getTracks = async (track_ids) => {
     }
 }
 
-const getArtistTopTracks = async (artist_id) => {
+export const getArtistTopTracks = async (artist_id) => {
     try {
         const res = await axios({
             method: 'get',
@@ -237,7 +237,7 @@ export const getUserData = async () => {
     }
 }
 
-const getUserTopTracks = async (limit, offset) => {
+export const getUserTopTracks = async (limit, offset) => {
     try {
         const res = await axios({
             method: 'get',
@@ -823,10 +823,6 @@ const filter = {
     valence_high: 0.75
 };
 
-<<<<<<< HEAD
-
-=======
->>>>>>> vibify playlist
 // getAllUserArtists().then((data) => {
 //     getTopSongsByArtists(data).then((tracks) => {
 //         getDataFromTracks(tracks).then((audio_features) => {

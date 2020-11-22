@@ -40,7 +40,6 @@ export default class VibecheckSong extends React.Component {
                     Vibecheck a song
                 </Heading>
                 <Autocomplete searchType={"song"} onSubmit={this.handleSubmit}/> 
-                <PublicPlaylist />
                 
                 {this.state.isSearched &&
                     <SongStatistics 

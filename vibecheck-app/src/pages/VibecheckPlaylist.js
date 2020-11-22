@@ -68,6 +68,7 @@ export default class VibecheckPlaylist extends React.Component {
                         playlistOwner={this.state.playlistObject.owner.display_name}
                         playlistTracks={this.state.playlistItems}
                         playlistItemsMetrics={this.state.playlistItemsMetrics}
+                        // playlistDescription={this.state.playlistDescription}
                     />
                 }
             </React.Fragment>

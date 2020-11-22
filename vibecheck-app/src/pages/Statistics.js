@@ -1,18 +1,66 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import { Container, Heading, Tile, Section, Image, Box } from 'react-bulma-components';
 import UserDataContext from '../context/userdata';
+import TopArtistList from '../components/TopArtistList'
+import { getUserTopTracks } from '../API/spotifyAPI'
+import './Statistics.css'
 
-function Statistics(props) {
-    const [userData, setUserData] = useContext(UserDataContext);
+class Statistics extends React.Component {
+    static userData = UserDataContext;
 
-    return (
-        <div>
-            <Section>
-            <Heading subtitle>
-                    Listening statistics for {userData.display_name}
-                </Heading>
-            <Box>
-                <Tile kind="ancestor">
+    constructor(props) {
+        super(props) 
+        this.state = {
+            active: "artist",
+            userData: {},
+        }
+
+        this.getTopArtists = this.getTopArtists.bind(this);
+        console.log(UserDataContext);
+    }
+
+    getTopArtists() {
+        getUserTopTracks(100, 0).then( (r) => {
+            return r.items;
+        }).catch( (error) => {
+            console.log(error);
+        })
+    }
+
+    render() {
+        // const { userData, setUserData } = this.context;
+        // console.log(this.userData);
+        return (
+            <div>
+                <UserDataContext.Consumer>
+                    {userData => {
+                        <Section>
+                    <Image className="is-128x128" id="user-icon" rounded src={userData.images[0].url}/>
+                    <br/>
+                    <Heading subtitle>
+                        Welcome, {userData.display_name}
+                    </Heading>
+                    <div className="buttons center-item">
+                        <button class="button">Your Top Tracks</button>
+                        <button class="button">Your Top Artists</button>
+                    </div>
+                </Section>
+                    {this.state.active === "artist" &&
+                        <TopArtistList items={this.getTopArtists()}/>    
+                    }
+                    }}
+                </UserDataContext.Consumer>     
+            </div>
+        );
+    }
+}
+
+export default Statistics; 
+
+/** 
+ * 
+ * 
+ * <Tile kind="ancestor">
                     <Tile size={8} vertical>
                         <Tile>
                             <Tile kind="parent" vertical>
@@ -57,11 +105,4 @@ function Statistics(props) {
                         </Tile>
                     </Tile>
                 </Tile>
-            </Box>
-    </Section>
-
-            </div >
-        );
-}
-
-export default Statistics; 
+ */

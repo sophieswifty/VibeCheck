@@ -3,7 +3,7 @@ import {
   Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
 } from 'recharts';
 import { Heading, Box, Section, Container, Image} from 'react-bulma-components';
-import './SongStatistics.css'
+import './PlaylistStatistics.css'
 import { Chart } from 'react-google-charts';
 
 export default class PlaylistStatistics extends React.Component {
@@ -50,24 +50,26 @@ export default class PlaylistStatistics extends React.Component {
         return (
         <Section>
             <Container>
+                <div className="media">
+                    <div className="media-left">
+                        <img src={this.props.playlistCoverUrl} id="album-img"/>
+                    </div>
+                    <div className="media-right" id="playlist-name">
+                        <p className="title" >{`${this.props.playlistOwner} - ${this.props.playlistName}`}</p>
+                        <p className="title">Average BPM: </p>
+                        <p className="title">Average BPM: </p>
+                    </div>
+                </div>
                 <Box>
-                    <Heading>
-                        {this.props.songName}
-                    </Heading>
-                    <div className="tile is-ancestor">
-                        <div className="tile is-vertical is-5 is-parent" id="album-image-tile">
-                            <div className="tile is-6 is-child">
-                                <Image src={this.props.albumCover} id="album-img">
-                                </Image>
-                            </div>
-                        </div>
-                        <div className="tile is-6 is-child">
+                    <div className="columns">
+                        <div className="column">
                             <PlaylistHistogram title={"Acousticness"} data={this.state.acousticness}/>
                             <PlaylistHistogram title={"Danceability"} data={this.state.danceability}/>
-                            <PlaylistHistogram title={"Energy"} data={this.state.energy}/>
                             <PlaylistHistogram title={"Instrumentalness"} data={this.state.instrumentalness}/>
+                        </div>
+                        <div className="column">
+                            <PlaylistHistogram title={"Energy"} data={this.state.energy}/>
                             <PlaylistHistogram title={"Liveness"} data={this.state.liveness} />
-                            <PlaylistHistogram title={"Speechiness"} data={this.state.speechiness} />
                             <PlaylistHistogram title={"Valence"} data={this.state.valence}/>
                         </div>
                     </div>
