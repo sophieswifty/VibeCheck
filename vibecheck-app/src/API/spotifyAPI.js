@@ -86,6 +86,39 @@ export const songSearch = async (searchTerm) => {
     }
 }
 
+export const playlistSearch = async (searchTerm) => {
+    searchTerm = searchTerm.replace(" ","+");
+    const searchUrl = "https://api.spotify.com/v1/search?query=" + searchTerm + "&offset=0&limit=20&type=playlist";
+    try {
+        const res = await axios({
+            method: 'get',
+            url: searchUrl,
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+        return res.data;
+    } catch (e) {
+        return e;
+    }
+}
+
+export const getPlaylistItems = async (id) => {
+    const searchUrl = `https://api.spotify.com/v1/playlists/${id}/tracks`;
+    try {
+        const res = await axios({
+            method: 'get',
+            url: searchUrl,
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+        return res.data;
+    } catch (e) {
+        return e;
+    }
+}
+
 const getArtist = async (artist_id) => {
     try {
         const res = await axios({
@@ -169,7 +202,7 @@ export const getTrackData = async (song_id) => {
     }
 }
 
-const getTracksData = async (song_ids) => {
+export const getTracksData = async (song_ids) => {
     var url = "https://api.spotify.com/v1/audio-features/?ids=" + song_ids[0];
     for (var i = 1; i < song_ids.length; i++) {
         url += ",";
@@ -780,7 +813,10 @@ const filter = {
     valence_high: 0.75
 };
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> vibify playlist
 // getAllUserArtists().then((data) => {
 //     getTopSongsByArtists(data).then((tracks) => {
 //         getDataFromTracks(tracks).then((audio_features) => {

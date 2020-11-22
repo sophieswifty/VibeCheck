@@ -51,24 +51,22 @@ export default class SongStatistics extends React.Component {
                     <Heading>
                         {this.props.songName}
                     </Heading>
-                    <Tile>
-                        
-                        <div className="song-image animated-box">
-                        <button onClick={this.handleImageClick}>
-                              { this.state.clicked 
-                              ? <Image src={this.props.albumCover}/> 
-                              : <p>"text"</p>}
-                        </button>
+                    <div className="tile is-ancestor">
+                        <div className="tile is-vertical is-5 is-parent" id="album-image-tile">
+                            <div className="tile is-6 is-child">
+                                <Image src={this.props.albumCover} id="album-img">
+                                </Image>
+                            </div>
                         </div>
-                        <Tile className="chart-container">
-                            <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={this.state.data} className="chart">
+                        <div className="tile is-6 is-child">
+                            <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={this.state.data}>
                                 <PolarGrid />
                                 <PolarAngleAxis dataKey="category" />
                                 <PolarRadiusAxis/>
                                 <Radar name="Mike" dataKey="score" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
                             </RadarChart>
-                        </Tile>
-                    </Tile>
+                        </div>
+                    </div>
                 </Box>
             </Container>
 
