@@ -101,7 +101,6 @@ const getArtist = async (artist_id) => {
     }
 }
 
-const getTrack = async (track_id) => {
 export const getTrack = async (track_id) => {
     const url = "https://api.spotify.com/v1/tracks/" + track_id;
     try {
@@ -118,7 +117,7 @@ export const getTrack = async (track_id) => {
     }
 }
 
-const getTracks = async (track_ids) => {
+export const getTracks = async (track_ids) => {
     var url = "https://api.spotify.com/v1/tracks/?ids=" + track_ids[0];
     for (var i = 1; i < track_ids.length; i++) {
         url += ",";
@@ -132,7 +131,6 @@ const getTracks = async (track_ids) => {
                 'Authorization': 'Bearer ' + token
             }
         });
-        console.log(res.data.tracks[0].album.images);
         return res.data;
     } catch (e) {
         return e;
@@ -780,8 +778,6 @@ const filter = {
     valence_low: 0.5,
     valence_high: 0.75
 };
-
-}
 
 
 // getAllUserArtists().then((data) => {

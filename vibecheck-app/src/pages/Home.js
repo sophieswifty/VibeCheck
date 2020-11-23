@@ -5,7 +5,6 @@ import ConnectSpotify from '../components/ConnectSpotify'
 import PlaylistReel from '../components/PlaylistReel';
 import './Home.css';
 
-
 export class Home extends React.Component {
     render() {
         return (
@@ -34,11 +33,9 @@ export class Home extends React.Component {
                 <br />
                
                 <br></br>
-                <Container>
-                    <div class="playlist-reel-home">
-                    <PlaylistReel title="Recently vibified playlists"/>
-                    </div>
-                </Container>
+                <Section>
+                    <PlaylistReel/>
+                </Section>     
                 <br/>
             </div>);
     }

@@ -29,6 +29,10 @@ app.get('/playlists/:id', (req, res) => {
 
 app.post('/playlists', (req, res) => {
     let {username, tracks} = req.body;
+    if (username == null || tracks == null) {
+        res.status('404').send('Bad Request - Ujesh');
+        return;
+    }
     let playlist = Playlist.create(username, tracks);
 
     if (playlist == null) {
@@ -63,7 +67,7 @@ app.delete('/playlists/:id', (req, res) => {
     res.json(true);
 });
 
-const port = 3030;
+const port = process.env.PORT || 80;
 app.listen(port, () => {
     console.log(`Local Host ${port} is running`);
 })
