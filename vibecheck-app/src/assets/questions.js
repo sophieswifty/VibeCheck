@@ -369,7 +369,102 @@ let questions = [
             { answerText: "I'm the only person on the planet who doesn't have an opinion on this.", nextIndex: null, answerImage: 'https://pics.me.me/reactions-to-pineapple-pizza-be-careful-boys-its-hot-eeew-39919178.png', metric: 'danceability', value: .02 },
         ],
     },
+    {
+        index: 31,
+        questionText: "Is this a group or solo chill sesh?",
+        answerOptions: [
+            { answerText: "Solo", answerImage: 'https://images.unsplash.com/photo-1471560090527-d1af5e4e6eb6?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpbGx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60', nextIndex: 32, metric: 'valence', value: .05},
+            { answerText: "Group", answerImage: 'https://images.unsplash.com/photo-1520127877998-122c33e8eb38?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Y2hpbGwlMjBncm91cHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60', nextIndex: 32, metric: 'valence', value: .1},
+        ],
+    },
+    {
+        index: 32,
+        questionText: "How would you describe your current vibe (pre VibeCheck)?",
+        answerOptions: [
+            { answerText: "Chaotic, I need a chill pill", answerImage: 'https://images.unsplash.com/photo-1603880920705-3fcc96d6e602?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Y2hhb3N8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'acousticness', value: .1 },
+            { answerText: "Content, but I wouldn't mind a pick me", answerImage: 'https://images.unsplash.com/photo-1525072124541-6237cc05f4f7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cmVsYXhlZHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'danceability', value: .05 },
+            { answerText: "Eh, somewhere in the middle", answerImage: 'https://images.unsplash.com/photo-1560270579-d515a443eb3b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uZnVzZWR8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'energy', value: .05 },
+        ],
+    },
+    {
+        index: 33,
+        questionText: "Are you trying to get in your feels?",
+        answerOptions: [
+            { answerText: "Yes please", answerImage: 'https://images.unsplash.com/photo-1525120334885-38cc03a6ec77?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8c2FkfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: -.1 },
+            { answerText: "Nah, I'm good", answerImage: 'https://images.unsplash.com/photo-1581539030295-a92e2872b9ac?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8b2theXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: .05 },
+            { answerText: "Yeah, okay, maybe a little", answerImage: 'https://images.unsplash.com/photo-1453227588063-bb302b62f50b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8c2FkfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: -.05 },
+        ],
+    },
+    {
+        index: 34,
+        questionText: "Pick your favorite hangout snack",
+        answerOptions: [
+            { answerText: "Popcorn", answerImage: 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cG9wY29ybnxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60', nextIndex: 35, metric: 'danceability', value: .05 },
+            { answerText: "Gummy Bears", answerImage: 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8Z3VtbXklMjBiZWFyfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: 35, metric: 'valence', value: .05 },
+            { answerText: "Cookies", answerImage: 'https://images.unsplash.com/photo-1571165841024-2ce92069301d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Y29va2llc3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60', nextIndex: 35, metric: 'danceability', value: .05 },
+            { answerText: "Pretzels", answerImage: 'https://images.unsplash.com/photo-1589621317486-84ba62eb6706?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8cHJldHplbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60', nextIndex: 35, metric: 'energy', value: .05 },
+        ],
+    },
+    {
+        index: 35,
+        questionText: "What color describes your mood right now?",
+        answerOptions: [
+            { answerText: "Red", answerImage: 'https://images.unsplash.com/photo-1535868463750-c78d9543614f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cmVkfGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60', nextIndex: 36, metric: 'danceability', value: .05 },
+            { answerText: "Yellow", answerImage: 'https://images.unsplash.com/photo-1521913626209-0fbf68f4c4b1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8eWVsbG93fGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60', nextIndex: 36, metric: 'valence', value: .05 },
+            { answerText: "Blue", answerImage: 'https://images.unsplash.com/photo-1530533718754-001d2668365a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8Ymx1ZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60', nextIndex: 36, metric: 'acousticness', value: .05 },
+            { answerText: "Green", answerImage: 'https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGdyZWVufGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60', nextIndex: 36, metric: 'energy', value: .05 },
+        ],
+    },
+    {
+        index: 36,
+        questionText: "What kind of shows are you into?",
+        answerOptions: [
+            { answerText: "Thriller or Adventure", answerImage: 'https://images.unsplash.com/photo-1547469447-4afec158715b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8YWR2ZW50dXJlfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 37, metric: 'danceability', value: .05 },
+            { answerText: "Comedy", answerImage: 'https://images.unsplash.com/photo-1507808973436-a4ed7b5e87c9?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnVubnl8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 37, metric: 'valence', value: .05 },
+            { answerText: "Romantic", answerImage: 'https://images.unsplash.com/photo-1516967124798-10656f7dca28?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8bG92ZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 37, metric: 'acousticness', value: .05 },
+            { answerText: "Drama or Horror", answerImage: 'https://images.unsplash.com/photo-1518898053858-dcb49207fb75?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fHNjYXJ5fGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 37, metric: 'energy', value: -.05 },
+        ],
+    },
+    {
+        index: 37,
+        questionText: "How many pillows are on your bed?",
+        answerOptions: [
+            { answerText: "One, why would I have more?", answerImage: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'energy', value: .05 },
+            { answerText: "Two to Four, a few extra never hurt", answerImage: 'https://images.unsplash.com/photo-1583860312136-35dc71739c79?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzR8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'energy', value: .05 },
+            { answerText: "Maybe a little over 5, I love to snuggle!", answerImage: 'https://images.unsplash.com/photo-1554745006-8b25b7aeb7cb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fHNudWdnbGV8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'acousticness', value: 0.5 },
+            { answerText: "You want me to count ALL my pillows?", answerImage: 'https://images.unsplash.com/photo-1596984768919-e51f75123a13?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTd8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'valence', value: .05 },
+        ],
+    },
+    {
+        index: 38,
+        questionText: "Morning Person or Night Owl?",
+        answerOptions: [
+            { answerText: "Morning Person", answerImage: 'https://images.unsplash.com/photo-1489533119213-66a5cd877091?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9ybmluZ3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60', nextIndex: 39, metric: 'valence', value: .05 },
+            { answerText: "Night Owl", answerImage: 'https://images.unsplash.com/photo-1479267658415-ff274a213280?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTZ8fG5pZ2h0fGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: 39, metric: 'acousticness', value: .05 },
+        ],
+    },
+    {
+        index: 39,
+        questionText: "If you got to rename your WiFi, which one would you pick?",
+        answerOptions: [
+            { answerText: "MySpectrumWiFib7-5G", answerImage: 'https://images.unsplash.com/photo-1600238454024-bc8c1e49caba?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHdpZml8ZW58MHx8MHw%3D&auto=format&fit=crop&w=1000&q=60', nextIndex: 40, metric: 'danceability', value: -.05 },
+            { answerText: "Bill Wi, the Science Fi", answerImage: 'https://images.unsplash.com/photo-1526411116157-21b2b172c6bc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8d2lmaXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60', nextIndex: 40, metric: 'danceability', value: .05 },
+            { answerText: "Clever Wifi Name", answerImage: 'https://images.unsplash.com/photo-1563168206-f0f627c83ca8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8d2lmaXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60', nextIndex: 40, metric: 'energy', value: .05 },
+            { answerText: "Drop It Like It's Hotspot", answerImage: 'https://m.hindustantimes.com/rf/image_size_1200x900/HT/p2/2020/08/30/Pictures/_0085d26c-eaa0-11ea-b0d0-732c2aa3f4c8.PNG', nextIndex: 40, metric: 'valence', value: .05 },
+         
+        ],
+    },
+    {
+        index: 40,
+        questionText: "And finally, how long would you last in a zombie apocalypse?",
+        answerOptions: [
+            { answerText: "Might as well serve them my brain on a silver platter", answerImage: 'https://images.unsplash.com/photo-1568283661163-c90193fd13f1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8ZGVhdGh8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'acousticness', value: .05 },
+            { answerText: "Maybe a little while..?", answerImage: 'https://images.unsplash.com/photo-1503925802536-c9451dcd87b5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8em9tYmllfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'valence', value: .05 },
+            { answerText: "Honestly I'd probably survive.", answerImage: 'https://images.unsplash.com/photo-1573216145940-0bc9e583d768?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fHpvbWJpZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'danceability', value: .05 },
+            { answerText: "I'd be the last. Person. Standing.", answerImage: 'https://images.unsplash.com/photo-1490668219599-a79d4d90cf66?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjd8fGRlYXRofGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'energy', value: .05 },
 
+        ],
+    },
 ];
 
 export default questions;
