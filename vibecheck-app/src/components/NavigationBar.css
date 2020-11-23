@@ -7,19 +7,19 @@
 
 
 .navbar-item-button:hover {
-   background-color:rgb(204, 252, 220); 
+   background-color:rgb(120, 250, 166);
+}
+
+a.navbar-item navbar-item-button:hover {
+  background-color: rgb(152, 255, 188);
 }
 
 .navbar-item-dropdown:hover {
-    background-color:rgb(204, 252, 220);
+    background-color:rgb(120, 250, 166);
  }
 
  .navbar-item-dropdown {
-    background-color:rgb(185, 255, 209);
- }
-
- .logout-btn {
-     background-color: #ffce8ea2;
+    background-color:rgb(120, 250, 166);
  }
 
  .btn-no-hover:hover {
@@ -40,7 +40,7 @@
 
 
 .navbar {
-    background-color: rgb(185, 255, 209);
+    background-color: rgb(120, 250, 166);
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0 0 10px  rgb(179, 223, 194);
@@ -107,7 +107,8 @@ img:hover {
 
   .navbar-menu a {
     color: white;
-    text-shadow: 2px 2px 4px #000000;
+    text-shadow: .5px .5px .5px #000000;
+    font-weight: bold;
     text-decoration: none;
   }
 

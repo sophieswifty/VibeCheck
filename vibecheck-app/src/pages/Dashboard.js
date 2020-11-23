@@ -9,21 +9,25 @@ export class Dashboard extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            landingPage: true
+            landingPage: true,
+            showSpotify: true
         }
     }
 
-
+    handleSpotifyClick() {
+        this.setState({showSpotify: false});
+    }
+    
     render() {
         return (
             <div>
-                {!this.state.landingPage && <div className="logged-in-dash">
+                {!this.state.showSpotify && <div className="logged-in-dash">
                     <Hero className="dash-hero">
                         <Hero.Body className="hero-background">
 
                             <Section className="dashboard-text">
                                 <Heading>Defining the vibe.</Heading>
-                                <ConnectSpotify></ConnectSpotify>
+                               
                                 <Heading subtitle>
                                     Explore your personal listening statistics, take a quiz for a custom playlist, and learn about the metrics of songs and playlists.
                                 </Heading>
@@ -47,7 +51,7 @@ export class Dashboard extends React.Component {
                             <p>
                                 Vibe  <i>(Noun)</i> A distinctive emotional atmosphere; sensed intuitively.
                             </p>
-                            <ConnectSpotify></ConnectSpotify>
+                            <ConnectSpotify onClick={this.handleSpotifyClick}></ConnectSpotify>
                             <div className="landing-desc">
                             <Heading size={5} className="landing-desc-slogan">
                                 A custom playlist fit to the vibe.
