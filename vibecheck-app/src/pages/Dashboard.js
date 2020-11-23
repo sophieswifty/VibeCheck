@@ -1,58 +1,56 @@
-import React from 'react'
+import React, { useEffect, useState, useContext }from 'react'
 import { Heading, Hero, Section, Box } from 'react-bulma-components';
 import './Dashboard.css';
+import './Home.css';
 import PR from '../components/PR';
 import { Container } from 'react-bulma-components';
 import ConnectSpotify from '../components/ConnectSpotify';
 
-export class Dashboard extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            landingPage: true,
-            showSpotify: true
-        }
-    }
 
-    handleSpotifyClick() {
-        this.setState({showSpotify: false});
-    }
-    
-    render() {
-        return (
-            <div>
-                {!this.state.showSpotify && <div className="logged-in-dash">
-                    <Hero className="dash-hero">
-                        <Hero.Body className="hero-background">
+function Dashboard(props) {
+    // const [landingPage, setLandingPage] = useState(true);
+    // const [authTokens, setAuthTokens] = useContext(AuthContext);
 
-                            <Section className="dashboard-text">
-                                <Heading>Defining the vibe.</Heading>
-                               
-                                <Heading subtitle>
-                                    Explore your personal listening statistics, take a quiz for a custom playlist, and learn about the metrics of songs and playlists.
+    // useEffect(() => {
+    //     if (authTokens) {
+    //         setLandingPage(false);
+    //     }
+    // }, [authTokens])
+
+    return (
+        <div>
+            {props.auth && <div className="logged-in-dash">
+                <Hero className="dash-hero">
+                    <Hero.Body className="hero-background">
+
+                        <Section className="dashboard-text">
+                            <Heading>Defining the vibe.</Heading>
+
+                            <Heading subtitle>
+                                Explore your personal listening statistics, take a quiz for a custom playlist, and learn about the metrics of songs and playlists.
                                 </Heading>
 
-                            </Section>
+                        </Section>
 
-                        </Hero.Body>
-                    </Hero>
-                    <br />
+                    </Hero.Body>
+                </Hero>
+                <br />
+                <Container>
                     <Container>
-                        <Container>
-                            <PR />
-                        </Container>
+                        <PR />
                     </Container>
-                </div>}
+                </Container>
+            </div>}
 
-                { this.state.landingPage && <div className="landing-dash">
-                    <Hero gradient size="large" className="home-hero">
-                        <Hero.Body className="fade-in" align="center">
-                            <div className="wrapper"><h1>▼ibec❚❚eck</h1></div>
-                            <p>
-                                Vibe  <i>(Noun)</i> A distinctive emotional atmosphere; sensed intuitively.
+            {!props.auth && <div className="landing-dash">
+                <Hero gradient size="large" className="home-hero">
+                    <Hero.Body className="fade-in" align="center">
+                        <div className="wrapper"><h1>▼ibec❚❚eck</h1></div>
+                        <p>
+                            Vibe  <i>(Noun)</i> A distinctive emotional atmosphere; sensed intuitively.
                             </p>
-                            <ConnectSpotify onClick={this.handleSpotifyClick}></ConnectSpotify>
-                            <div className="landing-desc">
+                        <ConnectSpotify></ConnectSpotify>
+                        <div className="landing-desc">
                             <Heading size={5} className="landing-desc-slogan">
                                 A custom playlist fit to the vibe.
                             </Heading>
@@ -62,21 +60,20 @@ export class Dashboard extends React.Component {
                                  <br></br>
                                 <i>Sign in with your spotify to get started.</i>
                             </Heading>
-                            </div>
-                            </Hero.Body>
-                    </Hero>
-                    <br />
+                        </div>
+                    </Hero.Body>
+                </Hero>
+                <br />
 
-                    <br></br>
-                    <Section>
-                        <PR />
-                    </Section>
-                    <br />
-                </div>}
+                <br></br>
+                <Section>
+                    <PR />
+                </Section>
+                <br />
+            </div>}
 
 
-            </div>);
-    }
+        </div>);
 }
 
 export default Dashboard;

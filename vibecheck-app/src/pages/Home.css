@@ -1,6 +1,6 @@
 
 .hero {
-    background-color: rgb(185, 255, 209);
+    background-color: rgb(255, 255, 255);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -31,26 +31,25 @@
   }
   
   .wrapper h1 {
-	color: #fff;
-	font-size: 500%;
-	font-family: "ubuntu";
-	text-transform: uppercase;
-	font-weight: 700;
-	font-family: "Josefin Sans", sans-serif;
-	background: linear-gradient(to right, #e72ade 10%, #ffce8e 60%,  hsl(51, 98%, 63%) 20%, #e72ade);
-	background-size: auto auto;
-	background-clip: border-box;
-	background-size: 200% auto;
-	color: #fff;
-	background-clip: text;
-	text-fill-color: transparent;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	animation: textclip 3s linear infinite;
-	display: inline-block;
-	transition: all .2s ease-in-out; 
-	text-shadow: 
-  5px 5px 1px hsl(240, 100%, 50%, .1); 
+		margin-top: 10px;
+		  color: #fff;
+		  font-size: 500%;
+		  text-transform: uppercase;
+		  font-weight: 700;
+		  font-family: "Josefin Sans", sans-serif;
+		  background: linear-gradient(to right, #e72ade , #ff9e1f,  hsl(51, 100%, 59%), #e72ade);
+		  background-size: auto auto;
+		  background-clip: border-box;
+		  background-size: 200% auto;
+		  color: #fff;
+		  background-clip: text;
+		  text-fill-color: transparent;
+		  -webkit-background-clip: text;
+		  -webkit-text-fill-color: transparent;
+		  animation: textclip 8s linear infinite;
+		  display: inline-block;
+		transition: all .5s ease-in-out; 
+		text-shadow: 4px 4px 1px rgba(0, 255, 157, 0.671) !important; 
   }
 
   .wrapper h1:hover { 

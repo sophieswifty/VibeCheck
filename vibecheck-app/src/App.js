@@ -44,6 +44,24 @@ function App(props) {
     setAuthTokens(data);
   }
 
+
+  const renderMergedProps = (component, ...rest) => {
+    const finalProps = Object.assign({}, ...rest);
+    return (
+      React.createElement(component, finalProps)
+    );
+  }
+
+  
+  const PropsRoute = ({ component, ...rest }) => {
+    return (
+      <Route {...rest} render={routeProps => {
+        return renderMergedProps(component, routeProps, rest);
+      }}/>
+    );
+  }
+
+
   // useEffect is equivalent to ComponentDidMount() --> runs this only once at first render.
   useEffect(() => {
     if (authTokens) {
@@ -74,7 +92,7 @@ function App(props) {
               {authTokens && <LoggedIn username={userData.display_name} loadingData={loadingSongData} />}
               <Layout>
                 <Switch>
-                  <Route path="/dashboard" component={Dashboard} />
+                  <PropsRoute path="/dashboard" component={Dashboard} auth={authTokens} />
                   <PrivateRoute path="/quiz" component={Quiz} />
                   <PrivateRoute path="/profile" component={Profile} />
                   <PrivateRoute path="/statistics" component={Statistics} />
