@@ -14,22 +14,22 @@ export class Dashboard extends React.Component {
         return (
             <div>
                 <Hero className="dash-hero">
-                    <Hero.Body>
+                    <Hero.Body className="hero-background">
 
-                                <Section style={{ backgroundColor: 'white' }}>
-                                Welcome to Vibecheck. 
-                                <br/>
-                                Want the perfect playlist for the moment? Take our quiz.
-                                Want to view your personal listening statstics? Let us do the math.
-                                Want to learn about the metrics of a song or playlist? Vibify any tune.
-                                </Section>
+                                <Section className="dashboard-text">
+                                <Heading>Defining the vibe.</Heading>
+                                <Heading subtitle>
+                                Explore your personal listening statistics, take a quiz for a custom playlist, and learn about the metrics of songs and playlists. 
+                                </Heading>
+                               
+                                 </Section>
                 
                     </Hero.Body>
                 </Hero>
                 <br />
                 <Container>
                     <Container>
-                        <PlaylistReel title="Your generated playlists"/>
+                        <PlaylistReel title="Your recently generated playlists"/>
                     </Container>
                 </Container>
 

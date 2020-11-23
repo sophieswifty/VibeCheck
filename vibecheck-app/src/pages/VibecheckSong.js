@@ -1,8 +1,11 @@
 import React from 'react';
-import {Heading, Form, Button, Hero} from 'react-bulma-components';
+import {Heading, Form, Button, Tile, Box, Hero} from 'react-bulma-components';
 import Autocomplete from '../components/Autocomplete';
 import SongStatistics from '../components/SongStatistics';
 import { getTrackData } from '../API/spotifyAPI';
+
+import './VibecheckSong.css';
+
 
 export default class VibecheckSong extends React.Component {
     constructor(props) {
@@ -20,24 +23,31 @@ export default class VibecheckSong extends React.Component {
         console.log(songObject);
         this.setState({songObject: songObject});
         this.setState({isSearched: false});
-        const request = getTrackData(songObject.id).then( (r) => {
+        getTrackData(songObject.id).then( (r) => {
             this.setState({songMetrics: r});
             this.setState({isSearched: true});
         }).catch( (error) => {
             console.log(error);
-        })
+        });
     }
 
     render() {
         return (
             <React.Fragment>
+                <Box>
                 <Heading>
                     Vibecheck a song
                 </Heading>
-                <Autocomplete onSubmit={this.handleSubmit}/> 
+                <Autocomplete searchType={"song"} onSubmit={this.handleSubmit}/> 
+                
                 {this.state.isSearched &&
-                    <SongStatistics albumCover={this.state.songObject.album.images[0].url} songName={this.state.songObject.name} songMetrics={this.state.songMetrics}/>
+                    <SongStatistics 
+                        albumCover={this.state.songObject.album.images[0].url} 
+                        songName={this.state.songObject.name} 
+                        songMetrics={this.state.songMetrics}
+                    />
                 }
+                </Box>
             </React.Fragment>);
     }
 }

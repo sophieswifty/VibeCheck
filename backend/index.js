@@ -7,6 +7,9 @@ app.use(bodyParser.json());
 var cors = require('cors')
 
 app.use(cors())
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("../vibecheck-app/build"));
+}
 
 app.get('/playlists', (req, res) => {
     res.json(Playlist.getAllIDs());
@@ -68,6 +71,10 @@ app.delete('/playlists/:id', (req, res) => {
 });
 
 const port = process.env.PORT || 80;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 91d9de73c892294e188de894191af90c09b5009a
 app.listen(port, () => {
     console.log(`Local Host ${port} is running`);
 })

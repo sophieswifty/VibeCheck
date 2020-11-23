@@ -5,17 +5,6 @@
  
 }
 
-a {
-    
-        color: rgb(143, 143, 143);
-        text-decoration: none;
-    
-}
-
-a:hover {
-    color: rgb(143, 143, 143);
-    text-decoration: none;
-}
 
 .navbar-item-button:hover {
    background-color:rgb(204, 252, 220); 
@@ -30,7 +19,7 @@ a:hover {
  }
 
  .logout-btn {
-     background-color: #ffce8e;
+     background-color: #ffce8ea2;
  }
 
  .btn-no-hover:hover {
@@ -43,9 +32,6 @@ a:hover {
   color: unset !important;
 } 
 
-navbar-item btn-no-hover.active {
-
-}
 
 .navbar-burger.burger.is-active {
   margin: 0px;
@@ -70,9 +56,13 @@ img:hover {
 }
 
 /* Front page gimmick: https://codepen.io/sxrdev/pen/LXMwPb */
-  .dash-logo {
+.dash-logo h1  {
   text-align: center;
-  
+  margin-right: 10px;
+  }
+
+.loader.loading {
+    margin-left: 10px;
   }
   
   .dash-logo h1 {
@@ -115,4 +105,10 @@ img:hover {
 	  padding-right: 10px;
   }
 
+  .navbar-menu a {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-decoration: none;
+  }
 
+  

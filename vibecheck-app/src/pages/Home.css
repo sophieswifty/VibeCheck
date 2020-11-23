@@ -16,11 +16,11 @@
 }
 
 
-img {
+.hero img {
     transition: all .2s ease-in-out; 
 }
    
-img:hover { 
+.hero img:hover { 
    transform: scale(1.05); 
 }
 

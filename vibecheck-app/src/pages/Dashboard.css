@@ -1,0 +1,15 @@
+.hero-body.hero-background {
+  background-image: url("https://media3.giphy.com/media/LLYMoDblVhhjvjRBtj/giphy.gif?cid=ecf05e47fk0sbw5iynqpghuaszui9yyvwhpz15icvct1uhj1&rid=giphy.gif");
+  background-repeat: no-repeat, repeat;
+  background-color: rebeccapurple;
+  background-size:100% 100%;
+}
+
+.dashboard-text {
+    color: white;
+}
+.dashboard-text h1 {
+    color: white;
+}
+
+

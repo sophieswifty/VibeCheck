@@ -37,6 +37,7 @@ function App(props) {
   const [authTokens, setAuthTokens] = useState(existingTokens);
   const [userData, setUserData] = useState({});
   const [audioBatch, setAudioBatch] = useState({});
+  const [loadingSongData, setLoadingSongData] = useState(true);
 
   const setTokens = (data) => {
     localStorage.setItem("tokens", JSON.stringify(data));
@@ -49,14 +50,13 @@ function App(props) {
       setAccessToken(authTokens.access_token);
       getUserData().then(data => {
         setUserData(data);
-        // setUsername(data.display_name);
-        // setUserId(data.id);
         console.log(data);
       });
 
       fetchCandidateSongs((data) => {
         console.log("audio batch incoming");
         console.log(data);
+        setLoadingSongData(false);
         setAudioBatch(data);
       });
     }
@@ -71,7 +71,7 @@ function App(props) {
         <UserDataContext.Provider value={[userData, setUserData]}>
           <AudioBatchContext.Provider value={[audioBatch, setAudioBatch]}>
             <Router>
-              {authTokens && <LoggedIn username={userData.display_name} />}
+              {authTokens && <LoggedIn username={userData.display_name} loadingData={loadingSongData} />}
               <Layout>
                 <Switch>
                   <PrivateRoute path="/dashboard" component={Dashboard} />

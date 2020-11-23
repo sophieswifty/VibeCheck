@@ -4,7 +4,7 @@ import NavigationBar from './NavigationBar';
 function LoggedIn(props) {
     return (
         <div>
-      <NavigationBar username={props.username} /> 
+      <NavigationBar username={props.username} loadingData={props.loadingData} /> 
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './NavigationBar.css'
 import { Link } from 'react-router-dom';
-import { Navbar } from 'react-bulma-components';
+import { Navbar, Loader, Heading } from 'react-bulma-components';
 import Logout from './Logout';
 
 function NavigationBar(props) {
@@ -14,55 +14,59 @@ function NavigationBar(props) {
             {/* <img src="./temp_vc.png" width="200" /> */}
             <div className="dash-logo"><h1>▼ibec❚❚eck</h1></div>
           </Link>
-          </div>
+        </div>
       </Navbar.Brand>
       <Navbar.Menu className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
         <Navbar.Container>
           <Navbar.Item href="./quiz" className="navbar-item-button">
             <Link className="nav-link" renderAs="a" to="./quiz">
-              Quiz
+              QUIZ
               </Link>
           </Navbar.Item>
           <Navbar.Item href="./statistics" className="navbar-item-button">
             <Link className="nav-link" renderAs="a" to="./statistics">
-              Statistics
+              STATISTICS
               </Link>
           </Navbar.Item>
           <Navbar.Item dropdown hoverable className="navbar-item-button">
             <Navbar.Link className="navbar-item-button">
               <Link className="nav-link" to="./vibecheck-song">
-                Vibify...
+                VIBIFY...
                 </Link>
             </Navbar.Link>
             <Navbar.Dropdown className="navbar-item-dropdown">
               <Navbar.Item>
                 <Link renderAs="a" to="./vibecheck-song">
-                  a Song
+                  A SONG
                   </Link>
               </Navbar.Item>
               <Navbar.Item>
                 <Link renderAs="a" to="./vibecheck-playlist">
-                  a Playlist
+                  A PLAYLIST
                   </Link>
               </Navbar.Item>
             </Navbar.Dropdown>
           </Navbar.Item>
         </Navbar.Container>
         <Navbar.Container position="end">
-          <Navbar.Item className='name-no-hover'>
-          <Link renderAs="a" to="./profile">
-            {props.username}
+          {props.loadingData && <Navbar.Item className='name-no-hover'>
+          Scanning for vibes from {props.username} 
+            <Loader className="loading" />
+          </Navbar.Item>}
+          {!props.loadingData && <Navbar.Item className='name-no-hover'>
+            <Link renderAs="a" to="./profile">
+              {props.username}
             </Link>
-          </Navbar.Item>
+          </Navbar.Item>}
           <Navbar.Item className='btn-no-hover'>
             <Logout />
           </Navbar.Item>
-      
+
         </Navbar.Container>
       </Navbar.Menu>
       <Navbar.Burger className={`navbar-burger burger ${isActive ? 'is-active' : ''}`} onClick={() => {
-            setisActive(!isActive)
-          }}/>
+        setisActive(!isActive)
+      }} />
     </Navbar>
   );
 }
