@@ -75,8 +75,12 @@ await axios({
     method: 'POST', 
     url: 'https://vibecheck-please.herokuapp.com/playlists',
     body: {
-        username: '', <---- Spotify username
-        tracks: []   <----- Array of track IDs in playlist
+        "playlistID": "", // Spotify Playlist ID
+        "playlistURL": "", // Spotify Playlist URL
+        "playlistName": "", // Spotify Playlist Name
+        "playlistIMG": "", // Spotify Playlist IMG
+        "userID": "", // Spotify Username
+        "displayName": "" // Spotify Profile Display Name
     }
 })
 
@@ -85,8 +89,12 @@ await axios({
     method: 'PUT', 
     url: 'https://vibecheck-please.herokuapp.com/playlists/:id',
     body: {
-        username: '', <---- Spotify username
-        tracks: []   <----- Array of track IDs in playlist
+       "playlistID": "", // Spotify Playlist ID
+        "playlistURL": "", // Spotify Playlist URL
+        "playlistName": "", // Spotify Playlist Name
+        "playlistIMG": "", // Spotify Playlist IMG
+        "userID": "", // Spotify Username
+        "displayName": "" // Spotify Profile Display Name
     }
 })
 
@@ -95,5 +103,5 @@ axios.delete('https://vibecheck-please.herokuapp.com/playlists/:id')
 
 ### Backend Use
 - Display the three most recently 'vibified' playlists on our home page with playlist album cover
-- Display the spotify username that created these playlists
-- "Click" on playlist will redirect user to spotify.com where they can listen to playlist
+- Display the spotify username and profile name that created these playlists
+- "Click" on playlist will redirect user to playlist on spotify.com where they can listen to playlist

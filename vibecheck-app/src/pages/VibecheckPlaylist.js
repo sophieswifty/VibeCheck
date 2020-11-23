@@ -19,6 +19,7 @@ export default class VibecheckPlaylist extends React.Component {
     }
 
     handleSubmit(playlistObject) {
+        console.log(playlistObject);
         if (this.state.isSearched) {
             this.setState({isSearched: false});
 
