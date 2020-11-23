@@ -62,10 +62,10 @@ function Dashboard(props) {
                                 <i>Sign in with your spotify to get started.</i>
                             </Heading>
                         </div>
-<br></br>
-                        <Container>
+                        <br></br>
+                       
                        <PlaylistReel/>
-                    </Container>
+                   
 
                     </Hero.Body>
                 </Hero>
