@@ -572,17 +572,12 @@ const passesFilter = (trackInfo, filter) => {
 }
 
 const passesFilterB = (track, filter) => {
-    const fields = ["acousticness","danceability","energy","instrumentalness","speechiness","valence"];
-    fields.forEach(field => {
-        const field_range = field + "_range";
-        if (track[field] < filter[field] - filter[field_range]) {
-            return false;
-        }
-        if (track[field] > filter[field] + filter[field_range]) {
-            return false;
-        }
-    });
-    return true;
+    return Math.abs(track["acousticness"] - filter["acousticness"]) <= filter["acousticness_range"] &&
+    Math.abs(track["danceability"] - filter["danceability"]) <= filter["danceability_range"] &&
+    Math.abs(track["energy"] - filter["energy"]) <= filter["energy_range"] &&
+    Math.abs(track["instrumentalness"] - filter["instrumentalness"]) <= filter["instrumentalness_range"] &&
+    Math.abs(track["speechiness"] - filter["speechiness"]) <= filter["speechiness_range"] &&
+    Math.abs(track["valence"] - filter["valence"]) <= filter["valence_range"];
 }
 
 const getFullSongName = (track) => {
