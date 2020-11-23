@@ -909,10 +909,6 @@ const filter = {
     valence_high: 0.75
 };
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 91d9de73c892294e188de894191af90c09b5009a
 // getAllUserArtists().then((data) => {
 //     getTopSongsByArtists(data).then((tracks) => {
 //         getDataFromTracks(tracks).then((audio_features) => {
