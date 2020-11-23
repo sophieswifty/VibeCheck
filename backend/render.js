@@ -15,7 +15,6 @@ export function generateTitle() {
 
     return section;
 }
-
 export async function getPlaylistFeed() {
     try {
         const result = await axios({
@@ -66,14 +65,13 @@ async function handlePlaylistClick(ev) {
         feed = feed.splice(feed.length - 10,feed.length - 1).reverse();
 
         var track_data = await getTracks([feed[index].tracks[0]]);
-        var image = track_data.tracks[0].album.images[1];
+        var image = track_data.tracks[0].album.images[0];
         var thumbnail = document.createElement('img');
         thumbnail.src = image.url;
 
         clickedPlaylist.getElementsByClassName('tracks').item(0).replaceWith(thumbnail);
     }
 }
-
 export async function generatePlaylists() {
     let section = document.createElement('section');
     section.classList.add('section');    
@@ -114,7 +112,7 @@ export async function generateTiles(container, feed) {
             content.append(h1);
 
             var track_data = await getTracks([feed[i*5 + j].tracks[0]]);
-            var image = track_data.tracks[0].album.images[1];
+            var image = track_data.tracks[0].album.images[0];
             var thumbnail = document.createElement('img');
             thumbnail.src = image.url;
             child.append(thumbnail);

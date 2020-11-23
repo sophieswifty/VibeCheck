@@ -59,3 +59,41 @@
   * `useEffect()` and `useState()` from React
   * React Context (see: https://reactjs.org/docs/context.html and https://medium.com/better-programming/building-basic-react-authentication-e20a574d5e71)
   * React Router
+
+### Backend Functions:
+* Get all keys (ids)
+axios.get('https://vibecheck-please.herokuapp.com/playlists')
+
+* Get all playlists in JSON
+axios.get('https://vibecheck-please.herokuapp.com/playlists/all')
+
+* Get a certain playlist by ID
+axios.get('https://vibecheck-please.herokuapp.com/playlists/:id')
+
+* Post a new playlist to the backend
+await axios({
+    method: 'POST', 
+    url: 'https://vibecheck-please.herokuapp.com/playlists',
+    body: {
+        username: '', <---- Spotify username
+        tracks: []   <----- Array of track IDs in playlist
+    }
+})
+
+* Edit a playlist in the backend, must pass in the id of playlist you are editing
+await axios({
+    method: 'PUT', 
+    url: 'https://vibecheck-please.herokuapp.com/playlists/:id',
+    body: {
+        username: '', <---- Spotify username
+        tracks: []   <----- Array of track IDs in playlist
+    }
+})
+
+* Delete a playlist in the backend
+axios.delete('https://vibecheck-please.herokuapp.com/playlists/:id')
+
+### Backend Use
+- Display the three most recently 'vibified' playlists on our home page with playlist album cover
+- Display the spotify username that created these playlists
+- "Click" on playlist will redirect user to spotify.com where they can listen to playlist

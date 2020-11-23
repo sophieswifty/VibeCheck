@@ -164,7 +164,6 @@ export const getTracks = async (track_ids) => {
                 'Authorization': 'Bearer ' + token
             }
         });
-        console.log(res.data.tracks[0].album.images);
         return res.data;
     } catch (e) {
         return e;
@@ -910,6 +909,10 @@ const filter = {
     valence_high: 0.75
 };
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 91d9de73c892294e188de894191af90c09b5009a
 // getAllUserArtists().then((data) => {
 //     getTopSongsByArtists(data).then((tracks) => {
 //         getDataFromTracks(tracks).then((audio_features) => {
