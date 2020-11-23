@@ -271,6 +271,21 @@ export const getUserTopTracks = async (limit, offset) => {
     }
 }
 
+export const getUserRecentlyPlayedTracks = async () => {
+    try {
+        const res = await axios({
+            method: 'get',
+            url: "https://api.spotify.com/v1/me/player/recently-played?limit=50",
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+        return res.data;
+    } catch (e) {
+        return e;
+    }
+}
+
 const getUserTopTracksData = async () => {
     const res = await getUserTopTracks(50,0);
     const track_ids = res.items.map(elt => elt.id);

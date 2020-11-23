@@ -20,14 +20,13 @@ export default class VibecheckSong extends React.Component {
     }
 
     handleSubmit(songObject) {
-        console.log(songObject);
         this.setState({songObject: songObject});
         this.setState({isSearched: false});
         getTrackData(songObject.id).then( (r) => {
             this.setState({songMetrics: r});
             this.setState({isSearched: true});
         }).catch( (error) => {
-            console.log(error);
+            alert("Something went wrong. Try again.");
         });
     }
 
@@ -35,18 +34,20 @@ export default class VibecheckSong extends React.Component {
         return (
             <React.Fragment>
                 <Box>
-                <Heading>
-                    Vibecheck a song
-                </Heading>
-                <Autocomplete searchType={"song"} onSubmit={this.handleSubmit}/> 
-                
-                {this.state.isSearched &&
-                    <SongStatistics 
-                        albumCover={this.state.songObject.album.images[0].url} 
-                        songName={this.state.songObject.name} 
-                        songMetrics={this.state.songMetrics}
-                    />
-                }
+                    <Heading>
+                        Vibecheck a song
+                    </Heading>
+                    <Autocomplete searchType={"song"} onSubmit={this.handleSubmit}/> 
+                    
+                    {this.state.isSearched &&
+                        <SongStatistics 
+                            albumCover={this.state.songObject.album.images[0].url} 
+                            artistName={this.state.songObject.artists[0].name}
+                            songName={this.state.songObject.name} 
+                            songMetrics={this.state.songMetrics}
+                            songURL={this.state.songObject.external_urls.spotify}
+                        />
+                    }
                 </Box>
             </React.Fragment>);
     }

@@ -29,9 +29,6 @@ export default class SongStatistics extends React.Component {
                 }
             ]
         }
-
-        console.log(this.state.data);
-        console.log(this.props.albumCover)
     }
 
     // CLick on image, show stats. Trying to get this to wor but giving up it s 2am
@@ -41,11 +38,13 @@ export default class SongStatistics extends React.Component {
             <Container>
                 <Box>
                     <Heading>
-                        {this.props.songName}
+                        {`${this.props.artistName} - ${this.props.songName}`}
                     </Heading>
                     <Tile>
                         <div className="song-image animated-box">
-                              <Image src={this.props.albumCover}/> 
+                            <a href={this.props.songURL}>
+                                <Image src={this.props.albumCover}/> 
+                            </a>
                         </div>
                         <Tile className="chart-container">
                             <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={this.state.data} className="chart">
