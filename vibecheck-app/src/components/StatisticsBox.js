@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Button, Heading, Card, Image, Section, Container } from 'react-bulma-components';
 import { getUserTopTracks, getUserTopArtists, getUserRecentlyPlayedTracks } from '../API/spotifyAPI';
-import StatisticsList from './StatisticsList'
 import { Link } from 'react-router-dom'
 import './StatisticsBox.css'
 
