@@ -293,9 +293,9 @@ let questions = [
         index: 23,
         questionText: "Do you need motivation for the exercise?",
         answerOptions: [
-            { answerText: "PLEASE", answerImage: 'yeah.jpg',  nextIndex: 24, metric: 'energy', value: .1 },
-            { answerText: "Nah, I love to exercise!", answerImage: 'nah.jpg',  nextIndex: 24, metric: 'danceability', value: .05 },
-            { answerText: "Maybe a little", answerImage: 'little.jpg',  nextIndex: 24, metric: 'danceability', value: .05 },
+            { answerText: "PLEASE", answerImage: 'https://images.unsplash.com/photo-1580893211123-627e0262be3a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8dGh1bWJzJTIwdXB8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 24, metric: 'energy', value: .1 },
+            { answerText: "Nah, I love to exercise!", answerImage: 'https://images.unsplash.com/photo-1596057176846-4dfa9a53c9ba?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8dGh1bWJzJTIwZG93bnxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 24, metric: 'danceability', value: .05 },
+            { answerText: "Maybe a little", answerImage: 'https://images.unsplash.com/photo-1556711905-4bd1b6603275?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fG1vdGl2YXRpb258ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 24, metric: 'danceability', value: .05 },
         ],
     },
     {
