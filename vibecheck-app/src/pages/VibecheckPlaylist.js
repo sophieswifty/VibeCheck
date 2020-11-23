@@ -2,6 +2,7 @@ import React from 'react';
 import {Heading, Box, Form, Button, Hero} from 'react-bulma-components';
 import Autocomplete from '../components/Autocomplete';
 import PlaylistStatistics from '../components/PlaylistStatistics';
+import PlaylistTracksList from '../components/PlaylistTracksList'
 import { getPlaylistItems, getTracksData } from '../API/spotifyAPI';
 
 export default class VibecheckPlaylist extends React.Component {
@@ -19,13 +20,13 @@ export default class VibecheckPlaylist extends React.Component {
     }
 
     handleSubmit(playlistObject) {
-        console.log(playlistObject);
         if (this.state.isSearched) {
             this.setState({isSearched: false});
 
         }
         // Get all the playlist items
         getPlaylistItems(playlistObject.id).then( (r) => {
+            console.log(r);
             this.setState({playlistItems: r.items});
             this.setState({playlistObject: playlistObject});
 
@@ -43,7 +44,6 @@ export default class VibecheckPlaylist extends React.Component {
     }
 
     getTrackIds() {
-        // console.log(this.state.playlistItems);
         if (this.state.playlistItems.length > 0) {
             const arr = []
             this.state.playlistItems.forEach( (elt) => {
@@ -58,23 +58,27 @@ export default class VibecheckPlaylist extends React.Component {
             <React.Fragment>
                 <div className="vibecheck-page-container">
                     <Heading>
-                        Vibecheck a playlist
+                        Vibify a playlist
                     </Heading>
                     <Autocomplete searchType={"playlist"} onSubmit={this.handleSubmit}/> 
                     
                     {this.state.isSearched &&
-                        <PlaylistStatistics 
-                            playlistCoverUrl={this.state.playlistObject.images[0].url} 
-                            playlistName={this.state.playlistObject.name} 
-                            playlistOwner={this.state.playlistObject.owner.display_name}
-                            playlistTracks={this.state.playlistItems}
-                            playlistItemsMetrics={this.state.playlistItemsMetrics}
-                            playlistURL={this.state.playlistObject.external_urls.spotify}
-                            // playlistDescription={this.state.playlistDescription}
-                        />
+                        <React.Fragment>
+                            <PlaylistStatistics 
+                                playlistCoverUrl={this.state.playlistObject.images[0].url} 
+                                playlistName={this.state.playlistObject.name} 
+                                playlistOwner={this.state.playlistObject.owner.display_name}
+                                playlistTracks={this.state.playlistItems}
+                                playlistItemsMetrics={this.state.playlistItemsMetrics}
+                                playlistURL={this.state.playlistObject.external_urls.spotify}
+                            />
+                            <PlaylistTracksList 
+                                title={`${this.state.playlistObject.owner.display_name} - ${this.state.playlistObject.name}`} 
+                                items={this.state.playlistItems}    
+                            />
+                        </React.Fragment>
                     }
                 </div>
-
             </React.Fragment>
         );
     }

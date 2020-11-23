@@ -43,7 +43,7 @@ export default class SongStatistics extends React.Component {
                     <div>
                     <Tile className="chart-container">
                         <div className="audio-image animated-box">
-                            <a href={this.props.songURL}>
+                            <a href={this.props.songURL} target="_blank">
                                 <Image src={this.props.albumCover}/> 
                             </a>
                         </div>

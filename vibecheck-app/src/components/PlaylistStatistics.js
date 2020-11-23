@@ -54,7 +54,7 @@ export default class PlaylistStatistics extends React.Component {
                     <div className="media">
                         <div className="media-left playlist-image">
                             <div className="audio-image animated-box">
-                                <a href={this.props.playlistURL}>
+                                <a href={this.props.playlistURL} target="_blank">
                                     <img src={this.props.playlistCoverUrl} id="album-img" />
                                 </a>
                             </div>
@@ -66,14 +66,32 @@ export default class PlaylistStatistics extends React.Component {
                     
                         <div className="columns">
                             <div className="column">
-                                <PlaylistHistogram title={"Acousticness"} data={this.state.acousticness} />
-                                <PlaylistHistogram title={"Danceability"} data={this.state.danceability} />
-                                <PlaylistHistogram title={"Instrumentalness"} data={this.state.instrumentalness} />
+                                <div>
+                                    <PlaylistHistogram title="Acousticness" data={this.state.acousticness} />
+                                    <p>A Confidence measure from 0.0 to 1.0 of whether the track is acoustic.</p>
+                                </div>
+                                <div>
+                                    <PlaylistHistogram title={"Danceability"} data={this.state.danceability} />
+                                    <p>Describes how suitable a track is for dancing with 1.0 indicating high danceability. Based on the tempo and rhythm stability.</p>
+                                </div>
+                                <div>
+                                    <PlaylistHistogram title={"Instrumentalness"} data={this.state.instrumentalness} />
+                                    <p>Predicts whether a track contains words. The closer to 1.0, the less wordy the song is.</p>
+                                </div>
                             </div>
                             <div className="column">
-                                <PlaylistHistogram title={"Energy"} data={this.state.energy} />
-                                <PlaylistHistogram title={"Liveness"} data={this.state.liveness} />
-                                <PlaylistHistogram title={"Valence"} data={this.state.valence} />
+                                <div>
+                                    <PlaylistHistogram title={"Energy"} data={this.state.energy} />
+                                    <p>Predicts the energy of a track with a 1.0 indicating the track is fast, intense.</p>
+                                </div>
+                                <div>
+                                    <PlaylistHistogram title={"Liveness"} data={this.state.liveness} />
+                                    <p>Detects the presence of an audience in the recording. A value above 0.8 is a strong indicator that the track was recorded live.</p>
+                                </div>
+                                <div>
+                                    <PlaylistHistogram title={"Valence"} data={this.state.valence} />
+                                    <p>Songs with a valence close to 1.0 are cheerful and euphoric, while those closer 0.0 sound depressing and sad.</p>
+                                </div>
                             </div>
                         </div>
                     </Box>

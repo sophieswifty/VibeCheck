@@ -12,6 +12,8 @@ export default class StatisticsBox extends React.Component {
             display: [],
         }
 
+        console.log(this.props.userData);
+
         this.handleTopTracks = this.handleTopTracks.bind(this);
         this.handleTopArtists = this.handleTopArtists.bind(this);
         this.handleRecentlyPlayedTracks = this.handleRecentlyPlayedTracks.bind(this);
@@ -22,17 +24,17 @@ export default class StatisticsBox extends React.Component {
     }
 
     componentDidMount(props) {
-        this.setState({title: "Top Tracks"});
+        this.setState({title: `${this.props.userData[0].display_name}\`s Top Tracks`});
         this.fetchTopTracks();
     }
 
     handleTopTracks(e) {
-        this.setState({title: "Top Tracks"});
+        this.setState({title: `${this.props.userData[0].display_name}\`s Top Tracks`});
         this.fetchTopTracks(); // function sets the state
     }
 
     handleTopArtists(e) {
-        this.setState({title: "Top Artists"});
+        this.setState({title: `${this.props.userData[0].display_name}\`s Top Artists`});
         this.fetchTopArtists(); // function sets the state
     }
 
@@ -88,15 +90,13 @@ export default class StatisticsBox extends React.Component {
             <React.Fragment>
                 <Section>
                     <Container>
-                        <Box>
-                            <Heading>{this.state.title}</Heading>
-                                <Button onClick={this.handleTopArtists}>Top Artists</Button>
-                                <Button onClick={this.handleTopTracks}>Top Tracks</Button>
-                                {/* <Button onClick={this.handleRecentlyPlayedTracks}>Recently Played Tracks</Button> */}
-                        </Box>
-                    </Container>
-                    <Container>
-                    <div className="card">
+                        <Button onClick={this.handleTopArtists}>Top Artists</Button>
+                        <Button onClick={this.handleTopTracks}>Top Tracks</Button>
+                        <Image className="is-rounded is-128x128" id="user-image" src={this.props.userData[0].images[0].url} />
+                        <Heading>
+                            {this.state.title}
+                        </Heading>
+                        {/* <Button onClick={this.handleRecentlyPlayedTracks}>Recently Played Tracks</Button> */}
                         <div className="columns">
                             <div className="column vcenter">
                                 <h1 className="title">
@@ -113,11 +113,11 @@ export default class StatisticsBox extends React.Component {
                                 <strong>Cover</strong>
                                 </h1>
                             </div>
-                            </div>
                         </div>
+                    </Container>
+                    <Container>
                         {this.state.display.map( (s, i) => {
                             return (
-                                <div className="card">
                                     <div className="columns">
                                         <div className="column vcenter">
                                             <h1 className="title">
@@ -130,12 +130,11 @@ export default class StatisticsBox extends React.Component {
                                             </h1>
                                         </div>
                                         <div className="column">
-                                            <a href={s.url}>
+                                            <a href={s.url} target="_blank">
                                                 <img src={s.image} className="is-128x128"/>
                                             </a>
                                         </div>
                                     </div>
-                                </div>
                             )
                         })}
                     </Container>
