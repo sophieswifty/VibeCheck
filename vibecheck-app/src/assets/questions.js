@@ -378,7 +378,7 @@ let questions = [
         questionText: "How would you describe your current vibe (pre VibeCheck)?",
         answerOptions: [
             { answerText: "Chaotic, I need a chill pill", answerImage: 'https://images.unsplash.com/photo-1603880920705-3fcc96d6e602?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Y2hhb3N8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'acousticness', value: .1 },
-            { answerText: "Content, but I wouldn't mind a pick me", answerImage: 'https://images.unsplash.com/photo-1525072124541-6237cc05f4f7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cmVsYXhlZHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'danceability', value: .05 },
+            { answerText: "Content :-)", answerImage: 'https://images.unsplash.com/photo-1525072124541-6237cc05f4f7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cmVsYXhlZHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'danceability', value: .05 },
             { answerText: "Eh, somewhere in the middle", answerImage: 'https://images.unsplash.com/photo-1560270579-d515a443eb3b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uZnVzZWR8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'energy', value: .05 },
         ],
     },
@@ -386,9 +386,9 @@ let questions = [
         index: 33,
         questionText: "Are you trying to get in your feels?",
         answerOptions: [
-            { answerText: "Yes please", answerImage: 'https://images.unsplash.com/photo-1525120334885-38cc03a6ec77?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8c2FkfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: -.1 },
-            { answerText: "Nah, I'm good", answerImage: 'https://images.unsplash.com/photo-1581539030295-a92e2872b9ac?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8b2theXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: .05 },
-            { answerText: "Yeah, okay, maybe a little", answerImage: 'https://images.unsplash.com/photo-1453227588063-bb302b62f50b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8c2FkfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: -.05 },
+            { answerText: "Yes please!", answerImage: 'https://images.unsplash.com/photo-1525120334885-38cc03a6ec77?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8c2FkfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: -.1 },
+            { answerText: "Nah, I'm good.", answerImage: 'https://images.unsplash.com/photo-1581539030295-a92e2872b9ac?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8b2theXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: .05 },
+            { answerText: "Yeah, okay...maybe a little", answerImage: 'https://images.unsplash.com/photo-1453227588063-bb302b62f50b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8c2FkfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: -.05 },
         ],
     },
     {
@@ -426,9 +426,9 @@ let questions = [
         questionText: "How many pillows are on your bed?",
         answerOptions: [
             { answerText: "One, why would I have more?", answerImage: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'energy', value: .05 },
-            { answerText: "Two to Four, a few extra never hurt", answerImage: 'https://images.unsplash.com/photo-1583860312136-35dc71739c79?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzR8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'energy', value: .05 },
-            { answerText: "Maybe a little over 5, I love to snuggle!", answerImage: 'https://images.unsplash.com/photo-1554745006-8b25b7aeb7cb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fHNudWdnbGV8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'acousticness', value: 0.5 },
-            { answerText: "You want me to count ALL my pillows?", answerImage: 'https://images.unsplash.com/photo-1596984768919-e51f75123a13?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTd8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'valence', value: .05 },
+            { answerText: "2-4, a few extra never hurt.", answerImage: 'https://images.unsplash.com/photo-1583860312136-35dc71739c79?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzR8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'energy', value: .05 },
+            { answerText: "Over 5 - I love to snuggle!", answerImage: 'https://images.unsplash.com/photo-1554745006-8b25b7aeb7cb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fHNudWdnbGV8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'acousticness', value: 0.5 },
+            { answerText: "Do I need to count ALL of them?", answerImage: 'https://images.unsplash.com/photo-1596984768919-e51f75123a13?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTd8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'valence', value: .05 },
         ],
     },
     {
@@ -454,10 +454,10 @@ let questions = [
         index: 40,
         questionText: "And finally, how long would you last in a zombie apocalypse?",
         answerOptions: [
-            { answerText: "Might as well serve them my brain on a silver platter", answerImage: 'https://images.unsplash.com/photo-1568283661163-c90193fd13f1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8ZGVhdGh8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'acousticness', value: .05 },
-            { answerText: "Maybe a little while..?", answerImage: 'https://images.unsplash.com/photo-1503925802536-c9451dcd87b5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8em9tYmllfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'valence', value: .05 },
-            { answerText: "Honestly I'd probably survive.", answerImage: 'https://images.unsplash.com/photo-1573216145940-0bc9e583d768?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fHpvbWJpZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'danceability', value: .05 },
-            { answerText: "I'd be the last. Person. Standing.", answerImage: 'https://images.unsplash.com/photo-1490668219599-a79d4d90cf66?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjd8fGRlYXRofGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'energy', value: .05 },
+            { answerText: "Serve 'em my brain on a platter", answerImage: 'https://images.unsplash.com/photo-1568283661163-c90193fd13f1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8ZGVhdGh8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'acousticness', value: .05 },
+            { answerText: "Definitely not the first to go...", answerImage: 'https://images.unsplash.com/photo-1503925802536-c9451dcd87b5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8em9tYmllfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'valence', value: .05 },
+            { answerText: "Honestly, I'd probably survive.", answerImage: 'https://images.unsplash.com/photo-1573216145940-0bc9e583d768?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fHpvbWJpZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'danceability', value: .05 },
+            { answerText: "Last. Person. Standing.", answerImage: 'https://images.unsplash.com/photo-1490668219599-a79d4d90cf66?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjd8fGRlYXRofGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'energy', value: .05 },
 
         ],
     },
