@@ -36,7 +36,7 @@ let questions = [
     // speechiness range: 0.2
     // valence: 0.5
     // valence range: 0.15
-    { answerText: "Study mode", answerImage: 'q1_study.jpeg', nextIndex: 11, metric: 'energy_low', value: -0.5 },
+    { answerText: "Study mode", answerImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80', nextIndex: 11, metric: 'energy_low', value: -0.5 },
     // accousticness: 0.05
     // accousticness range: 0.05
     // danceability: 0.8

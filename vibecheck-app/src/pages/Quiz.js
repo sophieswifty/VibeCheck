@@ -142,8 +142,11 @@ function Quiz() {
                         {!showResult && questions[currentQuestion].answerOptions.map((answerOption, index) => (
                             <div className='grid-box' key={questions[currentQuestion].id}>
                                 <button onClick={() => handleAnswerOptionClick(answerOption)}>
+                                   <div className="image-container">
                                     <img src={answerOption.answerImage} alt="" />
+                                    </div>
                                     <p>{answerOption.answerText}</p>
+                                   
                                 </button>
                             </div>
                         ))
