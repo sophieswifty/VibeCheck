@@ -4,7 +4,8 @@ const Playlist = require('./Playlist.js');
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-var cors = require('cors')
+var cors = require('cors');
+const { use } = require('browser-sync');
 
 app.use(cors())
 if (process.env.NODE_ENV === "production") {
@@ -31,12 +32,12 @@ app.get('/playlists/:id', (req, res) => {
 });
 
 app.post('/playlists', (req, res) => {
-    let {username, tracks} = req.body;
-    if (username == null || tracks == null) {
+    let {playlistID, playlistURL, playlistName, playlistIMG, userID, displayName} = req.body;
+    if (playlistID == null || playlistURL == null || playlistName == null || playlistIMG == null || userID == null || displayName == null) {
         res.status('404').send('Bad Request - Ujesh');
         return;
     }
-    let playlist = Playlist.create(username, tracks);
+    let playlist = Playlist.create(playlistID, playlistURL, playlistName, playlistIMG, userID, displayName);
 
     if (playlist == null) {
         res.status(404).send('Bad Request');
@@ -51,11 +52,19 @@ app.put('/playlists/:id', (req, res) => {
         res.status(404).send('Playlist not found');
         return
     }
-    let {username, tracks} = req.body;
-    p.username = username;
-    p.tracks = tracks;
-    p.update();
+    let {playlistID, playlistURL, playlistName, playlistIMG, userID, displayName} = req.body;
+    if (playlistID == null || playlistURL == null || playlistName == null || playlistIMG == null || userID == null || displayName == null) {
+        res.status(404).send('Did not meet all properties');
+        return;
+    }
+    p.playlistID = playlistID;
+    p.playlistURL = playlistURL;
+    p.playlistName = playlistName;
+    p.playlistIMG = playlistIMG;
+    p.userID = userID;
+    p.displayName = displayName;
 
+    p.update();
     res.json(p);
 });
 
