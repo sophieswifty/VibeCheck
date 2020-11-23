@@ -362,7 +362,7 @@ let questions = [
         answerOptions: [
             { answerText: "Ew!", answerImage: 'https://elhstalon.net/wp-content/uploads/2017/05/Pineapple.jpg', nextIndex: null, metric: 'danceability', value: .03 },
             { answerText: "Delicious!", answerImage: 'https://cdn.drawception.com/images/panels/2017/4-15/r3fQaGdFAw-2.png', nextIndex: null, metric: 'danceability', value: .02 },
-            { answerText: "I'm the only person on the planet who doesn't have an opinion on this.", nextIndex: null, answerImage: 'https://pics.me.me/reactions-to-pineapple-pizza-be-careful-boys-its-hot-eeew-39919178.png', metric: 'danceability', value: .02 },
+            { answerText: "No comment.", nextIndex: null, answerImage: 'https://pics.me.me/reactions-to-pineapple-pizza-be-careful-boys-its-hot-eeew-39919178.png', metric: 'danceability', value: .02 },
         ],
     },
     {
