@@ -1,14 +1,17 @@
-.song-image {
-  height: 400px;
-  width: 400px;
+.audio-image {
+  height: 450px;
+  width: 450px;
+  background-color: purple;
 }
 
-.song-image img {
-  max-height: 100%;
-  max-width: 100%;
+.audio-image img {
+  object-fit: cover;
+  object-position: 50% 0;
+  width: 450px;
+  height: 450px;
 }
 
-.song-image button {
+.audio-image button {
   max-height: 100%;
   max-width: 100%;
 }
@@ -19,10 +22,15 @@
 
 .chart-container {
  height: 100%;
+ padding-left: 20px;
 }
 
-.chart {
-  padding-bottom: 20px;
+.recharts-wrapper {
+  padding-left: 10px;
+}
+.recharts-wrapper.chart {
+margin: 0 auto;
+
 }
 
 .animated-box:after {

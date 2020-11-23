@@ -55,7 +55,7 @@ export default class VibecheckPlaylist extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Box>
+                <div className="vibecheck-page-container">
                     <Heading>
                         Vibecheck a playlist
                     </Heading>
@@ -72,7 +72,7 @@ export default class VibecheckPlaylist extends React.Component {
                             // playlistDescription={this.state.playlistDescription}
                         />
                     }
-                </Box>
+                </div>
 
             </React.Fragment>
         );

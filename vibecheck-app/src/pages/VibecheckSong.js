@@ -33,7 +33,7 @@ export default class VibecheckSong extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Box>
+                 <div className="vibecheck-page-container">
                     <Heading>
                         Vibecheck a song
                     </Heading>
@@ -48,7 +48,7 @@ export default class VibecheckSong extends React.Component {
                             songURL={this.state.songObject.external_urls.spotify}
                         />
                     }
-                </Box>
+                </div>
             </React.Fragment>);
     }
 }

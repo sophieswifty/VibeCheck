@@ -40,13 +40,14 @@ export default class SongStatistics extends React.Component {
                     <Heading>
                         {`${this.props.artistName} - ${this.props.songName}`}
                     </Heading>
-                    <Tile>
-                        <div className="song-image animated-box">
+                    <div>
+                    <Tile className="chart-container">
+                        <div className="audio-image animated-box">
                             <a href={this.props.songURL}>
                                 <Image src={this.props.albumCover}/> 
                             </a>
                         </div>
-                        <Tile className="chart-container">
+                        
                             <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={this.state.data} className="chart">
                                 <PolarGrid />
                                 <PolarAngleAxis dataKey="category" />
@@ -54,7 +55,7 @@ export default class SongStatistics extends React.Component {
                                 <Radar dataKey="score" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
                             </RadarChart>
                         </Tile>
-                    </Tile>
+                    </div>
                 </Box>
             </Container>
 
