@@ -92,7 +92,9 @@ export default class StatisticsBox extends React.Component {
                     <Container>
                         <Button onClick={this.handleTopArtists}>Top Artists</Button>
                         <Button onClick={this.handleTopTracks}>Top Tracks</Button>
-                        <Image className="is-rounded is-128x128" id="user-image" src={this.props.userData[0].images[0].url} />
+                        <a href={this.props.userData[0].external_urls.spotify} target="_blank">
+                            <Image className="is-rounded is-128x128" id="user-image" src={this.props.userData[0].images[0].url} />
+                        </a>
                         <Heading>
                             {this.state.title}
                         </Heading>
@@ -114,6 +116,7 @@ export default class StatisticsBox extends React.Component {
                                 </h1>
                             </div>
                         </div>
+                        <hr />
                     </Container>
                     <Container>
                         {this.state.display.map( (s, i) => {

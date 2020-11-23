@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Container, Button, Box, Heading, Notification, Field, Control } from 'react-bulma-components';
 import UserDataContext from '../context/userdata';
-import axios from 'axios';
+import { deleteAllUserPlaylists } from '../API/backendAPI'
 import './Profile.css';
 
 function Profile(props) {
@@ -12,16 +12,7 @@ function Profile(props) {
 
     const deleteData = async () => {
         console.log("deleting account");
-        // try {
-        //     const result = await axios({
-        //         method: 'DELETE',
-        //         url: 'https://vibecheck-please.herokuapp.com/dashboard/playlists/all',
-        //     });
-
-        //     console.log(result.data);
-        // } catch (error) {
-        //     return error;
-        // }
+        deleteAllUserPlaylists(userData.id)
     }
 
     const clearPlaylistData = async () => {
@@ -67,7 +58,7 @@ function Profile(props) {
                 <Box className="profile">
                     <Heading>{userData.display_name}</Heading>
                     <div className="profile-image">
-                        <a href={userData.external_urls.spotify}>
+                        <a href={userData.external_urls.spotify} target="_blank">
                             <img src={userData.images[0].url} id="album-img" />
                         </a>
                     </div>

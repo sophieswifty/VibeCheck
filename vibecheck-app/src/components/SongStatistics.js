@@ -58,7 +58,6 @@ export default class SongStatistics extends React.Component {
                     </div>
                 </Box>
             </Container>
-
         );
     }
 }
