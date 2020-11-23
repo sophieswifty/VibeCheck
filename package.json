@@ -6,9 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd backend && npm install && node index.js",
-    "build": "cd client && npm run build",
-    "install-client": "cd client && npm install",
-    "install-server": "cd backend && npm install",
+    "build": "cd vibecheck-app && npm run build",
+    "install-client": "cd vibecheck-app && npm install",
     "heroku-postbuild": "npm run install-client && npm run build"
 
   },
