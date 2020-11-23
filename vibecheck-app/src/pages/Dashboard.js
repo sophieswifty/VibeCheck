@@ -3,6 +3,7 @@ import { Heading, Hero, Section, Box } from 'react-bulma-components';
 import './Dashboard.css';
 import './Home.css';
 import PR from '../components/PR';
+import PlaylistReel from '../components/PlaylistReel'
 import { Container } from 'react-bulma-components';
 import ConnectSpotify from '../components/ConnectSpotify';
 
@@ -32,14 +33,14 @@ function Dashboard(props) {
 
                         </Section>
 
-                    </Hero.Body>
-                </Hero>
-                <br />
-                <Container>
+                     
                     <Container>
-                        <PR />
+                       <PlaylistReel/>
                     </Container>
-                </Container>
+              
+                    </Hero.Body>
+                   
+                </Hero>
             </div>}
 
             {!props.auth && <div className="landing-dash">
@@ -61,15 +62,15 @@ function Dashboard(props) {
                                 <i>Sign in with your spotify to get started.</i>
                             </Heading>
                         </div>
+<br></br>
+                        <Container>
+                       <PlaylistReel/>
+                    </Container>
+
                     </Hero.Body>
                 </Hero>
-                <br />
-
-                <br></br>
-                <Section>
-                    <PR />
-                </Section>
-                <br />
+             
+               
             </div>}
 
 

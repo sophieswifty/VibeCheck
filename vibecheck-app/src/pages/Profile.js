@@ -1,31 +1,98 @@
-import React, {useContext} from 'react';
-import { Container, Button } from 'react-bulma-components';
+import React, { useContext, useState } from 'react';
+import { Container, Button, Box, Heading, Notification, Field, Control } from 'react-bulma-components';
 import UserDataContext from '../context/userdata';
 import axios from 'axios';
+import './Profile.css';
 
 function Profile(props) {
 
     const [userData, setUserData] = useContext(UserDataContext);
+    const [deleteUserWarning, setDeleteUserWarning] = useState(false);
+    const [deletePlaylistsSuccess, setDeletePlaylistsSuccess] = useState(false);
 
-    const deleteData = async() => {
-        try {
-            const result = await axios({
-                method: 'GET',
-                url: 'http://localhost:3030/playlists/all',
-            });
+    const deleteData = async () => {
+        console.log("deleting account");
+        // try {
+        //     const result = await axios({
+        //         method: 'DELETE',
+        //         url: 'https://vibecheck-please.herokuapp.com/dashboard/playlists/all',
+        //     });
 
-            console.log(result.data);
-        } catch (error) {
-            return error;
-        }
+        //     console.log(result.data);
+        // } catch (error) {
+        //     return error;
+        // }
     }
+
+    const clearPlaylistData = async () => {
+        setDeletePlaylistsSuccess(true);
+
+        // try {
+        //     const result = await axios({
+        //         method: 'DELETE',
+        //         url: 'https://vibecheck-please.herokuapp.com/dashboard/playlists/all',
+        //     });
+
+        //     console.log(result.data);
+        // } catch (error) {
+        //     return error;
+        // }
+    }
+
+    const showWarning = () => {
+        setDeleteUserWarning(true);
+    }
+
+    const handleRemove = () => {
+        setDeletePlaylistsSuccess(false);
+        setDeleteUserWarning(false);
+    }
+
+    const yesDelete = () => {
+        deleteData();
+        window.location.href='/'; // Redirect to login page.
+        setDeletePlaylistsSuccess(false);
+        setDeleteUserWarning(false);
+    }
+
+    const noDelete = () => {
+        setDeletePlaylistsSuccess(false);
+        setDeleteUserWarning(false);
+    }
+
 
     return (
         <div>
-           <Container>
-              {userData.display_name}
-              <Button color="warning" onClick={deleteData}>Delete data</Button>
-           </Container>
+            <Container>
+                <Box className="profile">
+                    <Heading>{userData.display_name}</Heading>
+                    <div className="profile-image">
+                        <a href={userData.external_urls.spotify}>
+                            <img src={userData.images[0].url} id="album-img" />
+                        </a>
+                    </div>
+                    <Button color="warning" onClick={clearPlaylistData}>Clear playlist data</Button>
+
+                    <Button color="danger" onClick={showWarning}>Delete all data</Button>
+
+                    {deleteUserWarning &&
+                        <Notification color="warning">
+                            Are you sure you want to clear user data?
+                            You will be logged out automatically if yes.
+                       
+                                    <Button type="primary" onClick={yesDelete}>Yes</Button>
+                               
+                                    <Button color="danger" onClick={noDelete}>Cancel</Button>
+                              
+                        </Notification>}
+
+                    {deletePlaylistsSuccess && <Notification color="success">
+                        All your playlists have been cleared from Vibecheck!
+                        <Button remove onClick={handleRemove} />
+                    </Notification>}
+
+                </Box>
+            </Container>
         </div>
     )
 }

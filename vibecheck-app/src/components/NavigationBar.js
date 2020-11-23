@@ -50,8 +50,10 @@ function NavigationBar(props) {
         </Navbar.Container>
         <Navbar.Container position="end">
           {props.loadingData && <Navbar.Item className='name-no-hover'>
-          Sensing vibes of {props.username} 
-            <Loader className="loading" />
+           
+              Sensing vibes of {props.username}
+              <Loader className="loading" />
+           
           </Navbar.Item>}
           {!props.loadingData && <Navbar.Item className='name-no-hover'>
             <Link renderAs="a" to="./profile">
