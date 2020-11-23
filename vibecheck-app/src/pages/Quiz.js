@@ -140,7 +140,7 @@ function Quiz() {
                     </div>
                     <div className='answer-section grid-container'>
                         {!showResult && questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                            <div className='grid-box cropped' key={questions[currentQuestion].id}>
+                            <div className='grid-box' key={questions[currentQuestion].id}>
                                 <button onClick={() => handleAnswerOptionClick(answerOption)}>
                                     <img src={answerOption.answerImage} alt="" />
                                     {answerOption.answerText}

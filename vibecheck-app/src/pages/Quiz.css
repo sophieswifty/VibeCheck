@@ -20,14 +20,14 @@
     grid-row-gap:10px;
   }
   .grid-container .grid-box {
-    background-color: #ffffff;
+    background-color: #f1f1f1;
     padding: 10px;
     border-radius: 4px;
     color: rgb(255, 255, 255);
     display: flex;
-    font-size: 25px;
+    font-size: 18px;
     font-family: Calibri;
-    box-shadow:0 0 5px rgb(184, 184, 184);
+    box-shadow:0 0 5px rgb(236, 236, 236);
   }
   
   .quiz {
@@ -63,15 +63,12 @@
     margin: 20px;
   }
   
-  .cropped {
-    width: 150px; /* width of container */
-    height: 150px; /* height of container */
-    overflow: hidden;
+.grid-box 
 
-}
-
-.cropped img {
-    margin: 0px 0px 0px -180px;
+.grid-box img {
+  object-fit: cover;
+  background-size: 100%; 
+  transform: none;
 }
 
 
