@@ -81,7 +81,7 @@ function App(props) {
                   <PrivateRoute path="/vibecheck-song" component={VibecheckSong} />
                   <PrivateRoute path="/vibecheck-playlist" component={VibecheckPlaylist} />
                   <Route path="/redirect" component={Redirect} />
-                  <Route exact path="/" component={Home} />
+                  <Route exact path="/" component={Dashboard} />
                 </Switch>
               </Layout>
             </Router>

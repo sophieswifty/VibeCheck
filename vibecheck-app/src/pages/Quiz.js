@@ -143,7 +143,7 @@ function Quiz() {
                             <div className='grid-box' key={questions[currentQuestion].id}>
                                 <button onClick={() => handleAnswerOptionClick(answerOption)}>
                                     <img src={answerOption.answerImage} alt="" />
-                                    {answerOption.answerText}
+                                    <p>{answerOption.answerText}</p>
                                 </button>
                             </div>
                         ))
