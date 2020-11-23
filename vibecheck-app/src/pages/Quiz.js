@@ -6,87 +6,111 @@ import { fetchCandidateSongs, filterCandidateSongs, makePlaylist, createPlaylist
 import NewPlaylist from '../components/NewPlaylist';
 import { AudioBatchContext } from '../context/audiobatch';
 
-// NEW FILTER:
-// acousticness: 0,
-// danceability: 0,
-// duration_ms: 0,
-// energy: 0,
-// instrumentalness: 0,
-// liveness: 0,
-// loudness: 0,
-// mode: 0,
-// speechiness: 0,
-// tempo: 0,
-// time_signature: 0,
-// valence_high: 0
+const turnt = {
+    accousticness: 0.15,
+    accousticness_range: 0.15,
+    danceability: 0.8,
+    danceability_range: 0.2,
+    energy: 0.8,
+    energy_range: 0.2,
+    instrumentalness: 0.2,
+    instrumentalness_range: 0.2,
+    speechiness: 0.33,
+    speechiness_range: 0.33,
+    valence: 0.7,
+    valence_range: 0.3
+}
 
-let resetFilter = {
-    acousticness_low: 0,
-    acousticness_high: 0.25,
-    danceability_low: 0.4,
-    danceability_high: 0.65,
-    duration_ms_low: 0,
-    duration_ms_high: 600000,
-    energy_low: 0.5,
-    energy_high: 0.75,
-    instrumentalness_low: 0,
-    instrumentalness_high: 0.25,
-    key: 0,
-    liveness_low: 0,
-    liveness_high: 0.25,
-    loudness_low: -8,
-    loudness_high: 0,
-    mode: 1,
-    speechiness_low: 0,
-    speechiness_high: 0.25,
-    tempo_low: 60,
-    tempo_high: 140,
-    time_signature: 4,
-    valence_low: 0.5,
-    valence_high: 0.75
-};
+const study = {
+accousticness: 0.6,
+    accousticness_range: 0.4,
+    danceability: 0.1,
+    danceability_range: 0.1,
+    energy: 0.25,
+    energy_range: 0.25,
+    instrumentalness: 0.5,
+    instrumentalness_range: 0.5,
+    speechiness: 0.2,
+    speechiness_range: 0.2,
+    valence: 0.5,
+    valence_range: 0.15
+}
+
+const exercise = {
+    accousticness: 0.05,
+    accousticness_range: 0.05,
+    danceability: 0.8,
+    danceability_range: 0.2,
+    energy: 0.8,
+    energy_range: 0.2,
+    instrumentalness: 0.2,
+    instrumentalness_range: 0.2,
+    speechiness: 0.33,
+    speechiness_range: 0.33,
+    valence: 0.8,
+    valence_range: 0.2
+
+}
+
+const vibes = {
+    accousticness: 0.25,
+    accousticness_range: 0.25,
+    danceability: 0.2,
+    danceability_range: 0.2,
+    energy: 0.2,
+    energy_range: 0.2,
+    instrumentalness: 0.4,
+    instrumentalness_range: 0.4,
+    speechiness: 0.33,
+    speechiness_range: 0.33,
+    valence: 0.3,
+    valence_range: 0.3
+}
+
 
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showResult, setShowResult] = useState(false);
     const [showPlaylist, setShowPlaylist] = useState(false);
-    const [filter, setFilter] = useState({
-        acousticness_low: 0,
-        acousticness_high: 0.25,
-        danceability_low: 0.4,
-        danceability_high: 0.65,
-        duration_ms_low: 0,
-        duration_ms_high: 600000,
-        energy_low: 0.5,
-        energy_high: 0.75,
-        instrumentalness_low: 0,
-        instrumentalness_high: 0.25,
-        key: 0,
-        liveness_low: 0,
-        liveness_high: 0.25,
-        loudness_low: -8,
-        loudness_high: 0,
-        mode: 1,
-        speechiness_low: 0,
-        speechiness_high: 0.25,
-        tempo_low: 60,
-        tempo_high: 140,
-        time_signature: 4,
-        valence_low: 0.5,
-        valence_high: 0.75
-    });
+    const [cleanFilter, setCleanFilter] = useState(false);
 
     const [audioBatch, setAudioBatch] = useContext(AudioBatchContext);
     const [playlistName, setPlaylistName] = useState("Vibecheck Playlist");
     const [playlistData, setPlaylistData] = useState({});
 
+    let resultFilter = {};
+
+    if (cleanFilter) {
+        resultFilter = {};
+        setCleanFilter(false);
+    }
+
     // Using filter as a global var which means when the user goes 
 
     const handleAnswerOptionClick = (answerOption) => {
+    
+        // Setting initial filter based off q1 answer.
+        switch(answerOption.answerText) {
+            case "Getting turnt":
+                resultFilter = turnt;
+                break;
+            case "Study mode":
+                resultFilter = study;
+                break;
+            case "Exercising":
+                resultFilter = exercise;
+                break;
+            case "Just vibing.":
+                resultFilter = vibes;
+                break;
+            default:
+                break;
+        }
+
         // Update filter by adding the value to the metric per question
-        let filter_copy = JSON.parse(JSON.stringify(filter));
-        filter_copy[answerOption.metric] = filter[answerOption.metric] + answerOption.value;
-        setFilter(filter_copy);
+        let filter_copy = JSON.parse(JSON.stringify(resultFilter));
+        filter_copy[answerOption.metric] = resultFilter[answerOption.metric] + answerOption.value;
+        resultFilter = filter_copy;
 
         const nextQuestion = answerOption.nextIndex;
 
@@ -101,20 +125,21 @@ function Quiz() {
         setCurrentQuestion(0);
         setShowResult(false);
         setShowPlaylist(false)
-        setFilter(resetFilter);
+        setCleanFilter(true);
     }
 
     const generatePlaylist = () => {
-        // modify filter before sending
-        let resultPlaylist = filterCandidateSongs(audioBatch, resetFilter);
-
+        const resultPlaylist = filterCandidateSongs(audioBatch, resultFilter);
+        
         createPlaylist(playlistName).then((playlist) => {
             const URIs = resultPlaylist.map(elt => elt.uri);
+            
             addTracksToPlaylist(playlist.id, URIs).then(() => {
+                
                 getPlaylist(playlist.id).then((final_playlist) => {
-                   
                     setPlaylistData(final_playlist);
                     setShowPlaylist(true);
+                    cleanFilter(true);
                 })
             })
         }).catch((error) => {
@@ -142,11 +167,11 @@ function Quiz() {
                         {!showResult && questions[currentQuestion].answerOptions.map((answerOption, index) => (
                             <div className='grid-box' key={questions[currentQuestion].id}>
                                 <button onClick={() => handleAnswerOptionClick(answerOption)}>
-                                   <div className="image-container">
-                                    <img src={answerOption.answerImage} alt="" />
+                                    <div className="image-container">
+                                        <img src={answerOption.answerImage} alt="" />
                                     </div>
                                     <p>{answerOption.answerText}</p>
-                                   
+
                                 </button>
                             </div>
                         ))
@@ -170,7 +195,7 @@ function Quiz() {
                 <Button className="restart-btn" onClick={handleRestartClick}>Restart</Button>
 
             </div>}
-            {showPlaylist && <NewPlaylist restart={handleRestartClick} playlist={playlistData}/>}
+            {showPlaylist && <NewPlaylist restart={handleRestartClick} playlist={playlistData} />}
         </div>
 
     );

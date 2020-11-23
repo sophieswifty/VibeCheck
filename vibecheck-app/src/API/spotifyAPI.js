@@ -735,12 +735,12 @@ export const fetchCandidateSongs = async (callback) => {
 
 // audio_features is a list of all fetched candidate songs' audio features
 export const filterCandidateSongs = (audio_features, filter) => {
-    const passed_tracks = audio_features.filter((elt) => passesFilterB(elt, filter));
-    const fields = ["acousticness","danceability","energy","instrumentalness","liveness","speechiness","valence"];
+    let passed_tracks = audio_features.filter((elt) => passesFilterB(elt, filter));
+    let fields = ["acousticness","danceability","energy","instrumentalness","liveness","speechiness","valence"];
     if (passed_tracks.length < 15) {
         while (passed_tracks.length < 15) {
             fields.forEach(field => {
-                const field_range = field + "_range";
+                let field_range = field + "_range";
                 filter[field_range] *= 1.1;
             })
             passed_tracks = audio_features.filter((elt) => passesFilterB(elt, filter));
@@ -751,18 +751,18 @@ export const filterCandidateSongs = (audio_features, filter) => {
     } else if (passed_tracks.length > 35) {
         while (passed_tracks.length > 35) {
             fields.forEach(field => {
-                const field_range = field + "_range";
+                let field_range = field + "_range";
                 filter[field_range] /= 1.1;
             })
             passed_tracks = audio_features.filter((elt) => passesFilterB(elt, filter));
         }
         if (passed_tracks.length < 15) {
             fields.forEach(field => {
-                const field_range = field + "_range";
+                let field_range = field + "_range";
                 filter[field_range] *= 1.1;
             })
             passed_tracks = audio_features.filter((elt) => passesFilterB(elt, filter));
-            const playlist_length = passed_tracks.length > 35 ? 30 : passed_tracks.length;
+            let playlist_length = passed_tracks.length > 35 ? 30 : passed_tracks.length;
             passed_tracks = passed_tracks.slice(0,playlist_length);
         }
     }

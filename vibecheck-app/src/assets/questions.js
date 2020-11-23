@@ -23,7 +23,7 @@ let questions = [
     // speechiness range: 0.33
     // valence: 0.7
     // valence range: 0.3
-    { answerText: "Getting turnt", answerImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80', nextIndex: 1, metric: 'energy_high', value: 1 },
+    { answerText: "Getting turnt", answerImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80', nextIndex: 1, metric: 'energy', value: 0 },
     // accousticness: 0.6
     // accousticness range: 0.4
     // danceability: 0.1
@@ -36,7 +36,7 @@ let questions = [
     // speechiness range: 0.2
     // valence: 0.5
     // valence range: 0.15
-    { answerText: "Study mode", answerImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80', nextIndex: 11, metric: 'energy_low', value: -0.5 },
+    { answerText: "Study mode", answerImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80', nextIndex: 11, metric: 'energy', value: 0 },
     // accousticness: 0.05
     // accousticness range: 0.05
     // danceability: 0.8
@@ -49,7 +49,7 @@ let questions = [
     // speechiness range: 0.33
     // valence: 0.8
     // valence range: 0.2
-    { answerText: "Healthicizing", answerImage: 'https://images.unsplash.com/photo-1527933053326-89d1746b76b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80', nextIndex: 21, metric: 'energy_high', value: 1.5 },
+    { answerText: "Exercising", answerImage: 'https://images.unsplash.com/photo-1527933053326-89d1746b76b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80', nextIndex: 21, metric: 'energy', value: 0 },
     // accousticness: 0.25
     // accousticness range: 0.25
     // danceability: 0.2
@@ -62,42 +62,40 @@ let questions = [
     // speechiness range: 0.33
     // valence: 0.3
     // valence range: 0.3
-    { answerText: "Just vibing.", answerImage: 'https://images.unsplash.com/photo-1498892156743-6d5da30bab8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80', nextIndex: 31, metric: 'energy_low', value: -1 },
+    { answerText: "Just vibing.", answerImage: 'https://images.unsplash.com/photo-1498892156743-6d5da30bab8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80', nextIndex: 31, metric: 'energy', value: 0 },
     ]
     
     },
     
     {
     index: 1,
-    questionText: "Are you feeling...",
+    questionText: "Which party would you attend?",
     answerOptions: [
-    { answerText: "Smooth", answerImage: 'q1_party.jpeg', nextIndex: 2, metric: 'energy_high', value: 1 },
-    { answerText: "Glitter", answerImage: 'q1_study.jpeg', nextIndex: 2, metric: 'energy_high', value: 1 },
-    { answerText: "Wood", answerImage: 'q1_run.jpeg', nextIndex: 2, metric: 'energy_high', value: 1 },
-    { answerText: "Concrete", answerImage: 'q1_vibes.jpeg', nextIndex: 2, metric: 'energy_high', value: 1 },
+    { answerText: "The office party", answerImage: 'https://valetcoffee.com/wp-content/uploads/2019/12/Office-Party-Ideas-that-dont-suck-Northern-Kentucky-Cincinnati.jpeg', nextIndex: 2, metric: 'danceability', value: -0.4 },
+    { answerText: "The house show", answerImage: 'https://images.unsplash.com/photo-1508171254668-090b66f22108?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2UlMjBwYXJ0eXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=600&q=60', nextIndex: 2, metric: 'danceability', value: .15 },
+    { answerText: "Mr. Gatsby's", answerImage: 'https://media.newyorker.com/photos/59095192019dfc3494e9daf2/16:9/w_1280,c_limit/the-great-gatsby-party-580.jpg', nextIndex: 2, metric: 'danceability', value: -0.2 },
+    { answerText: "EDM concert", answerImage: 'https://imagez.tmz.com/image/de/1by1/2019/11/21/de7cb7de7e964052b624773a4cfc4463_xl.jpg', nextIndex: 2, metric: 'danceability', value: .3 },
     ],
     },
     
     {
     index: 2,
-    nextIndex: 3,
     questionText: "How many people are with you?",
     answerOptions: [
-    { answerText: "Just me.", answerImage: 'q1_party.jpeg', nextIndex: 1, metric: 'energy_high', value: 1 },
-    { answerText: "1-3", answerImage: 'q1_study.jpeg'},
-    { answerText: "4-9", answerImage: 'q1_run.jpeg' },
-    { answerText: "Over 10", answerImage: 'q1_vibes.jpeg' },
+    { answerText: "Just me.", answerImage: 'q1_party.jpeg', nextIndex: 3, metric: 'energy', value: -.2 },
+    { answerText: "1-3", answerImage: 'q1_study.jpeg', nextIndex: 3, metric: 'energy', value: -0.1 },
+    { answerText: "4-9", answerImage: 'q1_run.jpeg', nextIndex: 3, metric: 'energy', value: .1 },
+    { answerText: "Over 10", answerImage: 'q1_vibes.jpeg', nextIndex: 3, metric: 'energy', value: .2  },
     ],
     },
     {
     index: 3,
-    nextIndex: 4,
     questionText: "Pick a destination of choice.",
     answerOptions: [
-    { answerText: "Berlin", answerImage: 'q1_party.jpeg'},
-    { answerText: "Rio de Janeiro", answerImage: 'q1_study.jpeg'},
-    { answerText: "Los Angeles", answerImage: 'q1_study.jpeg'},
-    { answerText: "Tokyo", answerImage: 'q1_study.jpeg'},
+    { answerText: "Berlin", answerImage: 'https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8YmVybGlufGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60',  nextIndex: 4, metric: 'energy', value: .05 },
+    { answerText: "Rio de Janeiro", answerImage: 'https://images.unsplash.com/photo-1589394760151-b4c9890765fe?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8cmlvfGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60',   nextIndex: 4, metric: 'acousticness_range', value:  .1 },
+    { answerText: "Bali", answerImage: 'https://images.unsplash.com/photo-1515896769750-31548aa180ed?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8bG9zJTIwYW5nZWxlc3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60',   nextIndex: 4, metric: 'energy', value: -.2 },
+    { answerText: "Tokyo", answerImage: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8dG9reW98ZW58MHx8MHw%3D&auto=format&fit=crop&w=1000&q=60',   nextIndex: 4, metric: 'energy_range', value: -.05 },
     ],
     },
     {
@@ -105,40 +103,38 @@ let questions = [
     nextIndex: 5,
     questionText: "How are you feeling?",
     answerOptions: [
-    { answerText: "Chaotic", answerImage: 'q1_party.jpeg'},
-    { answerText: "Loved", answerImage: 'q1_study.jpeg'},
-    { answerText: "Nostalgic", answerImage: 'q1_study.jpeg'},
-    { answerText: "Hot.", answerImage: 'q1_study.jpeg'},
+    { answerText: "Chaotic", answerImage: 'https://images.unsplash.com/photo-1571289868918-f1deff2f7219?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c3BsYXR0ZXIlMjBwYWludHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60', nextIndex: 5, metric: 'instrumentalness', value: -.1 },
+    { answerText: "Loved", answerImage: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aGVhcnRzfGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60', nextIndex: 5, metric: 'valence_range', value: .05 },
+    { answerText: "Nostalgic", answerImage: 'https://images.unsplash.com/photo-1511090141963-54adba30c2d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=926&q=80', nextIndex: 5, metric: 'valence', value: -.2 },
+    { answerText: "Hot.", answerImage: 'q1_study.jpeg', nextIndex: 5, metric: 'energy_range', value: .05 },
     ],
     },
     {
     index: 5,
-    nextIndex: 6,
-    questionText: "Pick a cereal.",
+    questionText: "Drink of choice?",
     answerOptions: [
-    { answerText: "Fruit loops", answerImage: 'q1_party.jpeg'},
-    { answerText: "Cheerios", answerImage: 'q1_study.jpeg'},
-    { answerText: "Honey Bunches of Oats", answerImage: 'q1_study.jpeg'},
-    { answerText: "Cinnamon Toast Crunch", answerImage: 'q1_study.jpeg'},
+    { answerText: "Margarita", answerImage: 'https://images.unsplash.com/photo-1556855810-ac404aa91e85?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjl8fG1hcmdhcml0YXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60',nextIndex: 6, metric: 'valence', value: .05 },
+    { answerText: "G&T", answerImage: 'https://images.unsplash.com/photo-1598509679475-bb4fa54cfeda?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Z2luJTIwYW5kJTIwdG9uaWN8ZW58MHx8MHw%3D&auto=format&fit=crop&w=1000&q=60',nextIndex: 6, metric: 'valence', value: -.15 },
+    { answerText: "Whiteclaw", answerImage: 'https://www.thespiritsbusiness.com/content/http://www.thespiritsbusiness.com/media/2020/05/White-Claw.jpg', nextIndex: 6, metric: 'energy_range', value: -.05 },
+    { answerText: "PBR", answerImage: 'https://i5.walmartimages.com/asr/b1ada15a-b8db-4b78-bc04-4f48af6da156_1.b3a099d5d7f075a530d1358965570a43.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff', nextIndex: 6, metric: 'acousticness_range', value: .05 },
     ],
     },
     {
     index: 6,
-    nextIndex: 7,
     questionText: "What font do you jive with?",
     answerOptions: [
-    { answerText: "Comic Sans", answerImage: 'q1_party.jpeg'},
-    { answerText: "Impact", answerImage: 'q1_study.jpeg'},
-    { answerText: "Consolas", answerImage: 'q1_study.jpeg'},
-    { answerText: "Helvetica", answerImage: 'q1_study.jpeg'},
+    { answerText: "Comic Sans", answerImage: 'https://assets.change.org/photos/8/oz/vq/pjoZVQPonIIkiRD-1600x900-noPad.jpg?1556080920', nextIndex: 7, metric: 'valence', value: .05 },
+    { answerText: "Impact", answerImage: 'https://freefontsfamily.com/wp-content/uploads/2019/11/Impact-font-free.jpg', nextIndex: 7, metric: 'danceability', value: -.15 },
+    { answerText: "Consolas", answerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/ConsolasSP.svg/1200px-ConsolasSP.svg.png', nextIndex: 7, metric: 'energy', value: -.1 },
+    { answerText: "Helvetica", answerImage: 'https://cdn.freefontsfamily.com/wp-content/uploads/2019/04/Helvetica-Font-1.jpg', nextIndex: 7, metric: 'valence_range', value: .05 },
     ],
     },
     {
     index: 7,
     nextIndex: 8,
-    questionText: "Are you outside or inside?",
+    questionText: "Who's your plus one?",
     answerOptions: [
-    { answerText: "Inside", answerImage: 'q1_party.jpeg'},
+    { answerText: "Post malone", answerImage: 'https://imagez.tmz.com/image/de/1by1/2019/11/21/de7cb7de7e964052b624773a4cfc4463_xl.jpg'},
     { answerText: "Outside", answerImage: 'q1_study.jpeg'},
     ],
     },
