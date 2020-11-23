@@ -13,14 +13,14 @@ function Redirect(props) {
     const location = props.location;
     try {
       if (_.isEmpty(location.hash)) {
-        return history.push('/');
+        return history.push('/dashboard');
       }
       const access_token = getParamValues(location.hash);
       setAuthTokens(access_token);
       setLoggedIn(true);
       history.push('/dashboard');
     } catch (error) {
-      history.push('/');
+      history.push('/dashboard');
       setIsError(true);
     }
   }, []);

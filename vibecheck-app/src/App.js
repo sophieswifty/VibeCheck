@@ -74,14 +74,14 @@ function App(props) {
               {authTokens && <LoggedIn username={userData.display_name} loadingData={loadingSongData} />}
               <Layout>
                 <Switch>
-                  <PrivateRoute path="/dashboard" component={Dashboard} />
+                  <Route path="/dashboard" component={Dashboard} />
                   <PrivateRoute path="/quiz" component={Quiz} />
                   <PrivateRoute path="/profile" component={Profile} />
                   <PrivateRoute path="/statistics" component={Statistics} />
                   <PrivateRoute path="/vibecheck-song" component={VibecheckSong} />
                   <PrivateRoute path="/vibecheck-playlist" component={VibecheckPlaylist} />
                   <Route path="/redirect" component={Redirect} />
-                  <Route exact path="/" component={Dashboard} />
+                  <Route exact path="/" component={Redirect} />
                 </Switch>
               </Layout>
             </Router>

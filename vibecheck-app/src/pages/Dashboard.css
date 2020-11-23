@@ -12,4 +12,58 @@
     color: white;
 }
 
+.desc {
+  background-color: rebeccapurple;
+  background-size:100% 100%;
+}
 
+.landing-dash {
+  color: white;
+}
+
+.landing-desc .landing-desc-slogan {
+  padding-top: 40px;
+  color: white;
+}
+
+.landing-desc h1 {
+  color: white;
+}
+
+
+.fade-in {
+  background-image: url("https://media3.giphy.com/media/LLYMoDblVhhjvjRBtj/giphy.gif?cid=ecf05e47fk0sbw5iynqpghuaszui9yyvwhpz15icvct1uhj1&rid=giphy.gif");
+  background-repeat: no-repeat, repeat;
+  background-color: rebeccapurple;
+  background-size:100% 100%;
+  opacity: 0.9;
+  animation: fadeIn ease 20s;
+  -webkit-animation: fadeIn ease 20s;
+  -moz-animation: fadeIn ease 20s;
+  -o-animation: fadeIn ease 20s;
+  -ms-animation: fadeIn ease 20s;
+  }
+  @keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.9;}
+  }
+  
+  @-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.9;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.9;}
+  }
+  
+  @-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.9;}
+  }
+  
+  @-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.9;}
+  }
