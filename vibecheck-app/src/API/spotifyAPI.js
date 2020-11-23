@@ -1,4 +1,4 @@
-import { create } from 'lodash';
+import { create, isEmpty } from 'lodash';
 
 const axios = require('axios').default;
 
@@ -745,6 +745,10 @@ export const fetchCandidateSongs = async (callback) => {
 
 // audio_features is a list of all fetched candidate songs' audio features
 export const filterCandidateSongs = (audio_features, filter) => {
+    if (isEmpty(filter)) {
+        console.log("filter empty");
+        return {};
+    }
     let passed_tracks = audio_features.filter((elt) => passesFilterB(elt, filter));
     let fields = ["acousticness","danceability","energy","instrumentalness","liveness","speechiness","valence"];
     if (passed_tracks.length < 15) {

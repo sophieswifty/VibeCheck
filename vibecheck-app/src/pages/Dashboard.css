@@ -30,6 +30,11 @@
   color: white;
 }
 
+.playlists-title {
+  color: rgb(212, 212, 212);
+  font-size: 30px;
+}
+
 
 .fade-in {
   background-image: url("https://media3.giphy.com/media/LLYMoDblVhhjvjRBtj/giphy.gif?cid=ecf05e47fk0sbw5iynqpghuaszui9yyvwhpz15icvct1uhj1&rid=giphy.gif");

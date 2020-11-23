@@ -9,18 +9,10 @@ import ConnectSpotify from '../components/ConnectSpotify';
 
 
 function Dashboard(props) {
-    // const [landingPage, setLandingPage] = useState(true);
-    // const [authTokens, setAuthTokens] = useContext(AuthContext);
-
-    // useEffect(() => {
-    //     if (authTokens) {
-    //         setLandingPage(false);
-    //     }
-    // }, [authTokens])
 
     return (
         <div>
-            {props.auth && <div className="logged-in-dash">
+            {props.auth ? <div className="logged-in-dash">
                 <Hero className="dash-hero">
                     <Hero.Body className="hero-background">
 
@@ -32,18 +24,16 @@ function Dashboard(props) {
                                 </Heading>
 
                         </Section>
-
-                     
-                    <Container>
+                        <br></br>
+                        <Heading subtitle className="playlists-title">Your recently generated playlists:</Heading>
                        <PlaylistReel/>
-                    </Container>
-              
                     </Hero.Body>
-                   
                 </Hero>
-            </div>}
+            </div>
 
-            {!props.auth && <div className="landing-dash">
+            :
+
+            <div className="landing-dash">
                 <Hero gradient size="large" className="home-hero">
                     <Hero.Body className="fade-in" align="center">
                         <div className="wrapper"><h1>▼ibec❚❚eck</h1></div>
@@ -63,8 +53,9 @@ function Dashboard(props) {
                             </Heading>
                         </div>
                         <br></br>
-                       
-                       <PlaylistReel/>
+
+                        <Heading className="playlists-title">Checkout these recently generated playlists:</Heading>
+                       <PlaylistReel />
                    
 
                     </Hero.Body>

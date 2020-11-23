@@ -7,8 +7,8 @@ import NewPlaylist from '../components/NewPlaylist';
 import { AudioBatchContext } from '../context/audiobatch';
 
 const turnt = {
-    accousticness: 0.15,
-    accousticness_range: 0.15,
+    acousticness: 0.15,
+    acousticness_range: 0.15,
     danceability: 0.8,
     danceability_range: 0.2,
     energy: 0.8,
@@ -22,8 +22,8 @@ const turnt = {
 }
 
 const study = {
-accousticness: 0.6,
-    accousticness_range: 0.4,
+    acousticness: 0.6,
+    acousticness_range: 0.4,
     danceability: 0.1,
     danceability_range: 0.1,
     energy: 0.25,
@@ -37,8 +37,8 @@ accousticness: 0.6,
 }
 
 const exercise = {
-    accousticness: 0.05,
-    accousticness_range: 0.05,
+    acousticness: 0.05,
+    acousticness_range: 0.05,
     danceability: 0.8,
     danceability_range: 0.2,
     energy: 0.8,
@@ -53,8 +53,8 @@ const exercise = {
 }
 
 const vibes = {
-    accousticness: 0.25,
-    accousticness_range: 0.25,
+    acousticness: 0.25,
+    acousticness_range: 0.25,
     danceability: 0.2,
     danceability_range: 0.2,
     energy: 0.2,
@@ -67,6 +67,7 @@ const vibes = {
     valence_range: 0.3
 }
 
+let resultFilter = {};
 
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -78,7 +79,7 @@ function Quiz() {
     const [playlistName, setPlaylistName] = useState("Vibecheck Playlist");
     const [playlistData, setPlaylistData] = useState({});
 
-    let resultFilter = {};
+  
 
     if (cleanFilter) {
         resultFilter = {};
@@ -139,7 +140,7 @@ function Quiz() {
                 getPlaylist(playlist.id).then((final_playlist) => {
                     setPlaylistData(final_playlist);
                     setShowPlaylist(true);
-                    cleanFilter(true);
+                    setCleanFilter(true);
                 })
             })
         }).catch((error) => {
