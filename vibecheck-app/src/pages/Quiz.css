@@ -64,7 +64,10 @@
     transform: scale(1.025);
   }
 
-
+  .grid-box p {
+    font-size: 13px;
+    padding-top: 3px;
+  }
 
   .result-section label {
     padding: 10px;

@@ -131,42 +131,42 @@ let questions = [
     },
     {
     index: 7,
-    nextIndex: 8,
     questionText: "Who's your plus one?",
     answerOptions: [
-    { answerText: "Post malone", answerImage: 'https://imagez.tmz.com/image/de/1by1/2019/11/21/de7cb7de7e964052b624773a4cfc4463_xl.jpg'},
-    { answerText: "Outside", answerImage: 'q1_study.jpeg'},
+    { answerText: "Post Malone", answerImage: 'https://imagez.tmz.com/image/de/1by1/2019/11/21/de7cb7de7e964052b624773a4cfc4463_xl.jpg', nextIndex: 8, metric: 'energy', value: 0.5},
+    { answerText: "Michelle Obama", answerImage: 'https://thumbor.forbes.com/thumbor/711x559/https://blogs-images.forbes.com/anneglusker/files/2018/12/Michelle-Obama-book-cover-shot-e1544143689487-1200x944.jpg?width=960', nextIndex: 8, metric: 'valence', value: 0.5},
+    { answerText: "John Mulaney", answerImage: 'https://www.insidehook.com/wp-content/uploads/2020/11/mulaney-snl.jpg?fit=1200%2C675', nextIndex: 8, metric: 'danceability', value: 0.5},
+    { answerText: "Beyonce", answerImage: 'https://www.news4jax.com/resizer/mutSFf2yvwH5J44J5XvR_1WVIQ0=/1280x720/smart/filters:format(jpeg):strip_exif(true):strip_icc(true):no_upscale(true):quality(65)/cloudfront-us-east-1.images.arcpublishing.com/gmg/BUOMEP42VVCGLCCC235AQLLOOQ.jpg', nextIndex: 8, metric: 'energy_range', value: 0.5},
     ],
     },
     {
     index: 8,
-    nextIndex: 9,
     questionText: "Pick a duck.",
     answerOptions: [
-    { answerText: "DUck", answerImage: 'q1_party.jpeg'},
-    { answerText: "DUCK", answerImage: 'q1_study.jpeg'},
-    { answerText: "dUCK", answerImage: 'q1_party.jpeg'},
-    { answerText: "dUCk", answerImage: 'q1_study.jpeg'},
+    { answerText: "DUck", answerImage: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/943ea12e-b329-422a-8221-584934d9e570/d990vhn-e49b64a8-7705-4110-9387-a50e587ea3a3.jpg/v1/fill/w_900,h_900,q_75,strp/silly_duck_by_kittenfairy_d990vhn-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD05MDAiLCJwYXRoIjoiXC9mXC85NDNlYTEyZS1iMzI5LTQyMmEtODIyMS01ODQ5MzRkOWU1NzBcL2Q5OTB2aG4tZTQ5YjY0YTgtNzcwNS00MTEwLTkzODctYTUwZTU4N2VhM2EzLmpwZyIsIndpZHRoIjoiPD05MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.q7IgrpQykqwXKruLDXj9ipNopIJH8Mmd04GZ2JKFiwg', nextIndex: 9, metric: 'valence', value: 0.5},
+    { answerText: "duCK", answerImage: 'https://ae01.alicdn.com/kf/H6b466a63550c44ac8c2751666a488049v.jpg', nextIndex: 9, metric: 'danceability', value: 0.5},
+    { answerText: "dUCk", answerImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmF0F9ilFaGesRtUH4GvFr_uiZJSQSitDtvA&usqp=CAU', nextIndex: 9, metric: 'energy', value: 0.5},
+    { answerText: "DUCK", answerImage: 'https://www.treehugger.com/thmb/ZDV1Pz1NKlIeYrKYBI50nyrVQio=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__treehugger__images__2017__06__giant_rubber_duck-b87f93575c254bfb93e1423527a6b6c2.png', nextIndex: 9, metric: 'danceability', value: 0.5},
     ],
     },
     {
     index: 9,
-    nextIndex: 10,
     questionText: "Favorite part of a song.",
     answerOptions: [
-    { answerText: "Catchy chorus", answerImage: 'q1_party.jpeg'},
-    { answerText: "Unexpected beat drop", answerImage: 'q1_study.jpeg'},
-    { answerText: "Meaningful lyrics", answerImage: 'q1_party.jpeg'},
-    { answerText: "Head-boppin' baseline", answerImage: 'q1_study.jpeg'},
+    { answerText: "Catchy chorus", answerImage: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c29uZ3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60', nextIndex: 10, metric: 'valence', value: 0.5},
+    { answerText: "Unexpected beat drop", answerImage: 'https://images.unsplash.com/photo-1591557184386-e0e124abe0be?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8dGVjaG5vfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: 10, metric: 'energy', value: 0.5},
+    { answerText: "Meaningful lyrics", answerImage: 'https://images.unsplash.com/photo-1520454125516-134a66d9bf78?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fHNvbmd8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60', nextIndex: 10, metric: 'acousticness', value: 0.5},
+    { answerText: "Head-boppin' baseline", answerImage: 'https://images.unsplash.com/photo-1583944000409-00dd0ba1a873?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTV8fHNvbmd8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60', nextIndex: 10, metric: 'danceability', value: 0.5},
     ],
     },
     {
     index: 10,
-    nextIndex: 11,
-    questionText: "WILDCARD?",
+    questionText: "Which animal is your spirit party animal?",
     answerOptions: [
-    { answerText: "Yes?", answerImage: 'q1_party.jpeg'},
-    { answerText: "Not right now.", answerImage: 'q1_study.jpeg'},
+    { answerText: "Party Pug Pete", answerImage: 'https://images.unsplash.com/photo-1566674717261-e3b344428702?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8cGFydHklMjBhbmltYWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'energy', value: 0.5},
+    { answerText: "Drunk Dog Doug", answerImage: 'https://lefunny.net/wp-content/uploads/2014/05/Funny-party-animals-picture.jpg', nextIndex: null, metric: 'danceability', value: 0.5},
+    { answerText: "Overdressed Orangutan Olive", answerImage: 'https://www.geburtszeit.com/wp-content/uploads/2018/11/49e7fb54ee689124c46865fce2586e20.jpeg', nextIndex: null, metric: 'valence', value: 0.5},
+    { answerText: "Refined Rex", answerImage: 'https://blog.yellowoctopus.com.au/wp-content/uploads/2017/06/yellow-octopus-party-time-meme-2.jpg', nextIndex: null, metric: 'energy_range', value: -0.5},
     ],
     },
     {
@@ -362,7 +362,7 @@ let questions = [
         answerOptions: [
             { answerText: "Ew!", answerImage: 'https://elhstalon.net/wp-content/uploads/2017/05/Pineapple.jpg', nextIndex: null, metric: 'danceability', value: .03 },
             { answerText: "Delicious!", answerImage: 'https://cdn.drawception.com/images/panels/2017/4-15/r3fQaGdFAw-2.png', nextIndex: null, metric: 'danceability', value: .02 },
-            { answerText: "I'm the only person on the planet who doesn't have an opinion on this.", nextIndex: null, answerImage: 'https://pics.me.me/reactions-to-pineapple-pizza-be-careful-boys-its-hot-eeew-39919178.png', metric: 'danceability', value: .02 },
+            { answerText: "No comment.", nextIndex: null, answerImage: 'https://pics.me.me/reactions-to-pineapple-pizza-be-careful-boys-its-hot-eeew-39919178.png', metric: 'danceability', value: .02 },
         ],
     },
     {
@@ -378,7 +378,7 @@ let questions = [
         questionText: "How would you describe your current vibe (pre VibeCheck)?",
         answerOptions: [
             { answerText: "Chaotic, I need a chill pill", answerImage: 'https://images.unsplash.com/photo-1603880920705-3fcc96d6e602?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Y2hhb3N8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'acousticness', value: .1 },
-            { answerText: "Content, but I wouldn't mind a pick me", answerImage: 'https://images.unsplash.com/photo-1525072124541-6237cc05f4f7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cmVsYXhlZHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'danceability', value: .05 },
+            { answerText: "Content :-)", answerImage: 'https://images.unsplash.com/photo-1525072124541-6237cc05f4f7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cmVsYXhlZHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'danceability', value: .05 },
             { answerText: "Eh, somewhere in the middle", answerImage: 'https://images.unsplash.com/photo-1560270579-d515a443eb3b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uZnVzZWR8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'energy', value: .05 },
         ],
     },
@@ -386,9 +386,9 @@ let questions = [
         index: 33,
         questionText: "Are you trying to get in your feels?",
         answerOptions: [
-            { answerText: "Yes please", answerImage: 'https://images.unsplash.com/photo-1525120334885-38cc03a6ec77?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8c2FkfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: -.1 },
-            { answerText: "Nah, I'm good", answerImage: 'https://images.unsplash.com/photo-1581539030295-a92e2872b9ac?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8b2theXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: .05 },
-            { answerText: "Yeah, okay, maybe a little", answerImage: 'https://images.unsplash.com/photo-1453227588063-bb302b62f50b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8c2FkfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: -.05 },
+            { answerText: "Yes please!", answerImage: 'https://images.unsplash.com/photo-1525120334885-38cc03a6ec77?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8c2FkfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: -.1 },
+            { answerText: "Nah, I'm good.", answerImage: 'https://images.unsplash.com/photo-1581539030295-a92e2872b9ac?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8b2theXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: .05 },
+            { answerText: "Yeah, okay...maybe a little", answerImage: 'https://images.unsplash.com/photo-1453227588063-bb302b62f50b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8c2FkfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: -.05 },
         ],
     },
     {
@@ -426,9 +426,9 @@ let questions = [
         questionText: "How many pillows are on your bed?",
         answerOptions: [
             { answerText: "One, why would I have more?", answerImage: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'energy', value: .05 },
-            { answerText: "Two to Four, a few extra never hurt", answerImage: 'https://images.unsplash.com/photo-1583860312136-35dc71739c79?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzR8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'energy', value: .05 },
-            { answerText: "Maybe a little over 5, I love to snuggle!", answerImage: 'https://images.unsplash.com/photo-1554745006-8b25b7aeb7cb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fHNudWdnbGV8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'acousticness', value: 0.5 },
-            { answerText: "You want me to count ALL my pillows?", answerImage: 'https://images.unsplash.com/photo-1596984768919-e51f75123a13?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTd8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'valence', value: .05 },
+            { answerText: "2-4, a few extra never hurt.", answerImage: 'https://images.unsplash.com/photo-1583860312136-35dc71739c79?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzR8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'energy', value: .05 },
+            { answerText: "Over 5 - I love to snuggle!", answerImage: 'https://images.unsplash.com/photo-1554745006-8b25b7aeb7cb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fHNudWdnbGV8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'acousticness', value: 0.5 },
+            { answerText: "Do I need to count ALL of them?", answerImage: 'https://images.unsplash.com/photo-1596984768919-e51f75123a13?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTd8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'valence', value: .05 },
         ],
     },
     {
@@ -454,10 +454,10 @@ let questions = [
         index: 40,
         questionText: "And finally, how long would you last in a zombie apocalypse?",
         answerOptions: [
-            { answerText: "Might as well serve them my brain on a silver platter", answerImage: 'https://images.unsplash.com/photo-1568283661163-c90193fd13f1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8ZGVhdGh8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'acousticness', value: .05 },
-            { answerText: "Maybe a little while..?", answerImage: 'https://images.unsplash.com/photo-1503925802536-c9451dcd87b5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8em9tYmllfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'valence', value: .05 },
-            { answerText: "Honestly I'd probably survive.", answerImage: 'https://images.unsplash.com/photo-1573216145940-0bc9e583d768?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fHpvbWJpZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'danceability', value: .05 },
-            { answerText: "I'd be the last. Person. Standing.", answerImage: 'https://images.unsplash.com/photo-1490668219599-a79d4d90cf66?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjd8fGRlYXRofGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'energy', value: .05 },
+            { answerText: "Serve 'em my brain on a platter", answerImage: 'https://images.unsplash.com/photo-1568283661163-c90193fd13f1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8ZGVhdGh8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'acousticness', value: .05 },
+            { answerText: "Definitely not the first to go...", answerImage: 'https://images.unsplash.com/photo-1503925802536-c9451dcd87b5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8em9tYmllfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'valence', value: .05 },
+            { answerText: "Honestly, I'd probably survive.", answerImage: 'https://images.unsplash.com/photo-1573216145940-0bc9e583d768?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fHpvbWJpZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'danceability', value: .05 },
+            { answerText: "Last. Person. Standing.", answerImage: 'https://images.unsplash.com/photo-1490668219599-a79d4d90cf66?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjd8fGRlYXRofGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'energy', value: .05 },
 
         ],
     },

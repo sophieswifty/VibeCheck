@@ -12,7 +12,6 @@ function NewPlaylist(props) {
 
 
     const handleSave = async () => {
-        setSaveNotification(true);
 
         try {
             const result = await axios({
@@ -23,6 +22,7 @@ function NewPlaylist(props) {
                     "tracks": props.playlist
                 }
             });
+            setSaveNotification(true);
         } catch (error) {
             return error;
         }
@@ -73,7 +73,9 @@ function NewPlaylist(props) {
                 <Media>
                     <Media.Item renderAs="figure" position="left">
                         <div className="playlist-image animated-box in">
-                            <Image src={props.playlist.images[0].url} />
+                            <a href={props.playlist.external_urls.spotify}>
+                                <Image src={props.playlist.images[0].url} />
+                            </a>
                         </div>
                     </Media.Item>
                     <Media.Item>

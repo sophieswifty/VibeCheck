@@ -1,5 +1,5 @@
 import React from 'react';
-import {Heading, Form, Button, Hero} from 'react-bulma-components';
+import {Heading, Box, Form, Button, Hero} from 'react-bulma-components';
 import Autocomplete from '../components/Autocomplete';
 import PlaylistStatistics from '../components/PlaylistStatistics';
 import { getPlaylistItems, getTracksData } from '../API/spotifyAPI';
@@ -56,21 +56,25 @@ export default class VibecheckPlaylist extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Heading>
-                    Vibecheck a playlist
-                </Heading>
-                <Autocomplete searchType={"playlist"} onSubmit={this.handleSubmit}/> 
-                
-                {this.state.isSearched &&
-                    <PlaylistStatistics 
-                        playlistCoverUrl={this.state.playlistObject.images[0].url} 
-                        playlistName={this.state.playlistObject.name} 
-                        playlistOwner={this.state.playlistObject.owner.display_name}
-                        playlistTracks={this.state.playlistItems}
-                        playlistItemsMetrics={this.state.playlistItemsMetrics}
-                        // playlistDescription={this.state.playlistDescription}
-                    />
-                }
+                <div className="vibecheck-page-container">
+                    <Heading>
+                        Vibecheck a playlist
+                    </Heading>
+                    <Autocomplete searchType={"playlist"} onSubmit={this.handleSubmit}/> 
+                    
+                    {this.state.isSearched &&
+                        <PlaylistStatistics 
+                            playlistCoverUrl={this.state.playlistObject.images[0].url} 
+                            playlistName={this.state.playlistObject.name} 
+                            playlistOwner={this.state.playlistObject.owner.display_name}
+                            playlistTracks={this.state.playlistItems}
+                            playlistItemsMetrics={this.state.playlistItemsMetrics}
+                            playlistURL={this.state.playlistObject.external_urls.spotify}
+                            // playlistDescription={this.state.playlistDescription}
+                        />
+                    }
+                </div>
+
             </React.Fragment>
         );
     }
