@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext }from 'react'
 import { Heading, Hero, Section, Box } from 'react-bulma-components';
 import './Dashboard.css';
 import './Home.css';
-import PR from '../components/PR';
 import PlaylistReel from '../components/PlaylistReel'
 import { Container } from 'react-bulma-components';
 import ConnectSpotify from '../components/ConnectSpotify';

@@ -82,7 +82,7 @@ let questions = [
     index: 2,
     questionText: "How many people are with you?",
     answerOptions: [
-    { answerText: "Just me.", answerImage: 'https://images.unsplash.com/photo-1560363199-a1264d4ea5fc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8b25lfGVufDB8fDB8&auto=format&fit=crop&w=600&q=60', nextIndex: 3, metric: 'energy', value: -.2 },
+    { answerText: "Just me.", answerImage: 'https://upload.wikimedia.org/wikipedia/commons/8/82/ONE-Logo.png', nextIndex: 3, metric: 'energy', value: -.2 },
     { answerText: "1-3", answerImage: 'https://ak.picdn.net/shutterstock/videos/1038515267/thumb/10.jpg', nextIndex: 3, metric: 'energy', value: -0.1 },
     { answerText: "4-9", answerImage: 'https://bs-toys.com/wp-content/uploads/4.png', nextIndex: 3, metric: 'energy', value: .1 },
     { answerText: "Over 10", answerImage: 'https://www.the-faith.com/wp-content/uploads/2015/04/10-hadiths-about-women-.jpg', nextIndex: 3, metric: 'energy', value: .2  },
