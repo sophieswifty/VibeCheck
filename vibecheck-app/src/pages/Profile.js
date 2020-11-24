@@ -57,11 +57,13 @@ function Profile(props) {
             <Container>
                 <Box className="profile">
                     <Heading>{userData.display_name}</Heading>
-                    <div className="profile-image">
-                        <a href={userData.external_urls.spotify} target="_blank">
+                        {userData.images[0] && 
+                        <div className="profile-image">
+                            <a href={userData.external_urls.spotify} target="_blank">
                             <img src={userData.images[0].url} id="album-img" />
                         </a>
-                    </div>
+                        </div>
+                        }
                     <Button color="warning" onClick={clearPlaylistData}>Clear playlist data</Button>
 
                     <Button color="danger" onClick={showWarning}>Delete all data</Button>
