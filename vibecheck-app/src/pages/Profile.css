@@ -5,3 +5,12 @@
 .dev {
     margin: 10px;
 }
+
+.profile h1{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.user-img {
+    margin: 0px;
+}

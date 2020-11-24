@@ -59,7 +59,7 @@ function Profile(props) {
                     <Heading>{userData.display_name}</Heading>
                     <div className="profile-image">
                         <a href={userData.external_urls.spotify} target="_blank">
-                            <img src={userData.images[0].url} id="album-img" />
+    {userData.images[0] && <img src={userData.images[0].url} id="user-img" target="_blank"/> }
                         </a>
                     </div>
 

@@ -64,8 +64,8 @@ function NewPlaylist(props) {
                 <Media>
                     <Media.Item renderAs="figure" position="left">
                         <div className="playlist-image animated-box in">
-                            <a href={props.playlist.external_urls.spotify}>
-                                <Image src={props.playlist.images[0].url} />
+                            <a href={props.playlist.external_urls.spotify} target="_blank">
+                                <img src={props.playlist.images[0].url} />
                             </a>
                         </div>
                     </Media.Item>
@@ -87,7 +87,7 @@ function NewPlaylist(props) {
                     </Media.Item>
                 </Media>
             </Box>
-                
+
             <PlaylistTracksList title={`${props.playlist.name} Tracks`} items={props.playlist.tracks.items} />
         </div>
     )

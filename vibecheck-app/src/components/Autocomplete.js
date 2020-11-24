@@ -8,7 +8,7 @@ import { playlistSearch } from '../API/spotifyAPI';
 export default class Autocomplete extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       q: "",
       results: [],
     };
@@ -29,74 +29,82 @@ export default class Autocomplete extends React.Component {
   _fetch = q => {
     // Call the appropriate fetch function whether getting a playlist or a song
     if (this.props.searchType === "song") {
-      songSearch(q).then( (r) => {
+      songSearch(q).then((r) => {
         const results = [];
-        r.tracks.items.forEach( (track) => {
+        r.tracks.items.forEach((track) => {
           results.push(track);
-          this.setState({results: results.slice(0, 5)});
+          this.setState({ results: results.slice(0, 5) });
         });
-      }).catch( (e) => {
+      }).catch((e) => {
         console.log(e);
       });
     } else if (this.props.searchType === "playlist") {
-      playlistSearch(q).then( (r) => {
+      playlistSearch(q).then((r) => {
         const results = [];
-        r.playlists.items.forEach( (playlist) => {
+        r.playlists.items.forEach((playlist) => {
           results.push(playlist);
-          this.setState({results: results.slice(0, 5)});
+          this.setState({ results: results.slice(0, 5) });
         });
-      }).catch( (e) => {
+      }).catch((e) => {
         console.log(e);
       });
     }
   };
 
   handleSubmit = (s) => {
-    this.setState({q: ""});
+    this.setState({ q: "" });
     this.props.onSubmit(s);
   }
 
   render() {
     return (
-        <Container>
-          <Columns gapless>
-            <Columns.Column className="is-full">
-              <Form.Field grouped>
-                <Form.Control>
-                  <Form.Input 
-                    placeholder={"Search for a " + this.props.searchType}
-                    type="text" 
-                    value={this.state.q} 
-                    onChange={this.changeQuery}>  
-                  </Form.Input>
-                </Form.Control>
-                <Form.Control>
-                </Form.Control>
-              </Form.Field>
-            </Columns.Column>
-            {this.state.q.length > 0 &&
-              this.state.results.map((s, i) => {
-                {/* Get the result string depending on whether you're searching a playlist or a song */}
-                let resultString;
-                if (this.props.searchType === "song") {
-                  resultString = `${s.artists[0].name} - ${s.name}`
-                } else if (this.props.searchType === "playlist") {
-                  resultString = `${s.owner.display_name} - ${s.name}`
-                }
+      <Container>
+        <Columns gapless>
+          <Columns.Column className="is-full">
+            <Form.Field grouped>
+              <Form.Control>
+                <Form.Input
+                  placeholder={"Search for a " + this.props.searchType}
+                  type="text"
+                  value={this.state.q}
+                  onChange={this.changeQuery}>
+                </Form.Input>
+              </Form.Control>
+              <Form.Control>
+              </Form.Control>
+            </Form.Field>
+          </Columns.Column>
+          {this.state.q.length > 0 &&
+            this.state.results.map((s, i) => {
+              {/* Get the result string depending on whether you're searching a playlist or a song */ }
+              let resultName;
+              let resultAudioName;
+              if (this.props.searchType === "song") {
+                resultName = `${s.artists[0].name}`;
+                resultAudioName = `${s.name}`;
+              } else if (this.props.searchType === "playlist") {
+                resultName = `${s.owner.display_name}`;
+                resultAudioName = `${s.name}`;
+              }
 
-                return (
+              return (
                 <Columns.Column className="is-full" key={s + i}>
                   <Box className="suggestion" onClick={(e) => this.handleSubmit(s)}>
-                      <div className="media-left">
-                        {resultString}
-                      </div>
+                    <div className="media-left">
+
+                      <h5 >
+                        <b><i>{resultAudioName}</i></b> by {resultName}
+                      </h5>
+                     
+                     
+                    </div>
                   </Box>
                 </Columns.Column>
-                );
-              })
-            }
-          </Columns>
-        </Container>
+              );
+            })
+          }
+        </Columns>
+      </Container>
     );
   }
 }

@@ -4,6 +4,10 @@
   background-color: purple;
 }
 
+.vs-title.title {
+  margin-bottom: 0px;
+}
+
 .audio-image img {
   object-fit: cover;
   object-position: 50% 0;

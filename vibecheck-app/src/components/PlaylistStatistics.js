@@ -51,16 +51,25 @@ export default class PlaylistStatistics extends React.Component {
             <Section>
                 <Container>
                     <Box>
-                    <div className="media">
-                        <div className="media-left playlist-image">
-                            <div className="audio-image animated-box">
-                                <a href={this.props.playlistURL} target="_blank">
-                                    <img src={this.props.playlistCoverUrl} id="album-img" />
-                                </a>
+                        <div className="media">
+                            <div className="media-left playlist-image">
+                                <div className="audio-image animated-box">
+                                    <a href={this.props.playlistURL} target="_blank">
+                                        <img src={this.props.playlistCoverUrl} id="album-img" />
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div className="media-right" id="playlist-name">
-                            <p className="title" >{`${this.props.playlistOwner} - ${this.props.playlistName}`}</p>
+                            <div className="media-right" id="playlist-name">
+                                <p className="title" >
+
+                                    <h1 >
+                                        <i> {this.props.playlistName}</i>
+                                    </h1>
+                                    <h4 className="track-artist">
+                                    {this.props.playlistOwner}
+                                    </h4>
+                                  
+                                </p>
                         </div>
                     </div>
                     

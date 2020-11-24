@@ -97,9 +97,9 @@ export default class StatisticsBox extends React.Component {
                 
                     <Container>
                     <div className="stats-profile-image">
-                    <a href={this.props.userData[0].external_urls.spotify} target="_blank">
-                            <img id="stats-user-image" src={this.props.userData[0].images[0].url} />
-                        </a>
+                {this.props.userData[0].images[0] && <a href={this.props.userData[0].external_urls.spotify} target="_blank">
+                        <img id="stats-user-image" src={this.props.userData[0].images[0].url} />
+                    </a>}
                     </div>
 
                         

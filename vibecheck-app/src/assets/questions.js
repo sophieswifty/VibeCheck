@@ -9,7 +9,7 @@
 let questions = [
     {
     index: 0,
-    questionText: "What are you doing????",
+    questionText: "What are you doing?",
     answerOptions: [
     // acousticness: 0.15
     // acousticness range: 0.15
@@ -259,7 +259,7 @@ let questions = [
     },
     {
     index: 20,
-    questionText: "Finally, pick a direction",
+    questionText: "Finally, pick a direction.",
     answerOptions: [
     { answerText: "North", answerImage: 'https://cdn0.iconfinder.com/data/icons/weather-forecast-meteorology/256/weather-nature-forecast-meteorology_149-512.png', nextIndex: null, metric: 'energy', value: 0.05 },
     { answerText: "East", answerImage: 'https://cdn0.iconfinder.com/data/icons/weather-forecast-meteorology/256/weather-nature-forecast-meteorology_153-512.png', nextIndex: null, metric: 'valence', value: 0.05 },
@@ -375,18 +375,19 @@ let questions = [
     },
     {
         index: 32,
-        questionText: "How would you describe your current vibe (pre VibeCheck)?",
+        questionText: "Describe your current vibe (pre-vibecheck).",
         answerOptions: [
-            { answerText: "Chaotic, I need a chill pill", answerImage: 'https://images.unsplash.com/photo-1603880920705-3fcc96d6e602?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Y2hhb3N8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'acousticness', value: .1 },
+            { answerText: "Chaotic", answerImage: 'https://images.unsplash.com/photo-1603880920705-3fcc96d6e602?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Y2hhb3N8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'acousticness', value: .5 },
             { answerText: "Content :-)", answerImage: 'https://images.unsplash.com/photo-1525072124541-6237cc05f4f7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cmVsYXhlZHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'danceability', value: .05 },
-            { answerText: "Eh, somewhere in the middle", answerImage: 'https://images.unsplash.com/photo-1560270579-d515a443eb3b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uZnVzZWR8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'energy', value: .05 },
+            { answerText: "Eh, somewhere in the middle", answerImage: 'https://images.unsplash.com/photo-1560270579-d515a443eb3b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uZnVzZWR8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'energy', value: -.15 },
+            { answerText: "Excited!", answerImage: 'https://images.unsplash.com/photo-1593186194428-1dd5be6ade2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',   nextIndex: 33, metric: 'energy', value: .05 },
         ],
     },
     {
         index: 33,
-        questionText: "Are you trying to get in your feels?",
+        questionText: "Are you in your feels?",
         answerOptions: [
-            { answerText: "Yes please!", answerImage: 'https://images.unsplash.com/photo-1525120334885-38cc03a6ec77?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8c2FkfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: -.1 },
+            { answerText: "Yes", answerImage: 'https://images.unsplash.com/photo-1525120334885-38cc03a6ec77?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8c2FkfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: -.1 },
             { answerText: "Nah, I'm good.", answerImage: 'https://images.unsplash.com/photo-1581539030295-a92e2872b9ac?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8b2theXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: .05 },
             { answerText: "Yeah, okay...maybe a little", answerImage: 'https://images.unsplash.com/photo-1453227588063-bb302b62f50b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8c2FkfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 34, metric: 'valence', value: -.05 },
         ],
