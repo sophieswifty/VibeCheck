@@ -7,8 +7,9 @@
     margin-bottom: auto;
 }
 
-#user-image {
+.stats-profile-image img {
     margin: 20px;
+    height: 175px;
     margin-left: auto;
     margin-right: auto;
 }

@@ -96,9 +96,13 @@ export default class StatisticsBox extends React.Component {
             <React.Fragment>
                 
                     <Container>
-                        <a href={this.props.userData[0].external_urls.spotify} target="_blank">
-                            <Image className="is-rounded is-128x128" id="user-image" src={this.props.userData[0].images[0].url} />
+                    <div className="stats-profile-image">
+                    <a href={this.props.userData[0].external_urls.spotify} target="_blank">
+                            <img id="stats-user-image" src={this.props.userData[0].images[0].url} />
                         </a>
+                    </div>
+
+                        
                         <Heading className="stats-title">
                             {this.state.title}
                         </Heading>

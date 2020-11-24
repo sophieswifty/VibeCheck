@@ -1,19 +1,27 @@
-.nav-link {
- 
-        color: rgb(211, 211, 211);
-        text-decoration: none;
+
+
+a.nav-link:hover {
+  color: rgb(212, 212, 212);
 }
 
-.navbar-item-button:hover {
-   background-color:rgb(125, 3, 196);
+a.navbar-item:active {
+  color: rgb(212, 212, 212);
 }
 
-a.navbar-item navbar-item-button:hover {
-  background-color: rgb(125, 3, 196);
+.drop-link:hover {
+  color: rgb(212, 212, 212);
+}
+
+.no-hover a:hover {
+  color: rgb(212, 212, 212);
+}
+
+.navbar-item.no-hover:hover {
+  color: white;
 }
 
 .navbar-item-dropdown:hover {
-    background-color:rgb(125, 3, 196);
+    color: white;
  }
 
  .navbar-item-dropdown {
@@ -25,10 +33,21 @@ a.navbar-item navbar-item-button:hover {
     color: unset !important;
  }
 
- .name-no-hover:hover {
+ .no-hover:hover {
   background-color: unset !important;
-  color: unset !important;
+  color: white !important;
  }
+
+ .no-hover:active {
+  background-color: unset !important;
+  color: white !important;
+ }
+
+ .no-hover:focus-within {
+  background-color: unset !important;
+  color: white !important;
+ }
+
 
 
 
@@ -106,7 +125,7 @@ img:hover {
 
   .navbar-menu a {
     color: white;
-    text-shadow: .5px .5px .5px #000000;
+
     text-decoration: none;
   }
 
