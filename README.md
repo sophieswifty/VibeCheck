@@ -1,20 +1,9 @@
 # Vibecheck
 #### Generate custom playlists to match your vibe, gain insights into your listening habits, and more!
 
-## Developer Notes:
-* Npm install the following packages:
-    * bulma,
-    * react,
-    * react-router,
-    * [react-bulma-components](https://couds.github.io/react-bulma-components/?path=/story/box--default),
-    * axios
-    * font-awesome (use: `npm install --save @fortawesome/fontawesome-free`)
-    * recharts
-    * throttle-debounce
-    * rect-google-charts
-    
-
-* To run in browser: `npm start` (browser-sync no longer needed)
+## Usage:
+* To run React UI in browser, clone project and run: `npm start`
+* To run backend in browser, run: `node index`
 
 ### Project organization:
 * `public/`
@@ -43,20 +32,21 @@
    
 * User logged in:
   * Dashboard: 
-      - User's generated playlists. 
-      - Suggested vibe playlists.
-      - Friends? Friends' playlists?
+      - Recently generated playlists. 
   
   * Quiz:
-      - Carousel of quiz questions
+      - Buzzfeed type quiz which generates custom playlist
   
   * Tools:
       - Vibecheck a song
       - Vibecheck a playlist
-      - Add to my playlists button?
+   
   * Statistics:
       - User top played tracks
       - User top played artists
+  * Profile:
+      - User profile details. Delete Vibecheck account button.
+      
    * Log out button
    
   ### Design Patterns:
