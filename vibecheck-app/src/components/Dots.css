@@ -9,14 +9,14 @@
   }
 
   .loading-text {
-      color: rebeccapurple;
+      color: rgb(7, 7, 7);
       margin: 10px;
   }
   
   .spinner > div {
     width: 15px;
     height: 15px;
-    background-color: rebeccapurple;
+    background-color: rgb(7, 7, 7);
   
     border-radius: 100%;
     display: inline-block;

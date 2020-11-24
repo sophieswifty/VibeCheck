@@ -69,7 +69,7 @@ const vibes = {
     valence_range: 0.3
 }
 
-let waitText = ["Synthesizing a sweet playlist...", "Scanning for ~gOoD vIbEs~", "Custom playlist incoming...", "Curating the perfect tunes for you...", "I think your mom will love this playlist...", "Synchronizing the vibes...", "Collecting only the best for you..."];
+let waitText = ["Synthesizing a sweet playlist...", "Scanning for ~gOoD vIbEs~", "Custom playlist incoming...", "Curating the perfect tunes for you...", "I think your mom will love this playlist...", "Synchronizing the vibes...", "Curating the best Country playlist just for you... jk!"];
 let resultFilter = {};
 let fakeCurrentQuestion = 0;
 
@@ -192,16 +192,19 @@ function Quiz(props) {
                 {showResult &&
                     <div className="result-container">
                         <Box className='result-section'>
-                            <Heading className='result-text'>You've got some good vibes...</Heading>
-
-                            <label>Enter a playlist title: </label>
-                            <input placeholder="Vibecheck Playlist" type="text" value={playlistName} onChange={handleChange} />
-
+                        
                             {isLoading ?
                                 <div>
-                                   <Dots title={randomGenerationText}/>
+                                     <Heading className='result-text'>You've got some good vibes.</Heading>
+                                    <Dots title={randomGenerationText} />
                                 </div>
-                                : <Button size="large" fullwidth onClick={generatePlaylist}>Generate playlist!</Button>}
+                                :
+                                <div>
+                                    <label className="label-entry">Enter a playlist title: </label>
+                                    <input className="label-entry" size="40" placeholder="Vibecheck Playlist" type="text" value={playlistName} onChange={handleChange} />
+
+                                    <Button size="large" fullwidth onClick={generatePlaylist}>Generate playlist!</Button>
+                                </div>}
                         </Box>
                     </div>
                 }

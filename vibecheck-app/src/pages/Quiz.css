@@ -77,6 +77,19 @@
     padding: 20px;
   }
 
+  .result-text {
+    font-size: 25px;
+  }
+
+   input.label-entry {
+    line-height: 40px;
+    font-size: 20px;
+  }
+
+  .label-entry {
+    font-size: 25px;
+  }
+
   .result-section .result-text.title{
     padding: 10px;
     margin: 0px;

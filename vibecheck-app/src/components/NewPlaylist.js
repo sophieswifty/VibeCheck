@@ -16,6 +16,7 @@ function NewPlaylist(props) {
         console.log(props.playlist);
         console.log(userData);
         addPlaylistToBackend(userData, props.playlist);
+        setSaveNotification(true);
     }
 
     const handleRemove = () => {
@@ -76,7 +77,7 @@ function NewPlaylist(props) {
                             </p>
                             <Button onClick={props.restart}>Restart</Button>
                             <Button color="primary" onClick={handleSave}>Save</Button>
-                            {saveNotifcation && <Notification color="success">
+                            {saveNotifcation && <Notification color="success" className="save-notif">
                                 Playlist successfully saved to Spotify and VibeCheck.
                                     <Button remove onClick={handleRemove} />
                             </Notification>}

@@ -41,9 +41,9 @@ function Profile(props) {
 
     const yesDelete = () => {
         deleteData();
-        // window.location.href='/'; // Redirect to login page.
-        // setDeletePlaylistsSuccess(false);
-        // setDeleteUserWarning(false);
+        window.location.href='/'; // Redirect to login page.
+        setDeletePlaylistsSuccess(false);
+        setDeleteUserWarning(false);
     }
 
     const noDelete = () => {
