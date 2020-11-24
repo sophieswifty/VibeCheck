@@ -12,8 +12,6 @@ export default class StatisticsBox extends React.Component {
             display: [],
         }
 
-        console.log(this.props.userData);
-
         this.handleTopTracks = this.handleTopTracks.bind(this);
         this.handleTopArtists = this.handleTopArtists.bind(this);
         this.handleRecentlyPlayedTracks = this.handleRecentlyPlayedTracks.bind(this);
