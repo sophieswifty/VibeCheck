@@ -1,10 +1,12 @@
 import React, { useState, useContext } from 'react';
-import { Box, Content, Media, Image, Heading, Button, Notification } from 'react-bulma-components';
+import { Box, Content, Media, Image, Heading, Button, Notification, Tabs } from 'react-bulma-components';
 import UserDataContext from '../context/userdata';
 import PlaylistStatistics from './PlaylistStatistics';
 import { addPlaylistToBackend } from '../API/backendAPI';
+import PlaylistTrackList from './PlaylistTracksList';
 import axios from 'axios';
 import './NewPlaylist.css';
+import PlaylistTracksList from './PlaylistTracksList';
 
 // Need to update Playlist details
 function NewPlaylist(props) {
@@ -85,6 +87,19 @@ function NewPlaylist(props) {
                     </Media.Item>
                 </Media>
             </Box>
+                <Tabs
+                    type={ 'boxed'}
+                    fullwidth={true}
+                    align={'centered'}
+                >
+                    <Tabs.Tab >
+                        Top Artists
+                    </Tabs.Tab>
+                    <Tabs.Tab >
+                        Top Tracks
+                    </Tabs.Tab>
+                </Tabs>
+            <PlaylistTracksList title={`${props.playlist.name} Tracks`} items={props.playlist.tracks.items} />
         </div>
     )
 }

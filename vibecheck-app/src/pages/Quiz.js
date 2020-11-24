@@ -208,9 +208,6 @@ function Quiz(props) {
                         </Box>
                     </div>
                 }
-
-
-
                 <Button className="restart-btn" onClick={handleRestartClick}>Restart</Button>
 
             </div>}
