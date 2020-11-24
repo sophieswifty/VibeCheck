@@ -9,8 +9,8 @@ import { LoadingContext } from '../context/loading';
 import Dots from '../components/Dots';
 
 const turnt = {
-    acousticness: 0.15,
-    acousticness_range: 0.15,
+    accousticness: 0.15,
+    accousticness_range: 0.15,
     danceability: 0.8,
     danceability_range: 0.2,
     energy: 0.8,
@@ -24,8 +24,8 @@ const turnt = {
 }
 
 const study = {
-    acousticness: 0.6,
-    acousticness_range: 0.4,
+    accousticness: 0.6,
+    accousticness_range: 0.4,
     danceability: 0.1,
     danceability_range: 0.1,
     energy: 0.25,
@@ -39,8 +39,8 @@ const study = {
 }
 
 const exercise = {
-    acousticness: 0.05,
-    acousticness_range: 0.05,
+    accousticness: 0.05,
+    accousticness_range: 0.05,
     danceability: 0.8,
     danceability_range: 0.2,
     energy: 0.8,
@@ -55,8 +55,8 @@ const exercise = {
 }
 
 const vibes = {
-    acousticness: 0.25,
-    acousticness_range: 0.25,
+    accousticness: 0.25,
+    accousticness_range: 0.25,
     danceability: 0.2,
     danceability_range: 0.2,
     energy: 0.2,
