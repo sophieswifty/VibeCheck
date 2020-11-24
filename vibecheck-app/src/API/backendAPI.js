@@ -23,11 +23,11 @@ let addPlaylistToBackend = async (userInfo, playlistInfo) => {
 export const deleteAllUserPlaylists = async (userID) => {
     //Iterate through entire backend
     axios.get('https://vibecheck-please.herokuapp.com/playlists/all').then( (res) => {
-        for (let i = 0; i < res.length; i++) {
-            if (res[i].userID == userID) {
-                axios.delete(`https://vibecheck-please.herokuapp.com/playlists/${res[i].backendID}`);
-            }
-        }
+        res.data.forEach( (elt) => {
+            if (elt.userID === userID) {
+                axios.delete(`https://vibecheck-please.herokuapp.com/playlists/${elt.backendID}`);
+            };
+        })
     });
 }
 

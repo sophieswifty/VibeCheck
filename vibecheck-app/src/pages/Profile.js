@@ -12,7 +12,7 @@ function Profile(props) {
 
     const deleteData = async () => {
         console.log("deleting account");
-        deleteAllUserPlaylists(userData.id)
+        deleteAllUserPlaylists(userData.id);
     }
 
     const clearPlaylistData = async () => {
@@ -41,9 +41,9 @@ function Profile(props) {
 
     const yesDelete = () => {
         deleteData();
-        window.location.href='/'; // Redirect to login page.
-        setDeletePlaylistsSuccess(false);
-        setDeleteUserWarning(false);
+        // window.location.href='/'; // Redirect to login page.
+        // setDeletePlaylistsSuccess(false);
+        // setDeleteUserWarning(false);
     }
 
     const noDelete = () => {
