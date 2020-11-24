@@ -82,10 +82,10 @@ let questions = [
     index: 2,
     questionText: "How many people are with you?",
     answerOptions: [
-    { answerText: "Just me.", answerImage: 'q1_party.jpeg', nextIndex: 3, metric: 'energy', value: -.2 },
-    { answerText: "1-3", answerImage: 'q1_study.jpeg', nextIndex: 3, metric: 'energy', value: -0.1 },
-    { answerText: "4-9", answerImage: 'q1_run.jpeg', nextIndex: 3, metric: 'energy', value: .1 },
-    { answerText: "Over 10", answerImage: 'q1_vibes.jpeg', nextIndex: 3, metric: 'energy', value: .2  },
+    { answerText: "Just me.", answerImage: 'https://images.unsplash.com/photo-1560363199-a1264d4ea5fc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8b25lfGVufDB8fDB8&auto=format&fit=crop&w=600&q=60', nextIndex: 3, metric: 'energy', value: -.2 },
+    { answerText: "1-3", answerImage: 'https://ak.picdn.net/shutterstock/videos/1038515267/thumb/10.jpg', nextIndex: 3, metric: 'energy', value: -0.1 },
+    { answerText: "4-9", answerImage: 'https://bs-toys.com/wp-content/uploads/4.png', nextIndex: 3, metric: 'energy', value: .1 },
+    { answerText: "Over 10", answerImage: 'https://www.the-faith.com/wp-content/uploads/2015/04/10-hadiths-about-women-.jpg', nextIndex: 3, metric: 'energy', value: .2  },
     ],
     },
     {
@@ -106,7 +106,7 @@ let questions = [
     { answerText: "Chaotic", answerImage: 'https://images.unsplash.com/photo-1571289868918-f1deff2f7219?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c3BsYXR0ZXIlMjBwYWludHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60', nextIndex: 5, metric: 'instrumentalness', value: -.1 },
     { answerText: "Loved", answerImage: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aGVhcnRzfGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60', nextIndex: 5, metric: 'valence_range', value: .05 },
     { answerText: "Nostalgic", answerImage: 'https://images.unsplash.com/photo-1511090141963-54adba30c2d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=926&q=80', nextIndex: 5, metric: 'valence', value: -.2 },
-    { answerText: "Hot.", answerImage: 'q1_study.jpeg', nextIndex: 5, metric: 'energy_range', value: .05 },
+    { answerText: "Hot.", answerImage: 'https://us.123rf.com/450wm/nanakokoshka/nanakokoshka1904/nanakokoshka190400055/122679880-stock-vector-vector-illustration-of-womans-girl-red-lipstick-kiss-mark-isolated-on-white-background-valentines-da.jpg?ver=6', nextIndex: 5, metric: 'energy_range', value: .05 },
     ],
     },
     {

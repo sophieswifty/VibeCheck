@@ -2,9 +2,7 @@
  
         color: rgb(211, 211, 211);
         text-decoration: none;
- 
 }
-
 
 .navbar-item-button:hover {
    background-color:rgb(125, 3, 196);
@@ -65,9 +63,6 @@ img:hover {
   margin-right: 10px;
   }
 
-.loader.loading {
-    margin-left: 10px;
-  }
   
   .dash-logo h1 {
   margin-top: 10px;
