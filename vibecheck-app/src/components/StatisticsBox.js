@@ -55,7 +55,8 @@ export default class StatisticsBox extends React.Component {
             r.items.forEach( (elt, i) => {
                 items.push({
                     index: i,
-                    name: `${elt.artists[0].name} - ${elt.name}`,
+                    name: `${elt.artists[0].name}`,
+                    track_name: `${elt.name}`,
                     image: elt.album.images[1].url,
                     url: elt.external_urls.spotify,
                 })
@@ -93,12 +94,16 @@ export default class StatisticsBox extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Section>
+                
                     <Container>
-                        <a href={this.props.userData[0].external_urls.spotify} target="_blank">
-                            <Image className="is-rounded is-128x128" id="user-image" src={this.props.userData[0].images[0].url} />
+                    <div className="stats-profile-image">
+                    <a href={this.props.userData[0].external_urls.spotify} target="_blank">
+                            <img id="stats-user-image" src={this.props.userData[0].images[0].url} />
                         </a>
-                        <Heading>
+                    </div>
+
+                        
+                        <Heading className="stats-title">
                             {this.state.title}
                         </Heading>
                         <br/>
@@ -108,10 +113,10 @@ export default class StatisticsBox extends React.Component {
                             align={'centered'}
                         >
                             <Tabs.Tab className={this.state.isTopArtistsActive ? "is-active" : ""} onClick={this.handleTopArtists}>
-                                Top Artists
+                                <h5>Top Artists</h5>
                             </Tabs.Tab>
                             <Tabs.Tab className={this.state.isTopTracksActive ? "is-active" : ""} onClick={this.handleTopTracks}>
-                                Top Tracks
+                                <h5>Top Tracks</h5>
                             </Tabs.Tab>
                         </Tabs>
                         <hr />
@@ -139,20 +144,23 @@ export default class StatisticsBox extends React.Component {
                         </div>
                         {this.state.display.map( (s, i) => {
                             return (
-                                    <div className="columns">
+                                    <div className="columns tracks-display">
                                         <div className="column vcenter">
                                             <h1 className="subtitle">
                                                 <strong>{i+1}</strong>
                                             </h1>
                                         </div>
                                         <div className="column vcenter">
-                                            <h1 className="subtitle">
-                                            {s.name}
-                                            </h1>
+                                       { !this.state.isTopArtistsActive && <h3>
+                                        <i>{`${s.track_name}`}</i>
+                                        </h3>}
+                                        <h4 className="track-artist">
+                                            {`${s.name}`}
+                                        </h4>
                                         </div>
                                         <div className="column">
                                             <a href={s.url} target="_blank">
-                                                <img src={s.image} className="is-128x128"/>
+                                                <img src={s.image} className="tracks-list-img"/>
                                             </a>
                                         </div>
                                     </div>
@@ -160,7 +168,7 @@ export default class StatisticsBox extends React.Component {
                         })}
                                                     
                     </Container>
-                </Section>
+               
             </React.Fragment>
         )
     }

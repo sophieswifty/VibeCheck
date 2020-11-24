@@ -15,15 +15,18 @@ export default function PlaylistTracksList(props) {
                     <Container>
                         {props.items.map( (s, i) => {
                             return (
-                                <div className="columns">
+                                <div className="columns tracks-display">
                                     <div className="column vcenter">
-                                        <h3>
-                                            {`${s.track.artists[0].name} - ${s.track.name}`}
+                                        <h3 >
+                                        <i>{`${s.track.name}`}</i>
                                         </h3>
+                                        <h4 className="track-artist">
+                                            {`${s.track.artists[0].name}`}
+                                        </h4>
                                     </div>
                                     <div className="column">
                                         <a href={s.track.external_urls.spotify} target="_blank">
-                                            <img src={s.track.album.images[1].url} className="is-128x128" alt="icon" />
+                                            <img src={s.track.album.images[1].url} className="tracks-list-img" alt="icon" />
                                         </a>
                                     </div>
                                 </div>

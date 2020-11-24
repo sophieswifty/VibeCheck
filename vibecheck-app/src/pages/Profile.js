@@ -55,14 +55,13 @@ function Profile(props) {
     return (
         <div>
             <Container>
-                <Box className="profile">
+                <div className="profile">
                     <Heading>{userData.display_name}</Heading>
                     <div className="profile-image">
                         <a href={userData.external_urls.spotify} target="_blank">
                             <img src={userData.images[0].url} id="album-img" />
                         </a>
                     </div>
-                    <Button color="warning" onClick={clearPlaylistData}>Clear playlist data</Button>
 
                     <Button color="danger" onClick={showWarning}>Delete all data</Button>
 
@@ -82,8 +81,17 @@ function Profile(props) {
                         <Button remove onClick={handleRemove} />
                     </Notification>}
 
-                </Box>
+                </div>
             </Container>
+            <Box className="dev">
+                <h5>Developer Team:</h5>
+                <h6>Sofia Dimos</h6>
+                <h6>Ujesh Regmi</h6>
+                <h6>Mahler Revsine</h6>
+                <h6>Dennis Schimtzek</h6>
+                <h6>Sophie Swift</h6>
+
+  </Box>
         </div>
     )
 }

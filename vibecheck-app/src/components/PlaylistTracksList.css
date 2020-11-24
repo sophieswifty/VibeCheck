@@ -6,3 +6,15 @@
     margin-top: auto;
     margin-bottom: auto;
 }
+
+img.tracks-list-img {
+    height: 100%;
+}
+
+div.columns.tracks-display {
+    height: 175px;
+}
+
+.track-artist {
+    color: rebeccapurple;
+}

@@ -18,30 +18,28 @@ function NavigationBar(props) {
       </Navbar.Brand>
       <Navbar.Menu className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
         <Navbar.Container>
-          <Navbar.Item href="./quiz" className="navbar-item-button">
+          <Navbar.Item href="./quiz" className='no-hover'>
             <Link className="nav-link" renderAs="a" to="./quiz">
               QUIZ
               </Link>
           </Navbar.Item>
-          <Navbar.Item href="./statistics" className="navbar-item-button">
+          <Navbar.Item href="./statistics" className='no-hover'>
             <Link className="nav-link" renderAs="a" to="./statistics">
               STATISTICS
               </Link>
           </Navbar.Item>
-          <Navbar.Item dropdown hoverable className="navbar-item-button">
-            <Navbar.Link className="navbar-item-button">
-              <Link className="nav-link" to="./vibecheck-song">
-                VIBIFY...
-                </Link>
-            </Navbar.Link>
+          <Navbar.Item dropdown hoverable className='no-hover'>
+            <Navbar.Item className="no-hover">
+                 VIBIFY...
+            </Navbar.Item>
             <Navbar.Dropdown className="navbar-item-dropdown">
-              <Navbar.Item>
-                <Link renderAs="a" to="./vibecheck-song">
+              <Navbar.Item className='no-hover'>
+                <Link className="drop-link" renderAs="a" to="./vibecheck-song">
                   A SONG
                   </Link>
               </Navbar.Item>
-              <Navbar.Item>
-                <Link renderAs="a" to="./vibecheck-playlist">
+              <Navbar.Item className='no-hover'>
+                <Link className="drop-link"renderAs="a" to="./vibecheck-playlist">
                   A PLAYLIST
                   </Link>
               </Navbar.Item>
@@ -49,11 +47,11 @@ function NavigationBar(props) {
           </Navbar.Item>
         </Navbar.Container>
         <Navbar.Container position="end">
-          {!props.loadingData && <Navbar.Item className='name-no-hover'>
+           <Navbar.Item className='no-hover'>
             <Link renderAs="a" to="./profile">
               {props.username}
             </Link>
-          </Navbar.Item>}
+          </Navbar.Item>
           <Navbar.Item className='btn-no-hover'>
             <Logout />
           </Navbar.Item>

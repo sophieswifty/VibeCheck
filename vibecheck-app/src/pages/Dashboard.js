@@ -19,7 +19,7 @@ function Dashboard(props) {
                             <Heading>Defining the vibe.</Heading>
 
                             <Heading subtitle>
-                                Explore your personal listening statistics, take a quiz for a custom playlist, and learn about the metrics of songs and playlists.
+                                Generate a custom quiz fit to the vibe, explore your personal listening statistics, and discover the metrics of any song or playlist.
                                 </Heading>
 
                         </Section>
@@ -48,7 +48,7 @@ function Dashboard(props) {
                                 If a picture is worth a 1000 words, a song is worth a 1,000,000 more. <br />
                                 Take the quiz to gauge your vibe and let our algorithm produce the perfect playlist to match using you and your friends' music taste.
                                  <br></br>
-                                <i>Sign in with your Spotify to get started.</i>
+                                <i>Sign in with your Spotify to create an account.</i>
                             </Heading>
                         </div>
                         <br></br>

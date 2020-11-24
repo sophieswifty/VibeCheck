@@ -36,7 +36,7 @@ class PlaylistReel extends React.Component {
 
                         <figcaption className="caption">
                             <Heading>{this.state.playlists[0].displayName}</Heading>
-                            <Heading subtitle>{this.state.playlists[0].userID} </Heading>
+                            <Heading subtitle>{this.state.playlists[0].playlistName} </Heading>
                         </figcaption>
                     </figure>
                 </Box>
@@ -49,7 +49,7 @@ class PlaylistReel extends React.Component {
 
                         <figcaption className="caption">
                             <Heading>{this.state.playlists[1].displayName}</Heading>
-                            <Heading subtitle>{this.state.playlists[1].userID} </Heading>
+                            <Heading subtitle>{this.state.playlists[1].playlistName} </Heading>
                         </figcaption>
                     </figure>
                 </Box>
@@ -62,7 +62,7 @@ class PlaylistReel extends React.Component {
 
                         <figcaption className="caption">
                             <Heading>{this.state.playlists[2].displayName}</Heading>
-                            <Heading subtitle>{this.state.playlists[2].userID} </Heading>
+                            <Heading subtitle>{this.state.playlists[2].playlistName} </Heading>
                         </figcaption>
                     </figure>
                 </Box>

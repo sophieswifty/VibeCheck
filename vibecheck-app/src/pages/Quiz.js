@@ -69,7 +69,7 @@ const vibes = {
     valence_range: 0.3
 }
 
-let waitText = ["Synthesizing a sweet playlist...", "Scanning for ~gOoD vIbEs~", "Custom playlist incoming...", "Curating the perfect tunes for you...", "I think your mom will love this playlist...", "Synchronizing the vibes...", "Curating the best Country playlist just for you... jk!"];
+let waitText = ["Synthesizing a sweet playlist", "Scanning for ~gOoD vIbEs~", "Artisan playlist incoming", "Curating the perfect tunes for you", "I think your mom will love this playlist", "Synchronizing the vibes", "Curating the best Country playlist just for you... jk!", "This'll be a hit with the ladies", "Stay tuned for incoming tunes", "You're promoted to leader of the aux", "BuzzFeed could never"];
 let resultFilter = {};
 let fakeCurrentQuestion = 0;
 

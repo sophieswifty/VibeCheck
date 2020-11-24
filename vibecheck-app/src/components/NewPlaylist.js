@@ -87,18 +87,7 @@ function NewPlaylist(props) {
                     </Media.Item>
                 </Media>
             </Box>
-                <Tabs
-                    type={ 'boxed'}
-                    fullwidth={true}
-                    align={'centered'}
-                >
-                    <Tabs.Tab >
-                        Top Artists
-                    </Tabs.Tab>
-                    <Tabs.Tab >
-                        Top Tracks
-                    </Tabs.Tab>
-                </Tabs>
+                
             <PlaylistTracksList title={`${props.playlist.name} Tracks`} items={props.playlist.tracks.items} />
         </div>
     )
