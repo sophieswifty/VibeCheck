@@ -9,7 +9,9 @@
     * [react-bulma-components](https://couds.github.io/react-bulma-components/?path=/story/box--default),
     * axios
     * font-awesome (use: `npm install --save @fortawesome/fontawesome-free`)
-    * `npm install recharts`
+    * recharts
+    * throttle-debounce
+    * rect-google-charts
     
 
 * To run in browser: `npm start` (browser-sync no longer needed)
@@ -35,9 +37,9 @@
       - Description
       - Recently generated playlists from users
   
-  * Tools (if we get to this)
-      - Vibecheck a song
-      - Vibecheck a playlist
+  * Tools
+      - Vibify a song <--- Uses autocomplete (uses throttle debounce library)
+      - Vibify a playlist , <--- Uses autocomplete (uses throttle debounce library)
    
 * User logged in:
   * Dashboard: 
@@ -52,7 +54,9 @@
       - Vibecheck a song
       - Vibecheck a playlist
       - Add to my playlists button?
-      
+  * Statistics:
+      - User top played tracks
+      - User top played artists
    * Log out button
    
   ### Design Patterns:
