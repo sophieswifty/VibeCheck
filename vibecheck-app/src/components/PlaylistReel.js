@@ -30,7 +30,7 @@ class PlaylistReel extends React.Component {
 
                 <Box className="tile">
                     <figure>
-                        <a href={this.state.playlists[0].playlistURL}>
+                        <a href={this.state.playlists[0].playlistURL}  target="_blank">
                             <img src={this.state.playlists[0].playlistIMG} />
                         </a>
 
@@ -43,7 +43,7 @@ class PlaylistReel extends React.Component {
 
                 <Box className="tile">
                     <figure>
-                        <a href={this.state.playlists[1].playlistURL}>
+                        <a href={this.state.playlists[1].playlistURL}  target="_blank">
                             <img src={this.state.playlists[1].playlistIMG} />
                         </a>
 
@@ -56,7 +56,7 @@ class PlaylistReel extends React.Component {
 
                 <Box className="tile">
                     <figure>
-                        <a href={this.state.playlists[2].playlistURL}>
+                        <a href={this.state.playlists[2].playlistURL} target="_blank">
                             <img src={this.state.playlists[2].playlistIMG} />
                         </a>
 
