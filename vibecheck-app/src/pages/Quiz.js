@@ -1,10 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
 import './Quiz.css';
 import questions from '../assets/questions';
-import { Button, Box, Heading, Field, Label, Control, Input, Form } from 'react-bulma-components';
+import { Button, Box, Heading, Field, Label, Control, Input, Form, Loader } from 'react-bulma-components';
 import { fetchCandidateSongs, filterCandidateSongs, makePlaylist, createPlaylist, getPlaylist, addTracksToPlaylist } from '../API/spotifyAPI';
 import NewPlaylist from '../components/NewPlaylist';
 import { AudioBatchContext } from '../context/audiobatch';
+import { LoadingContext } from '../context/loading';
+import Dots from '../components/Dots';
 
 const turnt = {
     acousticness: 0.15,
@@ -67,15 +69,17 @@ const vibes = {
     valence_range: 0.3
 }
 
+let waitText = ["Synthesizing a sweet playlist...", "Scanning for ~gOoD vIbEs~", "Custom playlist incoming...", "Curating the perfect tunes for you...", "I think your mom will love this playlist...", "Synchronizing the vibes...", "Collecting only the best for you..."];
 let resultFilter = {};
 let fakeCurrentQuestion = 0;
 
-function Quiz() {
+function Quiz(props) {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showResult, setShowResult] = useState(false);
     const [showPlaylist, setShowPlaylist] = useState(false);
     const [cleanFilter, setCleanFilter] = useState(false);
     const [audioBatch, setAudioBatch] = useContext(AudioBatchContext);
+    const [isLoading, setIsLoading] = useContext(LoadingContext);
     const [playlistName, setPlaylistName] = useState("Vibecheck Playlist");
     const [playlistData, setPlaylistData] = useState({});
 
@@ -91,9 +95,9 @@ function Quiz() {
     // Using filter as a global var which means when the user goes 
 
     const handleAnswerOptionClick = (answerOption) => {
-    
+
         // Setting initial filter based off q1 answer.
-        switch(answerOption.answerText) {
+        switch (answerOption.answerText) {
             case "Getting turnt":
                 resultFilter = turnt;
                 break;
@@ -135,12 +139,12 @@ function Quiz() {
 
     const generatePlaylist = () => {
         const resultPlaylist = filterCandidateSongs(audioBatch, resultFilter);
-        
+
         createPlaylist(playlistName).then((playlist) => {
             const URIs = resultPlaylist.map(elt => elt.uri);
-            
+
             addTracksToPlaylist(playlist.id, URIs).then(() => {
-                
+
                 getPlaylist(playlist.id).then((final_playlist) => {
                     setPlaylistData(final_playlist);
                     setShowPlaylist(true);
@@ -151,6 +155,8 @@ function Quiz() {
             console.log(error);
         });
     }
+
+    let randomGenerationText = waitText[Math.floor(Math.random() * waitText.length)];
 
     function handleChange(e) {
         setPlaylistName(e.target.value);
@@ -191,10 +197,17 @@ function Quiz() {
                             <label>Enter a playlist title: </label>
                             <input placeholder="Vibecheck Playlist" type="text" value={playlistName} onChange={handleChange} />
 
-                            <Button size="large" fullwidth onClick={generatePlaylist}>Generate playlist!</Button>
+                            {isLoading ?
+                                <div>
+                                   <Dots title={randomGenerationText}/>
+                                </div>
+                                : <Button size="large" fullwidth onClick={generatePlaylist}>Generate playlist!</Button>}
                         </Box>
                     </div>
                 }
+
+
+
                 <Button className="restart-btn" onClick={handleRestartClick}>Restart</Button>
 
             </div>}
@@ -205,22 +218,3 @@ function Quiz() {
 }
 
 export default Quiz;
-
-
-
-
-            // <div className="quiz">
-            //     <div className='question-section'>
-			// 			<div className='question-count'>
-			// 				<span>Question {currentQuestion + 1}</span>/{questions.length}
-			// 			</div>
-			// 			<div className='question-text'>{questions[currentQuestion].questionText}</div>
-			// 		</div>
-			// 		<div className='answer-section'>
-			// 			{questions[currentQuestion].answerOptions.map((answerOption, index) => (
-
-			// 				<button onClick={() => handleAnswerOptionClick(answerOption)}>{answerOption.answerText}</button>
-			// 			))}
-			// 		</div>
-
-            // </div>

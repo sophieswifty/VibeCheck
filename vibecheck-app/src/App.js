@@ -20,6 +20,7 @@ import NavigationBar from './components/NavigationBar';
 import { AuthContext } from './context/auth';
 import { UserDataContext } from './context/userdata';
 import { AudioBatchContext } from './context/audiobatch';
+import { LoadingContext } from './context/loading';
 import PrivateRoute from './components/PrivateRoute';
 
 // Icons
@@ -29,21 +30,19 @@ import { fab } from '@fortawesome/free-brands-svg-icons'; // import brand icons 
 import { getUserData, setAccessToken, fetchCandidateSongs } from './API/spotifyAPI';
 library.add(fab)
 
-
-
-
 function App(props) {
   const existingTokens = JSON.parse(localStorage.getItem("spotify_auth_state"));
   const [authTokens, setAuthTokens] = useState(existingTokens);
   const [userData, setUserData] = useState({});
   const [audioBatch, setAudioBatch] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+
   const [loadingSongData, setLoadingSongData] = useState(true);
 
   const setTokens = (data) => {
     localStorage.setItem("tokens", JSON.stringify(data));
     setAuthTokens(data);
   }
-
 
   const renderMergedProps = (component, ...rest) => {
     const finalProps = Object.assign({}, ...rest);
@@ -52,12 +51,12 @@ function App(props) {
     );
   }
 
-  
+
   const PropsRoute = ({ component, ...rest }) => {
     return (
       <Route {...rest} render={routeProps => {
         return renderMergedProps(component, routeProps, rest);
-      }}/>
+      }} />
     );
   }
 
@@ -75,6 +74,7 @@ function App(props) {
         console.log("audio batch incoming");
         console.log(data);
         setLoadingSongData(false);
+        setIsLoading(false);
         setAudioBatch(data);
       });
     }
@@ -88,21 +88,23 @@ function App(props) {
       <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
         <UserDataContext.Provider value={[userData, setUserData]}>
           <AudioBatchContext.Provider value={[audioBatch, setAudioBatch]}>
-            <Router>
-              {authTokens && <LoggedIn username={userData.display_name} loadingData={loadingSongData} />}
-              <Layout>
-                <Switch>
-                  <PropsRoute path="/dashboard" component={Dashboard} auth={authTokens} />
-                  <PrivateRoute path="/quiz" component={Quiz} />
-                  <PrivateRoute path="/profile" component={Profile} />
-                  <PrivateRoute path="/statistics" component={Statistics} />
-                  <PrivateRoute path="/vibecheck-song" component={VibecheckSong} />
-                  <PrivateRoute path="/vibecheck-playlist" component={VibecheckPlaylist} />
-                  <Route path="/redirect" component={Redirect} />
-                  <Route exact path="/" component={Redirect} />
-                </Switch>
-              </Layout>
-            </Router>
+            <LoadingContext.Provider value={[isLoading, setIsLoading]}>
+              <Router>
+                {authTokens && <LoggedIn username={userData.display_name} loadingData={loadingSongData} />}
+                <Layout>
+                  <Switch>
+                    <PropsRoute path="/dashboard" component={Dashboard} auth={authTokens} />
+                    <PrivateRoute path="/quiz" component={Quiz} />
+                    <PrivateRoute path="/profile" component={Profile} />
+                    <PrivateRoute path="/statistics" component={Statistics} />
+                    <PrivateRoute path="/vibecheck-song" component={VibecheckSong} />
+                    <PrivateRoute path="/vibecheck-playlist" component={VibecheckPlaylist} />
+                    <Route path="/redirect" component={Redirect} />
+                    <Route exact path="/" component={Redirect} />
+                  </Switch>
+                </Layout>
+              </Router>
+            </LoadingContext.Provider>
           </AudioBatchContext.Provider>
         </UserDataContext.Provider>
       </AuthContext.Provider>
