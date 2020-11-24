@@ -38,8 +38,8 @@
       - Recently generated playlists from users
   
   * Tools
-      - Vibify a song <--- Uses autocomplete (uses throttle debounce library)
-      - Vibify a playlist , <--- Uses autocomplete (uses throttle debounce library)
+      - Vibify a song <--- Uses autocomplete (throttle debounce library)
+      - Vibify a playlist , <--- Uses autocomplete (throttle debounce library)
    
 * User logged in:
   * Dashboard: 
