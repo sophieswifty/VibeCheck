@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 var cors = require('cors');
-const { use } = require('browser-sync');
 
 app.use(cors())
 if (process.env.NODE_ENV === "production") {
@@ -53,7 +52,7 @@ app.put('/playlists/:id', (req, res) => {
         return
     }
     let {playlistID, playlistURL, playlistName, playlistIMG, userID, displayName} = req.body;
-    if (playlistID == null || playlistURL == null || playlistName ==  || playlistIMG == null || userID == null || displayName == null) {
+    if (playlistID == null || playlistURL == null || playlistName ==  null || playlistIMG == null || userID == null || displayName == null) {
         res.status(404).send('Did not meet all properties');
         return;
     }

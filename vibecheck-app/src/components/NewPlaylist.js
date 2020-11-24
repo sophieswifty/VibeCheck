@@ -13,6 +13,8 @@ function NewPlaylist(props) {
 
 
     const handleSave = () => {
+        console.log(props.playlist);
+        console.log(userData);
         addPlaylistToBackend(userData, props.playlist);
     }
 

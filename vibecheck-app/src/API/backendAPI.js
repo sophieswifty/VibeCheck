@@ -13,7 +13,7 @@ export const addPlaylistToBackend = async (userInfo, playlistInfo) => {
             "playlistName": playlistInfo.name, // Spotify Playlist Name -> playlistInfo.name
             "playlistIMG": playlistInfo.images[0].url, // Spotify Playlist IMG -> playlistInfo.images[0].url
             "userID": userInfo.id, // Spotify Username -> userInfo.id
-            "displayName": userInfo.display_name, // Spotify Profile Display Name -> userInfo.display_name
+            "displayName": userInfo.display_name // Spotify Profile Display Name -> userInfo.display_name
         }
     })
 }
