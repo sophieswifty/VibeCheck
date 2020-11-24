@@ -64,7 +64,7 @@ export default class Autocomplete extends React.Component {
               <Form.Field grouped>
                 <Form.Control>
                   <Form.Input 
-                    placeholder="Search for a song here"
+                    placeholder={"Search for a " + this.props.searchType}
                     type="text" 
                     value={this.state.q} 
                     onChange={this.changeQuery}>  

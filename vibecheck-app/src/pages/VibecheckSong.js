@@ -35,7 +35,7 @@ export default class VibecheckSong extends React.Component {
             <React.Fragment>
                  <div className="vibecheck-page-container">
                     <Heading>
-                        Vibify a song
+                        Vibify a Song
                     </Heading>
                     <Autocomplete searchType={"song"} onSubmit={this.handleSubmit}/> 
                     

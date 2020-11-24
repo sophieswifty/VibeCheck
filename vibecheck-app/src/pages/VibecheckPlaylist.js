@@ -58,7 +58,7 @@ export default class VibecheckPlaylist extends React.Component {
             <React.Fragment>
                 <div className="vibecheck-page-container">
                     <Heading>
-                        Vibify a playlist
+                        Vibify a Playlist
                     </Heading>
                     <Autocomplete searchType={"playlist"} onSubmit={this.handleSubmit}/> 
                     

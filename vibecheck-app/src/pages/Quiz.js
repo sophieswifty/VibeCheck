@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import './Quiz.css';
 import questions from '../assets/questions';
 import { Button, Box, Heading, Field, Label, Control, Input, Form } from 'react-bulma-components';
@@ -68,22 +68,24 @@ const vibes = {
 }
 
 let resultFilter = {};
+let fakeCurrentQuestion = 0;
 
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showResult, setShowResult] = useState(false);
     const [showPlaylist, setShowPlaylist] = useState(false);
     const [cleanFilter, setCleanFilter] = useState(false);
-
     const [audioBatch, setAudioBatch] = useContext(AudioBatchContext);
     const [playlistName, setPlaylistName] = useState("Vibecheck Playlist");
     const [playlistData, setPlaylistData] = useState({});
 
-  
-
     if (cleanFilter) {
         resultFilter = {};
         setCleanFilter(false);
+    }
+
+    if (currentQuestion === 0) {
+        fakeCurrentQuestion = 0;
     }
 
     // Using filter as a global var which means when the user goes 
@@ -117,12 +119,14 @@ function Quiz() {
 
         if (nextQuestion != null) {
             setCurrentQuestion(nextQuestion);
+            fakeCurrentQuestion++;
         } else {
             setShowResult(true);
         }
     };
 
     const handleRestartClick = () => {
+        fakeCurrentQuestion = 0;
         setCurrentQuestion(0);
         setShowResult(false);
         setShowPlaylist(false)
@@ -160,7 +164,7 @@ function Quiz() {
                 {!showResult && <div className="question-container">
                     <div className='question-section'>
                         <Heading subtitle size={6} className='question-count'>
-                            <span>Question {currentQuestion}</span>/{questions.length}
+                            <span>Question {fakeCurrentQuestion}</span>/{10}
                         </Heading>
                         <Heading className='question-text'>{questions[currentQuestion].questionText}</Heading>
                     </div>
