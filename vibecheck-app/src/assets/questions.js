@@ -11,8 +11,8 @@ let questions = [
     index: 0,
     questionText: "What are you doing????",
     answerOptions: [
-    // accousticness: 0.15
-    // accousticness range: 0.15
+    // acousticness: 0.15
+    // acousticness range: 0.15
     // danceability: 0.8
     // danceability range: 0.2
     // energy: 0.8
@@ -24,8 +24,8 @@ let questions = [
     // valence: 0.7
     // valence range: 0.3
     { answerText: "Getting turnt", answerImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80', nextIndex: 1, metric: 'energy', value: 0 },
-    // accousticness: 0.6
-    // accousticness range: 0.4
+    // acousticness: 0.6
+    // acousticness range: 0.4
     // danceability: 0.1
     // danceability range: 0.1
     // energy: 0.25
@@ -37,8 +37,8 @@ let questions = [
     // valence: 0.5
     // valence range: 0.15
     { answerText: "Study mode", answerImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80', nextIndex: 11, metric: 'energy', value: 0 },
-    // accousticness: 0.05
-    // accousticness range: 0.05
+    // acousticness: 0.05
+    // acousticness range: 0.05
     // danceability: 0.8
     // danceability range: 0.2
     // energy: 0.8
@@ -50,8 +50,8 @@ let questions = [
     // valence: 0.8
     // valence range: 0.2
     { answerText: "Exercising", answerImage: 'https://images.unsplash.com/photo-1527933053326-89d1746b76b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80', nextIndex: 21, metric: 'energy', value: 0 },
-    // accousticness: 0.25
-    // accousticness range: 0.25
+    // acousticness: 0.25
+    // acousticness range: 0.25
     // danceability: 0.2
     // danceability range: 0.2
     // energy: 0.2
@@ -93,7 +93,7 @@ let questions = [
     questionText: "Pick a destination of choice.",
     answerOptions: [
     { answerText: "Berlin", answerImage: 'https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8YmVybGlufGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60',  nextIndex: 4, metric: 'energy', value: .05 },
-    { answerText: "Rio de Janeiro", answerImage: 'https://images.unsplash.com/photo-1589394760151-b4c9890765fe?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8cmlvfGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60',   nextIndex: 4, metric: 'accousticness_range', value:  .1 },
+    { answerText: "Rio de Janeiro", answerImage: 'https://images.unsplash.com/photo-1589394760151-b4c9890765fe?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8cmlvfGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60',   nextIndex: 4, metric: 'acousticness_range', value:  .1 },
     { answerText: "Bali", answerImage: 'https://images.unsplash.com/photo-1515896769750-31548aa180ed?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8bG9zJTIwYW5nZWxlc3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60',   nextIndex: 4, metric: 'energy', value: -.2 },
     { answerText: "Tokyo", answerImage: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8dG9reW98ZW58MHx8MHw%3D&auto=format&fit=crop&w=1000&q=60',   nextIndex: 4, metric: 'energy_range', value: -.05 },
     ],
@@ -116,7 +116,7 @@ let questions = [
     { answerText: "Margarita", answerImage: 'https://images.unsplash.com/photo-1556855810-ac404aa91e85?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjl8fG1hcmdhcml0YXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60',nextIndex: 6, metric: 'valence', value: .05 },
     { answerText: "G&T", answerImage: 'https://images.unsplash.com/photo-1598509679475-bb4fa54cfeda?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Z2luJTIwYW5kJTIwdG9uaWN8ZW58MHx8MHw%3D&auto=format&fit=crop&w=1000&q=60',nextIndex: 6, metric: 'valence', value: -.15 },
     { answerText: "Whiteclaw", answerImage: 'https://www.thespiritsbusiness.com/content/http://www.thespiritsbusiness.com/media/2020/05/White-Claw.jpg', nextIndex: 6, metric: 'energy_range', value: -.05 },
-    { answerText: "PBR", answerImage: 'https://i5.walmartimages.com/asr/b1ada15a-b8db-4b78-bc04-4f48af6da156_1.b3a099d5d7f075a530d1358965570a43.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff', nextIndex: 6, metric: 'accousticness_range', value: .05 },
+    { answerText: "PBR", answerImage: 'https://i5.walmartimages.com/asr/b1ada15a-b8db-4b78-bc04-4f48af6da156_1.b3a099d5d7f075a530d1358965570a43.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff', nextIndex: 6, metric: 'acousticness_range', value: .05 },
     ],
     },
     {
@@ -155,7 +155,7 @@ let questions = [
     answerOptions: [
     { answerText: "Catchy chorus", answerImage: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c29uZ3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60', nextIndex: 10, metric: 'valence', value: 0.5},
     { answerText: "Unexpected beat drop", answerImage: 'https://images.unsplash.com/photo-1591557184386-e0e124abe0be?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8dGVjaG5vfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: 10, metric: 'energy', value: 0.5},
-    { answerText: "Meaningful lyrics", answerImage: 'https://images.unsplash.com/photo-1520454125516-134a66d9bf78?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fHNvbmd8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60', nextIndex: 10, metric: 'accousticness', value: 0.5},
+    { answerText: "Meaningful lyrics", answerImage: 'https://images.unsplash.com/photo-1520454125516-134a66d9bf78?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fHNvbmd8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60', nextIndex: 10, metric: 'acousticness', value: 0.5},
     { answerText: "Head-boppin' baseline", answerImage: 'https://images.unsplash.com/photo-1583944000409-00dd0ba1a873?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTV8fHNvbmd8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60', nextIndex: 10, metric: 'danceability', value: 0.5},
     ],
     },
@@ -174,7 +174,7 @@ let questions = [
     questionText: "How are you studying?",
     answerOptions: [
     { answerText: "In a group", answerImage: 'https://images.unsplash.com/photo-1460518451285-97b6aa326961?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80', nextIndex: 12, metric: 'valence', value: 0.2},
-    { answerText: "By myself", answerImage: 'https://images.unsplash.com/photo-1593698054469-2bb6fdf4b512?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80', nextIndex: 12, metric: 'accousticness', value: 0.1 },
+    { answerText: "By myself", answerImage: 'https://images.unsplash.com/photo-1593698054469-2bb6fdf4b512?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80', nextIndex: 12, metric: 'acousticness', value: 0.1 },
     ],
     },
     {
@@ -191,9 +191,9 @@ let questions = [
     index: 13,
     questionText: "What subject are you studying?",
     answerOptions: [
-    { answerText: "Humanities", answerImage: 'https://s3.amazonaws.com/photos.bcheights.com/wp-content/uploads/2019/09/03123633/opinions-36.png', nextIndex: 14, metric: 'accousticness', value: 0.05 },
-    { answerText: "STEM", answerImage: 'https://www.iberdrola.com/wcorp/gc/prod/en_US/comunicacion/profesionales_stem_1_res/STEM_gris_746x419.jpg', nextIndex: 14, metric: 'accousticness', value: -0.05 },
-    { answerText: "Art", answerImage: 'https://stvp-static-prod.s3.amazonaws.com/uploads/sites/2/2016/08/eCorner_Arts_Tech5.jpg', nextIndex: 14, metric: 'accousticness', value: 0.05 },
+    { answerText: "Humanities", answerImage: 'https://s3.amazonaws.com/photos.bcheights.com/wp-content/uploads/2019/09/03123633/opinions-36.png', nextIndex: 14, metric: 'acousticness', value: 0.05 },
+    { answerText: "STEM", answerImage: 'https://www.iberdrola.com/wcorp/gc/prod/en_US/comunicacion/profesionales_stem_1_res/STEM_gris_746x419.jpg', nextIndex: 14, metric: 'acousticness', value: -0.05 },
+    { answerText: "Art", answerImage: 'https://stvp-static-prod.s3.amazonaws.com/uploads/sites/2/2016/08/eCorner_Arts_Tech5.jpg', nextIndex: 14, metric: 'acousticness', value: 0.05 },
     { answerText: "Other", answerImage: 'https://cdn.shoplightspeed.com/shops/610593/files/2916194/mystery-box-mystery-box-7500.jpg', nextIndex: 14, metric: 'valence', value: 0.05 },
     ],
     },
@@ -214,7 +214,7 @@ let questions = [
     { answerText: "Of course", answerImage: 'https://img.jakpost.net/c/2017/11/30/2017_11_30_36667_1512028887._large.jpg', nextIndex: 16, metric: 'valence', value: 0.05 },
     { answerText: "Probably not", answerImage: 'https://i.imgur.com/FXLThSZ.jpg', nextIndex: 16, metric: 'speechiness', value: 0.05 },
     { answerText: "I don't care", answerImage: 'https://somersetsentinel.com/wp-content/uploads/2018/04/apathy-900x596.png', nextIndex: 16, metric: 'energy', value: 0.05 },
-    { answerText: "Oh god I hope so", answerImage: 'https://our.warwick.ac.uk/wp-content/uploads/2020/01/existential.jpeg', nextIndex: 16, metric: 'accousticness', value: 0.05 },
+    { answerText: "Oh god I hope so", answerImage: 'https://our.warwick.ac.uk/wp-content/uploads/2020/01/existential.jpeg', nextIndex: 16, metric: 'acousticness', value: 0.05 },
     ],
     },
     {
@@ -233,7 +233,7 @@ let questions = [
     answerOptions: [
     { answerText: "In my room", answerImage: 'https://www.timeshighereducation.com/sites/default/files/styles/the_breaking_news_image_style/public/istock-1093929298.jpg?itok=-ASwUBzQ', nextIndex: 18, metric: 'energy', value: -0.05 },
     { answerText: "At the library", answerImage: 'https://cdn7.dissolve.com/p/D1061_242_525/D1061_242_525_1200.jpg', nextIndex: 18, metric: 'danceability', value: -0.05 },
-    { answerText: "In front of the tv", answerImage: 'https://theenrichery.com/wp-content/uploads/2018/01/Distractions.jpg', nextIndex: 18, metric: 'accousticness', value: -0.05 },
+    { answerText: "In front of the tv", answerImage: 'https://theenrichery.com/wp-content/uploads/2018/01/Distractions.jpg', nextIndex: 18, metric: 'acousticness', value: -0.05 },
     { answerText: "In a sunny park", answerImage: 'https://www.faulkner.edu/wp-content/uploads/studying-in-the-park.jpg', nextIndex: 18, metric: 'energy', value: 0.05 },
     ],
     },
@@ -281,7 +281,7 @@ let questions = [
         answerOptions: [
             { answerText: "Cardio", answerImage: 'https://images.unsplash.com/photo-1571008887538-b36bb32f4571?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cnVubmluZ3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60',   nextIndex: 23, metric: 'danceability', value: .1 },
             { answerText: "Lifting weights", answerImage: 'https://images.unsplash.com/photo-1520948013839-62020f374478?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8bGlmdGluZyUyMHdlaWdodHN8ZW58MHx8MHw%3D&auto=format&fit=crop&w=1000&q=60',   nextIndex: 23, metric: 'energy', value: .05 },
-            { answerText: "Yoga", answerImage: 'https://images.unsplash.com/photo-1575052814074-c05122e0a17a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Y2FyZGlvfGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60',   nextIndex: 23,metric: 'accousticness', value: .1 },
+            { answerText: "Yoga", answerImage: 'https://images.unsplash.com/photo-1575052814074-c05122e0a17a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Y2FyZGlvfGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60',   nextIndex: 23,metric: 'acousticness', value: .1 },
             { answerText: "Just walking", answerImage: 'https://images.unsplash.com/photo-1494959764136-6be9eb3c261e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8d2Fsa2luZ3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60',   nextIndex: 23, metric: 'danceability', value: -.05 },
         ],
     },
@@ -310,7 +310,7 @@ let questions = [
         answerOptions: [
             { answerText: "Red", answerImage: 'https://images.unsplash.com/photo-1535868463750-c78d9543614f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cmVkfGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60', nextIndex: 26, metric: 'danceability', value: .1 },
             { answerText: "Yellow", answerImage: 'https://images.unsplash.com/photo-1521913626209-0fbf68f4c4b1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8eWVsbG93fGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60', nextIndex: 26, metric: 'danceability', value: .05 },
-            { answerText: "Blue", answerImage: 'https://images.unsplash.com/photo-1530533718754-001d2668365a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8Ymx1ZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60', nextIndex: 26, metric: 'accousticness', value: .05 },
+            { answerText: "Blue", answerImage: 'https://images.unsplash.com/photo-1530533718754-001d2668365a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8Ymx1ZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60', nextIndex: 26, metric: 'acousticness', value: .05 },
             { answerText: "Green", answerImage: 'https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGdyZWVufGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60', nextIndex: 26, metric: 'energy', value: .05 },
         ],
     },
@@ -331,7 +331,7 @@ let questions = [
         answerOptions: [
             { answerText: "Tennis shoes", answerImage: 'https://images.unsplash.com/photo-1546824034-b86974ff36f9?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8dGVubmlzJTIwc2hvZXN8ZW58MHx8MHw%3D&auto=format&fit=crop&w=1000&q=60',  nextIndex: 28, metric: 'energy', value: .05 },
             { answerText: "Heels", answerImage: 'https://images.unsplash.com/photo-1553545985-1e0d8781d5db?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aGVlbHN8ZW58MHx8MHw%3D&auto=format&fit=crop&w=1000&q=60',  nextIndex: 28, metric: 'valence', value: .05 },
-            { answerText: "Flip Flops", answerImage: 'https://images.unsplash.com/photo-1562454590-3ca6df2d87d5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8ZmxpcCUyMGZsb3BzfGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60',  nextIndex: 28, metric: 'accousticness', value: 0.5 },
+            { answerText: "Flip Flops", answerImage: 'https://images.unsplash.com/photo-1562454590-3ca6df2d87d5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8ZmxpcCUyMGZsb3BzfGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60',  nextIndex: 28, metric: 'acousticness', value: 0.5 },
             { answerText: "Shoes? Barefoot for sure", answerImage: 'https://images.unsplash.com/photo-1580091150791-bf43c05a64df?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFyZWZvb3R8ZW58MHx8MHw%3D&auto=format&fit=crop&w=1000&q=60',  nextIndex: 28, metric: 'valence', value: .05 },
         ],
     },
@@ -340,7 +340,7 @@ let questions = [
         questionText: "Pick a cereal.",
         answerOptions: [
             { answerText: "Fruit loops", answerImage: 'https://images.unsplash.com/photo-1504308805006-0f7a5f1f0f71?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJ1aXQlMjBsb29wc3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60', nextIndex: 29, metric: 'danceability', value: .05 },
-            { answerText: "Cheerios", answerImage: 'https://images.unsplash.com/photo-1470909752008-c78c7f6423a3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8Y2hlZXJpb3N8ZW58MHx8MHw%3D&auto=format&fit=crop&w=1000&q=60', nextIndex: 29, metric: 'accousticness', value: .05 },
+            { answerText: "Cheerios", answerImage: 'https://images.unsplash.com/photo-1470909752008-c78c7f6423a3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8Y2hlZXJpb3N8ZW58MHx8MHw%3D&auto=format&fit=crop&w=1000&q=60', nextIndex: 29, metric: 'acousticness', value: .05 },
             { answerText: "Honey Bunches of Oats", answerImage: 'https://www.cerealously.net/wp-content/uploads/2020/01/new-frosted-honey-bunches-of-oats-review-cereal.jpg', nextIndex: 29, metric: 'danceability', value: -.05 },
             { answerText: "Cinnamon Toast Crunch", answerImage: 'https://images-gmi-pmc.edge-generalmills.com/593f6d6d-1f89-464e-afed-cd97971d9938.jpg', nextIndex: 29, metric: 'danceability', value: .05 },
         ],
@@ -377,7 +377,7 @@ let questions = [
         index: 32,
         questionText: "How would you describe your current vibe (pre VibeCheck)?",
         answerOptions: [
-            { answerText: "Chaotic, I need a chill pill", answerImage: 'https://images.unsplash.com/photo-1603880920705-3fcc96d6e602?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Y2hhb3N8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'accousticness', value: .1 },
+            { answerText: "Chaotic, I need a chill pill", answerImage: 'https://images.unsplash.com/photo-1603880920705-3fcc96d6e602?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Y2hhb3N8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'acousticness', value: .1 },
             { answerText: "Content :-)", answerImage: 'https://images.unsplash.com/photo-1525072124541-6237cc05f4f7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cmVsYXhlZHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'danceability', value: .05 },
             { answerText: "Eh, somewhere in the middle", answerImage: 'https://images.unsplash.com/photo-1560270579-d515a443eb3b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uZnVzZWR8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',   nextIndex: 33, metric: 'energy', value: .05 },
         ],
@@ -407,7 +407,7 @@ let questions = [
         answerOptions: [
             { answerText: "Red", answerImage: 'https://images.unsplash.com/photo-1535868463750-c78d9543614f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cmVkfGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60', nextIndex: 36, metric: 'danceability', value: .05 },
             { answerText: "Yellow", answerImage: 'https://images.unsplash.com/photo-1521913626209-0fbf68f4c4b1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8eWVsbG93fGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60', nextIndex: 36, metric: 'valence', value: .05 },
-            { answerText: "Blue", answerImage: 'https://images.unsplash.com/photo-1530533718754-001d2668365a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8Ymx1ZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60', nextIndex: 36, metric: 'accousticness', value: .05 },
+            { answerText: "Blue", answerImage: 'https://images.unsplash.com/photo-1530533718754-001d2668365a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8Ymx1ZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60', nextIndex: 36, metric: 'acousticness', value: .05 },
             { answerText: "Green", answerImage: 'https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGdyZWVufGVufDB8fDB8&auto=format&fit=crop&w=1000&q=60', nextIndex: 36, metric: 'energy', value: .05 },
         ],
     },
@@ -417,7 +417,7 @@ let questions = [
         answerOptions: [
             { answerText: "Thriller or Adventure", answerImage: 'https://images.unsplash.com/photo-1547469447-4afec158715b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8YWR2ZW50dXJlfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 37, metric: 'danceability', value: .05 },
             { answerText: "Comedy", answerImage: 'https://images.unsplash.com/photo-1507808973436-a4ed7b5e87c9?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnVubnl8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 37, metric: 'valence', value: .05 },
-            { answerText: "Romantic", answerImage: 'https://images.unsplash.com/photo-1516967124798-10656f7dca28?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8bG92ZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 37, metric: 'accousticness', value: .05 },
+            { answerText: "Romantic", answerImage: 'https://images.unsplash.com/photo-1516967124798-10656f7dca28?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8bG92ZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 37, metric: 'acousticness', value: .05 },
             { answerText: "Drama or Horror", answerImage: 'https://images.unsplash.com/photo-1518898053858-dcb49207fb75?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fHNjYXJ5fGVufDB8fDB8&auto=format&fit=crop&w=500&q=60',  nextIndex: 37, metric: 'energy', value: -.05 },
         ],
     },
@@ -427,7 +427,7 @@ let questions = [
         answerOptions: [
             { answerText: "One, why would I have more?", answerImage: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'energy', value: .05 },
             { answerText: "2-4, a few extra never hurt.", answerImage: 'https://images.unsplash.com/photo-1583860312136-35dc71739c79?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzR8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'energy', value: .05 },
-            { answerText: "Over 5 - I love to snuggle!", answerImage: 'https://images.unsplash.com/photo-1554745006-8b25b7aeb7cb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fHNudWdnbGV8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'accousticness', value: 0.5 },
+            { answerText: "Over 5 - I love to snuggle!", answerImage: 'https://images.unsplash.com/photo-1554745006-8b25b7aeb7cb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fHNudWdnbGV8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'acousticness', value: 0.5 },
             { answerText: "Do I need to count ALL of them?", answerImage: 'https://images.unsplash.com/photo-1596984768919-e51f75123a13?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTd8fG9uZSUyMHBpbGxvd3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60',  nextIndex: 38, metric: 'valence', value: .05 },
         ],
     },
@@ -436,7 +436,7 @@ let questions = [
         questionText: "Morning Person or Night Owl?",
         answerOptions: [
             { answerText: "Morning Person", answerImage: 'https://images.unsplash.com/photo-1489533119213-66a5cd877091?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9ybmluZ3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60', nextIndex: 39, metric: 'valence', value: .05 },
-            { answerText: "Night Owl", answerImage: 'https://images.unsplash.com/photo-1479267658415-ff274a213280?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTZ8fG5pZ2h0fGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: 39, metric: 'accousticness', value: .05 },
+            { answerText: "Night Owl", answerImage: 'https://images.unsplash.com/photo-1479267658415-ff274a213280?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTZ8fG5pZ2h0fGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: 39, metric: 'acousticness', value: .05 },
         ],
     },
     {
@@ -454,7 +454,7 @@ let questions = [
         index: 40,
         questionText: "And finally, how long would you last in a zombie apocalypse?",
         answerOptions: [
-            { answerText: "Serve 'em my brain on a platter", answerImage: 'https://images.unsplash.com/photo-1568283661163-c90193fd13f1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8ZGVhdGh8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'accousticness', value: .05 },
+            { answerText: "Serve 'em my brain on a platter", answerImage: 'https://images.unsplash.com/photo-1568283661163-c90193fd13f1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8ZGVhdGh8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'acousticness', value: .05 },
             { answerText: "Definitely not the first to go...", answerImage: 'https://images.unsplash.com/photo-1503925802536-c9451dcd87b5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8em9tYmllfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'valence', value: .05 },
             { answerText: "Honestly, I'd probably survive.", answerImage: 'https://images.unsplash.com/photo-1573216145940-0bc9e583d768?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fHpvbWJpZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'danceability', value: .05 },
             { answerText: "Last. Person. Standing.", answerImage: 'https://images.unsplash.com/photo-1490668219599-a79d4d90cf66?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjd8fGRlYXRofGVufDB8fDB8&auto=format&fit=crop&w=500&q=60', nextIndex: null, metric: 'energy', value: .05 },
