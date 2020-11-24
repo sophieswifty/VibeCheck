@@ -11,6 +11,7 @@ export default function PlaylistTracksList(props) {
                         <Heading>{props.title}</Heading>
                             {/* <Button onClick={this.handleRecentlyPlayedTracks}>Recently Played Tracks</Button> */}
                     </Container>
+                    <hr />
                     <Container>
                         {props.items.map( (s, i) => {
                             return (

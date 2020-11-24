@@ -73,7 +73,7 @@ export default class VibecheckPlaylist extends React.Component {
                                 playlistURL={this.state.playlistObject.external_urls.spotify}
                             />
                             <PlaylistTracksList 
-                                title={`${this.state.playlistObject.owner.display_name} - ${this.state.playlistObject.name}`} 
+                                title={"Playlist Tracks"} 
                                 items={this.state.playlistItems}    
                             />
                         </React.Fragment>

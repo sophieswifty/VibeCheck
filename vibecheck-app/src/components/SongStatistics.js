@@ -36,27 +36,30 @@ export default class SongStatistics extends React.Component {
         return (
         
             <Container>
-                <Box>
-                    <Heading>
-                        {`${this.props.artistName} - ${this.props.songName}`}
-                    </Heading>
-                    <div>
-                    <Tile className="chart-container">
-                        <div className="audio-image animated-box">
-                            <a href={this.props.songURL} target="_blank">
-                                <Image src={this.props.albumCover}/> 
-                            </a>
+                    <br />
+                    <br />
+                    <Box>
+                        <Heading>
+                            {`${this.props.artistName} - ${this.props.songName}`}
+                        </Heading>
+                        <div className="columns">
+                            <div classname="column">
+                                <div className="audio-image animated-box">
+                                    <a href={this.props.songURL}>
+                                        <Image src={this.props.albumCover}/> 
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="column">
+                                <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={this.state.data} className="chart">
+                                    <PolarGrid />
+                                    <PolarAngleAxis dataKey="category" />
+                                    <PolarRadiusAxis/>
+                                    <Radar dataKey="score" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                                </RadarChart>
+                            </div>
                         </div>
-                        
-                            <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={this.state.data} className="chart">
-                                <PolarGrid />
-                                <PolarAngleAxis dataKey="category" />
-                                <PolarRadiusAxis/>
-                                <Radar dataKey="score" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-                            </RadarChart>
-                        </Tile>
-                    </div>
-                </Box>
+                    </Box>
             </Container>
         );
     }
