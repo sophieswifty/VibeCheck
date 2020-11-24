@@ -2,19 +2,19 @@ import axios from "axios"
 
 let userInfo; // The user info object
 let playlistInfo; // The spotify playlist object that is generated when they create playlist
-let addPlaylistToBackend = async (userInfo, playlistInfo) => {
+
+export const addPlaylistToBackend = async (userInfo, playlistInfo) => {
     await axios({
         method: 'POST', 
         url: 'https://vibecheck-please.herokuapp.com/playlists',
         body: {
-            "playlistID": "", // Spotify Playlist ID -> playlistInfo.id
-            "playlistURL": "", // Spotify Playlist URL -> playlistInfo.external_urls.spotify
-            "playlistName": "", // Spotify Playlist Name -> playlistInfo.name
-            "playlistIMG": "", // Spotify Playlist IMG -> playlistInfo.images[0].url
-            "userID": "", // Spotify Username -> userInfo.id
-            "displayName": "" // Spotify Profile Display Name -> userInfo.display_name
+            "playlistID": playlistInfo.id, // Spotify Playlist ID -> playlistInfo.id
+            "playlistURL": playlistInfo.external_urls.spotify, // Spotify Playlist URL -> playlistInfo.external_urls.spotify
+            "playlistName": playlistInfo.name, // Spotify Playlist Name -> playlistInfo.name
+            "playlistIMG": playlistInfo.images[0].url, // Spotify Playlist IMG -> playlistInfo.images[0].url
+            "userID": userInfo.id, // Spotify Username -> userInfo.id
+            "displayName": userInfo.display_name, // Spotify Profile Display Name -> userInfo.display_name
         }
-
     })
 }
 

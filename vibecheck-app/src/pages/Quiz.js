@@ -152,8 +152,6 @@ function Quiz() {
         });
     }
 
-
-
     function handleChange(e) {
         setPlaylistName(e.target.value);
     }

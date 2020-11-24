@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Box, Content, Media, Image, Heading, Button, Notification } from 'react-bulma-components';
 import UserDataContext from '../context/userdata';
 import PlaylistStatistics from './PlaylistStatistics';
+import { addPlaylistToBackend } from '../API/backendAPI';
 import axios from 'axios';
 import './NewPlaylist.css';
 
@@ -11,23 +12,8 @@ function NewPlaylist(props) {
     const [userData, setUserData] = useContext(UserDataContext);
 
 
-    const handleSave = async () => {
-
-        try {
-            const result = await axios({
-                method: 'POST',
-                url: 'http://localhost:3030/playlists',
-                body: {
-                    "username": userData.id,
-                    "tracks": props.playlist
-                }
-            });
-            setSaveNotification(true);
-        } catch (error) {
-            return error;
-        }
-
-        console.log("push to db");
+    const handleSave = () => {
+        addPlaylistToBackend(userData, props.playlist);
     }
 
     const handleRemove = () => {
