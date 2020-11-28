@@ -69,8 +69,9 @@ const vibes = {
     valence_range: 0.3
 }
 
-let waitText = ["Synthesizing a sweet playlist", "Scanning for ~gOoD vIbEs~", "Artisan playlist incoming", "Curating the perfect tunes for you", "I think your mom will love this playlist", "Synchronizing the vibrations", "Curating the best Country playlist just for you... jk!", "This'll be a hit with the ladies", "Stay tuned for incoming tunes", "You're promoted to leader of the aux", "BuzzFeed could never", "Sensing good vibes"];
+let waitText = ["Synthesizing a sweet playlist", "Scanning for ~gOoD vIbEs~", "Artisan playlist incoming", "Curating the perfect tunes for you", "I think your mom will love this playlist", "Synchronizing the vibes", "Curating the best Country playlist just for you... jk!", "This'll be a hit with the ladies", "Stay tuned for incoming tunes", "You're promoted to leader of the aux", "BuzzFeed could never"];
 let resultFilter = {};
+let fakeCurrentQuestion = 0;
 
 function Quiz(props) {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -81,17 +82,18 @@ function Quiz(props) {
     const [isLoading, setIsLoading] = useContext(LoadingContext);
     const [playlistName, setPlaylistName] = useState("Vibecheck Playlist");
     const [playlistData, setPlaylistData] = useState({});
-    let fakeCurrentQuestion =  currentQuestion % 10;
-    
-    if (currentQuestion === 10 || currentQuestion === 20 || currentQuestion === 30 || currentQuestion === 40) {
-        fakeCurrentQuestion = 10;
-    }
 
     if (cleanFilter) {
         resultFilter = {};
         setCleanFilter(false);
     }
-    
+
+    if (currentQuestion === 0) {
+        fakeCurrentQuestion = 0;
+    }
+
+    // Using filter as a global var which means when the user goes 
+
     const handleAnswerOptionClick = (answerOption) => {
 
         // Setting initial filter based off q1 answer.
@@ -121,12 +123,14 @@ function Quiz(props) {
 
         if (nextQuestion != null) {
             setCurrentQuestion(nextQuestion);
+            fakeCurrentQuestion++;
         } else {
             setShowResult(true);
         }
     };
 
     const handleRestartClick = () => {
+        fakeCurrentQuestion = 0;
         setCurrentQuestion(0);
         setShowResult(false);
         setShowPlaylist(false)

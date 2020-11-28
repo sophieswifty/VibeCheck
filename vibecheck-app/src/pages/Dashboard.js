@@ -24,7 +24,7 @@ function Dashboard(props) {
 
                         </Section>
                         <br></br>
-                        <Heading subtitle className="playlists-title">Recently generated playlists:</Heading>
+                        <Heading subtitle className="playlists-title">Your recently generated playlists:</Heading>
                        <PlaylistReel/>
                     </Hero.Body>
                 </Hero>
@@ -46,14 +46,14 @@ function Dashboard(props) {
                             </Heading>
                             <Heading subtitle size={6}>
                                 If a picture is worth a 1000 words, a song is worth a 1,000,000 more. <br />
-                                Take our quiz and let our algorithm produce the perfect custom playlist to match your vibe using your music taste.
+                                Take the quiz to gauge your vibe and let our algorithm produce the perfect playlist to match using you and your friends' music taste.
                                  <br></br>
                                 <i>Sign in with your Spotify to create an account.</i>
                             </Heading>
                         </div>
                         <br></br>
 
-                        <Heading className="playlists-title">Recently generated playlists:</Heading>
+                        <Heading className="playlists-title">Checkout these recently generated playlists:</Heading>
                        <PlaylistReel />
                    
 

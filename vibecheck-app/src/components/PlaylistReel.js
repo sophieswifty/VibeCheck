@@ -9,12 +9,12 @@ class PlaylistReel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            playlists: [{}, {}, {}, {}]
+            playlists: [{}, {}, {}]
         }
     }
     componentDidMount() {
-        axios.get('http://localhost:3000/playlists/all').then(res => {
-            const playlists = res.data.slice(res.data.length - 4, res.data.length).reverse();
+        axios.get('https://vibecheck-please.herokuapp.com/playlists/all').then(res => {
+            const playlists = res.data.slice(res.data.length - 3, res.data.length).reverse();
             this.setState({ playlists: playlists });
 
         }).catch((e) => {
@@ -25,7 +25,7 @@ class PlaylistReel extends React.Component {
     render() {
         return (
 
-<div className="columns">
+
             <div className="tiles">
 
                 <Box className="tile">
@@ -35,9 +35,9 @@ class PlaylistReel extends React.Component {
                         </a>
 
                         <figcaption className="caption">
-                            <Heading>{this.state.playlists[1].playlistName} </Heading>
-                            <Heading subtitle>{this.state.playlists[1].displayName}</Heading>
-                         </figcaption>
+                            <Heading>{this.state.playlists[0].displayName}</Heading>
+                            <Heading subtitle>{this.state.playlists[0].playlistName} </Heading>
+                        </figcaption>
                     </figure>
                 </Box>
 
@@ -48,8 +48,8 @@ class PlaylistReel extends React.Component {
                         </a>
 
                         <figcaption className="caption">
-                            <Heading>{this.state.playlists[1].playlistName} </Heading>
-                            <Heading subtitle>{this.state.playlists[1].displayName}</Heading>
+                            <Heading>{this.state.playlists[1].displayName}</Heading>
+                            <Heading subtitle>{this.state.playlists[1].playlistName} </Heading>
                         </figcaption>
                     </figure>
                 </Box>
@@ -67,20 +67,6 @@ class PlaylistReel extends React.Component {
                     </figure>
                 </Box>
 
-                <Box className="tile">
-                    <figure>
-                        <a href={this.state.playlists[3].playlistURL} target="_blank">
-                            <img src={this.state.playlists[3].playlistIMG} />
-                        </a>
-
-                        <figcaption className="caption">
-                            <Heading>{this.state.playlists[3].displayName}</Heading>
-                            <Heading subtitle>{this.state.playlists[3].playlistName} </Heading>
-                        </figcaption>
-                    </figure>
-                </Box>
-
-            </div>
             </div>
         )
     }
