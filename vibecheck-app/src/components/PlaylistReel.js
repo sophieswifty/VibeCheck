@@ -13,18 +13,8 @@ class PlaylistReel extends React.Component {
         }
     }
     componentDidMount() {
-<<<<<<< HEAD
         axios.get('https://vibecheck-please.herokuapp.com/playlists/all').then(res => {
             const playlists = res.data.slice(res.data.length - 3, res.data.length).reverse();
-=======
-        axios.get('http://localhost:3000/playlists/all').then(res => {
-            let playlists = [{"backendID":0,"playlistID":"37i9dQZF1DX0XUsuxWHRQd","playlistURL":"https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd","playlistName":"RapCaviar","playlistIMG":"https://i.scdn.co/image/ab67706f000000031b89435bb4df05b53c326980","userID":"ujeshregmi","displayName":"Ujesh R"},{"backendID":1,"playlistID":"37i9dQZF1DXbITWG1ZJKYt","playlistURL":"https://open.spotify.com/playlist/37i9dQZF1DXbITWG1ZJKYt","playlistName":"Jazz Classics","playlistIMG":"https://i.scdn.co/image/ab67706f0000000388b40afd9e31d92a818f355d","userID":"alecwhite","displayName":"Alec W"},{"backendID":2,"playlistID":"37i9dQZF1DWWQRwui0ExPn","playlistURL":"https://open.spotify.com/playlist/37i9dQZF1DWWQRwui0ExPn","playlistName":"Lo-Fi Beats","playlistIMG":"https://i.scdn.co/image/ab67706f00000003c414e7daf34690c9f983f76e","userID":"dschimtz","displayName":"Dennis S"}, {"backendID":2,"playlistID":"37i9dQZF1DWWQRwui0ExPn","playlistURL":"https://open.spotify.com/playlist/37i9dQZF1DWWQRwui0ExPn","playlistName":"Happy Day","playlistIMG":"https://i.scdn.co/image/ab67706f00000003c414e7daf34690c9f983f76e","userID":"sdimos","displayName":"Sofia D"}]
-        
-            if (res.data.length > 4) {
-                playlists = res.data.slice(res.data.length - 4, res.data.length).reverse();
-            }
-
->>>>>>> 4c261b8b0eb3efddbad8ac4950f4e63b4a0ae2fe
             this.setState({ playlists: playlists });
 
         }).catch((e) => {
