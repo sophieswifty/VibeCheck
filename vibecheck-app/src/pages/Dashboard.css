@@ -31,7 +31,8 @@
 }
 
 .playlists-title {
-  color: rgb(212, 212, 212);
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 1px rebeccapurple;
   font-size: 30px;
 }
 
@@ -49,26 +50,26 @@
   -ms-animation: fadeIn ease 10s;
   }
   @keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:.9;}
+  0% {opacity:.2;}
+  100% {opacity:1;}
   }
   
   @-moz-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:.9;}
-  }
+    0% {opacity:.2;}
+    100% {opacity:1;}
+    }
   
   @-webkit-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:.9;}
-  }
+    0% {opacity:.2;}
+    100% {opacity:1;}
+    }
   
   @-o-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:.9;}
-  }
+    0% {opacity:.2;}
+    100% {opacity:1;}
+    }
   
   @-ms-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:.9;}
-  }
+    0% {opacity:.2;}
+    100% {opacity:1;}
+    }
